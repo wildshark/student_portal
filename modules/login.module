@@ -1,0 +1,80 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Andrew Quaye
+ * Date: 15/10/2018
+ * Time: 11:58 AM
+ */
+
+
+class user_login{
+
+    function login($conn){
+
+        if (!isset($_POST['username'])){
+            echo "no user name";
+        }else{
+            $username = $_POST['username'];
+        }
+
+        if (!isset($_POST['password'])){
+            echo "no password";
+        }else{
+            $password =  $_POST['password'];
+        }
+
+        $sql = "SELECT * FROM `get_student_profile_detail` where username='$username' and password='$password' LIMIT 1";
+        $result = (mysqli_query($conn,$sql));
+        if (mysqli_num_rows($result) > 0){
+            $user = mysqli_fetch_assoc($result);
+            $_USER['token'] = md5($user['admissionNo']);
+
+            if (!isset($_COOKIE[$_USER['token']])){
+                $cookie_name = "token";
+                setcookie($cookie_name,$_USER['token'],time() + (86400 * 30), "/");
+                if (!isset($_SESSION['token'])){
+                    $_SESSION['token'] = $_USER['token'];
+                    $_SESSION['student_name'] = $user['first_name']." ". $user['surname'];
+                    $_SESSION['index'] = $user['admissionNo'];
+                    $_USER['picture'] = $user['picture'];
+                    header("location: index.php?_route=student&p=dashboard");
+                }
+            }
+        }else{
+            header("location: index.php");
+        }
+
+    }
+
+
+    function recovery($conn){
+
+        if (!isset($_POST['email'])){
+            echo "No email";
+        }else{
+
+            $email = $_POST['email'];
+
+            $sql = "SELECT * FROM `get_student_profile_detail` where email='$email' LIMIT 1";
+            $result = (mysqli_query($conn,$sql));
+            if (mysqli_num_rows($result) > 0){
+                $user = mysqli_fetch_assoc($result);
+                $_USER['username'] = $user['username'];
+                $_USER['password'] = $user['password'];
+
+                $headers = "MIME-Version: 1.0" . "\r\n";
+                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                $headers .= 'From: <webmaster@example.com>' . "\r\n";
+
+                $msg = "username ". $_USER['username'] ."\n Password ". $_USER['password'];
+                mail("$email","GhanaCU Login Recovery",$msg,$headers);
+
+                echo "email send";
+            }else{
+                header("location: index.php");
+            }
+
+        }
+
+    }
+}
