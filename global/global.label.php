@@ -13,4 +13,5 @@ $_USER['picture'] ="";
 
 
 $_template = new stdClass();
+$_template->tilte ="GhanaCU Portal";
 $_template->copyrigth = "copyright © 2018 iQuipe Digital. All rights reserved.";
