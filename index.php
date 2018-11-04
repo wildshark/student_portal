@@ -28,8 +28,8 @@ if (!isset($_GET['_route'])){
         require "student/navigation.php";
     }elseif ($route === 'recovery') {
         require "template/recovery.php";
-    }elseif ($route === "student"){
-        require "student/navigation.php";
+    }elseif ($route === "register"){
+        require "template/register.php";
     }
 }
 

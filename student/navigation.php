@@ -5,6 +5,7 @@
  * Date: 15/10/2018
  * Time: 7:58 AM
  */
+include "template/top.menu.php";
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
    // echo "no cookie or session created";
@@ -15,8 +16,7 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
         switch ($_GET['p']){
 
             case "dashboard";
-                echo $_SESSION['student_name'] ;
-
+                $_template->menu = "template/menu.php";
                 include "template/dashboard.php";
             break;
 

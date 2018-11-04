@@ -35,7 +35,7 @@ class user_login{
                 if (!isset($_SESSION['token'])){
                     $_SESSION['token'] = $_USER['token'];
                     $_SESSION['student_name'] = $user['first_name']." ". $user['surname'];
-                    $_SESSION['index'] = $user['admissionNo'];
+                    $_SESSION['student_index'] = $user['admissionNo'];
                     $_USER['picture'] = $user['picture'];
                     header("location: index.php?_route=student&p=dashboard");
                 }

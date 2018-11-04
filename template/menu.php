@@ -19,9 +19,9 @@ if(isset($_USER['picture']) and !empty($_USER['picture'])){
                 <img src="<?php echo $picture;?>" alt="profile image">
             </div>
             <div class="text-wrapper">
-                <p class="profile-name"><?php echo $_SESSION['name'];?></p>
+                <p class="profile-name"><?php echo $_SESSION['student_name'];?></p>
                 <div>
-                    <small class="designation text-muted"><? echo $_SESSION['index'];?></small>
+                    <small class="designation text-muted"><?php echo $_SESSION['student_index'];?></small>
                     <span class="status-indicator online"></span>
                 </div>
             </div>
