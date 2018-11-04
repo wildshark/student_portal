@@ -44,31 +44,31 @@ if(isset($_USER['picture']) and !empty($_USER['picture'])){
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="pages/charts/chartjs.html">
+    <a class="nav-link" href="?_route=student&p=matriculation.form">
         <i class="menu-icon mdi mdi-school"></i>
         <span class="menu-title">Matriculation Form</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="pages/tables/basic-table.html">
+    <a class="nav-link" href="?_route=student&p=hostel">
         <i class="menu-icon mdi mdi-hotel"></i>
         <span class="menu-title">Hostel</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="pages/icons/font-awesome.html">
+    <a class="nav-link" href="?_route=student&p=semester.timetable">
         <i class="menu-icon mdi mdi-calendar-check"></i>
         <span class="menu-title">Semester Timetable</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="pages/icons/font-awesome.html">
+    <a class="nav-link" href="?_route=student&p=graduation.registration">
         <i class="menu-icon mdi mdi-trophy-variant"></i>
         <span class="menu-title">Graduation Registration</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="pages/icons/font-awesome.html">
+    <a class="nav-link" href="?_route=student&p=result">
         <i class="menu-icon mdi mdi-receipt"></i>
         <span class="menu-title">Result</span>
     </a>
