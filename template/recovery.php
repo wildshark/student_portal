@@ -7,90 +7,92 @@
  */
 
 ?>
-<?php
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title><?php echo $_SCHOOL;?> Portal</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->
-    <link rel="icon" type="asset/image/png" href="images/icons/favicon.ico"/>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="asset/vendor/bootstrap/css/bootstrap.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="asset/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="asset/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="asset/vendor/animate/animate.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="asset/vendor/css-hamburgers/hamburgers.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="asset/vendor/animsition/css/animsition.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="asset/vendor/select2/select2.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="asset/vendor/daterangepicker/daterangepicker.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="asset/css/util.css">
-    <link rel="stylesheet" type="text/css" href="asset/css/main.css">
-    <!--===============================================================================================-->
+    <?php include "header.php";?>
 </head>
+
 <body>
-
-<div class="limiter">
-    <div class="container-login100">
-        <div class="wrap-login100 p-t-50 p-b-90">
-            <form class="login100-form validate-form flex-sb flex-w">
-					<span class="login100-form-title p-b-51">
-						Recover Login Details
-					</span>
-
-                <div class="wrap-input100 validate-input m-b-16" data-validate = "Email is required">
-                    <input class="input100" type="text" name="email" placeholder="Email">
-                    <span class="focus-input100"></span>
-                </div>
-
-                <div class="flex-sb-m w-full p-t-3 p-b-24">
-                    <div class="contact100-form-checkbox">
-                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper auth-page">
+        <div class="content-wrapper d-flex align-items-center auth auth-bg-1 theme-one">
+            <div class="row w-100">
+                <div class="col-lg-4 mx-auto">
+                    <div class="auto-form-wrapper">
+                        <form action="<?php echo $_INDEX;?>" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label class="label">Username</label>
+                                <div class="input-group">
+                                    <input type="text" name="username" class="form-control" placeholder="Username">
+                                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <i class="mdi mdi-check-circle-outline"></i>
+                      </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label">Password</label>
+                                <div class="input-group">
+                                    <input type="password" name="password" class="form-control" placeholder="*********">
+                                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <i class="mdi mdi-check-circle-outline"></i>
+                      </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="submit" value="Login" class="btn btn-primary submit-btn btn-block">
+                            </div>
+                            <div class="form-group d-flex justify-content-between">
+                                <div class="form-check form-check-flat mt-0">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" checked> Keep me signed in
+                                    </label>
+                                </div>
+                                <a href="#" class="text-small forgot-password text-black">Forgot Password</a>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-block g-login">
+                                    <img class="mr-3" src="asset/images/file-icons/icon-google.svg" alt="">Log in with Google</button>
+                            </div>
+                            <div class="text-block text-center my-3">
+                                <span class="text-small font-weight-semibold">Not a member ?</span>
+                                <a href="register.html" class="text-black text-small">Create new account</a>
+                            </div>
+                        </form>
                     </div>
+                    <ul class="auth-footer">
+                        <li>
+                            <a href="#">Conditions</a>
+                        </li>
+                        <li>
+                            <a href="#">Help</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms</a>
+                        </li>
+                    </ul>
+                    <p class="footer-text text-center"><?php echo $_template->copyrigth;?></p>
                 </div>
-
-                <div class="container-login100-form-btn m-t-17">
-                    <input type="submit" class="login100-form-btn" name="submit" value="recovery">
-                </div>
-                <div class="container-login100-form-btn m-t-17">
-                    <a href="index.php" class="login100-form-btn">Login</a>
-                </div>
-
-            </form>
+            </div>
         </div>
+        <!-- content-wrapper ends -->
     </div>
+    <!-- page-body-wrapper ends -->
 </div>
-
-
-<div id="dropDownSelect1"></div>
-
-<!--===============================================================================================-->
-<script src="asset/vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-<script src="asset/vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-<script src="asset/vendor/bootstrap/js/popper.js"></script>
-<script src="asset/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-<script src="asset/vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-<script src="asset/vendor/daterangepicker/moment.min.js"></script>
-<script src="asset/vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-<script src="asset/vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-<script src="asset/js/main.js"></script>
-
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="asset/vendors/js/vendor.bundle.base.js"></script>
+<script src="asset/vendors/js/vendor.bundle.addons.js"></script>
+<!-- endinject -->
+<!-- inject:js -->
+<script src="asset/js/off-canvas.js"></script>
+<script src="asset/js/misc.js"></script>
+<!-- endinject -->
 </body>
+
 </html>
