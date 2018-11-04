@@ -33,43 +33,43 @@ if(isset($_USER['picture']) and !empty($_USER['picture'])){
 </li>
 <li class="nav-item">
     <a class="nav-link" href="?_route=student&p=dashboard">
-        <i class="menu-icon mdi mdi-television"></i>
+        <i class="menu-icon mdi mdi-view-dashboard"></i>
         <span class="menu-title">Dashboard</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="pages/forms/basic_elements.html">
-        <i class="menu-icon mdi mdi-backup-restore"></i>
+    <a class="nav-link" href="?_route=student&p=fees.history">
+        <i class="menu-icon mdi mdi-cash-multiple"></i>
         <span class="menu-title">Fees Statement</span>
     </a>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="pages/charts/chartjs.html">
-        <i class="menu-icon mdi mdi-chart-line"></i>
+        <i class="menu-icon mdi mdi-school"></i>
         <span class="menu-title">Matriculation Form</span>
     </a>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="pages/tables/basic-table.html">
-        <i class="menu-icon mdi mdi-table"></i>
+        <i class="menu-icon mdi mdi-hotel"></i>
         <span class="menu-title">Hostel</span>
     </a>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="pages/icons/font-awesome.html">
-        <i class="menu-icon mdi mdi-sticker"></i>
+        <i class="menu-icon mdi mdi-calendar-check"></i>
         <span class="menu-title">Semester Timetable</span>
     </a>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="pages/icons/font-awesome.html">
-        <i class="menu-icon mdi mdi-sticker"></i>
+        <i class="menu-icon mdi mdi-trophy-variant"></i>
         <span class="menu-title">Graduation Registration</span>
     </a>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="pages/icons/font-awesome.html">
-        <i class="menu-icon mdi mdi-sticker"></i>
+        <i class="menu-icon mdi mdi-receipt"></i>
         <span class="menu-title">Result</span>
     </a>
 </li>
