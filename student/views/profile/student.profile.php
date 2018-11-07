@@ -56,6 +56,87 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Nationality</label>
+                            <div class="col-sm-9">
+                                <select class="form-control">
+                                    <option>Category1</option>
+                                    <option>Category2</option>
+                                    <option>Category3</option>
+                                    <option>Category4</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Marital Status</label>
+                            <div class="col-sm-9">
+                                <select class="form-control">
+                                    <option>Category1</option>
+                                    <option>Category2</option>
+                                    <option>Category3</option>
+                                    <option>Category4</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Address
+                </p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Mobile No#</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Home Mobile No#</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Address</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Programme Enrolled
+                </p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Programme</label>
+                            <div class="col-sm-9">
+                                <select class="form-control">
+                                    <option>Category1</option>
+                                    <option>Category2</option>
+                                    <option>Category3</option>
+                                    <option>Category4</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Category</label>
                             <div class="col-sm-9">
                                 <select class="form-control">
@@ -69,58 +150,47 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Membership</label>
-                            <div class="col-sm-4">
-                                <div class="form-radio">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked> Free
-                                    </label>
-                                </div>
+                            <label class="col-sm-3 col-form-label">Stream</label>
+                            <div class="col-sm-9">
+                                <select class="form-control">
+                                    <option>Category1</option>
+                                    <option>Category2</option>
+                                    <option>Category3</option>
+                                    <option>Category4</option>
+                                </select>
                             </div>
-                            <div class="col-sm-5">
-                                <div class="form-radio">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2"> Professional
-                                    </label>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Hostel Status</label>
+                            <div class="col-sm-9">
+                                <select class="form-control">
+                                    <option>Category1</option>
+                                    <option>Category2</option>
+                                    <option>Category3</option>
+                                    <option>Category4</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                 </div>
                 <p class="card-description">
-                    Address
+                    History
                 </p>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Address 1</label>
-                            <div class="col-sm-9">
+                            <label class="col-sm-4 col-form-label">High school Attended</label>
+                            <div class="col-sm-8">
                                 <input type="text" class="form-control" />
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">State</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Address 2</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Postcode</label>
-                            <div class="col-sm-9">
+                            <label class="col-sm-4 col-form-label">Year of Completion</label>
+                            <div class="col-sm-8">
                                 <input type="text" class="form-control" />
                             </div>
                         </div>
@@ -129,7 +199,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">City</label>
+                            <label class="col-sm-3 col-form-label">WSSCE Index ID</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" />
                             </div>
@@ -137,14 +207,17 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Country</label>
+                            <label class="col-sm-5 col-form-label">Other Qualifications, If any</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Duration</label>
                             <div class="col-sm-9">
-                                <select class="form-control">
-                                    <option>America</option>
-                                    <option>Italy</option>
-                                    <option>Russia</option>
-                                    <option>Britain</option>
-                                </select>
+                                <input type="text" class="form-control" />
                             </div>
                         </div>
                     </div>

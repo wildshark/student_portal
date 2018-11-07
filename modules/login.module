@@ -80,6 +80,7 @@ class user_login{
 
     function registration($conn){
 
+
         if (!isset($_POST['username'])){
             echo "No name found";
         }elseif (!$_POST['mobile']){
@@ -97,15 +98,34 @@ class user_login{
             $email = $_POST['email'];
             $voucher = $_POST['voucher'];
 
-                $sql = "SELECT * FROM `get_pins` where `pin`='$voucher'";
-                $result = (mysqli_query($conn,$sql));
-                if (mysqli_num_rows($result) < 0) {
-                  echo "wrong voucher or voucher has be used";
-                }else {
-                    ECHO "ok";
+            $sql = "SELECT * FROM `get_pins` where `pin`='$voucher'";
+            $result = (mysqli_query($conn,$sql));
+            if ($result->num_rows > 0) {
+
+                $date = date("Y-m-d H:i:s");
+                $sql ="UPDATE `pins` SET `username`='$username', `password`='$password', `active_date`='$date', status='2'  WHERE (`pin`='$voucher')";
+                $update_pin_record = mysqli_query($conn,$sql);
+
+                if ($update_pin_record == TRUE){
+                    $_USER['token'] = md5($user['admissionNo']);
+
+                    if (!isset($_COOKIE[$_USER['token']])){
+                        $cookie_name = "token";
+                        setcookie($cookie_name,$_USER['token'],time() + (86400 * 30), "/");
+                        if (!isset($_SESSION['token'])){
+                            $_SESSION['token'] = $_USER['token'];
+                            $_SESSION['student_name'] = $username;
+                            $_SESSION['student_index'] = $email;
+                            $_USER['picture'] = $user['picture'];
+                            header("location: index.php?_route=student&p=profile");
+                        }
+                    }
+                }else{
+                    echo "error";
                 }
+            }else{
+                echo "wrong voucher or voucher has be used";
+            }
         }
-
-
     }
 }

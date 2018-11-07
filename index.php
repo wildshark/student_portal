@@ -12,16 +12,23 @@ include "global/global.label.php";
 include "modules/login.module";
 
 if (!isset($_GET['_route'])){
+
     if (!isset($_POST['submit'])){
         logout();
     }elseif ($_POST['submit'] === "Login"){
         user_login::login($conn);
     }elseif ($_POST['submit'] === "Recovery"){
         user_login::recovery($conn);
+    }elseif ($_POST['submit'] === "Register"){
+        user_login::registration($conn);
     }
+
 }else{
-     $route = $_GET['_route'];
+
+    $route = $_GET['_route'];
+
     $GLOBALS['route'] = $route;
+
     if($route === 'admin'){
         require "admin/navigation.php";
     }elseif ($route === 'student'){
