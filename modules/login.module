@@ -77,4 +77,35 @@ class user_login{
         }
 
     }
+
+    function registration($conn){
+
+        if (!isset($_POST['username'])){
+            echo "No name found";
+        }elseif (!$_POST['mobile']){
+            echo "No mobile number found";
+        }elseif (!$_POST['email']){
+            echo "No email found";
+        }elseif (!$_POST['voucher']){
+            echo "No voucher found";
+        }elseif (!$_POST['password']){
+            echo "No voucher found";
+        }else{
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $mobile = $_POST['mobile'];
+            $email = $_POST['email'];
+            $voucher = $_POST['voucher'];
+
+                $sql = "SELECT * FROM `get_pins` where `pin`='$voucher'";
+                $result = (mysqli_query($conn,$sql));
+                if (mysqli_num_rows($result) < 0) {
+                  echo "wrong voucher or voucher has be used";
+                }else {
+                    ECHO "ok";
+                }
+        }
+
+
+    }
 }

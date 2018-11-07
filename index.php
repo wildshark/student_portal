@@ -30,8 +30,6 @@ if (!isset($_GET['_route'])){
         require "template/recovery.php";
     }elseif ($route === "register"){
         require "template/register.php";
-    }else{
-        echo"time out";
     }
 }
 

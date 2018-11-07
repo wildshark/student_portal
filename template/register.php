@@ -10,21 +10,7 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Star Admin Free Bootstrap Admin Dashboard Template</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="../../vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.addons.css">
-    <!-- endinject -->
-    <!-- plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="../../css/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="../../images/favicon.png" />
+    <?php include "header.php";?>
 </head>
 
 <body>
@@ -35,10 +21,20 @@
                 <div class="col-lg-4 mx-auto">
                     <h2 class="text-center mb-4">Register</h2>
                     <div class="auto-form-wrapper">
-                        <form action="#">
+                        <form action="<?php echo $_INDEX;?>" method="POST" enctype="application/x-www-form-urlencoded">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Username">
+                                    <input type="text" name="username" class="form-control" placeholder="Username">
+                                    <div class="input-group-append">
+                                          <span class="input-group-text">
+                                            <i class="mdi mdi-check-circle-outline"></i>
+                                          </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="password" name="password" class="form-control" placeholder="Password">
                                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>
@@ -58,7 +54,27 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="password" class="form-control" placeholder="Confirm Password">
+                                    <input type="text" name="mobile" class="form-control" placeholder="Mobile">
+                                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <i class="mdi mdi-check-circle-outline"></i>
+                      </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="email" name="email" class="form-control" placeholder="Email">
+                                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <i class="mdi mdi-check-circle-outline"></i>
+                      </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" name="voucher" class="form-control" placeholder="Voucher">
                                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>
@@ -74,11 +90,11 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-primary submit-btn btn-block">Register</button>
+                                <input type="submit" name="submit" value="Register" class="btn btn-primary submit-btn btn-block">
                             </div>
                             <div class="text-block text-center my-3">
                                 <span class="text-small font-weight-semibold">Already have and account ?</span>
-                                <a href="login.html" class="text-black text-small">Login</a>
+                                <a href="?_route=login" class="text-black text-small">Login</a>
                             </div>
                         </form>
                     </div>
@@ -91,12 +107,12 @@
 </div>
 <!-- container-scroller -->
 <!-- plugins:js -->
-<script src="../../vendors/js/vendor.bundle.base.js"></script>
-<script src="../../vendors/js/vendor.bundle.addons.js"></script>
+<script src="asset/vendors/js/vendor.bundle.base.js"></script>
+<script src="asset/vendors/js/vendor.bundle.addons.js"></script>
 <!-- endinject -->
 <!-- inject:js -->
-<script src="../../js/off-canvas.js"></script>
-<script src="../../js/misc.js"></script>
+<script src="asset/js/off-canvas.js"></script>
+<script src="asset/js/misc.js"></script>
 <!-- endinject -->
 </body>
 

@@ -44,7 +44,7 @@
                                         <input type="checkbox" class="form-check-input" checked> Keep me signed in
                                     </label>
                                 </div>
-                                <a href="#" class="text-small forgot-password text-black">Forgot Password</a>
+                                <a href="?_route=recovery" class="text-small forgot-password text-black">Forgot Password</a>
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-block g-login">
@@ -52,7 +52,7 @@
                             </div>
                             <div class="text-block text-center my-3">
                                 <span class="text-small font-weight-semibold">Not a member ?</span>
-                                <a href="register.html" class="text-black text-small">Create new account</a>
+                                <a href="?_route=register" class="text-black text-small">Create new account</a>
                             </div>
                         </form>
                     </div>
