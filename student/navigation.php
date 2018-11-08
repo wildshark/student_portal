@@ -7,6 +7,7 @@
  */
 include "template/top.menu.php";
 
+
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
    // echo "no cookie or session created";
     logout();
@@ -34,7 +35,7 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
 
             case"hostel";
                 $_template->menu = "template/menu.php";
-                $_template->view ="student/views/hostel/list.hostel.php";
+                $_template->view ="student/views/hostel/hostel.php";
                 include "template/form.php";
             break;
 

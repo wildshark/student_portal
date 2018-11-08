@@ -7,40 +7,20 @@
  */
 class StudentProfile{
 
-    // Declare  properties
-    public $serial = "";
-    public $application_mode = "";
-    public $academic_year = "";
-    public $first_name = "";
-    public $last_name = "";
-    public $dob = "";
-    public $nationality = "";
-    public $marital_status = "";
-    public $mobile1 = "";
-    public $mobile2 = "";
-    public $email = "";
-    public $address = "";
-    public $programme = "";
-    public $category = "";
-    public $stream = "";
-    public $hostel = "";
-    public $school_attended = "";
-    public $school_year = "";
-    public $wssce = "";
-    public $qualification = "";
-    public $duration = "";
-
     public function add($conn){
 
-         $this->dob
 
     }
 
     public function update(){
 
+        $id = $_SESSION['studentID'];
+
+
     }
 
     public function delete(){
+
 
     }
 
