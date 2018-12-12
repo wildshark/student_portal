@@ -14,7 +14,12 @@
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <ul class="nav">
-                <?php include_once $_template->menu;?>
+                <?php
+                if ($_REQUEST['_route'] === "student"){
+                    stuSideMenu::nav_student_profile();
+                    stuSideMenu::menu_activated();
+                }
+                ;?>
             </ul>
         </nav>
         <!-- partial -->

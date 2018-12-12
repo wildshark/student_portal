@@ -24,7 +24,7 @@
                         <form action="<?php echo $_INDEX;?>" method="POST" enctype="application/x-www-form-urlencoded">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" name="username" class="form-control" placeholder="Username">
+                                    <input type="text" name="username" class="form-control" placeholder="Index Number">
                                     <div class="input-group-append">
                                           <span class="input-group-text">
                                             <i class="mdi mdi-check-circle-outline"></i>
@@ -36,19 +36,9 @@
                                 <div class="input-group">
                                     <input type="password" name="password" class="form-control" placeholder="Password">
                                     <div class="input-group-append">
-                      <span class="input-group-text">
-                        <i class="mdi mdi-check-circle-outline"></i>
-                      </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="password" class="form-control" placeholder="Password">
-                                    <div class="input-group-append">
-                      <span class="input-group-text">
-                        <i class="mdi mdi-check-circle-outline"></i>
-                      </span>
+                                        <span class="input-group-text">
+                                            <i class="mdi mdi-check-circle-outline"></i>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -56,9 +46,9 @@
                                 <div class="input-group">
                                     <input type="text" name="mobile" class="form-control" placeholder="Mobile">
                                     <div class="input-group-append">
-                      <span class="input-group-text">
-                        <i class="mdi mdi-check-circle-outline"></i>
-                      </span>
+                                        <span class="input-group-text">
+                                            <i class="mdi mdi-check-circle-outline"></i>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -66,9 +56,9 @@
                                 <div class="input-group">
                                     <input type="email" name="email" class="form-control" placeholder="Email">
                                     <div class="input-group-append">
-                      <span class="input-group-text">
-                        <i class="mdi mdi-check-circle-outline"></i>
-                      </span>
+                                      <span class="input-group-text">
+                                        <i class="mdi mdi-check-circle-outline"></i>
+                                      </span>
                                     </div>
                                 </div>
                             </div>
@@ -76,17 +66,10 @@
                                 <div class="input-group">
                                     <input type="text" name="voucher" class="form-control" placeholder="Voucher">
                                     <div class="input-group-append">
-                      <span class="input-group-text">
-                        <i class="mdi mdi-check-circle-outline"></i>
-                      </span>
+                                      <span class="input-group-text">
+                                        <i class="mdi mdi-check-circle-outline"></i>
+                                      </span>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="form-group d-flex justify-content-center">
-                                <div class="form-check form-check-flat mt-0">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input" checked> I agree to the terms
-                                    </label>
                                 </div>
                             </div>
                             <div class="form-group">

@@ -16,7 +16,82 @@ function logout(){
 
     include "global.label.php";
     include "template/login.php";
+}
 
+function student_stream($streamID){
+
+    if ($streamID == 1){
+        $stream = "Regular";
+    } elseif ($streamID == 2){
+        $stream = "weekend";
+    }else{
+        $stream = "unknown";
+    }
+    return $stream;
+}
+
+function marital_status($maritalID){
+
+    if($maritalID == 1){
+        $marital ="Single";
+    }elseif ($maritalID == 2){
+        $marital ="Married";
+    }elseif ($maritalID == 3){
+        $marital ="Divorce";
+    }elseif ($maritalID == 4){
+        $marital ="Windowed";
+    }else{
+        $marital = "unknown";
+    }
+    return $marital;
+}
+
+function student_application_mode($entryID){
+
+    if($entryID = 1){
+        $entry="Direct Entry";
+    }elseif ($entryID = 2){
+        $entry="Mature Entry";
+    }else{
+        $entry="unknown";
+    }
+    return $entry;
+}
+
+function gender($genderID){
+
+    if ($genderID = 1){
+        $gender = "Male";
+    }elseif($genderID = 2){
+        $gender = "Female";
+    }else{
+        $gender = "unknown";
+    }
+    return $gender;
+}
+
+function student_category_type($categoryID){
+
+    if($categoryID = 1){
+        $category = "Am a local Student";
+    }elseif ($categoryID = 2){
+        $category = "Am a Foreign Student";
+    }else{
+        $category = "unknown";
+    }
+    return $category;
+}
+
+function student_hostel_status($hostID){
+
+    if($hostID == 1){
+        $host = "I live on campus";
+    }elseif($hostID == 2){
+        $host = "I live off campus";
+    }else{
+        $host = "unknown";
+    }
+    return $host;
 }
 
 function generate_academic_session(){

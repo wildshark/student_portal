@@ -6,6 +6,8 @@
  * Time: 7:58 AM
  */
 include "template/top.menu.php";
+include_once "model/student_menu.module";
+include_once "function/data.module";
 
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
@@ -15,6 +17,10 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
     if ($_SESSION['token'] === $_COOKIE["token"]){
 
         switch ($_GET['p']){
+
+            case "logout";
+                logout();
+            break;
 
             case "dashboard";
                 $_template->menu = "template/menu.php";
@@ -28,7 +34,7 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
             break;
 
             case "fees.history";
-                $_template->menu = "template/menu.php";
+                //$_template->menu = "template/menu.php";
                 $_template->view ="student/views/fees/list.fees.statement.php";
                 include "template/form.php";
             break;

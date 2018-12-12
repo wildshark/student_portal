@@ -14,9 +14,9 @@
                     <div class="auto-form-wrapper">
                         <form action="<?php echo $_INDEX;?>" method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label class="label">Username</label>
+                                <label class="label">Index Number</label>
                                 <div class="input-group">
-                                    <input type="text" name="username" class="form-control" placeholder="Username">
+                                    <input type="text" name="username" class="form-control" placeholder="Index Number">
                                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>

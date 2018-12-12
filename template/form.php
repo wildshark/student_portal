@@ -16,13 +16,84 @@
 <body>
 <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
-    <?php echo top_menu::student_menu();?>
+    <nav class='navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row'>
+        <div class='text-center navbar-brand-wrapper d-flex align-items-top justify-content-center'>
+            <a class='navbar-brand brand-logo' href='index.html'>
+                <img src='asset/images/logo.svg' alt='logo' />
+            </a>
+            <a class='navbar-brand brand-logo-mini' href='index.html'>
+                <img src='asset/images/logo-mini.svg' alt='logo' />
+            </a>
+        </div>
+        <div class='navbar-menu-wrapper d-flex align-items-center'>
+            <ul class='navbar-nav navbar-nav-left header-links d-none d-md-flex'>
+                <li class='nav-item'>
+                    <a href='index.php?_route=student&p=profile' class='nav-link'>
+                        <i class='mdi mdi-account'></i>Profile</a>
+                </li>
+                <li class='nav-item'>
+                    <a href='#' class='nav-link'>Schedule
+                        <span class='badge badge-primary ml-1'>New</span>
+                    </a>
+                </li>
+                <li class='nav-item active'>
+                    <a href='#' class='nav-link'>
+                        <i class='mdi mdi-elevation-rise'></i>Reports</a>
+                </li>
+                <li class='nav-item'>
+                    <a href='#' class='nav-link'>
+                        <i class='mdi mdi-bookmark-plus-outline'></i>Score</a>
+                </li>
+            </ul>
+            <ul class='navbar-nav navbar-nav-right'>
+                <li class='nav-item dropdown'>
+                    <a class='nav-link count-indicator dropdown-toggle' id='messageDropdown' href='#' data-toggle='dropdown' aria-expanded='false'>
+                        <i class='mdi mdi-file-document-box'></i>
+                        <span class='count'>7</span>
+                    </a>
+                    <div class='dropdown-menu dropdown-menu-right navbar-dropdown preview-list' aria-labelledby='messageDropdown'>
+                        <?php ?>
+                    </div>
+                </li>
+                <li class='nav-item dropdown'>
+                    <a class='nav-link count-indicator dropdown-toggle' id='notificationDropdown' href='#' data-toggle='dropdown'>
+                        <i class='mdi mdi-bell'></i>
+                        <span class='count'>4</span>
+                    </a>
+                    <div class='dropdown-menu dropdown-menu-right navbar-dropdown preview-list' aria-labelledby='notificationDropdown'>
+                        <a class='dropdown-item'>
+                            <p class='mb-0 font-weight-normal float-left'>You have 4 new notifications
+                            </p>
+                            <span class='badge badge-pill badge-warning float-right'>View all</span>
+                        </a>
+                        <?php top_menu::notification();?>
+                    </div>
+                </li>
+                <li class='nav-item dropdown d-none d-xl-inline-block'>
+                    <a class='nav-link dropdown-toggle' id='UserDropdown' href='#' data-toggle='dropdown' aria-expanded='false'>
+                        <?php top_menu::student_menu();?>
+                    </a>
+                    <div class='dropdown-menu dropdown-menu-right navbar-dropdown' aria-labelledby='UserDropdown'>
+                        <?php top_menu:: profile_menu();?>
+                    </div>
+                </li>
+            </ul>
+            <button class='navbar-toggler navbar-toggler-right d-lg-none align-self-center' type='button' data-toggle='offcanvas'>
+                <span class='mdi mdi-menu'></span>
+            </button>
+        </div>
+    </nav>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
         <!-- partial:../../partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <ul class="nav">
-                <?php include_once $_template->menu;?>
+                <?php
+                if ($_REQUEST['_route'] === "student"){
+                    stuSideMenu::nav_student_profile();
+                    stuSideMenu::menu_activated();
+                }
+                ;?>
             </ul>
         </nav>
         <!-- partial -->

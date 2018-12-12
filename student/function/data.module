@@ -1,0 +1,35 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Andrew Quaye
+ * Date: 12/12/2018
+ * Time: 6:44 AM
+ */
+
+
+
+function fees_details($conn){
+
+    $sql="SELECT * FROM `school_data`.`get_fees_payment_details` LIMIT 0,1000";
+    $result = mysqli_query($conn,$sql);
+    if ($result->num_rows > 0){
+        $r=$result->fetch_assoc();
+
+        $studentID = $r['studentID'];
+        $yearID = $r['yearID'];
+        $tran_time = $r['tran_time'];
+        $tranDate = $r['tranDate'];
+
+
+        echo"
+        <tr>
+            <td>{$r['first_name']} {$r['surname']}</td>
+            <td>{{$r['yearID']}}</td>
+            <td>{{$r['yearID']}}</td>
+            <td>{{$r['yearID']}}</td>
+            <td>{{$r['yearID']}}</td>
+            <td>{{$r['yearID']}}</td>
+        </tr>
+    ";
+    }
+}

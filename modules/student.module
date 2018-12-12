@@ -8,6 +8,37 @@
 class StudentProfile{
 
     public function add($conn){
+        $date= date ("Y-m-d");
+        $f_name = $_REQUEST['f-name'];
+        $l_name = $_REQUEST['l-name'];
+        $dob = $_REQUEST['dob'];
+        $marital = $_REQUEST['martial'];
+        $nationality = $_REQUEST['nationality'];
+        $address = $_REQUEST['address'];
+        $serial = $_REQUEST['admission'];
+        $mobile = $_REQUEST['mobile-1'];
+        $mobile2 =$_REQUEST['mobile-2'];
+        $email = $_REQUEST['email'];
+        $attend = $_REQUEST['attend'];
+        $examID = $_REQUEST['examID'];
+        $attend_yr = $_REQUEST['attend-year'];
+        $yearID = $_REQUEST['year'];
+        $progID = $_REQUEST['programme'];
+        $categoryID = $_REQUEST['category'];
+        $stream = $_REQUEST['stream'];
+        $proofID ='1';
+        $application = $_REQUEST['applicationID'];
+        $statusID = '1';
+
+        $sql="INSERT INTO `school_data`.`new_student`(`date`, `f_name`, `l_name`, `dob`, `maritalID`, `email`, `address`, `mobile1`, `mobile2`, `nationality`, `attended`, `exam_index_id`, `attended_year`, `yearID`, `progID`, `streaID`, `categoryID`, `proofID`, `applicationID`, `serial_no`, `statusID`) VALUES ('$date', '$f_name', '$l_name', '$dob', '$marital', '$email', '$address', '$mobile', '$mobile2', '$nationality', '$attend', '$examID', '$attend_yr', '$yearID','$progID', '$stream', '$categoryID', '$proofID', '$application','$serial', '$statusID')";
+        $result = (mysqli_query($conn,$sql));
+
+        if ($result == TRUE){
+            
+
+        }else{
+
+        }
 
 
     }
@@ -20,6 +51,8 @@ class StudentProfile{
     }
 
     public function delete(){
+
+        $id = $_SESSION['studentID'];
 
 
     }
