@@ -25,8 +25,7 @@ if (!isset($_GET['_route'])){
 
 }else{
 
-    $route = $_GET['_route'];
-
+    $route = $_REQUEST['_route'];
     $GLOBALS['route'] = $route;
 
     if($route === 'admin'){
