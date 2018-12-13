@@ -6,10 +6,20 @@
  * Time: 8:13 AM
  */
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "school_data";
+
+if ( $_SERVER['SERVER_NAME'] === "localhost"){
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "school_data";
+
+}else{
+    $servername = "localhost";
+    $username = "ghanacucom";
+    $password = "ghanacu@50";
+    $database = "ghanacu_portal";
+}
+
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password,$database);
