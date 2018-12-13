@@ -29,6 +29,8 @@ if (!isset($_GET['_route'])){
 
     if($route === 'admin'){
         require "navigation.php";
+    }elseif ($route === 'recovery') {
+        require "template/recovery.php";
     }
 }
 
