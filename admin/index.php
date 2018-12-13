@@ -18,6 +18,8 @@ if (!isset($_GET['_route'])){
         logout();
     }elseif ($_POST['submit'] === "Login"){
         admin_login::login($conn);
+    }else{
+        require "module.php";
     }
 
 }else{
