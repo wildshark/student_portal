@@ -18,6 +18,7 @@ function logout(){
     include "template/login.php";
 }
 
+
 function student_stream($streamID){
 
     if ($streamID == 1){

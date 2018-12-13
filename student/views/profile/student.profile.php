@@ -7,38 +7,35 @@
  */
 
 if (!isset($_SESSION['student_index'])){
- exit();
+    $entryID = "";
+    $date = "";
+    $serial = "";
+    $f_name = "";
+    $l_name = "";
+    $admission = "";
+    $genderID = "";
+    $dob = "";
+    $maritalID = "";
+    $nationalityID = "";
+    $nationality = "";
+    $address = "";
+    $mobile = "";
+    $mobile2 = "";
+    $email = "";
+    $progID = "";
+    $programme = "";
+    $prefix = "";
+    $categoryID = "";
+    $streamID = "";
+    $hostID = "";
+    $token = "";
+    $statusID = "";
 }else{
     $admission = $_SESSION['student_index'];
     $sql = "SELECT * FROM get_student_profile_detail where admissionNo='$admission'";
     $result = (mysqli_query($conn,$sql));
 
-    if ($result->num_rows < 0) {
-        $entryID = "";
-        $date= "";
-        $serial = "";
-        $f_name = "";
-        $l_name = "";
-        $genderID ="";
-        $nationalityID ="";
-        $nationality = "";
-        $dob = "";
-        $maritalID = "";
-        $address = "";
-        $admission ="";
-        $mobile = "";
-        $mobile2 ="";
-        $email ="";
-        $progID = "";
-        $programme = "";
-        $prefix = "";
-        $categoryID = "";
-        $stream = "";
-        $campus_status = "";
-        $username = "";
-        $password = "";
-        $statusID = "";
-    }else{
+    if ($result->num_rows > 0) {
 
         $r = $result->fetch_assoc();
 
@@ -71,7 +68,7 @@ if (!isset($_SESSION['student_index'])){
 <div class="col-12 grid-margin">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title"><?php echo "Profile: ". $_SESSION['student_name']." | ".$_SESSION['student_index'];?></h4>
+            <h3 class="card-title"><?php echo "Profile: ". $_SESSION['student_index'];?></h3>
             <form class="form-sample">
                 <p class="card-description">
                     <h4>Personal Info:</4>

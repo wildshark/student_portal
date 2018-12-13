@@ -77,7 +77,7 @@
                             </div>
                             <div class="text-block text-center my-3">
                                 <span class="text-small font-weight-semibold">Already have and account ?</span>
-                                <a href="?_route=login" class="text-black text-small">Login</a>
+                                <a href="index.php" class="text-black text-small">Login</a>
                             </div>
                         </form>
                     </div>

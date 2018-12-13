@@ -13,11 +13,10 @@ class stuSideMenu{
         if(isset($_USER['picture']) and !empty($_USER['picture'])){
             $picture = $_USER['picture'];
         }else{
-            $picture ="asset/images/faces/face.png";
+            $picture ="asset/images/faces/face1.jpg";
         }
 
         echo"
-        <li class='nav-item nav-profile'>
             <div class='nav-link'>
                 <div class='user-wrapper'>
                     <div class='profile-image'>
@@ -34,8 +33,7 @@ class stuSideMenu{
                 <button class='btn btn-success btn-block'>New Project
                     <i class='mdi mdi-plus'></i>
                 </button>
-            </div>
-        </li>";
+            </div>";
     }
 
     function menu_activated(){

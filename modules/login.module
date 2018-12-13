@@ -93,13 +93,19 @@ class user_login{
                     $_SESSION['student_name'] = $user['first_name']." ". $user['surname'];
                     $_SESSION['student_index'] = $user['admissionNo'];
                     $_USER['picture'] = $user['picture'];
-                    header("location: index.php?_route=student&p=dashboard&e=100");
+
+                    $profile = "SELECT * FROM `school_data`.`student_profile` WHERE token = '$token'";
+                    $profile_result = mysqli_query($conn,$profile);
+                    if(mysqli_num_rows($profile_result) > 0){
+                        header("location: index.php?_route=student&p=dashboard&e=100");
+                    }else{
+                        header("location: index.php?_route=student&p=profile&e=100");
+                    }
                 }
             }
         }else{
             header("location: index.php");
         }
-
     }
 
 
