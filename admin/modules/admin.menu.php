@@ -16,6 +16,18 @@ class stuSideMenu{
             $picture ="asset/images/faces/face1.jpg";
         }
 
+        if (!isset($_COOKIE['username'])){
+            $username = "Unknown User";
+        }else{
+            $username = $_COOKIE['username'];
+        }
+
+        if (!isset($_COOKIE['email'])){
+            $email = "Email Not Found";
+        }else{
+            $email = $_COOKIE['email'];
+        }
+
         echo"
             <div class='nav-link'>
                 <div class='user-wrapper'>
@@ -23,9 +35,9 @@ class stuSideMenu{
                         <img src='{$picture}' alt='profile image'>
                     </div>
                     <div class='text-wrapper'>
-                        <p class='profile-name'>{$_COOKIE['username']}</p>
+                        <p class='profile-name'>{$username}</p>
                         <div>
-                            <small class='designation text-muted'>{$_COOKIE['email']}</small>
+                            <small class='designation text-muted'>{$email}</small>
                             <span class='status-indicator online'></span>
                         </div>
                     </div>
