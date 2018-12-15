@@ -6,50 +6,50 @@
  * Time: 8:24 AM
  */
 
+if (isset($_SESSION['token'])){
+    $token = $_SESSION['token'];
+    $sql = "SELECT * FROM `school_data`.`get_all_pins`  where `token` = '$token'";
+    $result = mysqli_query($conn,$sql);
+    if($result->num_rows === 0){
+        $username = "";
+        $password = "";
+        $mobile = "";
+        $email ="";
+        $token = "";
+        $status = "";
+    }else{
+        $r = $result->fetch_assoc();
+        $username = $r['username'];
+        $password = $r['password'];
+        $email = $r['email'];
+        $mobile = $r['mobile'];
+        $token = $r['token'];
+        $status = $r['status'];
+    }
+}
 ?>
 <div class="col-12 grid-margin">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Horizontal Two column</h4>
-            <form class="form-sample">
+            <h4 class="card-title">Password Details</h4>
+            <form method="post" action="index.php" class="form-sample" enctype="multipart/form-data">
                 <p class="card-description">
                     Personal info
                 </p>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">First Name</label>
+                            <label class="col-sm-3 col-form-label">Username</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input name="username" readonly value="<?php echo $username;?>" type="text" class="form-control" />
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Last Name</label>
+                            <label class="col-sm-3 col-form-label">Password</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Gender</label>
-                            <div class="col-sm-9">
-                                <select class="form-control">
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Date of Birth</label>
-                            <div class="col-sm-9">
-                                <input class="form-control" placeholder="dd/mm/yyyy" />
+                                <input name="password" value="<?php echo $password;?>" type="text" class="form-control" />
                             </div>
                         </div>
                     </div>
@@ -57,54 +57,17 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Category</label>
+                            <label class="col-sm-3 col-form-label">Mobile</label>
                             <div class="col-sm-9">
-                                <select class="form-control">
-                                    <option>Category1</option>
-                                    <option>Category2</option>
-                                    <option>Category3</option>
-                                    <option>Category4</option>
-                                </select>
+                                <input name="mobile" value="<?php echo $mobile;?>" type="text" class="form-control" />
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Membership</label>
-                            <div class="col-sm-4">
-                                <div class="form-radio">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked> Free
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-sm-5">
-                                <div class="form-radio">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2"> Professional
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="card-description">
-                    Address
-                </p>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Address 1</label>
+                            <label class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">State</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input name="email" value="<?php echo $email;?>" type="text" class="form-control" />
                             </div>
                         </div>
                     </div>
@@ -112,42 +75,24 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Address 2</label>
+                            <label class="col-sm-3 col-form-label"></label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input name="key" value="<?php echo date("YmdHis");?>" type="text" class="form-control" />
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Postcode</label>
+                            <label class="col-sm-3 col-form-label">Stamp</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input name="stamp" value="<?php echo "ghc".rand(10,99)."".$token;?>" type="text" class="form-control" />
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">City</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Country</label>
-                            <div class="col-sm-9">
-                                <select class="form-control">
-                                    <option>America</option>
-                                    <option>Italy</option>
-                                    <option>Russia</option>
-                                    <option>Britain</option>
-                                </select>
-                            </div>
-                        </div>
+                <div class="col-md-12">
+                    <div class="form-group text-right">
+                        <button type="submit" name="submit" value="update-password" class="btn btn-primary btn-fw">Update</button>
                     </div>
                 </div>
             </form>

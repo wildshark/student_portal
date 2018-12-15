@@ -6,39 +6,37 @@
  * Time: 8:57 AM
  */
 
-if (!isset($_SESSION['student_index'])){
-    $entryID = "";
-    $date = "";
-    $serial = "";
-    $f_name = "";
-    $l_name = "";
-    $admission = "";
-    $genderID = "";
-    $dob = "";
-    $maritalID = "";
-    $nationalityID = "";
-    $nationality = "";
-    $address = "";
-    $mobile = "";
-    $mobile2 = "";
-    $email = "";
-    $progID = "";
-    $programme = "";
-    $prefix = "";
-    $categoryID = "";
-    $streamID = "";
-    $hostID = "";
-    $token = "";
-    $statusID = "";
-}else{
-    $admission = $_SESSION['student_index'];
-    $sql = "SELECT * FROM get_student_profile_detail where admissionNo='$admission'";
-    $result = (mysqli_query($conn,$sql));
-
-    if ($result->num_rows > 0) {
-
+if (isset($_SESSION['studentID'])){
+    $id = $_SESSION['studentID'];
+    $sql = "SELECT * FROM `school_data`.`get_student_profile_detail` where `studentID` = '$id'";
+    $result = mysqli_query($conn,$sql);
+    if($result->num_rows === 0){
+        $entryID = "";
+        $date = "";
+        $serial = "";
+        $f_name = "";
+        $l_name = "";
+        $admission = "";
+        $genderID = "";
+        $dob = "";
+        $maritalID = "";
+        $nationalityID = "";
+        $nationality = "";
+        $address = "";
+        $mobile = "";
+        $mobile2 = "";
+        $email = "";
+        $year="";
+        $progID = "";
+        $programme = "";
+        $prefix = "";
+        $categoryID = "";
+        $streamID = "";
+        $hostelID = "";
+        $token = "";
+        $statusID = "";
+    }else{
         $r = $result->fetch_assoc();
-
         $entryID = $r['entryID'];
         $date = $r['admissionDate'];
         $serial = $r['serial_no'];
@@ -54,31 +52,56 @@ if (!isset($_SESSION['student_index'])){
         $mobile = $r['mobile1'];
         $mobile2 = $r['mobile2'];
         $email = $r['email'];
+        $yearID = $r['yearID'];
         $progID = $r['progID'];
         $programme = $r['programme'];
         $prefix = $r['prefix'];
         $categoryID = $r['categoryID'];
         $streamID = $r['streamID'];
-        $hostID = $r['campus_status'];
+        $hostelID = $r['campus_status'];
         $token = $r['token'];
         $statusID = $r['statusID'];
     }
+
 }
+
 ?>
+
 <div class="col-12 grid-margin">
     <div class="card">
         <div class="card-body">
             <h3 class="card-title"><?php echo "Profile: ". $_SESSION['student_index'];?></h3>
-            <form class="form-sample">
+            <form method="post" action="index.php" class="form-sample">
                 <p class="card-description">
-                    <h4>Personal Info:</4>
+                <h4>Personal Info:</4>
                 </p>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Date</label>
                             <div class="col-sm-9">
-                                <input name="f-name" value="<?php echo date("d D M Y");?>" type="text" class="form-control" />
+                                <input name="date" value="<?php echo date("Y-mm-d");?>" type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Academy Year</label>
+                            <div class="col-sm-9">
+                                <select name="year" class="form-control">
+                                    <option value="<?php echo $yearID?>" ><?php echo $yearID;?></option>
+                                    <?php cmb_academic_session($conn);?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Index</label>
+                            <div class="col-sm-9">
+                                <input name="admission" value="<?php echo $_SESSION['student_index'];?>" type="text" class="form-control" />
                             </div>
                         </div>
                     </div>
@@ -86,7 +109,7 @@ if (!isset($_SESSION['student_index'])){
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Application</label>
                             <div class="col-sm-9">
-                                <select name="marital-status" class="form-control">
+                                <select name="entry" class="form-control">
                                     <option value="<?php echo $entryID?>" ><?php echo student_application_mode($entryID);?></option>
                                     <option value="1">Direct Entry</option>
                                     <option value="2">Mature Entry</option>
@@ -118,10 +141,10 @@ if (!isset($_SESSION['student_index'])){
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Gender</label>
                             <div class="col-sm-9">
-                                <select class="form-control">
+                                <select name="gender" class="form-control">
                                     <option class="active" value="<?php echo $genderID;?>"><?php echo gender($genderID);?></option>
-                                    <option>Male</option>
-                                    <option>Female</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
                                 </select>
                             </div>
                         </div>
@@ -200,7 +223,7 @@ if (!isset($_SESSION['student_index'])){
                     </div>
                 </div>
                 <p class="card-description">
-                   <h4>Programme Enrolled:</h4>
+                <h4>Programme Enrolled:</h4>
                 </p>
                 <div class="row">
                     <div class="col-md-6">
@@ -218,7 +241,7 @@ if (!isset($_SESSION['student_index'])){
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Category</label>
                             <div class="col-sm-9">
-                                <select class="form-control">
+                                <select name="category" class="form-control">
                                     <option class="active" value="<?php echo $categoryID?>"><?php echo  student_category_type($categoryID);?></option>
                                     <option value="1">Local Student</option>
                                     <option value="2">Foreign Student</option>
@@ -242,8 +265,8 @@ if (!isset($_SESSION['student_index'])){
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Hostel Status</label>
                             <div class="col-sm-9">
-                                <select name="hostel-status" class="form-control">
-                                    <option class="active" value="<?php echo $hostelID?>"><?php echo student_hostel_status($hostID);?></option>
+                                <select name="hostel" class="form-control">
+                                    <option class="active" value="<?php echo $hostelID?>"><?php echo student_hostel_status($hostelID);?></option>
                                     <option value="1">I live on campus</option>
                                     <option value="2">I live off campus</option>
                                 </select>
@@ -252,7 +275,7 @@ if (!isset($_SESSION['student_index'])){
                     </div>
                     <div class="col-md-12">
                         <div class="form-group text-right">
-                            <button type="submit" name="submit" value="update" class="btn btn-primary btn-fw">Update</button>
+                            <button type="submit" name="submit" value="update-student-profile" class="btn btn-primary btn-fw">Update</button>
                         </div>
                     </div>
                 </div>

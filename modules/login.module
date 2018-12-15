@@ -39,14 +39,17 @@ class user_login{
 
                 $sql ="UPDATE `pins` SET `password`='$password', `mobile`='$mobile', `email`='$email', `active_date`='$date', `token`='$token', status='2'  WHERE (`pin`='$voucher')";
                 $update_pin_record = mysqli_query($conn,$sql);
-
                 if ($update_pin_record == TRUE){
 
                     if (!isset($_COOKIE[$token])){
+                        $sql = "INSERT INTO `school_data`.`student_profile`(`token`) VALUES ('$token')";
+                        mysqli_query($conn,$sql);
+                        $last_id = mysqli_insert_id($conn);
                         setcookie("token",$token,time() + (86400 * 30), "/");
                         if (!isset($_SESSION['token'])){
 
                             $_SESSION['token'] = $token;
+                            $_SESSION['studentID'] = $last_id;
                             $_SESSION['student_name'] = $username;
                             $_SESSION['student_index'] = $index;
                             $_SESSION['password']=$password;
@@ -91,15 +94,20 @@ class user_login{
                 if (!isset($_SESSION['token'])){
                     $_SESSION['token'] = $token;
                     $_SESSION['student_name'] = $user['first_name']." ". $user['surname'];
-                    $_SESSION['student_index'] = $user['admissionNo'];
+                    $_SESSION['student_index'] = $username;
                     $_USER['picture'] = $user['picture'];
 
                     $profile = "SELECT * FROM `school_data`.`student_profile` WHERE token = '$token'";
                     $profile_result = mysqli_query($conn,$profile);
                     if(mysqli_num_rows($profile_result) > 0){
-                        header("location: index.php?_route=student&p=dashboard&e=100");
-                    }else{
-                        header("location: index.php?_route=student&p=profile&e=100");
+                        $student = mysqli_fetch_assoc($profile_result);
+                        $_SESSION['studentID'] = $student['studentID'];
+                        $_SESSION['student_name'] = $student['first_name']." ".$student['surname'];
+                        if (!isset($student['admissionNo']) OR !isset($student['surname'])){
+                            header("location: index.php?_route=student&p=profile&e=100");
+                        }else{
+                            header("location: index.php?_route=student&p=dashboard&e=100");
+                        }
                     }
                 }
             }

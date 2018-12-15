@@ -78,8 +78,7 @@
                 </li>
                 <li class="nav-item dropdown d-none d-xl-inline-block">
                     <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                        <span class="profile-text">Hello, Richard V.Welsh !</span>
-                        <img class="img-xs rounded-circle" src="asset/images/faces/face1.jpg" alt="Profile image">
+                        <?php top_menu::student_menu();?>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                         <?php top_menu::profile_menu();?>
@@ -124,9 +123,9 @@
                                         <i class="mdi mdi-cube text-danger icon-lg"></i>
                                     </div>
                                     <div class="float-right">
-                                        <p class="mb-0 text-right">Total Revenue</p>
+                                        <p class="mb-0 text-right">Total Fees</p>
                                         <div class="fluid-container">
-                                            <h3 class="font-weight-medium text-right mb-0">$65,650</h3>
+                                            <h3 class="font-weight-medium text-right mb-0"><?php echo DASHBOARD::total_fees($conn);?></h3>
                                         </div>
                                     </div>
                                 </div>
@@ -144,9 +143,9 @@
                                         <i class="mdi mdi-receipt text-warning icon-lg"></i>
                                     </div>
                                     <div class="float-right">
-                                        <p class="mb-0 text-right">Orders</p>
+                                        <p class="mb-0 text-right">Fees Paid</p>
                                         <div class="fluid-container">
-                                            <h3 class="font-weight-medium text-right mb-0">3455</h3>
+                                            <h3 class="font-weight-medium text-right mb-0"><?php echo DASHBOARD::total_payment($conn);?></h3>
                                         </div>
                                     </div>
                                 </div>
@@ -164,9 +163,9 @@
                                         <i class="mdi mdi-poll-box text-success icon-lg"></i>
                                     </div>
                                     <div class="float-right">
-                                        <p class="mb-0 text-right">Sales</p>
+                                        <p class="mb-0 text-right">Balance</p>
                                         <div class="fluid-container">
-                                            <h3 class="font-weight-medium text-right mb-0">5693</h3>
+                                            <h3 class="font-weight-medium text-right mb-0"><?php echo DASHBOARD::total_balance($conn);?></h3>
                                         </div>
                                     </div>
                                 </div>

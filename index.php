@@ -21,6 +21,8 @@ if (!isset($_GET['_route'])){
         user_login::recovery($conn);
     }elseif ($_POST['submit'] === "Register"){
         user_login::registration($conn);
+    }else{
+        include_once "student/modules.php";
     }
 
 }else{

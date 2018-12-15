@@ -8,6 +8,7 @@
 include "template/top.menu.php";
 include_once "model/student_menu.module";
 include_once "function/data.module";
+include_once "model/dashboard.php";
 
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
@@ -36,6 +37,12 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
             case"password";
                 $_template->menu = "template/menu.php";
                 $_template->view ="student/views/profile/student.password.php";
+                include "template/form.php";
+            break;
+
+            case "enrollment.form";
+                $_template->menu = "template/menu.php";
+                $_template->view ="student/views/enrollment/add.enrollment.php";
                 include "template/form.php";
             break;
 

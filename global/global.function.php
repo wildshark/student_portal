@@ -18,6 +18,15 @@ function logout(){
     include "template/login.php";
 }
 
+function student_index(){
+    if (isset($_SESSION['student_name'])){
+        $name = ucwords($_SESSION['student_name']);
+    }else{
+        $name ="No Name";
+    }
+
+    return $name;
+}
 
 function student_stream($streamID){
 
@@ -49,9 +58,9 @@ function marital_status($maritalID){
 
 function student_application_mode($entryID){
 
-    if($entryID = 1){
+    if($entryID == 1){
         $entry="Direct Entry";
-    }elseif ($entryID = 2){
+    }elseif ($entryID == 2){
         $entry="Mature Entry";
     }else{
         $entry="unknown";
@@ -61,9 +70,9 @@ function student_application_mode($entryID){
 
 function gender($genderID){
 
-    if ($genderID = 1){
+    if ($genderID == 1){
         $gender = "Male";
-    }elseif($genderID = 2){
+    }elseif($genderID == 2){
         $gender = "Female";
     }else{
         $gender = "unknown";
@@ -73,26 +82,27 @@ function gender($genderID){
 
 function student_category_type($categoryID){
 
-    if($categoryID = 1){
+    if($categoryID == 1){
         $category = "Am a local Student";
-    }elseif ($categoryID = 2){
+    }elseif ($categoryID == 2){
         $category = "Am a Foreign Student";
     }else{
         $category = "unknown";
     }
     return $category;
+
 }
 
-function student_hostel_status($hostID){
+function student_hostel_status($hostelID){
 
-    if($hostID == 1){
-        $host = "I live on campus";
-    }elseif($hostID == 2){
-        $host = "I live off campus";
+    if($hostelID == 1){
+        $hostel = "I live on campus";
+    }elseif($hostelID == 2){
+        $hostel = "I live off campus";
     }else{
-        $host = "unknown";
+        $hostel = "unknown";
     }
-    return $host;
+    return $hostel;
 }
 
 function generate_academic_session(){

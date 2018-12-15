@@ -16,6 +16,18 @@ class stuSideMenu{
             $picture ="asset/images/faces/face1.jpg";
         }
 
+        if (isset($_SESSION['student_name'])){
+            $name = ucwords($_SESSION['student_name']);
+        }else{
+            $name ="No Name";
+        }
+
+        if (isset($_SESSION['student_index'])){
+            $index = strtoupper($_SESSION['student_index']);
+        }else{
+            $index ="No Index";
+        }
+
         echo"
             <div class='nav-link'>
                 <div class='user-wrapper'>
@@ -23,9 +35,9 @@ class stuSideMenu{
                         <img src='{$picture}' alt='profile image'>
                     </div>
                     <div class='text-wrapper'>
-                        <p class='profile-name'>{$_SESSION['student_name']}</p>
+                        <p class='profile-name'>{$name}</p>
                         <div>
-                            <small class='designation text-muted'>{$_SESSION['student_index']}</small>
+                            <small class='designation text-muted'>{$index}</small>
                             <span class='status-indicator online'></span>
                         </div>
                     </div>
@@ -52,9 +64,9 @@ class stuSideMenu{
                 </a>
             </li>
             <li class='nav-item'>
-                <a class='nav-link' href='?_route=student&p=matriculation.form'>
+                <a class='nav-link' href='?_route=student&p=enrollment.form'>
                     <i class='menu-icon mdi mdi-school'></i>
-                    <span class='menu-title'>Matriculation Form</span>
+                    <span class='menu-title'>Enrollment</span>
                 </a>
             </li>
             <li class='nav-item'>
@@ -63,6 +75,12 @@ class stuSideMenu{
                     <span class='menu-title'>Hostel</span>
                 </a>
             </li>
+            <li class='nav-item'>
+                <a class='nav-link' href='?_route=student&p=matriculation.form'>
+                    <i class='menu-icon mdi mdi-school'></i>
+                    <span class='menu-title'>Matriculation Form</span>
+                </a>
+            </li>        
             <li class='nav-item'>
                 <a class='nav-link' href='?_route=student&p=semester.timetable'>
                     <i class='menu-icon mdi mdi-calendar-check'></i>

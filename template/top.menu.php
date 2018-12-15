@@ -10,9 +10,10 @@
 class top_menu{
 
     function student_menu(){
+        $name =strtoupper($_SESSION['student_index']);
         echo"
-            <span class='profile-text'>Hello, {$_SESSION['student_name']} !</span>
-            <img class='img-xs rounded-circle' src='asset/images/faces/face.png' alt='Profile image'>
+            <span class='profile-text'>Hello, {$name} !</span>
+            <img class=\"img-xs rounded-circle\" src=\"asset/images/faces/face1.jpg\" alt=\"Profile image\">
             ";
     }
 
