@@ -76,6 +76,12 @@ class stuSideMenu{
                 </a>
             </li>
             <li class='nav-item'>
+                <a class='nav-link' href='?_route=student&p=result'>
+                    <i class='menu-icon mdi mdi-receipt'></i>
+                    <span class='menu-title'>Result</span>
+                </a>
+            </li>
+            <li class='nav-item'>
                 <a class='nav-link' href='?_route=student&p=matriculation.form'>
                     <i class='menu-icon mdi mdi-school'></i>
                     <span class='menu-title'>Matriculation Form</span>
@@ -93,12 +99,7 @@ class stuSideMenu{
                     <span class='menu-title'>Graduation Registration</span>
                 </a>
             </li>
-            <li class='nav-item'>
-                <a class='nav-link' href='?_route=student&p=result'>
-                    <i class='menu-icon mdi mdi-receipt'></i>
-                    <span class='menu-title'>Result</span>
-                </a>
-            </li>
+            
             <li class='nav-item'>
                 <a class='nav-link' data-toggle='collapse' href='#auth' aria-expanded='false' aria-controls='auth'>
                     <i class='menu-icon mdi mdi-restart'></i>

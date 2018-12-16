@@ -33,3 +33,4 @@ function fees_details($conn){
     ";
     }
 }
+

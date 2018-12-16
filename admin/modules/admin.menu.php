@@ -52,14 +52,14 @@ class stuSideMenu{
         echo"
         
             <li class='nav-item'>
-                <a class='nav-link' href='?_route=student&p=dashboard'>
+                <a class='nav-link' href='?_route=admin&p=dashboard'>
                     <i class='menu-icon mdi mdi-view-dashboard'></i>
                     <span class='menu-title'>Dashboard</span>
                 </a>
             </li>
             <li class='nav-item'>
                 <a class='nav-link' data-toggle='collapse' href='#auth' aria-expanded='false' aria-controls='auth'>
-                    <i class='menu-icon mdi mdi-restart'></i>
+                    <i class='menu-icon mdi mdi-barcode-scan'></i>
                     <span class='menu-title'>PINs Card</span>
                     <i class='menu-arrow'></i>
                 </a>
@@ -79,7 +79,7 @@ class stuSideMenu{
             </li>
             <li class='nav-item'>
                 <a class='nav-link' data-toggle='collapse' href='#fees' aria-expanded='false' aria-controls='auth'>
-                    <i class='menu-icon mdi mdi-restart'></i>
+                    <i class='menu-icon mdi mdi-cash'></i>
                     <span class='menu-title'>Student Fees</span>
                     <i class='menu-arrow'></i>
                 </a>
@@ -98,9 +98,9 @@ class stuSideMenu{
                 </div>
             </li>
             <li class='nav-item'>
-                <a class='nav-link' href='?_route=student&p=matriculation.form'>
+                <a class='nav-link' href='?_route=admin&p=student.profile'>
                     <i class='menu-icon mdi mdi-school'></i>
-                    <span class='menu-title'>Matriculation Form</span>
+                    <span class='menu-title'>Student Profile</span>
                 </a>
             </li>
             <li class='nav-item'>
@@ -108,6 +108,32 @@ class stuSideMenu{
                     <i class='menu-icon mdi mdi-hotel'></i>
                     <span class='menu-title'>Hostel</span>
                 </a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' data-toggle='collapse' href='#programme-courses' aria-expanded='false' aria-controls='auth'>
+                    <i class='menu-icon mdi mdi-book-open-page-variant'></i>
+                    <span class='menu-title'>Programme & Courses</span>
+                    <i class='menu-arrow'></i>
+                </a>
+                <div class='collapse' id='programme-courses'>
+                    <ul class='nav flex-column sub-menu'>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=affiliate'> Affiliate School</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=faculty'> School/Faculty</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=programme'> Programme</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=course'> Course</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=add.course'> Block Course </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
             <li class='nav-item'>
                 <a class='nav-link' href='?_route=student&p=semester.timetable'>

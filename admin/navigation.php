@@ -51,6 +51,24 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                 include "template/form.php";
             break;
 
+            case"student.profile";
+                $_template->menu = "template/menu.php";
+                $_template->view ="views/profile/student/list.student.php";
+                include "template/form.php";
+            break;
+
+            case"affiliate";
+                $_template->menu = "template/menu.php";
+                $_template->view ="views/programme/affiliate.php";
+                include "template/form.php";
+            break;
+
+            case"faculty";
+                $_template->menu = "template/menu.php";
+                $_template->view ="views/programme/faculty.php";
+                include "template/form.php";
+            break;
+
             default:
                 include_once "template/error.php";
 

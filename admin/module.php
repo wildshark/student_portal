@@ -7,6 +7,7 @@
  */
 
 include "modules/pins.php";
+include "modules/programme.php";
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
     // echo "no cookie or session created";
@@ -22,6 +23,22 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
 
             case"add.pins";
                 PINs::add($conn);
+            break;
+
+            case "school-affiliated";
+                PROGRAMME::add_affiliate($conn);
+            break;
+
+            case "edit-school-affiliated";
+                PROGRAMME::update_affiliate($conn);
+            break;
+
+            case "add-faculty";
+                PROGRAMME::add_faculty($conn);
+            break;
+
+            case"edit-faculty";
+                PROGRAMME::edit_faculty($conn);
             break;
 
 

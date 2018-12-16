@@ -140,15 +140,12 @@ class PROFILE{
         if ($result == TRUE){
             header("location: index.php?_route=student&p=profile&e=104");
         }else{
-           // header("location: index.php?_route=student&p=profile&e=103");
+            header("location: index.php?_route=student&p=profile&e=103");
         }
     }
 
     public function delete(){
-
-        $id = $_SESSION['studentID'];
-
-
+        //$id = $_SESSION['studentID'];
     }
 
 
