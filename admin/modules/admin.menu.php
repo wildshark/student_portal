@@ -104,10 +104,30 @@ class stuSideMenu{
                 </a>
             </li>
             <li class='nav-item'>
-                <a class='nav-link' href='?_route=student&p=hostel'>
-                    <i class='menu-icon mdi mdi-hotel'></i>
-                    <span class='menu-title'>Hostel</span>
+                <a class='nav-link' href='?_route=admin&p=course.registration'>
+                    <i class='menu-icon mdi mdi-account-edit'></i>
+                    <span class='menu-title'>Course Registration </span>
                 </a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' data-toggle='collapse' href='#hostel' aria-expanded='false' aria-controls='auth'>
+                    <i class='menu-icon mdi mdi-hotel'></i>
+                    <span class='menu-title'>Hostel & Booking</span>
+                    <i class='menu-arrow'></i>
+                </a>
+                <div class='collapse' id='hostel'>
+                    <ul class='nav flex-column sub-menu'>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=hostel'> Student Booking</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=hostel-block'> Create Block</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=hostel-room'> Create Room</a>
+                        </li>
+                    </ul>
+                </div>
             </li>
             <li class='nav-item'>
                 <a class='nav-link' data-toggle='collapse' href='#programme-courses' aria-expanded='false' aria-controls='auth'>
@@ -135,50 +155,7 @@ class stuSideMenu{
                     </ul>
                 </div>
             </li>
-            <li class='nav-item'>
-                <a class='nav-link' href='?_route=student&p=semester.timetable'>
-                    <i class='menu-icon mdi mdi-calendar-check'></i>
-                    <span class='menu-title'>Semester Timetable</span>
-                </a>
-            </li>
-            <li class='nav-item'>
-                <a class='nav-link' href='?_route=student&p=graduation.registration'>
-                    <i class='menu-icon mdi mdi-trophy-variant'></i>
-                    <span class='menu-title'>Graduation Registration</span>
-                </a>
-            </li>
-            <li class='nav-item'>
-                <a class='nav-link' href='?_route=student&p=result'>
-                    <i class='menu-icon mdi mdi-receipt'></i>
-                    <span class='menu-title'>Result</span>
-                </a>
-            </li>
-            <li class='nav-item'>
-                <a class='nav-link' data-toggle='collapse' href='#auth' aria-expanded='false' aria-controls='auth'>
-                    <i class='menu-icon mdi mdi-restart'></i>
-                    <span class='menu-title'>User Pages</span>
-                    <i class='menu-arrow'></i>
-                </a>
-                <div class='collapse' id='auth'>
-                    <ul class='nav flex-column sub-menu'>
-                        <li class='nav-item'>
-                            <a class='nav-link' href='pages/samples/blank-page.html'> Blank Page </a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' href='pages/samples/login.html'> Login </a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' href='pages/samples/register.html'> Register </a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' href='pages/samples/error-404.html'> 404 </a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' href='pages/samples/error-500.html'> 500 </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
+            
     ";
 
     }

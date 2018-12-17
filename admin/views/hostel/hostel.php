@@ -3,32 +3,34 @@
  * Created by PhpStorm.
  * User: Andrew Quaye
  * Date: 17/12/2018
- * Time: 1:36 AM
+ * Time: 9:40 AM
  */
 
 if(!isset($_GET['d'])){
-    $button = "add-programme";
-    $programme = "";
-    $programme_code ="";
-    $duration ="";
-    $school ="";
-    $schoolID="";
+    $button = "add-hostel";
+    $pin = "";
+    $student ="";
+    $ref ="";
+    $input_type ="<input name='pin' value=".rand(100,999)&&date('yhdims')." type='text' name='faculty' class='form-control' id='exampleInputName1' placeholder='Pin'>";
+
 }else{
 
     $id = $_GET['d'];
     $_SESSION['id']=$id;
-    $sql = "SELECT * FROM `school_data`.`get_programme` where progID='$id'";
+    $sql = "SELECT * FROM `school_data`.`get_hostel_booking` where userID='$id'";
     $result = mysqli_query($conn,$sql);
     if ($result->num_rows >0){
         $r = $result->fetch_assoc();
 
-        $programme = $r['programme'];
-        $programme_code = $r['prog_prefix'];
-        $duration = $r['prog_year'];
-        $schoolID = $r['schoolID'];
-        $school = $r['prefix'];
+        $pin = $r['pin_index'];
+        $studentID = $r['studentID'];
+        $student = $r['admissionNo']." - ".$r['first_name']." ".$r['surname'];
+        $ref = $r['ref_no'];
+
     }
-    $button ="edit-courses";
+
+    $input_type ="<input name='pin' readonly value=".$pin." type='text' name='faculty' class='form-control' id='exampleInputName1' placeholder='Pin'>";
+    $button ="edit-hostel";
 }
 
 ?>
@@ -37,26 +39,22 @@ if(!isset($_GET['d'])){
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Add Course</h4>
+                    <h4 class="card-title">Hostel</h4>
                     <form method="post" action="index.php" class="forms-sample" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="exampleInputName1">Programme</label>
-                            <input name="programme" value="<?php echo $programme?>" type="text" name="faculty" class="form-control" id="exampleInputName1" placeholder="Programme Title">
+                            <label for="exampleInputName1">Generate PINs</label>
+                            <?php echo $input_type;?>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Programme Prefix</label>
-                            <input name="prefix" value="<?php echo $programme_code;?>" type="text" class="form-control" id="exampleInputName1" placeholder="Prefix">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputName1">Duration</label>
-                            <input name="duration" value="<?php echo $duration;?>" type="text" class="form-control" id="exampleInputName1" placeholder="Duration">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect3">School</label>
-                            <select name="school" class="form-control form-control-sm" id="exampleFormControlSelect3">
-                                <option value="<?php echo $schoolID;?>"><?php echo $school;?></option>
-                                <?php cmb_school_data($conn);?>
+                            <label for="exampleFormControlSelect3">Student</label>
+                            <select name="student" class="form-control form-control-sm" id="exampleFormControlSelect3">
+                                <option value="<?php echo $studentID;?>"><?php echo $student;?></option>
+                                <?php student_index_list($conn);?>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Ref. Number</label>
+                            <input name="ref" value="<?php echo $ref;?>" type="text" class="form-control" id="exampleInputName1" placeholder="Ref. Number">
                         </div>
                         <button type="submit" name="submit" value="<?php echo $button;?>" class="btn btn-success mr-2">Submit</button>
                         <button class="btn btn-light">Cancel</button>
@@ -92,14 +90,16 @@ if(!isset($_GET['d'])){
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Programme</th>
-                        <th>Prefix</th>
-                        <th>Duration</th>
-                        <th>School</th>
+                        <th>Date</th>
+                        <th>Pin(s)</th>
+                        <th>Student</th>
+                        <th>Arrival</th>
+                        <th>Status</th>
+
                     </tr>
                     </thead>
                     <tbody>
-                    <?php programme($conn)?>
+                    <?php hostel($conn)?>
                     </tbody>
                 </table>
             </div>

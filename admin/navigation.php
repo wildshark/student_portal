@@ -69,6 +69,31 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                 include "template/form.php";
             break;
 
+            case"programme";
+                $_template->menu = "template/menu.php";
+                $_template->view ="views/programme/programme.php";
+                include "template/form.php";
+            break;
+
+            case"course";
+                $_template->menu = "template/menu.php";
+                $_template->view ="views/programme/courses.php";
+                include "template/form.php";
+            break;
+
+            case"hostel";
+                $_template->menu = "template/menu.php";
+                $_template->view ="views/hostel/hostel.php";
+                include "template/form.php";
+            break;
+
+            case"course.registration";
+                $_template->menu = "template/menu.php";
+                $_template->view ="views/enrollment/enrollment.php";
+                include "template/form.php";
+            break;
+
+
             default:
                 include_once "template/error.php";
 

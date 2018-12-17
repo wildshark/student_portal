@@ -13,24 +13,7 @@
             <p class="card-description">
                 Basic form elements
             </p>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>Code</th>
-                        <th>Course</th>
-                        <th>School</th>
-                        <th>Affiliate</th>
-                        <th>Credit</th>
-                        <th>Level</th>
-                        <th>Semester</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php course($conn);?>
-                    </tbody>
-                </table>
-            </div>
+
         </div>
     </div>
 </div>

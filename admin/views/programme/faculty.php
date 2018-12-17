@@ -13,6 +13,8 @@ if(!isset($_GET['d'])){
     $affiliateID ="";
     $affiliate ="";
 }else{
+
+
     $id = $_GET['d'];
     $_SESSION['id']=$id;
     $sql = "SELECT * FROM `school_data`.`get_school` where schoolID='$id'";
@@ -26,6 +28,7 @@ if(!isset($_GET['d'])){
         $affiliate = $r['affliate'];
 
     }
+
     $button ="edit-faculty";
 
 }

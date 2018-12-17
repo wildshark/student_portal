@@ -8,6 +8,7 @@
 
 include "modules/pins.php";
 include "modules/programme.php";
+include "modules/hostel.php";
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
     // echo "no cookie or session created";
@@ -39,6 +40,18 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
 
             case"edit-faculty";
                 PROGRAMME::edit_faculty($conn);
+            break;
+
+            case"add-courses";
+                PROGRAMME::add_courses($conn);
+            break;
+
+            case"edit-courses";
+                PROGRAMME::edit_courses($conn);
+            break;
+
+            case "add-hostel";
+                HOSTEL::add_booking($conn);
             break;
 
 

@@ -81,4 +81,49 @@ class  PROGRAMME{
             header("location: index.php?_route=admin&p=faculty&e=103");
         }
     }
+
+    function add_courses($conn){
+
+        $programme = $_POST['programme'];
+        $course = $_POST['course'];
+        $code = $_POST['code'];
+        $credit = $_POST['credit'];
+        $level = $_POST['level'];
+        $semester = $_POST['semester'];
+
+        $sql = "INSERT INTO `school_data`.`course`(`progID`, `course`, `course_code`, `credit`, `course_level`, `semesterID`) VALUES ('$programme', '$course', '$code', '$credit', '$level', '$semester')";
+        $result = mysqli_query($conn,$sql);
+        if($result === TRUE){
+            header("location: index.php?_route=admin&p=course&e=104");
+        }else{
+            header("location: index.php?_route=admin&p=course&e=103");
+        }
+    }
+
+    function edit_courses($conn){
+
+        $id = $_SESSION['id'];
+        $programme = $_POST['programme'];
+        $course = $_POST['course'];
+        $code = $_POST['code'];
+        $credit = $_POST['credit'];
+        $level = $_POST['level'];
+        $semester = $_POST['semester'];
+
+        $sql = "UPDATE `school_data`.`course` SET 
+            `progID` = '$programme', 
+            `course` = '$course', 
+            `course_code` = '$code', 
+            `credit` = '$credit', 
+            `course_level` = '$level', 
+            `semesterID` = '$semester' 
+            WHERE `courseID` = '$id'";
+        $result = mysqli_query($conn,$sql);
+        if($result === TRUE){
+            header("location: index.php?_route=admin&p=course&e=104");
+        }else{
+            header("location: index.php?_route=admin&p=course&e=103");
+        }
+
+    }
 }

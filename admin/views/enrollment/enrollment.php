@@ -2,61 +2,50 @@
 /**
  * Created by PhpStorm.
  * User: Andrew Quaye
- * Date: 17/12/2018
- * Time: 1:36 AM
+ * Date: 14/12/2018
+ * Time: 5:25 AM
  */
 
-if(!isset($_GET['d'])){
-    $button = "add-programme";
-    $programme = "";
-    $programme_code ="";
-    $duration ="";
-    $school ="";
-    $schoolID="";
+if (!isset($_GET['d'])){
+    $button = "school-affiliated";
+    $affiliate ="";
+    $prefix ="";
+    $note ="";
 }else{
-
     $id = $_GET['d'];
-    $_SESSION['id']=$id;
-    $sql = "SELECT * FROM `school_data`.`get_programme` where progID='$id'";
+    $_SESSION['id'] = $id;
+    $sql ="SELECT * FROM `school_data`.`get_affliate_school` where affliateID='$id'";
     $result = mysqli_query($conn,$sql);
-    if ($result->num_rows >0){
-        $r = $result->fetch_assoc();
+    if($result->num_rows > 0){
+        $r=$result->fetch_assoc();
 
-        $programme = $r['programme'];
-        $programme_code = $r['prog_prefix'];
-        $duration = $r['prog_year'];
-        $schoolID = $r['schoolID'];
-        $school = $r['prefix'];
+        $affiliate = $r['affliate'];
+        $prefix = $r['affliate_prefix'];
+        $note = $r['note'];
     }
-    $button ="edit-courses";
-}
 
+    $button ="edit-school-affiliated";
+
+}
 ?>
 <div class="col-md-6 d-flex align-items-stretch grid-margin">
     <div class="row flex-grow">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Add Course</h4>
+                    <h4 class="card-title">School Affiliated</h4>
                     <form method="post" action="index.php" class="forms-sample" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="exampleInputName1">Programme</label>
-                            <input name="programme" value="<?php echo $programme?>" type="text" name="faculty" class="form-control" id="exampleInputName1" placeholder="Programme Title">
+                            <label for="exampleInputName1">Institute Name</label>
+                            <input type="text" name="affiliate" value="<?php echo $affiliate;?>" class="form-control" id="exampleInputName1" placeholder="Institute">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Programme Prefix</label>
-                            <input name="prefix" value="<?php echo $programme_code;?>" type="text" class="form-control" id="exampleInputName1" placeholder="Prefix">
+                            <label for="exampleInputName1">Prefix</label>
+                            <input type="text" name="prefix" value="<?php echo $prefix;?>" class="form-control" id="exampleInputName1" placeholder="Prefix">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Duration</label>
-                            <input name="duration" value="<?php echo $duration;?>" type="text" class="form-control" id="exampleInputName1" placeholder="Duration">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect3">School</label>
-                            <select name="school" class="form-control form-control-sm" id="exampleFormControlSelect3">
-                                <option value="<?php echo $schoolID;?>"><?php echo $school;?></option>
-                                <?php cmb_school_data($conn);?>
-                            </select>
+                            <label for="exampleFormControlSelect3">Short Note</label>
+                            <textarea name="note" value="<?php echo $note;?>" class="form-control" id="exampleTextarea1" rows="2"></textarea>
                         </div>
                         <button type="submit" name="submit" value="<?php echo $button;?>" class="btn btn-success mr-2">Submit</button>
                         <button class="btn btn-light">Cancel</button>
@@ -92,14 +81,14 @@ if(!isset($_GET['d'])){
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Programme</th>
+                        <th>Institute</th>
                         <th>Prefix</th>
-                        <th>Duration</th>
-                        <th>School</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php programme($conn)?>
+                        <?php affiliate($conn)?>
                     </tbody>
                 </table>
             </div>
