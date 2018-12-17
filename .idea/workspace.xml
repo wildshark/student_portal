@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3b10701-38f8-42d3-ae6c-f30fa9654001" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/modules/hostel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/views/hostel/hostel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/views/programme/courses.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/model/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/module.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/module.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/modules/admin.menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/modules/admin.menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/modules/programme.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/modules/programme.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/navigation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/enrollment/add.enrollment.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/enrollment/enrollment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/programme/faculty.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/programme/faculty.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/programme/list.course.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/programme/list.course.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/programme/programme.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/programme/programme.php" afterDir="false" />
-    </list>
+    <list default="true" id="a3b10701-38f8-42d3-ae6c-f30fa9654001" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +17,7 @@
               <entry file="file://$PROJECT_DIR$/admin/views/hostel/hostel.php">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="408">
-                    <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+                    <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
                   </state>
                 </provider>
               </entry>
@@ -62,25 +48,25 @@
         <counts>
           <entry key="js" value="1" />
           <entry key="module" value="68" />
-          <entry key="php" value="280" />
+          <entry key="php" value="281" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="348" />
+          <entry key="PHP" value="349" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="module" value="6445" />
-          <entry key="php" value="18770" />
+          <entry key="php" value="19091" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="55" />
-          <entry key="PHP" value="25056" />
+          <entry key="PHP" value="25377" />
           <entry key="SQL" value="104" />
         </counts>
       </usages-collector>
@@ -99,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/admin/model/function.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1887">
-              <caret line="116" column="35" lean-forward="true" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
+              <caret line="116" column="35" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -122,7 +108,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/navigation.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="477">
@@ -131,11 +117,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="56" column="35" lean-forward="true" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/views/enrollment/enrollment.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -153,7 +148,7 @@
         <entry file="file://$PROJECT_DIR$/admin/modules/hostel.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+              <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -162,7 +157,7 @@
         <entry file="file://$PROJECT_DIR$/admin/modules/programme.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="262">
-              <caret line="99" column="9" lean-forward="true" selection-start-line="93" selection-start-column="8" selection-end-line="99" selection-end-column="9" />
+              <caret line="99" column="9" selection-start-line="93" selection-start-column="8" selection-end-line="99" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -171,7 +166,7 @@
         <entry file="file://$PROJECT_DIR$/admin/views/programme/courses.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="296">
-              <caret line="65" column="61" lean-forward="true" selection-end-line="198" />
+              <caret line="65" column="61" selection-end-line="198" />
             </state>
           </provider>
         </entry>
@@ -206,7 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/template/register.php" />
         <option value="$PROJECT_DIR$/student/views/profile/st.profile.module" />
         <option value="$PROJECT_DIR$/template/form.php" />
         <option value="$PROJECT_DIR$/global/global.label.php" />
@@ -257,6 +251,7 @@
         <option value="$PROJECT_DIR$/admin/modules/admin.menu.php" />
         <option value="$PROJECT_DIR$/admin/views/enrollment/enrollment.php" />
         <option value="$PROJECT_DIR$/admin/navigation.php" />
+        <option value="$PROJECT_DIR$/test.php" />
       </list>
     </option>
   </component>
@@ -308,43 +303,7 @@
             <path>
               <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
               <item name="student_portal" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="student_portal" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="global" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="student_portal" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="student_portal" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="student_portal" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="student_portal" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="enrollment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="student_portal" type="462c0819:PsiDirectoryNode" />
-              <item name="global" type="462c0819:PsiDirectoryNode" />
+              <item name="plugin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -412,12 +371,12 @@
       <workItem from="1544631598785" duration="48898000" />
       <workItem from="1544777741683" duration="28445000" />
       <workItem from="1545006426499" duration="2778000" />
-      <workItem from="1545019315417" duration="18894000" />
+      <workItem from="1545019315417" duration="21301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203935000" />
+    <option name="totallyTimeSpent" value="206342000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -474,13 +433,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/global/setup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/views/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -740,7 +692,7 @@
     <entry file="file://$PROJECT_DIR$/admin/views/programme/courses.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
-          <caret line="65" column="61" lean-forward="true" selection-end-line="198" />
+          <caret line="65" column="61" selection-end-line="198" />
         </state>
       </provider>
     </entry>
@@ -754,7 +706,7 @@
     <entry file="file://$PROJECT_DIR$/admin/modules/programme.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
-          <caret line="99" column="9" lean-forward="true" selection-start-line="93" selection-start-column="8" selection-end-line="99" selection-end-column="9" />
+          <caret line="99" column="9" selection-start-line="93" selection-start-column="8" selection-end-line="99" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -768,7 +720,7 @@
     <entry file="file://$PROJECT_DIR$/admin/modules/hostel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -782,14 +734,14 @@
     <entry file="file://$PROJECT_DIR$/admin/model/function.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1887">
-          <caret line="116" column="35" lean-forward="true" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
+          <caret line="116" column="35" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/views/hostel/hostel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -803,7 +755,7 @@
     <entry file="file://$PROJECT_DIR$/admin/views/enrollment/enrollment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -818,6 +770,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="477">
           <caret line="91" column="62" selection-start-line="91" selection-start-column="62" selection-end-line="91" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="56" column="35" lean-forward="true" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
         </state>
       </provider>
     </entry>
