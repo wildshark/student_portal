@@ -7,25 +7,26 @@
  */
 
 if (!isset($_GET['d'])){
-    $button = "school-affiliated";
-    $affiliate ="";
-    $prefix ="";
-    $note ="";
+    $button = "add-enrollment";
+    $generate =rand(100,999)."".date('YHmids');
+    $input_type ="<input type='text' name='pin' value='{$generate}' class='form-control' id='exampleInputName1' placeholder='Institute'>";
+    $pin ="";
+    $student ="";
+    $studentID ="";
 }else{
     $id = $_GET['d'];
     $_SESSION['id'] = $id;
-    $sql ="SELECT * FROM `school_data`.`get_affliate_school` where affliateID='$id'";
+    $sql ="SELECT * FROM get_enrollment where enrollID='$id'";
     $result = mysqli_query($conn,$sql);
     if($result->num_rows > 0){
         $r=$result->fetch_assoc();
 
-        $affiliate = $r['affliate'];
-        $prefix = $r['affliate_prefix'];
-        $note = $r['note'];
+        $pin = $r['pins'];
+        $student = $r['admissionNo']." - ". $r['first_name'] ." ". $r['surname'];
+        $studentID = $r['studentID'];
     }
-
-    $button ="edit-school-affiliated";
-
+    $input_type ="<input type='text' name='pin' readonly value='{$pin}' class='form-control' id='exampleInputName1' placeholder='Institute'>";
+    $button ="edit-enrollment";
 }
 ?>
 <div class="col-md-6 d-flex align-items-stretch grid-margin">
@@ -33,19 +34,18 @@ if (!isset($_GET['d'])){
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">School Affiliated</h4>
+                    <h4 class="card-title">Enrollment & Course Registration</h4>
                     <form method="post" action="index.php" class="forms-sample" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="exampleInputName1">Institute Name</label>
-                            <input type="text" name="affiliate" value="<?php echo $affiliate;?>" class="form-control" id="exampleInputName1" placeholder="Institute">
+                            <label for="exampleInputName1">PIN Number</label>
+                            <?php echo $input_type;?>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Prefix</label>
-                            <input type="text" name="prefix" value="<?php echo $prefix;?>" class="form-control" id="exampleInputName1" placeholder="Prefix">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect3">Short Note</label>
-                            <textarea name="note" value="<?php echo $note;?>" class="form-control" id="exampleTextarea1" rows="2"></textarea>
+                            <label for="exampleFormControlSelect3">Student Index</label>
+                            <select name="student" class="form-control form-control-sm" id="exampleFormControlSelect3">
+                                <option value="<?php echo $studentID;?>"><?php echo $student;?></option>
+                                <?php student_index_list($conn);?>
+                            </select>
                         </div>
                         <button type="submit" name="submit" value="<?php echo $button;?>" class="btn btn-success mr-2">Submit</button>
                         <button class="btn btn-light">Cancel</button>
@@ -81,14 +81,15 @@ if (!isset($_GET['d'])){
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Institute</th>
-                        <th>Prefix</th>
-                        <th></th>
+                        <th>Date</th>
+                        <th>Pin</th>
+                        <th>Index</th>
+                        <th>Name</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                        <?php affiliate($conn)?>
+                        <?php enrollment_list($conn);?>
                     </tbody>
                 </table>
             </div>

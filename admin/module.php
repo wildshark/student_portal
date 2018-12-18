@@ -9,6 +9,7 @@
 include "modules/pins.php";
 include "modules/programme.php";
 include "modules/hostel.php";
+include "modules/enrollment.php";
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
     // echo "no cookie or session created";
@@ -50,10 +51,17 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                 PROGRAMME::edit_courses($conn);
             break;
 
-            case "add-hostel";
+            case"add-hostel";
                 HOSTEL::add_booking($conn);
             break;
 
+            case"add-enrollment";
+                ENROLLMENT::add_enroll($conn);
+            break;
+
+            case"edit-enrollment";
+                ENROLLMENT::edit_enroll($conn);
+            break;
 
             default:
                 include_once "template/error.php";

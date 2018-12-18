@@ -13,9 +13,9 @@ function pin_generated($conn){
     if (mysqli_num_rows($result) > 0) {
         while ($r = mysqli_fetch_assoc($result)){
             if ($r['status'] == 1){
-                $status = "Active";
+                $status = "<label class='badge badge-success'>Active</label>";
             }else{
-                $status = "Passive";
+                $status ="<label class='badge badge-danger'>Passive</label>";
             }
             echo"
                 <tr>
@@ -88,10 +88,10 @@ function affiliate($conn){
     if($result->num_rows > 0){
         while ($r= $result->fetch_assoc()){
 
-            if($r['statusID'] == 1){
-                $status = "Active";
+            if ($r['statusID'] == 1){
+                $status = "<label class='badge badge-success'>Active</label>";
             }else{
-                $status = "Passive";
+                $status ="<label class='badge badge-danger'>Passive</label>";
             }
             echo"
                 <tr>
@@ -113,10 +113,10 @@ function hostel($conn){
     if($result->num_rows > 0){
         while ($r= $result->fetch_assoc()){
             $id = $r['userID'];
-            if($r['status'] == 1){
-                $status = "Active";
+            if ($r['status'] == 1){
+                $status = "<label class='badge badge-success'>Active</label>";
             }else{
-                $status = "Used";
+                $status ="<label class='badge badge-danger'>Used</label>";
             }
             echo"
                 <tr>
@@ -139,10 +139,10 @@ function faculty($conn){
     if($result->num_rows > 0){
         while ($r= $result->fetch_assoc()){
 
-            if($r['statusID'] == 1){
-                $status = "Active";
+            if ($r['statusID'] == 1){
+                $status = "<label class='badge badge-success'>Active</label>";
             }else{
-                $status = "Passive";
+                $status ="<label class='badge badge-danger'>Passive</label>";
             }
             echo"
                 <tr>
@@ -258,6 +258,30 @@ function course_400($conn){
     }
 }
 
+function enrollment_list($conn){
+
+    $sql ="SELECT * FROM get_enrollment ORDER BY get_enrollment.enrollID DESC";
+    $result = mysqli_query($conn,$sql);
+    if ($result->num_rows > 0){
+        while ($r= $result->fetch_assoc()){
+
+            if ($r['statusID'] == 1){
+                $status = "<label class='badge badge-success'>Active</label>";
+            }else{
+                $status ="<label class='badge badge-danger'>Used</label>";
+            }
+            echo"
+                <tr> 
+                    <td>{$r['enroll_date']}</td>
+                    <td><a href='index.php?_route=admin&p=course.registration&d={$r['enrollID']}'>{$r['pins']}</a></td>
+                    <td>{$r['admissionNo']}</td>
+                    <td>{$r['first_name']} {$r['surname']}</td>                
+                    <td>{$status}</td>                   
+                </tr>
+            ";
+        }
+    }
+}
 
 ?>
 
