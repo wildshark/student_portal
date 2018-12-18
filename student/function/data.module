@@ -61,5 +61,31 @@ function hostel_details($conn){
         </tr>";
         }
     }
+}
 
+function enrollment_details($conn){
+
+    $studentID = $_SESSION['studentID'];
+
+    $sql="SELECT * FROM `school_data`.`get_student_enrollment` where studentID='$studentID'";
+    $result = mysqli_query($conn,$sql);
+    if ($result->num_rows > 0){
+        while ($r=$result->fetch_assoc()){
+            $yearID = $r['yearID'];
+            $programme =  $r['prefix']."/".$r['programme'];
+            $semester = $r['semesterID'];
+            $school = $r['prefix'];
+            $admission = $r['admissionNo'];
+            $level = $r['s_level'];
+            $name = $r['first_name']." ".$r['surname'];
+            echo"
+                <tr>
+                    <td>{$yearID}</td>
+                    <td>{$programme}</td>
+                    <td>{$semester}</td>
+                    <td>{$level}</td>
+                    <td><a href='index.php?_route=student&p=course.registration&&d={$r['progID']}&l={$level}&s={$semester}'>Courses</a></td>
+                </tr>";
+        }
+    }
 }

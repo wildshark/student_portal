@@ -87,16 +87,15 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Date</th>
-                        <th>Student</th>
-                        <th>Academy Year</th>
+                        <th>Year</th>
+                        <th>Programme</th>
                         <th>Semester</th>
-                        <th>Program</th>
-                        <th>Status</th>
+                        <th>Level</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php ?>
+                    <?php enrollment_details($conn);?>
                     </tbody>
                 </table>
             </div>
