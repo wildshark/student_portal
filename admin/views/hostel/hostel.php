@@ -11,7 +11,9 @@ if(!isset($_GET['d'])){
     $pin = "";
     $student ="";
     $ref ="";
-    $input_type ="<input name='pin' value=".rand(100,999)&&date('yhdims')." type='text' name='faculty' class='form-control' id='exampleInputName1' placeholder='Pin'>";
+    $year = "";
+    $generate = rand(10,99)."".date('YHmids');
+    $input_type ="<input name='pin' value={$generate} type='text' name='faculty' class='form-control' id='exampleInputName1' placeholder='Pin'>";
 
 }else{
 
@@ -26,6 +28,7 @@ if(!isset($_GET['d'])){
         $studentID = $r['studentID'];
         $student = $r['admissionNo']." - ".$r['first_name']." ".$r['surname'];
         $ref = $r['ref_no'];
+        $year = $r['yearID'];
 
     }
 
@@ -44,6 +47,13 @@ if(!isset($_GET['d'])){
                         <div class="form-group">
                             <label for="exampleInputName1">Generate PINs</label>
                             <?php echo $input_type;?>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect3">Academy Year</label>
+                            <select name="year" class="form-control form-control-sm" id="exampleFormControlSelect3">
+                                <option value="<?php echo $year;?>"><?php echo $year;?></option>
+                                <?php cmb_academic_session($conn);?>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect3">Student</label>

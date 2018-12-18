@@ -34,3 +34,32 @@ function fees_details($conn){
     }
 }
 
+function hostel_details($conn){
+
+    $studentID = $_SESSION['studentID'];
+
+    $sql="SELECT * FROM `school_data`.`get_hostel_booking_details` where studentID='$studentID'";
+    $result = mysqli_query($conn,$sql);
+    if ($result->num_rows > 0){
+        while ($r=$result->fetch_assoc()){
+            $room = $r['block_name']."-".$r['room'];
+            $yearID = $r['yearID'];
+            $in = $r['book_in'];
+
+            if (!isset($out)){
+                $out ="Not Out";
+            }else{
+                $out = $r['book_out'];
+            }
+
+            echo"
+        <tr>
+            <td>{$yearID}</td>
+            <td>{$room}</td>
+            <td>{$in}</td>
+            <td>{$out}</td>
+        </tr>";
+        }
+    }
+
+}

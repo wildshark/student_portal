@@ -6,6 +6,8 @@
  * Time: 7:28 PM
  */
 
+$OldDate = date("Y") - 1;
+$academy_yr = $OldDate."/".date("Y");
 
 ?>
 <div class="col-md-6 d-flex align-items-stretch grid-margin">
@@ -14,23 +16,31 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Hostel Booking</h4>
-                    <form class="forms-sample">
+                    <form method="post" action="index.php" enctype="multipart/form-data" class="forms-sample">
+
                         <div class="form-group">
-                            <label for="exampleInputName1">Booking Date</label>
-                            <input type="date" class="form-control" id="exampleInputName1" placeholder="dd/mm/yyyy">
+                            <label for="exampleFormControlSelect3">Academy Year</label>
+                            <select name="year" class="form-control form-control-sm" id="exampleFormControlSelect3">
+                                <option class="active" value="<?php echo $academy_yr;?>"><?php echo $academy_yr;?></option>
+                                <?php cmb_academic_session($conn);?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Arrival Date</label>
+                            <input type="date" name="date" class="form-control" id="exampleInputName1" placeholder="dd/mm/yyyy">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Hostel Voucher Pin</label>
-                            <input type="text" class="form-control" id="exampleInputName1" placeholder="PIN NUMBER">
+                            <input type="text" name="pin" class="form-control" id="exampleInputName1" placeholder="PIN NUMBER">
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlSelect3">Hall</label>
-                            <select class="form-control form-control-sm" id="exampleFormControlSelect3">
+                            <label for="exampleFormControlSelect3">Hall/room</label>
+                            <select name="room" class="form-control form-control-sm" id="exampleFormControlSelect3">
                                 <option value=""></option>
                                 <?php cmb_room_list($conn);?>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-success mr-2">Submit</button>
+                        <button type="submit" name="submit" value="add-booking" class="btn btn-success mr-2">Submit</button>
                         <button class="btn btn-light">Cancel</button>
                     </form>
                 </div>
@@ -73,53 +83,14 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Date</th>
-                        <th>Name</th>
-                        <th>Bed</th>
-                        <th>Student</th>
+                        <th>Year</th>
+                        <th>Block/Room</th>
+                        <th>Arrival Date</th>
+                        <th>Departure Date</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Jacob</td>
-                        <td>53275531</td>
-                        <td>12 May 2017</td>
-                        <td>
-                            <label class="badge badge-danger">Pending</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Messsy</td>
-                        <td>53275532</td>
-                        <td>15 May 2017</td>
-                        <td>
-                            <label class="badge badge-warning">In progress</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>John</td>
-                        <td>53275533</td>
-                        <td>14 May 2017</td>
-                        <td>
-                            <label class="badge badge-info">Fixed</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Peter</td>
-                        <td>53275534</td>
-                        <td>16 May 2017</td>
-                        <td>
-                            <label class="badge badge-success">Completed</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dave</td>
-                        <td>53275535</td>
-                        <td>20 May 2017</td>
-                        <td>
-                            <label class="badge badge-warning">In progress</label>
-                        </td>
-                    </tr>
+                        <?php hostel_details($conn);?>
                     </tbody>
                 </table>
             </div>

@@ -7,6 +7,7 @@
  */
 
 include_once "modules/student.module";
+include "modules/hostel.php";
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
     // echo "no cookie or session created";
@@ -22,6 +23,10 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
 
             case "update-student-profile";
                 PROFILE::update($conn);
+            break;
+
+            case"add-booking";
+                HOSTEL::add_booking($conn);
             break;
 
             default:
