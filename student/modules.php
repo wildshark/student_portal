@@ -8,6 +8,7 @@
 
 include_once "modules/student.module";
 include "modules/hostel.php";
+include "modules/enrollment.php";
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
     // echo "no cookie or session created";
@@ -27,6 +28,13 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
 
             case"add-booking";
                 HOSTEL::add_booking($conn);
+            break;
+
+            case"add.enrollment";
+                ENROLL::add_enrollment($conn);
+            break;
+            case"reg.course";
+            echo"ok";
             break;
 
             default:

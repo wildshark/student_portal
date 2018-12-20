@@ -12,7 +12,7 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auto-form-wrapper">
-                        <form action="<?php echo $_INDEX;?>" method="post" enctype="multipart/form-data">
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label class="label">Administrator</label>
                                 <div class="input-group">

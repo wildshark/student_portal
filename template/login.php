@@ -4,7 +4,6 @@
 <head>
     <?php include "header.php";?>
 </head>
-
 <body>
 <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper auth-page">
@@ -12,15 +11,15 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auto-form-wrapper">
-                        <form action="<?php echo $_INDEX;?>" method="post" enctype="multipart/form-data">
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label class="label">Index Number</label>
                                 <div class="input-group">
                                     <input type="text" name="username" class="form-control" placeholder="Index Number">
                                     <div class="input-group-append">
-                      <span class="input-group-text">
-                        <i class="mdi mdi-check-circle-outline"></i>
-                      </span>
+                                      <span class="input-group-text">
+                                        <i class="mdi mdi-check-circle-outline"></i>
+                                      </span>
                                     </div>
                                 </div>
                             </div>
@@ -29,9 +28,9 @@
                                 <div class="input-group">
                                     <input type="password" name="password" class="form-control" placeholder="*********">
                                     <div class="input-group-append">
-                      <span class="input-group-text">
-                        <i class="mdi mdi-check-circle-outline"></i>
-                      </span>
+                                      <span class="input-group-text">
+                                        <i class="mdi mdi-check-circle-outline"></i>
+                                      </span>
                                     </div>
                                 </div>
                             </div>
@@ -47,12 +46,7 @@
                                 <a href="?_route=recovery" class="text-small forgot-password text-black">Forgot Password</a>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-block g-login">
-                                    <img class="mr-3" src="asset/images/file-icons/icon-google.svg" alt="">Log in with Google</button>
-                            </div>
-                            <div class="text-block text-center my-3">
-                                <span class="text-small font-weight-semibold">Not a member ?</span>
-                                <a href="?_route=register" class="text-black text-small">Create new account</a>
+                                <a href="?_route=register" class="btn btn-dark btn-block">Register</a>
                             </div>
                         </form>
                     </div>

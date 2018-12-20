@@ -35,7 +35,7 @@ if (!isset($_GET['d'])){
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Enrollment & Course Registration</h4>
-                    <form method="post" action="index.php" class="forms-sample" enctype="multipart/form-data">
+                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="forms-sample" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="exampleInputName1">PIN Number</label>
                             <?php echo $input_type;?>

@@ -21,7 +21,7 @@
                 <div class="col-lg-4 mx-auto">
                     <h2 class="text-center mb-4">Login Recovery</h2>
                     <div class="auto-form-wrapper">
-                        <form action="#">
+                        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="application/x-www-form-urlencoded">
                             <div class="form-group">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Email">

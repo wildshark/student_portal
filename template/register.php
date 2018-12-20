@@ -21,7 +21,7 @@
                 <div class="col-lg-4 mx-auto">
                     <h2 class="text-center mb-4">Register</h2>
                     <div class="auto-form-wrapper">
-                        <form action="<?php echo $_INDEX;?>" method="POST" enctype="application/x-www-form-urlencoded">
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" enctype="application/x-www-form-urlencoded">
                             <div class="form-group">
                                 <div class="input-group">
                                     <input type="text" name="username" class="form-control" placeholder="Index Number">

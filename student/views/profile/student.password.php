@@ -32,7 +32,7 @@ if (isset($_SESSION['token'])){
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Password Details</h4>
-            <form method="post" action="index.php" class="form-sample" enctype="multipart/form-data">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="form-sample" enctype="application/x-www-form-urlencoded">
                 <p class="card-description">
                     Personal info
                 </p>

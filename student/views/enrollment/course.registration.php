@@ -31,7 +31,7 @@ if (!isset($_GET['d'])){
                     <td>{$r['course']}</td>
                     <td>{$r['course_level']}</td>
                     <td>{$r['semesterID']}</td>
-                    <td><a href='index.php?_route=student&p=take.course&d={$r['courseID']}&pd={$_GET['d']}&l={$_GET['l']}&s={$_GET['s']}'>Take</a></td>
+                    <td><a href='index.php?submit=reg.course&d={$r['courseID']}&pd={$_GET['d']}&l={$_GET['l']}&s={$_GET['s']}'>Take</a></td>
                 </tr>";
 
             }

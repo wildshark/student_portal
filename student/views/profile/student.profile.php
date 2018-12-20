@@ -26,7 +26,7 @@ if (isset($_SESSION['studentID'])){
         $mobile = "";
         $mobile2 = "";
         $email = "";
-        $year="";
+        $yearID="";
         $progID = "";
         $programme = "";
         $prefix = "";
@@ -71,7 +71,7 @@ if (isset($_SESSION['studentID'])){
     <div class="card">
         <div class="card-body">
             <h3 class="card-title"><?php echo "Profile: ". $_SESSION['student_index'];?></h3>
-            <form method="post" action="index.php" class="form-sample">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="form-sample">
                 <p class="card-description">
                 <h4>Personal Info:</4>
                 </p>

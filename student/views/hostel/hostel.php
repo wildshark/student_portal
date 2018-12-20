@@ -16,7 +16,7 @@ $academy_yr = $OldDate."/".date("Y");
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Hostel Booking</h4>
-                    <form method="post" action="index.php" enctype="multipart/form-data" class="forms-sample">
+                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data" class="forms-sample">
 
                         <div class="form-group">
                             <label for="exampleFormControlSelect3">Academy Year</label>
