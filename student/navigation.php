@@ -23,6 +23,10 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                 logout();
             break;
 
+            case"update";
+                include "template/update.php";
+            break;
+
             case "dashboard";
                 $_template->menu = "template/menu.php";
                 include "template/dashboard.php";

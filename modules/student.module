@@ -41,57 +41,6 @@ class PROFILE{
 
     }
 
-    public function add($conn){
-
-        $date= date ("Y-m-d");
-        $f_name = $_POST['f-name'];
-        $l_name = $_POST['l-name'];
-        $dob = $_POST['dob'];
-        $marital = $_POST['martial'];
-        $nationality = $_POST['nationality'];
-        $address = $_POST['address'];
-        $admissionNo = $_POST['admission'];
-        $gender = $_POST['gender'];
-        $mobile = $_POST['mobile-1'];
-        $mobile2 =$_POST['mobile-2'];
-        $email = $_POST['email'];
-        $yearID = $_POST['year'];
-        $progID = $_POST['programme'];
-        $categoryID = $_POST['category'];
-        $stream = $_POST['stream'];
-        $campus_status=$_POST['campus_status'];
-        $application = $_POST['applicationID'];
-
-        $sql="UPDATE `student_profile` SET 
-        `entryID` = '$application', 
-        `admissionDate` = '$date', 
-        `first_name` = '$f_name', 
-        `surname` = '$l_name', 
-        `admissionNo` = '$admissionNo', 
-        `dob` = '$dob', 
-        `gender` = '$gender', 
-        `nationalityID` = '$nationality', 
-        `marital_status` = '$marital', 
-        `mobile1` = '$mobile', 
-        `mobile2` = '$mobile2', 
-        `email` = '$email', 
-        `address` = '$address', 
-        `progID` = '$progID', 
-        `yearID` = '$yearID', 
-        `categoryID` = '$categoryID', 
-        `streamID` = '$stream', 
-        `campus_status` = '$campus_status', 
-        `token` = '12', 
-        `statusID` = 21474836472 WHERE `studentID` = 422";
-        $result = (mysqli_query($conn,$sql));
-
-        if ($result == TRUE){
-            header("location: index.php?_route=student&p=profile&e=104");
-        }else{
-            header("location: index.php?_route=student&p=profile&e=103");
-        }
-    }
-
     public function update($conn){
 
         $id = $_SESSION['studentID'];
@@ -138,7 +87,7 @@ class PROFILE{
         $result = (mysqli_query($conn,$sql));
 
         if ($result == TRUE){
-            header("location: index.php?_route=student&p=profile&e=104");
+            header("location: index.php?_route=student&p=update&e=104");
         }else{
             header("location: index.php?_route=student&p=profile&e=103");
         }

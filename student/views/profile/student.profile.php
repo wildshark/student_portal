@@ -101,7 +101,7 @@ if (isset($_SESSION['studentID'])){
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Index</label>
                             <div class="col-sm-9">
-                                <input name="admission" value="<?php echo $_SESSION['student_index'];?>" type="text" class="form-control" />
+                                <input name="admission" readonly value="<?php echo $_SESSION['student_index'];?>" type="text" class="form-control" />
                             </div>
                         </div>
                     </div>
