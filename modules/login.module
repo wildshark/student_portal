@@ -30,7 +30,7 @@ class user_login{
             $email = $_POST['email'];
             $voucher = $_POST['voucher'];
 
-            $check = "SELECT * FROM `school_data`.`get_pins` where pin = '$voucher' and username='$username'";
+            $check = "SELECT * FROM `get_pins` where pin = '$voucher' and username='$username'";
             $result = (mysqli_query($conn,$check));
             if ($result->num_rows > 0){
 
@@ -42,7 +42,7 @@ class user_login{
                 if ($update_pin_record == TRUE){
 
                     if (!isset($_COOKIE[$token])){
-                        $sql = "INSERT INTO `school_data`.`student_profile`(`token`) VALUES ('$token')";
+                        $sql = "INSERT INTO `student_profile`(`token`) VALUES ('$token')";
                         mysqli_query($conn,$sql);
                         $last_id = mysqli_insert_id($conn);
                         setcookie("token",$token,time() + (86400 * 30), "/");
@@ -97,7 +97,7 @@ class user_login{
                     $_SESSION['student_index'] = $username;
                     $_USER['picture'] = $user['picture'];
 
-                    $profile = "SELECT * FROM `school_data`.`student_profile` WHERE token = '$token'";
+                    $profile = "SELECT * FROM `student_profile` WHERE token = '$token'";
                     $profile_result = mysqli_query($conn,$profile);
                     if(mysqli_num_rows($profile_result) > 0){
                         $student = mysqli_fetch_assoc($profile_result);
