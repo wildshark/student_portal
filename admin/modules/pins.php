@@ -14,7 +14,7 @@ class PINs{
         $index = $_POST['index'];
         $mobile = $_POST['mobile'];
         $date = date('Y-m-d');
-        $sql= "INSERT INTO `school_data`.`pins`(`pin`, `username`, `mobile`, `pin_date`) VALUES ('$pin', '$index', '$mobile', '$date')";
+        $sql= "INSERT INTO `pins`(`pin`, `username`, `mobile`, `pin_date`) VALUES ('$pin', '$index', '$mobile', '$date')";
         $result = mysqli_query($conn,$sql);
 
         if ($result == TRUE){
@@ -32,7 +32,7 @@ class PINs{
         $index = $_POST['index'];
         $mobile = $_POST['mobile'];
         $date = date('Y-m-d');
-        $sql= "UPDATE `school_data`.`pins` SET `pin` = '$pin', `username` = '$index', `mobile` = '$mobile', `pin_date` = '$date' WHERE `pin_id` = '$id'";
+        $sql= "UPDATE `pins` SET `pin` = '$pin', `username` = '$index', `mobile` = '$mobile', `pin_date` = '$date' WHERE `pin_id` = '$id'";
 
         $result = mysqli_query($conn,$sql);
         if ($result == TRUE){
@@ -46,7 +46,7 @@ class PINs{
     function activate($conn){
 
         $id = $_POST['id'];
-        $sql="UPDATE `school_data`.`pins` SET `status` = '1' WHERE `pin_id` = '$id'";
+        $sql="UPDATE `pins` SET `status` = '1' WHERE `pin_id` = '$id'";
 
         $result = mysqli_query($conn,$sql);
         if ($result == TRUE){
@@ -59,7 +59,7 @@ class PINs{
 
     function  deactivate($conn){
         $id = $_POST['id'];
-        $sql="UPDATE `school_data`.`pins` SET `status` = '2' WHERE `pin_id` = '$id'";
+        $sql="UPDATE `pins` SET `status` = '2' WHERE `pin_id` = '$id'";
 
         $result = mysqli_query($conn,$sql);
         if ($result == TRUE){

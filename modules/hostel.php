@@ -17,7 +17,7 @@ class HOSTEL{
         $room = $_POST['room'];
         $year = $_POST['year'];
 
-        $sql = "SELECT * FROM `school_data`.`get_hostel_booking` where pin_index='$pin' and yearID='$year' ";
+        $sql = "SELECT * FROM `get_hostel_booking` where pin_index='$pin' and yearID='$year' ";
         $booking_result = mysqli_query($conn,$sql);
         if($booking_result == FALSE){
             header("location: index.php?_route=student&p=hostel&e=107");
@@ -26,11 +26,11 @@ class HOSTEL{
            // $_SESSION['room'] = $room;
            // $_SESSION['year'] = $year;
 
-            $sql = "SELECT * FROM `school_data`.`get_hostel_total_bed` where roomID='$room' and yearID='$year'";
+            $sql = "SELECT * FROM `get_hostel_total_bed` where roomID='$room' and yearID='$year'";
             $result = mysqli_query($conn,$sql);
             if ($result->num_rows == 0){
                 // Add new record
-                $sql ="UPDATE `school_data`.`hostel_detail` SET 
+                $sql ="UPDATE `hostel_detail` SET 
               `date` = '$now', 
               `roomID` = '$room', 
               `bed_no` = '1', 
@@ -53,7 +53,7 @@ class HOSTEL{
 
                     $bed = $r['total_user'] +1;
 
-                    $sql ="UPDATE `school_data`.`hostel_detail` SET 
+                    $sql ="UPDATE `hostel_detail` SET 
                       `date` = '$now', 
                       `roomID` = '$room', 
                       `bed_no` = '$bed', 

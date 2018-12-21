@@ -19,12 +19,12 @@ class ENROLL{
         $pin = $_POST['pin'];
 
 
-        $sql ="SELECT * FROM `school_data`.`get_enrollment` where pins='$pin' and studentID='$student'";
+        $sql ="SELECT * FROM `get_enrollment` where pins='$pin' and studentID='$student'";
         $result = mysqli_query($conn,$sql);
         if ($result->num_rows == 0){
             header("location: index.php?_route=student&p=enrollment.form&e=102");
         }else{
-            $sql="UPDATE `school_data`.`enrollment` SET 
+            $sql="UPDATE `enrollment` SET 
                   `enroll_date` = '$date',
                   `studentID` = '$student', 
                   `semesterID` = '$semester', 
@@ -55,7 +55,7 @@ class ENROLL{
         $year = $_GET['y'];
         $semester = $_GET['s'];
 
-        $sql = "INSERT INTO `school_data`.`course_registration`(`regDate`, `studentID`, `courseID`, `yearID`, `semesterID`, `level`) VALUES ('$date', '$student', '$courseID', '$year', '$semester', '$level')";
+        $sql = "INSERT INTO `course_registration`(`regDate`, `studentID`, `courseID`, `yearID`, `semesterID`, `level`) VALUES ('$date', '$student', '$courseID', '$year', '$semester', '$level')";
         $result = mysqli_query($conn,$sql);
 
         $url ="d={$programme}&st={$student}&l={$level}&s={$semester}&y={$year}&sch=0&adm=0";
@@ -71,7 +71,7 @@ class ENROLL{
         $id = $_GET['d'];
 
         //$go_back = $_SERVER['HTTP_REFERER'];
-        $sql="DELETE FROM `school_data`.`course_registration` WHERE `regID` = '$id'";
+        $sql="DELETE FROM `course_registration` WHERE `regID` = '$id'";
         $result = mysqli_query($conn,$sql);
         if ($result == TRUE){
             header("location: ". $_SERVER['HTTP_REFERER']);

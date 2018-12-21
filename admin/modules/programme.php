@@ -14,7 +14,7 @@ class  PROGRAMME{
         $prefix = $_POST['prefix'];
         $note = $_POST['note'];
 
-        $sql ="INSERT INTO `school_data`.`affliate_school`(`affliate`, `affliate_prefix`, `note`) VALUES ('$affiliate', '$prefix', '$note')";
+        $sql ="INSERT INTO `affliate_school`(`affliate`, `affliate_prefix`, `note`) VALUES ('$affiliate', '$prefix', '$note')";
         $result = mysqli_query($conn,$sql);
 
         if($result === TRUE){
@@ -31,7 +31,7 @@ class  PROGRAMME{
         $prefix = $_POST['prefix'];
         $note = $_POST['note'];
 
-        $sql ="UPDATE `school_data`.`get_affliate_school` SET 
+        $sql ="UPDATE `get_affliate_school` SET 
                 `affliate` = '$affiliate', 
                 `affliate_prefix` = '$prefix', 
                 `note` = '$note' 
@@ -51,7 +51,7 @@ class  PROGRAMME{
         $prefix = $_POST['prefix'];
         $affliateID = $_POST['affiliate'];
 
-        $sql = "INSERT INTO `school_data`.`school`(`school`, `prefix`, `affliateID`, `statusID`, `catID`) VALUES ('$school', '$prefix','$affliateID', '1', '1')";
+        $sql = "INSERT INTO `school`(`school`, `prefix`, `affliateID`, `statusID`, `catID`) VALUES ('$school', '$prefix','$affliateID', '1', '1')";
         $result = mysqli_query($conn,$sql);
 
         if($result === TRUE){
@@ -91,7 +91,7 @@ class  PROGRAMME{
         $level = $_POST['level'];
         $semester = $_POST['semester'];
 
-        $sql = "INSERT INTO `school_data`.`course`(`progID`, `course`, `course_code`, `credit`, `course_level`, `semesterID`) VALUES ('$programme', '$course', '$code', '$credit', '$level', '$semester')";
+        $sql = "INSERT INTO `course`(`progID`, `course`, `course_code`, `credit`, `course_level`, `semesterID`) VALUES ('$programme', '$course', '$code', '$credit', '$level', '$semester')";
         $result = mysqli_query($conn,$sql);
         if($result === TRUE){
             header("location: index.php?_route=admin&p=course&e=104");
@@ -110,7 +110,7 @@ class  PROGRAMME{
         $level = $_POST['level'];
         $semester = $_POST['semester'];
 
-        $sql = "UPDATE `school_data`.`course` SET 
+        $sql = "UPDATE `course` SET 
             `progID` = '$programme', 
             `course` = '$course', 
             `course_code` = '$code', 

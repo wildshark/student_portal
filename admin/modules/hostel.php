@@ -16,7 +16,7 @@ class HOSTEL{
         $student = $_POST['student'];
         $ref= $_POST['ref'];
 
-        $sql = "INSERT INTO `school_data`.`hostel_detail`(`tran_date`,`date`, `pin_index`, `studentID`,`ref_no`) VALUES ('$now','$date', '$pin', '$student','$ref')";
+        $sql = "INSERT INTO `hostel_detail`(`tran_date`,`date`, `pin_index`, `studentID`,`ref_no`) VALUES ('$now','$date', '$pin', '$student','$ref')";
         $result = mysqli_query($conn,$sql);
         if($result === TRUE){
             header("location: index.php?_route=admin&p=hostel&e=104");

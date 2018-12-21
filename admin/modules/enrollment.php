@@ -15,7 +15,7 @@ class ENROLLMENT{
         $pin = $_POST['pin'];
         $index = $_POST['student'];
 
-        $sql ="INSERT INTO `school_data`.`enrollment`(`enroll_time`, `pins`, `enroll_date`, `studentID`) VALUES ('$now', '$pin', '$date', '$index')";
+        $sql ="INSERT INTO `enrollment`(`enroll_time`, `pins`, `enroll_date`, `studentID`) VALUES ('$now', '$pin', '$date', '$index')";
         $result = mysqli_query($conn,$sql);
         if($result === TRUE){
             header("location: index.php?_route=admin&p=course.registration&e=104");
@@ -31,7 +31,7 @@ class ENROLLMENT{
         $pin = $_POST['pin'];
         $index = $_POST['student'];
 
-        $sql ="UPDATE `school_data`.`enrollment` SET 
+        $sql ="UPDATE `enrollment` SET 
             `pins` = '$pin', 
             `enroll_date` = '$date', 
             `studentID` = '$index' 
