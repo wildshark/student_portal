@@ -70,7 +70,7 @@ class stuSideMenu{
             </li>
             <li class='nav-item'>
                 <a class='nav-link' data-toggle='collapse' href='#auth' aria-expanded='false' aria-controls='auth'>
-                    <i class='menu-icon mdi mdi-restart'></i>
+                    <i class='menu-icon mdi mdi-package-variant'></i>
                     <span class='menu-title'>eClass</span>
                     <i class='menu-arrow'></i>
                 </a>
