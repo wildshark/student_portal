@@ -15,7 +15,7 @@
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="forms-sample">
                         <div class="form-group">
                             <label for="exampleInputName1">PINs Generated</label>
-                            <input type="text" name="pin" value="<?php echo random_string(5);?>" class="form-control" id="exampleInputName1" placeholder="pins">
+                            <input type="text" name="pin" value="<?php echo random_string(7);?>" class="form-control" id="exampleInputName1" placeholder="pins">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Index Number</label>

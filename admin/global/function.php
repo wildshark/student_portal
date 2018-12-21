@@ -19,14 +19,27 @@ function logout(){
 }
 
 function random_string($length) {
-    $key = '';
-    $keys = array_merge(range(1, 9), range('A', 'Z'));
+    $i = 0; //counter
+    $pin = ""; //our default pin is blank.
+    while($i < $length){
+        //generate a random number between 0 and 9.
+        $pin .= mt_rand(0, 9);
+        $i++;
+    }
+    return $pin;
+}
 
-    for ($i = 0; $i < $length; $i++) {
-        $key .= $keys[array_rand($keys)];
+function generate_pin($length){
+    $token = "";
+    $codeAlphabet = "ABCDEFGHIJKLMNPQRSTUVWXYZ";
+    $codeAlphabet.= "123456789";
+    $max = strlen($codeAlphabet); // edited
+
+    for ($i=0; $i < $length; $i++) {
+        $token .= $codeAlphabet[crypto_rand_secure(0, $max-1)];
     }
 
-    return $key ."". date('dHis');
+    return $token;
 }
 
 function student_index(){

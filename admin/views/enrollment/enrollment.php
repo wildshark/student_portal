@@ -8,7 +8,7 @@
 
 if (!isset($_GET['d'])){
     $button = "add-enrollment";
-    $generate =rand(100,999)."".date('YHmids');
+    $generate = random_string(7);
     $input_type ="<input type='text' name='pin' value='{$generate}' class='form-control' id='exampleInputName1' placeholder='Institute'>";
     $pin ="";
     $student ="";
