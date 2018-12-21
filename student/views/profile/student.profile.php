@@ -8,7 +8,7 @@
 
 if (isset($_SESSION['studentID'])){
     $id = $_SESSION['studentID'];
-    $sql = "SELECT * FROM `school_data`.`get_student_profile_detail` where `studentID` = '$id'";
+    $sql = "SELECT * FROM `get_student_profile_detail` where `studentID` = '$id'";
     $result = mysqli_query($conn,$sql);
     if($result->num_rows === 0){
         $entryID = "";

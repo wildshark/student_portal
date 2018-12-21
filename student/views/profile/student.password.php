@@ -8,7 +8,7 @@
 
 if (isset($_SESSION['token'])){
     $token = $_SESSION['token'];
-    $sql = "SELECT * FROM `school_data`.`get_all_pins`  where `token` = '$token'";
+    $sql = "SELECT * FROM `get_all_pins`  where `token` = '$token'";
     $result = mysqli_query($conn,$sql);
     if($result->num_rows === 0){
         $username = "";
