@@ -15,12 +15,17 @@ if (!isset($_GET['d'])){
     header("location: index.php?_route=student&p=enrollment.form&e=110");
     exit();
 }else{
-    $id = $_GET['d'];
-    $level = $_GET['l'];
-    $semester = $_GET['s'];
+    function programme_list($conn){
 
-    function programme_list($conn,$id,$level,$semester){
+        $programmeID = $_GET['d'];
+        $studentID = $_GET['st'];
+        $level = $_GET['l'];
+        $semester = $_GET['s'];
+        $school = $_GET['sch'];
+        $admission = $_GET['adm'];
+        $yearID = $_GET['y'];
 
+        $url = "pg={$programmeID}&st={$studentID}&l={$level}&s={$semester}&sch={$school}&adm={$admission}&y={$yearID}";
         $sql = "SELECT * FROM `school_data`.`get_course_table` where progID='2' and course_level='$level' and semesterID='$semester'";
         $result = mysqli_query($conn, $sql);
         if ($result->num_rows > 0) {
@@ -31,7 +36,7 @@ if (!isset($_GET['d'])){
                     <td>{$r['course']}</td>
                     <td>{$r['course_level']}</td>
                     <td>{$r['semesterID']}</td>
-                    <td><a href='index.php?submit=reg.course&d={$r['courseID']}&pd={$_GET['d']}&l={$_GET['l']}&s={$_GET['s']}'>Take</a></td>
+                    <td><a href='index.php?submit=reg.course&c={$r['courseID']}&{$url}'>Take</a></td>
                 </tr>";
 
             }
@@ -58,7 +63,7 @@ if (!isset($_GET['d'])){
                     </tr>
                     </thead>
                     <tbody>
-                    <?php programme_list($conn,$id,$level,$semester);?>
+                    <?php programme_list($conn);?>
                     </tbody>
                 </table>
             </div>
@@ -77,14 +82,14 @@ if (!isset($_GET['d'])){
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Year</th>
-                        <th>Block/Room</th>
-                        <th>Arrival Date</th>
-                        <th>Departure Date</th>
+                        <th>Code</th>
+                        <th>Course Title</th>
+                        <th>Credit</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php hostel_details($conn);?>
+                    <?php get_course_registered($conn);?>
                     </tbody>
                 </table>
             </div>

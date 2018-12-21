@@ -13,13 +13,13 @@ include "modules/login.module";
 
 if (!isset($_GET['_route'])){
 
-    if (!isset($_POST['submit'])){
+    if (!isset($_REQUEST['submit'])){
         logout();
-    }elseif ($_POST['submit'] === "Login"){
+    }elseif ($_REQUEST['submit'] === "Login"){
         user_login::login($conn);
-    }elseif ($_POST['submit'] === "Recovery"){
+    }elseif ($_REQUEST['submit'] === "Recovery"){
         user_login::recovery($conn);
-    }elseif ($_POST['submit'] === "Register"){
+    }elseif ($_REQUEST['submit'] === "Register"){
         user_login::registration($conn);
     }else{
         include_once "student/modules.php";

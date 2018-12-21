@@ -260,7 +260,7 @@ function course_400($conn){
 
 function enrollment_list($conn){
 
-    $sql ="SELECT * FROM get_enrollment ORDER BY get_enrollment.enrollID DESC";
+    $sql ="SELECT * FROM get_enrollment_details ORDER BY get_enrollment_details.enrollID DESC";
     $result = mysqli_query($conn,$sql);
     if ($result->num_rows > 0){
         while ($r= $result->fetch_assoc()){

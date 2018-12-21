@@ -16,7 +16,7 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
 }else{
     if ($_SESSION['token'] === $_COOKIE["token"]){
 
-        switch ($_POST['submit']){
+        switch ($_REQUEST['submit']){
 
             case"update-password";
                 PROFILE::password($conn);
@@ -33,8 +33,13 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
             case"add.enrollment";
                 ENROLL::add_enrollment($conn);
             break;
+
             case"reg.course";
-            echo"ok";
+                ENROLL::add_reg_course($conn);
+            break;
+
+            case"remove.reg.course";
+                ENROLL::remove_course($conn);
             break;
 
             default:

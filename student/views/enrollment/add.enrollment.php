@@ -72,6 +72,20 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Level</label>
+                            <div class="col-sm-9">
+                                <select name="level" class="form-control">
+                                    <option value=""></option>
+                                    <option value="100">100</option>
+                                    <option value="200">200</option>
+                                    <option value="300">300</option>
+                                    <option value="400">400</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Pin</label>
                             <div class="col-sm-9">
                                 <input type="text" name="pin" class="form-control" placeholder="Pin Number" />

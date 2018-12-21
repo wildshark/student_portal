@@ -67,7 +67,7 @@ function enrollment_details($conn){
 
     $studentID = $_SESSION['studentID'];
 
-    $sql="SELECT * FROM `school_data`.`get_student_enrollment` where studentID='$studentID'";
+    $sql="SELECT * FROM `school_data`.`get_student_enrollment` where studentID='$studentID' and statusID='2'";
     $result = mysqli_query($conn,$sql);
     if ($result->num_rows > 0){
         while ($r=$result->fetch_assoc()){
@@ -78,14 +78,45 @@ function enrollment_details($conn){
             $admission = $r['admissionNo'];
             $level = $r['s_level'];
             $name = $r['first_name']." ".$r['surname'];
+
+            if($semester == 1){
+                $sem = "1st Semester";
+            }elseif ($semester == 2){
+                $sem = "2nd Semester";
+            }else{
+                $sem = "Unknown";
+            }
             echo"
                 <tr>
                     <td>{$yearID}</td>
                     <td>{$programme}</td>
-                    <td>{$semester}</td>
+                    <td>{$sem}</td>
                     <td>{$level}</td>
-                    <td><a href='index.php?_route=student&p=course.registration&&d={$r['progID']}&l={$level}&s={$semester}'>Courses</a></td>
+                    <td><a href='index.php?_route=student&p=course.registration&d={$r['progID']}&st={$studentID}&l={$level}&s={$semester}&sch={$school}&adm={$admission}&y={$yearID}'>Courses</a></td>
                 </tr>";
+        }
+    }
+}
+
+function get_course_registered($conn){
+
+    $studentID = $_SESSION['studentID'];
+    $year = $_GET['y'];
+    $semesterID = $_GET['s'];
+
+    $sql="SELECT * FROM `school_data`.`get_course_registrated` where studentID='$studentID' and yearID='$year' and semesterID='$semesterID'";
+    $result = mysqli_query($conn,$sql);
+    if ($result->num_rows > 0){
+        while ($r=$result->fetch_assoc()){
+            echo"
+                <tr>
+                    <td>{$r['course_code']}</td>
+                    <td>{$r['course']}</td>
+                    <td>{$r['credit']}</td>
+                    <td><a href='index.php?submit=remove.reg.course&d={$r['regID']}'>Remove</a></td>
+                    <td></td>
+                </tr>";
+
         }
     }
 }

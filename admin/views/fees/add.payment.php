@@ -6,14 +6,6 @@
  * Time: 6:58 PM
  */
 ?>
-<?php
-/**
- * Created by PhpStorm.
- * User: Andrew Quaye
- * Date: 13/12/2018
- * Time: 4:24 PM
- */
-?>
 <div class="col-md-6 d-flex align-items-stretch grid-margin">
     <div class="row flex-grow">
         <div class="col-12">
