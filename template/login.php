@@ -15,7 +15,7 @@
                             <div class="form-group">
                                 <label class="label">Index Number</label>
                                 <div class="input-group">
-                                    <input type="text" name="username" class="form-control" placeholder="Index Number">
+                                    <input type="text" name="username" class="form-control" placeholder="Index Number" required>
                                     <div class="input-group-append">
                                       <span class="input-group-text">
                                         <i class="mdi mdi-check-circle-outline"></i>
@@ -26,7 +26,7 @@
                             <div class="form-group">
                                 <label class="label">Password</label>
                                 <div class="input-group">
-                                    <input type="password" name="password" class="form-control" placeholder="*********">
+                                    <input type="password" name="password" class="form-control" placeholder="*********" required>
                                     <div class="input-group-append">
                                       <span class="input-group-text">
                                         <i class="mdi mdi-check-circle-outline"></i>

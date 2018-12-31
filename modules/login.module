@@ -6,7 +6,6 @@
  * Time: 11:58 AM
  */
 
-
 class user_login{
 
     function registration($conn){
@@ -54,7 +53,7 @@ class user_login{
                             $_SESSION['student_index'] = $index;
                             $_SESSION['password']=$password;
                             //$_USER['picture'] = $user['picture'];
-                            header("location: index.php?_route=student&p=profile&e=100");
+
                         }
                     }else{
                         header("location: index.php?_route=login&e=101");
@@ -116,7 +115,6 @@ class user_login{
         }
     }
 
-
     function recovery($conn){
 
         if (!isset($_POST['email'])){
@@ -143,9 +141,6 @@ class user_login{
             }else{
                 header("location: index.php");
             }
-
         }
-
     }
-
 }

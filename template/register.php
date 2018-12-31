@@ -19,12 +19,12 @@
         <div class="content-wrapper d-flex align-items-center auth register-bg-1 theme-one">
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
-                    <h2 class="text-center mb-4">Register</h2>
+                    <h2 class="text-center mb-4">Sign Up</h2>
                     <div class="auto-form-wrapper">
                         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" enctype="application/x-www-form-urlencoded">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" name="username" class="form-control" placeholder="Index Number">
+                                    <input type="text" required="required" name="username" class="form-control" placeholder="Index Number">
                                     <div class="input-group-append">
                                           <span class="input-group-text">
                                             <i class="mdi mdi-check-circle-outline"></i>
@@ -34,7 +34,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="password" name="password" class="form-control" placeholder="Password">
+                                    <input type="password" required="required" name="password" class="form-control" placeholder="Password">
                                     <div class="input-group-append">
                                         <span class="input-group-text">
                                             <i class="mdi mdi-check-circle-outline"></i>
@@ -44,7 +44,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" name="mobile" class="form-control" placeholder="Mobile">
+                                    <input type="text" required name="mobile" class="form-control" placeholder="Mobile">
                                     <div class="input-group-append">
                                         <span class="input-group-text">
                                             <i class="mdi mdi-check-circle-outline"></i>
@@ -54,7 +54,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="email" name="email" class="form-control" placeholder="Email">
+                                    <input type="email" required name="email" class="form-control" placeholder="Email">
                                     <div class="input-group-append">
                                       <span class="input-group-text">
                                         <i class="mdi mdi-check-circle-outline"></i>
@@ -64,7 +64,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" name="voucher" class="form-control" placeholder="Voucher">
+                                    <input type="text" required name="voucher" class="form-control" placeholder="PIN Number">
                                     <div class="input-group-append">
                                       <span class="input-group-text">
                                         <i class="mdi mdi-check-circle-outline"></i>
