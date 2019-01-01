@@ -207,22 +207,22 @@
                                         <thead>
                                         <tr>
                                             <th>
-                                                #
+                                                Pin
                                             </th>
                                             <th>
-                                                First name
+                                                Index
                                             </th>
                                             <th>
-                                                Progress
+                                                Name
                                             </th>
                                             <th>
-                                                Amount
+                                                Programme
                                             </th>
                                             <th>
-                                                Sales
+                                                amount
                                             </th>
                                             <th>
-                                                Deadline
+                                                Status
                                             </th>
                                         </tr>
                                         </thead>

@@ -11,7 +11,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Hostel Booking</h4>
+                    <h4 class="card-title">Student Portal PIN Generator</h4>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="forms-sample">
                         <div class="form-group">
                             <label for="exampleInputName1">PINs Generated</label>
@@ -36,10 +36,7 @@
 <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Booked Details</h4>
-            <p class="card-description">
-                Basic form elements
-            </p>
+            <h4 class="card-title">PIN LIST</h4>
             <form class="forms-sample">
                 <div class="form-group">
                     <label for="exampleInputName1">Name</label>
