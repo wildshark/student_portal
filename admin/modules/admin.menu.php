@@ -86,13 +86,13 @@ class stuSideMenu{
                 <div class='collapse' id='fees'>
                     <ul class='nav flex-column sub-menu'>
                         <li class='nav-item'>
-                            <a class='nav-link' href='?_route=admin&p=create.pins'>Billing </a>
+                            <a class='nav-link' href='?_route=admin&p=billing'>Billing </a>
                         </li>
                         <li class='nav-item'>
-                            <a class='nav-link' href='?_route=admin&p=pins.list'> Payment </a>
+                            <a class='nav-link' href='?_route=admin&p=payment'> Payment </a>
                         </li>
                         <li class='nav-item'>
-                            <a class='nav-link' href='?_route=admin&p=register.account'> Fees Ledger </a>
+                            <a class='nav-link' href='?_route=admin&p=fees.ledger'> Fees Ledger </a>
                         </li>
                     </ul>
                 </div>
