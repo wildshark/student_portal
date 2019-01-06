@@ -36,31 +36,22 @@
 <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">PIN LIST</h4>
-            <form class="forms-sample">
-                <div class="form-group">
-                    <label for="exampleInputName1">Name</label>
-                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputName1">Index Number</label>
-                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail3">Bed Number</label>
-                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-                </div>
-            </form>
+            <h4 class="card-title">Paragraph</h4>
+            <p class="card-description">
+                Write text in
+                <code>&lt;p&gt;</code> tag
+            </p>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley not only five centuries,
+            </p>
         </div>
     </div>
 </div>
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Member of the room</h4>
-            <p class="card-description">
-                Basic form elements
-            </p>
+            <h4 class="card-title">PIN List</h4>
             <div class="table-responsive">
                 <table class="table">
                     <thead>

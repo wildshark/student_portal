@@ -63,6 +63,8 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                 ENROLLMENT::edit_enroll($conn);
             break;
 
+
+
             default:
                 include_once "template/error.php";
 
