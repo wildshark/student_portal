@@ -17,7 +17,7 @@ class USER_PROFILE{
             $password = $_POST['password'];
             $token = md5($username."/".$password);
 
-            $sql = "UPDATE `school_data`.`admin` SET `email` = '$email', `password` = '$password' WHERE `userID` = '$id'";
+            $sql = "UPDATE `admin` SET `email` = '$email', `password` = '$password' WHERE `userID` = '$id'";
             $result = mysqli_query($conn,$sql);
             if ($result == TRUE){
 
