@@ -9,10 +9,7 @@
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Member of the room</h4>
-            <p class="card-description">
-                Basic form elements
-            </p>
+            <h4 class="card-title">List of Student & Profile</h4>
             <div class="table-responsive">
                 <table class="table">
                     <thead>

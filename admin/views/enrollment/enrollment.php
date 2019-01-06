@@ -58,7 +58,7 @@ if (!isset($_GET['d'])){
 <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Paragraph</h4>
+            <h4 class="card-title">Help</h4>
             <p class="card-description">
                 Write text in
                 <code>&lt;p&gt;</code> tag
@@ -73,10 +73,7 @@ if (!isset($_GET['d'])){
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Member of the room</h4>
-            <p class="card-description">
-                Basic form elements
-            </p>
+            <h4 class="card-title">Student Enrollment & Course Registration List</h4>
             <div class="table-responsive">
                 <table class="table">
                     <thead>

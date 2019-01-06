@@ -45,7 +45,7 @@ $button ="edit-courses";
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Add Course</h4>
+                    <h4 class="card-title">Add New Course</h4>
                     <form method="post" action="index.php" class="forms-sample" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="exampleFormControlSelect3">Programme</label>
@@ -110,7 +110,7 @@ $button ="edit-courses";
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Member of the room</h4>
+            <h4 class="card-title">List of Courses</h4>
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-a" role="tab" aria-controls="nav-home" aria-selected="true">Level 100</a>

@@ -37,7 +37,7 @@ if(!isset($_GET['d'])){
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Add Course</h4>
+                    <h4 class="card-title">Add New Programme</h4>
                     <form method="post" action="index.php" class="forms-sample" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="exampleInputName1">Programme</label>
@@ -84,10 +84,7 @@ if(!isset($_GET['d'])){
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Member of the room</h4>
-            <p class="card-description">
-                Basic form elements
-            </p>
+            <h4 class="card-title">List of Programmes</h4>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -99,7 +96,7 @@ if(!isset($_GET['d'])){
                     </tr>
                     </thead>
                     <tbody>
-                    <?php programme($conn)?>
+                        <?php programme($conn)?>
                     </tbody>
                 </table>
             </div>

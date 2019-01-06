@@ -26,15 +26,15 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                 include "template/dashboard.php";
                 break;
 
-            case"profile";
+            case"staff.profile";
                 $_template->menu = "template/menu.php";
-                $_template->view ="student/views/profile/student.profile.php";
+                $_template->view ="views/profile/admin/staff.profile.php";
                 include "template/form.php";
                 break;
 
             case"password";
                 $_template->menu = "template/menu.php";
-                $_template->view ="student/views/profile/student.password.php";
+                $_template->view ="views/profile/admin/staff.password.php";
                 include "template/form.php";
                 break;
 

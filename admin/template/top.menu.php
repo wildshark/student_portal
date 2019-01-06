@@ -31,7 +31,7 @@ class top_menu{
                   </div>
                 </div>
               </a>
-              <a href='index.php?_route=".$_REQUEST['_route']."&p=profile' class='dropdown-item mt-2'>
+              <a href='index.php?_route=".$_REQUEST['_route']."&p=staff.profile' class='dropdown-item mt-2'>
                 Manage Accounts
               </a>
               <a href='index.php?_route=".$_REQUEST['_route']."&p=password' class='dropdown-item'>

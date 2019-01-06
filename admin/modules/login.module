@@ -37,6 +37,7 @@ class admin_login{
                 setcookie("status",$user['status'],time() + (86400 * 30), "/");
                 if (!isset($_SESSION['token'])){
                     $_SESSION['token'] = $token;
+                    $_SESSION['user-id'] = $user['userID'];
                     header("location: index.php?_route=admin&p=dashboard&e=100");
                 }
             }

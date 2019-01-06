@@ -10,6 +10,7 @@ include "modules/pins.php";
 include "modules/programme.php";
 include "modules/hostel.php";
 include "modules/enrollment.php";
+include "modules/user.php";
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
     // echo "no cookie or session created";
@@ -63,7 +64,13 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                 ENROLLMENT::edit_enroll($conn);
             break;
 
+            case"update-password";
+               USER_PROFILE::change_password($conn);
+            break;
 
+            case"update-profile";
+                USER_PROFILE::update_profile($conn);
+            break;
 
             default:
                 include_once "template/error.php";
