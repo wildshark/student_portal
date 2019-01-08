@@ -8,6 +8,7 @@
 include "template/top.menu.php";
 include_once "modules/admin.menu.php";
 include_once "model/function.php";
+include "modules/dashboard.php";
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
     // echo "no cookie or session created";

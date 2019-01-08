@@ -85,7 +85,6 @@ class USER_PROFILE{
             }else{
                 header("location: index.php?_route=admin&p=staff.profile&e=103");
             }
-
         }else{
             header("location: index.php?_route=admin&p=staff.profile&e=105");
             exit();

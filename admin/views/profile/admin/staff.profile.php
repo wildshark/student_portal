@@ -91,8 +91,8 @@ if (isset( $_SESSION['user-id'])){
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Employment Date</label>
-                            <div class="col-sm-9">
+                            <label class="col-sm-5 col-form-label">Employment Date</label>
+                            <div class="col-sm-7">
                                 <input name="date" readonly value="<?php echo date("Y-mm-d");?>" type="text" class="form-control" />
                             </div>
                         </div>
@@ -187,8 +187,8 @@ if (isset( $_SESSION['user-id'])){
                     </div>
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Home Mobile No#</label>
-                            <div class="col-sm-9">
+                            <label class="col-sm-5 col-form-label">Home Mobile No#</label>
+                            <div class="col-sm-7">
                                 <input name="mobile-2" value="<?php echo $mobile2;?>" type="text" class="form-control" />
                             </div>
                         </div>
