@@ -67,7 +67,7 @@ function enrollment_details($conn){
 
     $studentID = $_SESSION['studentID'];
 
-    $sql="SELECT * FROM `school_data`.`get_student_enrollment` where studentID='$studentID' and statusID='2'";
+    $sql="SELECT * FROM `get_student_enrollment` where studentID='$studentID' and statusID='2'";
     $result = mysqli_query($conn,$sql);
     if ($result->num_rows > 0){
         while ($r=$result->fetch_assoc()){
@@ -104,7 +104,7 @@ function get_course_registered($conn){
     $year = $_GET['y'];
     $semesterID = $_GET['s'];
 
-    $sql="SELECT * FROM `school_data`.`get_course_registrated` where studentID='$studentID' and yearID='$year' and semesterID='$semesterID'";
+    $sql="SELECT * FROM `get_course_registrated` where studentID='$studentID' and yearID='$year' and semesterID='$semesterID'";
     $result = mysqli_query($conn,$sql);
     if ($result->num_rows > 0){
         while ($r=$result->fetch_assoc()){
