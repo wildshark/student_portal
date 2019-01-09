@@ -34,7 +34,7 @@
                             </div>
                             <div class="form-group d-flex justify-content-center"></div>
                             <div class="form-group">
-                                <button class="btn btn-primary submit-btn btn-block">Submit</button>
+                                <button type="submit" name="submit" value="Recover" class="btn btn-primary submit-btn btn-block">Submit</button>
                             </div>
                             <div class="text-block text-center my-3">
                                 <span class="text-small font-weight-semibold">Already have and account ?</span>

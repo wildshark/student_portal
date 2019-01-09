@@ -32,32 +32,31 @@ function message_box($conn,$errCode){
         $r= $result->fetch_assoc();
         $message = $r['description'];
 
-        $text_color = "text-white";
         if($r['msg_box'] =='a-pri'){
-            $bg_color = "bg-primary";
+            $bg_color = "alert-primary";
         }elseif($r['msg_box'] =='a-sec'){
-            $bg_color = "bg-secondary";
+            $bg_color = "alert-secondary";
         }elseif ($r['msg_box']=='a-suc'){
-            $bg_color = "bg-success";
+            $bg_color = "alert-success";
         }elseif ($r['msg_box']=='a-dan'){
-            $bg_color = "bg-danger";
+            $bg_color = "alert-danger";
         }elseif ($r['msg_box']=='a-war'){
-            $bg_color = "bg-warning";
+            $bg_color = "alert-warning";
         }elseif ($r['msg_box']=='a-inf'){
-            $bg_color = "bg-info";
+            $bg_color = "alert-info";
         }elseif ($r['msg_box']=='a-dar'){
-            $bg_color = "bg-dark";
+            $bg_color = "alert-dark";
         }else{
-            $bg_color = "bg-light";
-            $text_color ="text-dark";
+            $bg_color = "alert-light";
         }
     }
 
-
     return"
-        <span class='d-block {$bg_color} d-md-flex align-items-center'>
-            <p class='{$text_color}'>{$message}</p>
-            <i class='{$text_color} mdi mdi-close popup-dismiss d-none d-md-block pull-right'></i>
-        </span>
+        <div class='alert {$bg_color} alert-dismissible fade show' role='alert'>
+            {$message}
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+            </button>
+        </div>
     ";
 }
