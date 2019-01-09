@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b10701-38f8-42d3-ae6c-f30fa9654001" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/login.module" beforeDir="false" afterPath="$PROJECT_DIR$/modules/login.module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/recovery.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/recovery.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,14 +54,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="module" value="7901" />
+          <entry key="module" value="7916" />
           <entry key="php" value="30578" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="89" />
-          <entry key="PHP" value="38223" />
+          <entry key="PHP" value="38238" />
           <entry key="SQL" value="167" />
         </counts>
       </usages-collector>
@@ -81,8 +79,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/login.module">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="134" column="75" selection-start-line="134" selection-start-column="75" selection-end-line="134" selection-end-column="75" />
+            <state relative-caret-position="369">
+              <caret line="140" column="34" lean-forward="true" selection-start-line="140" selection-start-column="34" selection-end-line="140" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -332,12 +330,12 @@
       <workItem from="1546923150599" duration="1630000" />
       <workItem from="1546925916080" duration="9549000" />
       <workItem from="1547023619361" duration="5635000" />
-      <workItem from="1547040157276" duration="8497000" />
+      <workItem from="1547040157276" duration="8838000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="338863000" />
+    <option name="totallyTimeSpent" value="339204000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1380" height="735" extended-state="0" />
@@ -716,8 +714,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/login.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="134" column="75" selection-start-line="134" selection-start-column="75" selection-end-line="134" selection-end-column="75" />
+        <state relative-caret-position="369">
+          <caret line="140" column="34" lean-forward="true" selection-start-line="140" selection-start-column="34" selection-end-line="140" selection-end-column="34" />
         </state>
       </provider>
     </entry>
