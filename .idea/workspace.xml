@@ -54,14 +54,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="module" value="8067" />
+          <entry key="module" value="8113" />
           <entry key="php" value="30578" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="89" />
-          <entry key="PHP" value="38389" />
+          <entry key="PHP" value="38435" />
           <entry key="SQL" value="167" />
         </counts>
       </usages-collector>
@@ -79,8 +79,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/login.module">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="138" column="15" lean-forward="true" selection-start-line="138" selection-start-column="15" selection-end-line="138" selection-end-column="15" />
+            <state relative-caret-position="420">
+              <caret line="142" column="17" selection-start-line="142" selection-start-column="17" selection-end-line="142" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -224,7 +224,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="1380" />
     <option name="height" value="735" />
@@ -330,12 +330,12 @@
       <workItem from="1546923150599" duration="1630000" />
       <workItem from="1546925916080" duration="9549000" />
       <workItem from="1547023619361" duration="5635000" />
-      <workItem from="1547040157276" duration="9265000" />
+      <workItem from="1547040157276" duration="9566000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="339631000" />
+    <option name="totallyTimeSpent" value="339932000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1380" height="735" extended-state="0" />
@@ -714,8 +714,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/login.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="138" column="15" lean-forward="true" selection-start-line="138" selection-start-column="15" selection-end-line="138" selection-end-column="15" />
+        <state relative-caret-position="420">
+          <caret line="142" column="17" selection-start-line="142" selection-start-column="17" selection-end-line="142" selection-end-column="17" />
         </state>
       </provider>
     </entry>

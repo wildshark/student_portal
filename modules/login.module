@@ -135,9 +135,11 @@ class user_login{
                 $txt = "You login detail username:{$username} and password: {$password}";
                 $headers = "From: info@ghanacu.com";
 
-                mail($email,$subject,$txt,$headers);
-               
-                echo "email send";
+                if (mail($email,$subject,$txt,$headers)== TRUE){
+                    echo "email send";
+                }else{
+                    echo "email send error";
+                }
             }else{
                echo "error";
                 // header("location: index.php");
