@@ -18,7 +18,7 @@ if (!isset($_GET['_route'])){
     }elseif ($_REQUEST['submit'] === "Login"){
         user_login::login($conn);
     }elseif ($_REQUEST['submit'] === "Recover"){
-        user_login::recovery($conn);
+         user_login::recovery($conn);
     }elseif ($_REQUEST['submit'] === "Register"){
         user_login::registration($conn);
     }else{

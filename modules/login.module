@@ -118,13 +118,13 @@ class user_login{
 
     function recovery($conn){
 
-        if (!isset($_POST['email'])){
+        if (!isset($_REQUEST['email'])){
             echo "No email";
         }else{
 
-            $email = $_POST['email'];
+             $email = $_REQUEST['email'];
 
-            $sql = "SELECT * FROM `get_student_profile_detail` where email='$email' LIMIT 1";
+            $sql = "SELECT * FROM `get_all_pins` where email='$email' LIMIT 1";
             $result = (mysqli_query($conn,$sql));
             if (mysqli_num_rows($result) > 0){
                 $user = mysqli_fetch_assoc($result);
@@ -135,12 +135,13 @@ class user_login{
                 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                 $headers .= 'From: <webmaster@example.com>' . "\r\n";
 
-                $msg = "username ". $_USER['username'] ."\n Password ". $_USER['password'];
+               echo $msg = "username ". $_USER['username'] ."\n Password ". $_USER['password'];
                 mail("$email","GhanaCU Login Recovery",$msg,$headers);
 
                 echo "email send";
             }else{
-                header("location: index.php");
+               echo "error";
+                // header("location: index.php");
             }
         }
     }

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b10701-38f8-42d3-ae6c-f30fa9654001" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/admin/model/message.box.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/message.box.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/model/message.box.php" beforeDir="false" afterPath="$PROJECT_DIR$/student/model/message.box.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/login.module" beforeDir="false" afterPath="$PROJECT_DIR$/modules/login.module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/recovery.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/recovery.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,25 +45,25 @@
         <counts>
           <entry key="js" value="1" />
           <entry key="module" value="96" />
-          <entry key="php" value="474" />
+          <entry key="php" value="475" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="570" />
+          <entry key="PHP" value="571" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="module" value="7845" />
-          <entry key="php" value="30539" />
+          <entry key="module" value="7901" />
+          <entry key="php" value="30578" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="89" />
-          <entry key="PHP" value="38128" />
+          <entry key="PHP" value="38223" />
           <entry key="SQL" value="167" />
         </counts>
       </usages-collector>
@@ -79,11 +78,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/login.module">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1025">
-              <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+            <state relative-caret-position="267">
+              <caret line="134" column="75" selection-start-line="134" selection-start-column="75" selection-end-line="134" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/recovery.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -91,17 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/template/recovery.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="36" column="135" selection-start-line="36" selection-start-column="135" selection-end-line="36" selection-end-column="135" />
+            <state relative-caret-position="102">
+              <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -182,7 +181,6 @@
         <option value="$PROJECT_DIR$/admin/views/hostel/hostel.php" />
         <option value="$PROJECT_DIR$/admin/model/search.php" />
         <option value="$PROJECT_DIR$/admin/views/hostel/add.block.php" />
-        <option value="$PROJECT_DIR$/modules/login.module" />
         <option value="$PROJECT_DIR$/modules/student.module" />
         <option value="$PROJECT_DIR$/student/views/enrollment/add.enrollment.php" />
         <option value="$PROJECT_DIR$/modules/enrollment.php" />
@@ -195,8 +193,9 @@
         <option value="$PROJECT_DIR$/template/form.php" />
         <option value="$PROJECT_DIR$/admin/model/message.box.php" />
         <option value="$PROJECT_DIR$/student/model/message.box.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/template/recovery.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/modules/login.module" />
       </list>
     </option>
   </component>
@@ -227,7 +226,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="1380" />
     <option name="height" value="735" />
@@ -333,12 +332,12 @@
       <workItem from="1546923150599" duration="1630000" />
       <workItem from="1546925916080" duration="9549000" />
       <workItem from="1547023619361" duration="5635000" />
-      <workItem from="1547040157276" duration="7472000" />
+      <workItem from="1547040157276" duration="8497000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="337838000" />
+    <option name="totallyTimeSpent" value="338863000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1380" height="735" extended-state="0" />
@@ -701,24 +700,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/login.module">
+    <entry file="file://$PROJECT_DIR$/template/recovery.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1025">
-          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+        <state relative-caret-position="153">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+        <state relative-caret-position="102">
+          <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/recovery.php">
+    <entry file="file://$PROJECT_DIR$/modules/login.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="36" column="135" selection-start-line="36" selection-start-column="135" selection-end-line="36" selection-end-column="135" />
+        <state relative-caret-position="267">
+          <caret line="134" column="75" selection-start-line="134" selection-start-column="75" selection-end-line="134" selection-end-column="75" />
         </state>
       </provider>
     </entry>
