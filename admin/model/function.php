@@ -58,7 +58,7 @@ function pin_list($conn){
 
 function student_list($conn){
 
-    $sql ="SELECT * FROM `school_data`.`get_student_profile_detail`";
+    $sql ="SELECT * FROM `get_student_profile_detail`";
     $result = mysqli_query($conn,$sql);
     if ($result->num_rows > 0){
         while ($r= $result->fetch_assoc()){
@@ -83,7 +83,7 @@ function student_list($conn){
 
 function affiliate($conn){
 
-    $sql ="SELECT * FROM `school_data`.`get_affliate_school`";
+    $sql ="SELECT * FROM `get_affliate_school`";
     $result = mysqli_query($conn,$sql);
     if($result->num_rows > 0){
         while ($r= $result->fetch_assoc()){

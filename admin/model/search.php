@@ -6,14 +6,13 @@
  * Time: 10:24 AM
  */
 
-function search_pin($conn){
+function search_pin($conn,$search){
 
-    if(!isset($_REQUEST['q'])){
+    if(!isset($search)){
         header("location: index.php?_route=admin&p=pins.list&e=112");
     }else{
 
-        $q = $_REQUEST['q'];
-        $sql="SELECT * FROM `get_all_pins` where `pin`LIKE '%{$q}%' ORDER BY pin_id DESC LIMIT 0,20";
+        $sql="SELECT * FROM `get_all_pins` where `pin`LIKE '%{$search}%' OR `username`LIKE '%{$search}%'ORDER BY pin_id DESC LIMIT 0,20";
         $result = mysqli_query($conn,$sql);
         if (mysqli_num_rows($result) > 0) {
             while ($r = mysqli_fetch_assoc($result)){
@@ -34,77 +33,83 @@ function search_pin($conn){
                 </tr>
                 ";
             }
+
         }else{
-
-            $sql="SELECT * FROM `get_all_pins` where `username`LIKE '%{$q}%' ORDER BY pin_id DESC LIMIT 0,20";
-            $result = mysqli_query($conn,$sql);
-            if (mysqli_num_rows($result) > 0) {
-                while ($r = mysqli_fetch_assoc($result)) {
-                    if ($r['status'] == 1) {
-                        $status = "<label class='badge badge-info'>Active</label>";
-                    } elseif ($r['status'] == 2) {
-                        $status = "<label class='badge badge-success'>Used</label>";
-                    } else {
-                        $status = "<label class='badge badge-danger'>Block</label>";
-                    }
-                    echo "
-                        <tr>
-                            <td>{$r['pin_date']}</td>
-                            <td>{$r['pin']}</td>
-                            <td>{$r['username']}</td>
-                            <td>{$r['mobile']}</td>                
-                            <td>{$status}</td>                   
-                        </tr>
-                        ";
-                }
-            }else{
-                echo"error 111";
-            }
+            echo"error 111";
         }
-
     }
 }
 
-?>
+function search_student_Profile($conn,$profile){
 
-<div class="col-md-12 grid-margin stretch-card">
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Active PIN List</h4>
-            <div class="table-responsive">
-                <div class="col-md-4">
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="application/x-www-form-urlencoded">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input type="text" name="q" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="colored-addon3">
-                                <div class="input-group-append bg-primary border-primary">
-                                    <span class="input-group-btn bg-transparent">
-                                        <button type="submit" name="submit" value="search-pin" class="btn btn-icons btn-primary">
-                                            <i class="mdi mdi-account-search"></i>
-                                        </button>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <table class="table">
-                    <thead>
+    if(!isset($profile)){
+        header("location: index.php?_route=admin&p=pins.list&e=112");
+    }else{
+
+        $sql ="SELECT * FROM get_student_profile_detail WHERE
+                get_student_profile_detail.admissionNo LIKE '%{$profile}%' OR
+                get_student_profile_detail.school LIKE '%{$profile}%' OR
+                get_student_profile_detail.prefix LIKE '%{$profile}%' OR
+                get_student_profile_detail.country LIKE '%{$profile}%' OR
+                get_student_profile_detail.nationality LIKE '%{$profile}%' OR
+                get_student_profile_detail.programme LIKE '%{$profile}%'
+                ORDER BY admissionNo DESC LIMIT 0,20";
+        $result = mysqli_query($conn,$sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($r = mysqli_fetch_assoc($result)){
+                if ($r['statusID'] == 1){
+                    $status = "<label class='badge badge-success'>Active</label>";
+                }else{
+                    $status ="<label class='badge badge-danger'>Passive</label>";
+                }
+                echo"
                     <tr>
-                        <th>Date</th>
-                        <th>PINs</th>
-                        <th>Index No#</th>
-                        <th>Mobile</th>
-                        <th>Status</th>
+                        <td><a href='index.php?_route=admin&p=student.profile.detail&t={$r['token']}'>{$r['admissionNo']}</a></td>
+                        <td>{$r['first_name']} {$r['surname']}</td>
+                        <td>{$r['prefix']}</td>
+                        <td>{$r['programme']}</td>
+                        <td>{$status}</td>                   
                     </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                            search_pin($conn);
-                        ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
+                ";
+            }
+        }else{
+          echo"error 111";
+        }
+    }
+}
+
+function search_hostel($conn,$hostel){
+
+    if(!isset($hostel)){
+        header("location: index.php?_route=admin&p=pins.list&e=112");
+    }else{
+
+        $sql ="SELECT * FROM get_hostel_booking WHERE
+                pin_index LIKE '%{$hostel}%' OR
+                admissionNo LIKE '%{$hostel}%' OR
+                yearID LIKE '%{$hostel}%'
+                ORDER BY get_hostel_booking.userID DESC LIMIT 0,20";
+        $result = mysqli_query($conn,$sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($r = mysqli_fetch_assoc($result)){
+                $id = $r['userID'];
+                if ($r['status'] == 1){
+                    $status = "<label class='badge badge-success'>Active</label>";
+                }else{
+                    $status ="<label class='badge badge-danger'>Used</label>";
+                }
+                echo"
+                <tr>
+                    <td>{$r['date']}</td>
+                    <td><a href='index.php?_route=admin&p=hostel&d={$id}'>{$r['pin_index']}</a></td>
+                    <td>{$r['admissionNo']}/{$r['first_name']} {$r['surname']}</td>
+                    <td>{$r['book_in']}</td>
+                    <td>{$status}</td>
+                </tr>
+            ";
+            }
+        }else{
+            echo"error 111";
+        }
+    }
+}

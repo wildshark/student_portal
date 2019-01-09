@@ -10,7 +10,7 @@
 <div class="col-12 grid-margin">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Horizontal Two column</h4>
+            <h4 class="card-title">New Enrollment</h4>
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="form-sample" enctype="multipart/form-data">
                 <p class="card-description">
                     Personal info
@@ -104,10 +104,7 @@
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Member of the room</h4>
-            <p class="card-description">
-                Basic form elements
-            </p>
+            <h4 class="card-title">Enrollment Details</h4>
             <div class="table-responsive">
                 <table class="table">
                     <thead>

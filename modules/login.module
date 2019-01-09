@@ -54,6 +54,7 @@ class user_login{
                             $_SESSION['password']=$password;
                             //$_USER['picture'] = $user['picture'];
 
+                            header("location: index.php?_route=student&p=profile&e=100");
                         }
                     }else{
                         header("location: index.php?_route=login&e=101");

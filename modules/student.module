@@ -37,8 +37,6 @@ class PROFILE{
                 header("location: index.php?_route=student&p=password&e=103");
             }
         }
-
-
     }
 
     public function update($conn){

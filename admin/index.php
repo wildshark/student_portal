@@ -11,30 +11,25 @@ include "global/function.php";
 include "global/setup.php";
 include "modules/login.module";
 
-if (!isset($_REQUEST['_search'])){
+if (!isset($_GET['_route'])) {
 
-    if (!isset($_GET['_route'])) {
-
-        if (!isset($_POST['submit'])) {
-            logout();
-        }elseif($_POST['submit'] === "Login") {
-            admin_login::login($conn);
-        }else{
-            require "module.php";
-        }
-
+    if (!isset($_POST['submit'])) {
+        logout();
+    }elseif($_POST['submit'] === "Login") {
+        admin_login::login($conn);
     }else{
-
-        $route = $_REQUEST['_route'];
-        $GLOBALS['route'] = $route;
-
-        if($route === 'admin'){
-            require "navigation.php";
-        }elseif ($route === 'recovery') {
-            require "template/recovery.php";
-        }
+        require "module.php";
     }
 
 }else{
-    include_once "search.php";
+
+    $route = $_REQUEST['_route'];
+    $GLOBALS['route'] = $route;
+
+    if($route === 'admin'){
+        require "navigation.php";
+    }elseif ($route === 'recovery') {
+        require "template/recovery.php";
+    }
 }
+

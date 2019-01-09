@@ -9,6 +9,7 @@ include "template/top.menu.php";
 include_once "modules/admin.menu.php";
 include_once "model/function.php";
 include "modules/dashboard.php";
+include"model/search.php";
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
     // echo "no cookie or session created";
@@ -92,7 +93,6 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                 $_template->view ="views/enrollment/enrollment.php";
                 include "template/form.php";
             break;
-
 
             default:
                 include_once "template/error.php";
