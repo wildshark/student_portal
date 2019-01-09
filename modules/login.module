@@ -128,16 +128,15 @@ class user_login{
             $result = (mysqli_query($conn,$sql));
             if (mysqli_num_rows($result) > 0){
                 $user = mysqli_fetch_assoc($result);
-                $_USER['username'] = $user['username'];
-                $_USER['password'] = $user['password'];
+                $username = $user['username'];
+                $password = $user['password'];
 
-                $headers = "MIME-Version: 1.0" . "\r\n";
-                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                $headers .= 'From: <recovery@ghanacu.com>' . "\r\n";
+                $subject = "Password Recovery";
+                $txt = "You login detail username:{$username} and password: {$password}";
+                $headers = "From: info@ghanacu.com";
 
-               echo $msg = "username ". $_USER['username'] ."\n Password ". $_USER['password'];
-                mail("$email","GhanaCU Login Recovery",$msg,$headers);
-
+                mail($email,$subject,$txt,$headers);
+               
                 echo "email send";
             }else{
                echo "error";
