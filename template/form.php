@@ -105,6 +105,11 @@
         <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
+                <div class="row purchace-popup">
+                    <div class="col-12">
+                        <?php echo message_box($conn,$errCode);?>
+                    </div>
+                </div>
                 <div class="row">
                     <?php include $_template->view;?>
                 </div>
