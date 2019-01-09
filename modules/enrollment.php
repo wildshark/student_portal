@@ -19,7 +19,7 @@ class ENROLL{
         $pin = $_POST['pin'];
 
 
-        $sql ="SELECT * FROM `get_enrollment` where pins='$pin' and studentID='$student'";
+        $sql ="SELECT * FROM `get_enrollment` where pins='$pin' and studentID='$student' and statusID ='1'";
         $result = mysqli_query($conn,$sql);
         if ($result->num_rows == 0){
             header("location: index.php?_route=student&p=enrollment.form&e=102");
