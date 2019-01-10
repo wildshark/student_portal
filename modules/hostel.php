@@ -73,6 +73,15 @@ class HOSTEL{
 
     }
 
+    function get_random_block_name($conn){
 
+        $sql = "SELECT * FROM get_hostel_block where statusID ='1' ORDER BY RAND() LIMIT 1";
+        $result = mysqli_query($conn,$sql);
+        if ($result->num_rows > 0){
+            $r = $result->fetch_assoc();
 
+            $block = $r['block_name'];
+        }
+        return $block;
+    }
 }

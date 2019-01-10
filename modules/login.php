@@ -6,7 +6,7 @@
  * Time: 11:58 AM
  */
 
-class user_login{
+class USER_LOGIN{
 
     function registration($conn){
 
@@ -138,10 +138,10 @@ class user_login{
                 if (mail($email,$subject,$txt,$headers)== TRUE){
                     echo "email send";
                 }else{
-                    echo "email send error";
+                    echo "email-send-error";
                 }
             }else{
-               echo "error";
+               header("location: index.php?_route=recovery&e=113");
                 // header("location: index.php");
             }
         }

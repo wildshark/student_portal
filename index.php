@@ -9,18 +9,18 @@
 include "global/db.connection.php";
 include "global/global.function.php";
 include "global/global.label.php";
-include "modules/login.module";
+include "modules/login.php";
 
 if (!isset($_GET['_route'])){
 
     if (!isset($_REQUEST['submit'])){
         logout();
     }elseif ($_REQUEST['submit'] === "Login"){
-        user_login::login($conn);
+        USER_LOGIN::login($conn);
     }elseif ($_REQUEST['submit'] === "Recover"){
-         user_login::recovery($conn);
+         USER_LOGIN::recovery($conn);
     }elseif ($_REQUEST['submit'] === "Register"){
-        user_login::registration($conn);
+        USER_LOGIN::registration($conn);
     }else{
         include_once "student/modules.php";
     }

@@ -119,14 +119,14 @@
                                         <i class="mdi mdi-cube text-danger icon-lg"></i>
                                     </div>
                                     <div class="float-right">
-                                        <p class="mb-0 text-right">Total Revenue</p>
+                                        <p class="mb-0 text-right">New Entry</p>
                                         <div class="fluid-container">
-                                            <h3 class="font-weight-medium text-right mb-0">$65,650</h3>
+                                            <h3 class="font-weight-medium text-right mb-0"><?php echo total_new_entry($conn,$year);?></h3>
                                         </div>
                                     </div>
                                 </div>
                                 <p class="text-muted mt-3 mb-0">
-                                    <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> 65% lower growth
+                                    <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> New Student
                                 </p>
                             </div>
                         </div>
@@ -139,14 +139,14 @@
                                         <i class="mdi mdi-receipt text-warning icon-lg"></i>
                                     </div>
                                     <div class="float-right">
-                                        <p class="mb-0 text-right">Total Student</p>
+                                        <p class="mb-0 text-right">Total Enrolled</p>
                                         <div class="fluid-container">
-                                            <h3 class="font-weight-medium text-right mb-0">3455</h3>
+                                            <h3 class="font-weight-medium text-right mb-0"><?php echo total_enrollment($conn,$year);?></h3>
                                         </div>
                                     </div>
                                 </div>
                                 <p class="text-muted mt-3 mb-0">
-                                    <i class="mdi mdi-bookmark-outline mr-1" aria-hidden="true"></i> Product-wise sales
+                                    <i class="mdi mdi-bookmark-outline mr-1" aria-hidden="true"></i> Enrolled Student
                                 </p>
                             </div>
                         </div>

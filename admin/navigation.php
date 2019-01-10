@@ -9,6 +9,8 @@ include "template/top.menu.php";
 include_once "modules/admin.menu.php";
 include_once "model/function.php";
 include_once "model/message.box.php";
+include_once "model/dashboard.php";
+
 include "modules/dashboard.php";
 include"model/search.php";
 
@@ -51,6 +53,12 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
             case"pins.list";
                 $_template->menu = "template/menu.php";
                 $_template->view ="views/pins/list.pins.php";
+                include "template/form.php";
+            break;
+
+            case"student.index";
+                $_template->menu = "template/menu.php";
+                $_template->view ="views/profile/student/student.index.php";
                 include "template/form.php";
             break;
 

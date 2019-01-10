@@ -18,6 +18,8 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
 
         switch ($_REQUEST['submit']){
 
+
+
             case"update-password";
                 PROFILE::password($conn);
             break;

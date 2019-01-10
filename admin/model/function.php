@@ -55,6 +55,31 @@ function pin_list($conn){
         }
     }
 }
+function student_index_data_list($conn){
+
+    $sql ="SELECT * FROM get_student_index ORDER BY stud_indexID DESC LIMIT 0,20";
+    $result = mysqli_query($conn,$sql);
+    if($result->num_rows > 0){
+        while ($r= $result->fetch_assoc()){
+            $id = $r['stud_indexID'];
+            if ($r['statusID'] == 1){
+                $status = "<label class='badge badge-success'>Active</label>";
+            }else{
+                $status ="<label class='badge badge-danger'>block</label>";
+            }
+            echo"
+                <tr>
+                    <td>{$r['name']}</td>
+                    <td><a href='index.php?_route=admin&p=student.index&d={$id}'>{$r['stud_index']}</a></td>
+                    <td>{$r['mobile']}</td>
+                    <td>{$r['programme']}</td>
+                    <td>{$status}</td>
+                </tr>
+            ";
+
+        }
+    }
+}
 
 function student_list($conn){
 

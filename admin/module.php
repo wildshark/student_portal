@@ -7,6 +7,7 @@
  */
 
 include "modules/pins.php";
+include "modules/student.php";
 include "modules/programme.php";
 include "modules/hostel.php";
 include "modules/enrollment.php";
@@ -22,6 +23,10 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
 
             case "logout";
                 logout();
+            break;
+
+            case"add-index-number";
+                STUDENT::generate_student_index($conn);
             break;
 
             case"add.pins";

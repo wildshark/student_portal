@@ -78,6 +78,18 @@ class stuSideMenu{
                 </div>
             </li>
             <li class='nav-item'>
+                <a class='nav-link' href='?_route=admin&p=student.index'>
+                    <i class='menu-icon mdi mdi-account-key'></i>
+                    <span class='menu-title'>Generate Index</span>
+                </a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' href='?_route=admin&p=student.profile'>
+                    <i class='menu-icon mdi mdi-school'></i>
+                    <span class='menu-title'>Student Profile</span>
+                </a>
+            </li>
+            <li class='nav-item'>
                 <a class='nav-link' data-toggle='collapse' href='#fees' aria-expanded='false' aria-controls='auth'>
                     <i class='menu-icon mdi mdi-cash'></i>
                     <span class='menu-title'>Student Fees</span>
@@ -97,12 +109,7 @@ class stuSideMenu{
                     </ul>
                 </div>
             </li>
-            <li class='nav-item'>
-                <a class='nav-link' href='?_route=admin&p=student.profile'>
-                    <i class='menu-icon mdi mdi-school'></i>
-                    <span class='menu-title'>Student Profile</span>
-                </a>
-            </li>
+            
             <li class='nav-item'>
                 <a class='nav-link' href='?_route=admin&p=course.registration'>
                     <i class='menu-icon mdi mdi-account-edit'></i>

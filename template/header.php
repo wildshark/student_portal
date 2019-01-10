@@ -17,3 +17,9 @@
 <link rel="stylesheet" href="asset/css/style.css">
 <!-- endinject -->
 <link rel="shortcut icon" href="asset/images/favicon.png" />
+<!-- Load React API -->
+<script src= "https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<!-- Load React DOM-->
+<script src= "https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<!-- Load Babel Compiler -->
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
