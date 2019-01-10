@@ -41,7 +41,7 @@
                             <div class="form-group d-flex justify-content-between">
                                 <div class="form-check form-check-flat mt-0">
                                     <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input" checked> Keep me signed in
+                                        <input type="checkbox" name="check" value="checked" class="form-check-input" checked> Keep me signed in
                                     </label>
                                 </div>
                                 <a href="?_route=recovery" class="text-small forgot-password text-black">Forgot Password</a>
