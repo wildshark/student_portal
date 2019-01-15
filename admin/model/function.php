@@ -159,7 +159,7 @@ function hostel($conn){
 
 function faculty($conn){
 
-    $sql ="SELECT * FROM `school_data`.`get_school`";
+    $sql ="SELECT * FROM `get_school`";
     $result = mysqli_query($conn,$sql);
     if($result->num_rows > 0){
         while ($r= $result->fetch_assoc()){
@@ -185,7 +185,7 @@ function faculty($conn){
 
 function programme($conn){
 
-    $sql ="SELECT * FROM `school_data`.`get_programme`";
+    $sql ="SELECT * FROM `get_programme`";
     $result = mysqli_query($conn,$sql);
     if($result->num_rows > 0){
         while ($r= $result->fetch_assoc()){
@@ -196,7 +196,7 @@ function programme($conn){
                     <td>{$r['prog_prefix']}</td>
                     <td>{$r['prog_year']}</td>
                     <td>{$r['prefix']}</td>
-                    <td><a href='index.php?_route=admin&p=pg.list.course&d={$id}'>view</a> </td>
+                    <td><a href='index.php?_route=admin&p=pg.list.course&pg={$id}&prog={$r['programme']}'>view</a> </td>
                 </tr>
             ";
 

@@ -5,6 +5,12 @@
  * Date: 15/12/2018
  * Time: 4:22 PM
  */
+//if (!isset($_GET['pg'])){
+//    $progID = "0";
+//}else{
+//    $progID = $_GET['pg'];
+//}
+
 
 if(!isset($_GET['d'])){
     $button = "add-courses";
@@ -20,7 +26,7 @@ if(!isset($_GET['d'])){
 
     $id = $_GET['d'];
     $_SESSION['id']=$id;
-    $sql = "SELECT * FROM `school_data`.`get_course` where courseID='$id'";
+    $sql = "SELECT * FROM get_course where courseID='$id'";
     $result = mysqli_query($conn,$sql);
     if ($result->num_rows >0){
         $r = $result->fetch_assoc();
@@ -136,7 +142,7 @@ if(!isset($_GET['d'])){
                             </tr>
                             </thead>
                             <tbody>
-                            <?php list_course_100($conn,$id);?>
+                            <?php list_course_100($conn,$progID);?>
                             </tbody>
                         </table>
                     </div>
@@ -154,7 +160,7 @@ if(!isset($_GET['d'])){
                             </tr>
                             </thead>
                             <tbody>
-                            <?php list_course_200($conn,$id);?>
+                            <?php list_course_200($conn,$progID);?>
                             </tbody>
                         </table>
                     </div>
@@ -172,7 +178,7 @@ if(!isset($_GET['d'])){
                             </tr>
                             </thead>
                             <tbody>
-                            <?php list_course_300($conn,$id);?>
+                            <?php list_course_300($conn,$progID);?>
                             </tbody>
                         </table>
                     </div>
@@ -190,7 +196,7 @@ if(!isset($_GET['d'])){
                             </tr>
                             </thead>
                             <tbody>
-                            <?php list_course_400($conn,$id);?>
+                            <?php list_course_400($conn,$progID);?>
                             </tbody>
                         </table>
                     </div>
