@@ -43,6 +43,7 @@ class admin_login{
                 if (!isset($_SESSION['token'])){
                     $_SESSION['token'] = $token;
                     $_SESSION['user-id'] = $user['userID'];
+                    $_SESSION['username'] = $_POST['username'];
                     header("location: index.php?_route=admin&p=dashboard&e=100");
                 }
             }

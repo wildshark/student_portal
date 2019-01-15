@@ -8,6 +8,7 @@
 include "template/top.menu.php";
 include_once "modules/admin.menu.php";
 include_once "model/function.php";
+include_once "model/programme.course.php";
 include_once "model/message.box.php";
 include_once "model/dashboard.php";
 
@@ -89,6 +90,12 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
             case"course";
                 $_template->menu = "template/menu.php";
                 $_template->view ="views/programme/courses.php";
+                include "template/form.php";
+            break;
+
+            case "pg.list.course";
+                $_template->menu = "template/menu.php";
+                $_template->view ="views/programme/list.course.php";
                 include "template/form.php";
             break;
 

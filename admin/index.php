@@ -16,15 +16,10 @@ if (!isset($_GET['_route'])) {
     if (!isset($_POST['submit'])) {
         logout();
     }elseif($_POST['submit'] === "Login") {
-        if(isset($_COOKIE['user-token'])){
-            admin_login::login_use_cookie($conn);
-        }else{
             admin_login::login($conn);
-        }
     }else{
         require "module.php";
     }
-
 }else{
 
     $route = $_REQUEST['_route'];

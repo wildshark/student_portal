@@ -93,6 +93,7 @@ if(!isset($_GET['d'])){
                         <th>Prefix</th>
                         <th>Duration</th>
                         <th>School</th>
+                        <th>Courses</th>
                     </tr>
                     </thead>
                     <tbody>

@@ -196,6 +196,7 @@ function programme($conn){
                     <td>{$r['prog_prefix']}</td>
                     <td>{$r['prog_year']}</td>
                     <td>{$r['prefix']}</td>
+                    <td><a href='index.php?_route=admin&p=pg.list.course&d={$id}'>view</a> </td>
                 </tr>
             ";
 

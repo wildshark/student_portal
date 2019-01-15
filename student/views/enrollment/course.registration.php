@@ -76,7 +76,11 @@ if (!isset($_GET['d'])){
         <div class="card-body">
             <h4 class="card-title">Courses Taken</h4>
             <p class="card-description">
-                Basic form elements
+               Total Course Registrated
+                <?php
+                    $studentID = $_GET['st'];
+                    echo total_course_registration($conn,$studentID);
+                ?>
             </p>
             <div class="table-responsive">
                 <table class="table">

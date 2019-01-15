@@ -440,3 +440,17 @@ function cmb_affliate($conn){
         echo"<option value='{$r['affliateID']}'>{$r['affliate']}</option>";
     }
 }
+
+function total_course_registration($conn,$studentID){
+    
+    $sql ="SELECT Count(course_registration.regID) AS total, course_registration.studentID FROM course_registration where studentID ='$studentID'  GROUP BY course_registration.studentID";
+    $result = mysqli_query($conn,$sql);
+    if (mysqli_num_rows($result) > 0){
+        $r=$result->fetch_assoc();
+        $total = $r['total'];
+    }else{
+        $total = "0";
+    }
+    
+    return $total;
+}
