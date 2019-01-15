@@ -20,7 +20,7 @@ $semester = "";
 
 $id = $_GET['d'];
 $_SESSION['id']=$id;
-$sql = "SELECT * FROM `school_data`.`get_course` where courseID='$id'";
+$sql = "SELECT * FROM `get_course` where courseID='$id'";
 $result = mysqli_query($conn,$sql);
 if ($result->num_rows >0){
 $r = $result->fetch_assoc();

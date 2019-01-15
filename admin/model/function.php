@@ -206,7 +206,7 @@ function programme($conn){
 
 function course_100($conn){
 
-    $sql ="SELECT * FROM `school_data`.`get_course` where course_level = '100'";
+    $sql ="SELECT * FROM `get_course` where course_level = '100'";
     $result = mysqli_query($conn,$sql);
     if($result->num_rows > 0){
         while ($r= $result->fetch_assoc()){
@@ -226,7 +226,7 @@ function course_100($conn){
 
 function course_200($conn){
 
-    $sql ="SELECT * FROM `school_data`.`get_course` where course_level = '200'";
+    $sql ="SELECT * FROM `get_course` where course_level = '200'";
     $result = mysqli_query($conn,$sql);
     if($result->num_rows > 0){
         while ($r= $result->fetch_assoc()){
@@ -246,7 +246,7 @@ function course_200($conn){
 
 function course_300($conn){
 
-    $sql ="SELECT * FROM `school_data`.`get_course` where course_level = '300'";
+    $sql ="SELECT * FROM `get_course` where course_level = '300'";
     $result = mysqli_query($conn,$sql);
     if($result->num_rows > 0){
         while ($r= $result->fetch_assoc()){
@@ -266,7 +266,7 @@ function course_300($conn){
 
 function course_400($conn){
 
-    $sql ="SELECT * FROM `school_data`.`get_course` where course_level = '400'";
+    $sql ="SELECT * FROM `get_course` where course_level = '400'";
     $result = mysqli_query($conn,$sql);
     if($result->num_rows > 0){
         while ($r= $result->fetch_assoc()){
