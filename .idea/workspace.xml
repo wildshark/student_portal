@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b10701-38f8-42d3-ae6c-f30fa9654001" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/modules/programme.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/modules/programme.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/model/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/function.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/views/programme/courses.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/programme/courses.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,13 +63,13 @@
         <counts>
           <entry key="dummy" value="3" />
           <entry key="module" value="8417" />
-          <entry key="php" value="34076" />
+          <entry key="php" value="34126" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="94" />
-          <entry key="PHP" value="42232" />
+          <entry key="HTML" value="99" />
+          <entry key="PHP" value="42277" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="SQL" value="167" />
         </counts>
@@ -95,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/model/function.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1061">
-              <caret line="180" lean-forward="true" selection-start-line="180" selection-end-line="180" />
+            <state relative-caret-position="1744">
+              <caret line="284" column="20" lean-forward="true" selection-start-line="284" selection-start-column="20" selection-end-line="284" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -108,12 +107,12 @@
         <entry file="file://$PROJECT_DIR$/admin/views/programme/courses.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="75" column="51" selection-start-line="75" selection-start-column="51" selection-end-line="75" selection-end-column="51" />
+              <caret line="147" column="33" lean-forward="true" selection-start-line="147" selection-start-column="33" selection-end-line="147" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/modules/programme.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
@@ -224,9 +223,9 @@
         <option value="$PROJECT_DIR$/admin/navigation.php" />
         <option value="$PROJECT_DIR$/admin/model/programme.course.php" />
         <option value="$PROJECT_DIR$/admin/views/programme/list.course.php" />
-        <option value="$PROJECT_DIR$/admin/model/function.php" />
-        <option value="$PROJECT_DIR$/admin/views/programme/courses.php" />
         <option value="$PROJECT_DIR$/admin/modules/programme.php" />
+        <option value="$PROJECT_DIR$/admin/views/programme/courses.php" />
+        <option value="$PROJECT_DIR$/admin/model/function.php" />
       </list>
     </option>
   </component>
@@ -400,12 +399,12 @@
       <workItem from="1547278277851" duration="1861000" />
       <workItem from="1547449416783" duration="672000" />
       <workItem from="1547532821907" duration="7225000" />
-      <workItem from="1547622286061" duration="456000" />
+      <workItem from="1547622286061" duration="865000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="372616000" />
+    <option name="totallyTimeSpent" value="373025000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -771,24 +770,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/model/function.php">
+    <entry file="file://$PROJECT_DIR$/admin/modules/programme.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1061">
-          <caret line="180" lean-forward="true" selection-start-line="180" selection-end-line="180" />
+        <state relative-caret-position="391">
+          <caret line="97" column="29" lean-forward="true" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/views/programme/courses.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="75" column="51" selection-start-line="75" selection-start-column="51" selection-end-line="75" selection-end-column="51" />
+          <caret line="147" column="33" lean-forward="true" selection-start-line="147" selection-start-column="33" selection-end-line="147" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/modules/programme.php">
+    <entry file="file://$PROJECT_DIR$/admin/model/function.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="97" column="29" lean-forward="true" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
+        <state relative-caret-position="1744">
+          <caret line="284" column="20" lean-forward="true" selection-start-line="284" selection-start-column="20" selection-end-line="284" selection-end-column="20" />
         </state>
       </provider>
     </entry>

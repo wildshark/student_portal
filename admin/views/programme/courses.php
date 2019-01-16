@@ -69,11 +69,11 @@ $button ="edit-courses";
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Theory</label>
-                            <input name="theory" value="<?php echo $theory;?>" type="text" class="form-control" id="exampleInputName1" placeholder="Credit Unit">
+                            <input name="theory" value="<?php echo $theory;?>" type="text" class="form-control" id="exampleInputName1" placeholder="Theory Unit">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Practicals</label>
-                            <input name="practicals" value="<?php echo $practicals;?>" type="text" class="form-control" id="exampleInputName1" placeholder="Credit Unit">
+                            <input name="practicals" value="<?php echo $practicals;?>" type="text" class="form-control" id="exampleInputName1" placeholder="Practicals Unit">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Credit</label>

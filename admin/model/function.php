@@ -215,7 +215,9 @@ function course_100($conn){
                 <tr>
                     <td><a href='index.php?_route=admin&p=course&d={$id}'>{$r['course_code']}</a></td>
                     <td>{$r['course']}</td>
-                    <td>{$r['prefix']}</td>                
+                    <td>{$r['prefix']}</td>   
+                    <td>{$r['theory']}</td>             
+                    <td>{$r['practicals']}</td>
                     <td>{$r['credit']}</td>
                     <td>{$r['course_level']}</td>
                 </tr>
@@ -235,7 +237,9 @@ function course_200($conn){
                 <tr>
                     <td><a href='index.php?_route=admin&p=course&d={$id}'>{$r['course_code']}</a></td>
                     <td>{$r['course']}</td>
-                    <td>{$r['prefix']}</td>                
+                    <td>{$r['prefix']}</td>
+                     <td>{$r['theory']}</td>             
+                    <td>{$r['practicals']}</td>                
                     <td>{$r['credit']}</td>
                     <td>{$r['course_level']}</td>
                 </tr>
@@ -255,7 +259,9 @@ function course_300($conn){
                 <tr>
                     <td><a href='index.php?_route=admin&p=course&d={$id}'>{$r['course_code']}</a></td>
                     <td>{$r['course']}</td>
-                    <td>{$r['prefix']}</td>                
+                    <td>{$r['prefix']}</td> 
+                    <td>{$r['theory']}</td>             
+                    <td>{$r['practicals']}</td>               
                     <td>{$r['credit']}</td>
                     <td>{$r['course_level']}</td>
                 </tr>
@@ -275,7 +281,9 @@ function course_400($conn){
                 <tr>
                     <td><a href='index.php?_route=admin&p=course&d={$id}'>{$r['course_code']}</a></td>
                     <td>{$r['course']}</td>
-                    <td>{$r['prefix']}</td>                
+                    <td>{$r['prefix']}</td>
+                    <td>{$r['theory']}</td>             
+                    <td>{$r['practicals']}</td>                
                     <td>{$r['credit']}</td>
                     <td>{$r['course_level']}</td>
                 </tr>
