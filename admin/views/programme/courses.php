@@ -6,7 +6,7 @@
  * Time: 1:36 AM
  */
 
-if(!isset($_GET['pg'])){
+if(!isset($_GET['d'])){
     $button = "add-courses";
     $programmeID = "";
     $programme = "";
