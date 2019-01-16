@@ -7,15 +7,17 @@
  */
 
 if(!isset($_GET['pg'])){
-$button = "add-courses";
-$programmeID = "";
-$programme = "";
-$course ="";
-$course_code ="";
-$credit ="";
-$level ="";
-$semesterID ="";
-$semester = "";
+    $button = "add-courses";
+    $programmeID = "";
+    $programme = "";
+    $course ="";
+    $course_code ="";
+    $theory = "";
+    $practicals = "";
+    $credit ="";
+    $level ="";
+    $semesterID ="";
+    $semester = "";
 }else{
 
 $id = $_GET['d'];
@@ -29,10 +31,13 @@ $r = $result->fetch_assoc();
     $programme = $r['programme'];
     $course = $r['course'];
     $course_code = $r['course_code'];
+    $theory = $r['theory'];
+    $practicals = $r['practicals'];
     $credit = $r['credit'];
     $level = $r['course_level'];
     $semester = $r['semesterID'];
     $semester = $r['semester'];
+
 }
 
 $button ="edit-courses";
@@ -61,6 +66,14 @@ $button ="edit-courses";
                         <div class="form-group">
                             <label for="exampleInputName1">Course Code</label>
                             <input name="code" value="<?php echo $course_code;?>" type="text" class="form-control" id="exampleInputName1" placeholder="Course Code">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Theory</label>
+                            <input name="theory" value="<?php echo $theory;?>" type="text" class="form-control" id="exampleInputName1" placeholder="Credit Unit">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Practicals</label>
+                            <input name="practicals" value="<?php echo $practicals;?>" type="text" class="form-control" id="exampleInputName1" placeholder="Credit Unit">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Credit</label>
@@ -128,6 +141,8 @@ $button ="edit-courses";
                                 <th>Code</th>
                                 <th>Course</th>
                                 <th>School</th>
+                                <th>theory</th>
+                                <th>Practicals</th>
                                 <th>Credit</th>
                                 <th>Level</th>
                             </tr>

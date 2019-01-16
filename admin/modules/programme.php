@@ -89,9 +89,11 @@ class  PROGRAMME{
         $code = $_POST['code'];
         $credit = $_POST['credit'];
         $level = $_POST['level'];
+        $theory = $_POST['theory'];
+        $practicals = $_POST['practicals'];
         $semester = $_POST['semester'];
 
-        $sql = "INSERT INTO `course`(`progID`, `course`, `course_code`, `credit`, `course_level`, `semesterID`) VALUES ('$programme', '$course', '$code', '$credit', '$level', '$semester')";
+        $sql = "INSERT INTO `course`(`progID`, `course`, `course_code`,`theory`,`practicals`, `credit`, `course_level`, `semesterID`) VALUES ('$programme', '$course', '$code','$theory','$practicals', '$credit', '$level', '$semester')";
         $result = mysqli_query($conn,$sql);
         if($result === TRUE){
             header("location: index.php?_route=admin&p=course&e=104");
