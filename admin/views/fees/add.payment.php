@@ -5,31 +5,117 @@
  * Date: 13/12/2018
  * Time: 6:58 PM
  */
+
+if(!isset($_GET['d'])){
+
+    $ref_no = "A".date("ymdHis");
+    $button = "add-fees-payment";
+    $studentID ="";
+    $student ="";
+    $programmeID = "";
+    $programme ="";
+    $levelID ="";
+    $semesterID ="";
+    $year ="";
+    $bank="";
+    $ref="";
+    $amount="";
+
+}else{
+
+    $id = $_GET['d'];
+    $_SESSION['id'] = $id;
+    $sql ="SELECT * FROM `get_fees_payment_details` where feeID ='$id' LIMIT 0,1";
+    $result = mysqli_query($conn,$sql);
+    if($result->num_rows > 0) {
+        $r = $result->fetch_assoc();
+
+        $ref_no = $r['ref_index'];
+
+        $studentID = $r['studentID'];
+        $student = $r['name'];
+        $programmeID = $r['progID'];
+        $programme = $r['programme'];;
+        $levelID =$r['level'];
+        $semesterID =$r['semesterID'];
+        $year =$r['yearID'];
+        $bank=$r['bank'];
+        $ref=$r['ref'];
+        $amount=$r['amount'];
+
+    }
+    $button = "edit-fees-payment";
+
+}
+
 ?>
 <div class="col-md-6 d-flex align-items-stretch grid-margin">
     <div class="row flex-grow">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Hostel Booking</h4>
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="forms-sample">
+                    <h4 class="card-title">Fees Payment Details</h4>
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="forms-sample" enctype="application/x-www-form-urlencoded">
+                        <div class="form-group">
+                            <label for="exampleInputName1">Ref. Index</label>
+                            <input type="text" name="ref-index" value="<?php echo $ref_no;?>" class="form-control" id="exampleInputName1" placeholder="pins">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Payment Date</label>
+                            <input type="date" name="date" class="form-control" id="exampleInputName1" placeholder="Y-m-d">
+                        </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Student</label>
-                            <input type="text" name="student" value="<?php echo random_string(5);?>" class="form-control" id="exampleInputName1" placeholder="pins">
+                            <select name="student" class="form-control form-control-sm" id="exampleFormControlSelect3">
+                                <option value="<?php echo $studentID;?>"><?php echo $student;?></option>
+                                <?php cmb_student_index($conn);?>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Programme</label>
-                            <input type="text" name="programme" class="form-control" id="exampleInputName1" placeholder="index">
+                            <select name="programme" class="form-control">
+                                <option value="<?php echo $programmeID;?>"><?php echo $programme;?></option>
+                                <?php cmb_programme_data($conn);?>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">RefNo</label>
-                            <input type="text" name="ref" class="form-control" id="exampleInputName1" placeholder="ref no">
+                            <label for="exampleInputName1">Level</label>
+                            <select name="level" class="form-control form-control-sm" id="exampleFormControlSelect3">
+                                <option value="<?php echo $levelID;?>"><?php echo $levelID;?></option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                                <option value="300">300</option>
+                                <option value="400">400</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Semester</label>
+                            <select name="semester" class="form-control form-control-sm" id="exampleFormControlSelect3">
+                                <option value="<?php echo $semesterID;?>"><?php echo semester($semesterID);?></option>
+                                <option value="1">1st Semester</option>
+                                <option value="2">2nd Semester</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Academy Year</label>
+                            <select name="year" class="form-control">
+                                <option value="<?php echo $year;?>"><?php echo $year;?></option>
+                                <?php cmb_academic_session($conn);?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Bank</label>
+                            <input type="text" name="bank" value="<?php echo $bank;?>" class="form-control" id="exampleInputName1" placeholder="ref no">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Receipt No#</label>
+                            <input type="text" name="ref" value="<?php echo $ref;?>" class="form-control" id="exampleInputName1" placeholder="ref no">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Amount</label>
-                            <input type="text" name="amount" class="form-control" id="exampleInputName1" placeholder="0.00">
+                            <input type="text" name="amount" value="<?php echo $amount;?>" class="form-control" id="exampleInputName1" placeholder="0.00">
                         </div>
-                        <button type="submit" name="submit" value="add.pins" class="btn btn-success mr-2">Submit</button>
+                        <button type="submit" name="submit" value="<?php echo $button;?>" class="btn btn-success mr-2">Submit</button>
                         <button type="reset" class="btn btn-light">Cancel</button>
                     </form>
                 </div>

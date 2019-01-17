@@ -12,6 +12,7 @@ include "modules/programme.php";
 include "modules/hostel.php";
 include "modules/enrollment.php";
 include "modules/user.php";
+include "modules/fees.php";
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
     // echo "no cookie or session created";
@@ -75,6 +76,10 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
 
             case"update-profile";
                 USER_PROFILE::update_profile($conn);
+            break;
+
+            case"add-fees-payment":
+                FEES::add_fees_payment($conn);
             break;
 
             default:
