@@ -28,7 +28,8 @@ if (!isset($_GET['d'])){
 
 
         $url = "pg={$programmeID}&st={$studentID}&l={$level}&s={$semester}&sch={$school}&adm={$admission}&y={$yearID}";
-        $sql = "SELECT * FROM get_course_table where progID='$programmeID' and course_level='$level' and semesterID='$semester'";
+        //$sql = "SELECT * FROM get_course_table where progID='$programmeID' and course_level='$level' and semesterID='$semester'";
+        $sql = "SELECT * FROM get_course_table where progID='$programmeID' and course_level='$level'";
         $result = mysqli_query($conn, $sql);
         if ($result->num_rows === 0) {
            echo "<h4><b>Courses are not available. </b>Contact your administrator for more details.</h4>";

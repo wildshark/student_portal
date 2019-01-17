@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b10701-38f8-42d3-ae6c-f30fa9654001" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/modules/fees.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/module.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/module.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/navigation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/fees/add.payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/fees/add.payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/modules/fees.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/modules/fees.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,40 +14,20 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <splitter split-orientation="horizontal" split-proportion="0.33674964">
-            <split-first>
-              <leaf>
-                <file pinned="false" current-in-tab="true">
-                  <entry file="file://$PROJECT_DIR$/admin/views/fees/add.payment.php">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="436">
-                        <caret line="43" column="29" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="43" selection-end-column="29" />
-                        <folding>
-                          <element signature="e#6#96#0#PHP" expanded="true" />
-                        </folding>
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-              </leaf>
-            </split-first>
-            <split-second>
-              <leaf>
-                <file pinned="false" current-in-tab="true">
-                  <entry file="file://$PROJECT_DIR$/admin/views/fees/add.payment.php">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="425">
-                        <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
-                        <folding>
-                          <element signature="e#6#96#0#PHP" expanded="true" />
-                        </folding>
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-              </leaf>
-            </split-second>
-          </splitter>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/admin/views/fees/add.payment.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="45">
+                    <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+                    <folding>
+                      <element signature="e#6#96#0#PHP" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
         </state>
       </content>
     </window>
@@ -154,7 +130,7 @@
         <entry file="file://$PROJECT_DIR$/admin/modules/fees.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -315,7 +291,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-57" />
     <option name="y" value="220" />
     <option name="width" value="1038" />
@@ -485,15 +461,15 @@
       <workItem from="1547622286061" duration="4956000" />
       <workItem from="1547650414018" duration="6483000" />
       <workItem from="1547692191388" duration="6853000" />
-      <workItem from="1547700766437" duration="7707000" />
+      <workItem from="1547700766437" duration="8237000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398159000" />
+    <option name="totallyTimeSpent" value="398689000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30711043" />
@@ -874,16 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/views/fees/add.payment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="43" column="29" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="43" selection-end-column="29" />
-          <folding>
-            <element signature="e#6#96#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/module.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -894,7 +860,17 @@
     <entry file="file://$PROJECT_DIR$/admin/modules/fees.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/views/fees/add.payment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <folding>
+            <element signature="e#6#96#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
