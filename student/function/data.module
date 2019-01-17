@@ -65,9 +65,9 @@ function hostel_details($conn){
 
 function enrollment_details($conn){
 
-    $studentID = $_SESSION['studentID'];
+    $studentID = $_SESSION['student_index'];
 
-    $sql="SELECT * FROM `get_student_enrollment` where studentID='$studentID' and statusID='2'";
+    $sql="SELECT * FROM `get_student_enrollment` where stud_index='$studentID' and statusID='2'";
     $result = mysqli_query($conn,$sql);
     if ($result->num_rows > 0){
         while ($r=$result->fetch_assoc()){
@@ -75,9 +75,9 @@ function enrollment_details($conn){
             $programme =  $r['prefix']."/".$r['programme'];
             $semester = $r['semesterID'];
             $school = $r['prefix'];
-            $admission = $r['admissionNo'];
+            $admission = $r['stud_index'];
             $level = $r['s_level'];
-            $name = $r['first_name']." ".$r['surname'];
+            $name = $r['name'];
 
             if($semester == 1){
                 $sem = "1st Semester";
@@ -100,7 +100,7 @@ function enrollment_details($conn){
 
 function get_course_registered($conn){
 
-    $studentID = $_SESSION['studentID'];
+    $studentID = $_SESSION['student_index_id'];
     $year = $_GET['y'];
     $semesterID = $_GET['s'];
 
@@ -113,6 +113,7 @@ function get_course_registered($conn){
                     <td>{$r['course_code']}</td>
                     <td>{$r['course']}</td>
                     <td>{$r['credit']}</td>
+                    <td>{$r['stud_index']}</td>
                     <td><a href='index.php?submit=remove.reg.course&d={$r['regID']}'>Remove</a></td>
                     <td></td>
                 </tr>";

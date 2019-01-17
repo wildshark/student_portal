@@ -95,8 +95,7 @@ class USER_LOGIN{
                     $_SESSION['token'] = $token;
                     $_SESSION['student_name'] = $user['first_name']." ". $user['surname'];
                     $_SESSION['student_index'] = $username;
-                    $_USER['picture'] = $user['picture'];
-
+                    //$_USER['picture'] = $user['picture'];
                     $profile = "SELECT * FROM `student_profile` WHERE token = '$token'";
                     $profile_result = mysqli_query($conn,$profile);
                     if(mysqli_num_rows($profile_result) > 0){
@@ -106,7 +105,18 @@ class USER_LOGIN{
                         if (!isset($student['admissionNo']) OR !isset($student['surname'])){
                             header("location: index.php?_route=student&p=profile&e=100");
                         }else{
-                            header("location: index.php?_route=student&p=dashboard&e=100");
+
+                            $index_id = "SELECT * FROM `get_student_index` where stud_index='$username'LIMIT 0, 1";
+                            $student_index_id_result = mysqli_query($conn,$index_id);
+                            if (mysqli_num_rows($student_index_id_result) > 0) {
+                                $r = mysqli_fetch_assoc($student_index_id_result);
+                                $student_index_id = $r['stud_indexID'];
+                                $_SESSION['student_index_id']= $student_index_id;
+                                if(isset($_SESSION['student_index_id'])){
+                                    header("location: index.php?_route=student&p=dashboard&e=100");
+                                }
+                            }
+
                         }
                     }
                 }

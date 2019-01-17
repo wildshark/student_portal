@@ -13,7 +13,10 @@ if (!isset($_GET['d'])){
     $pin ="";
     $student ="";
     $studentID ="";
+    $semesterID = "";
+    $levelID ="";
 }else{
+
     $id = $_GET['d'];
     $_SESSION['id'] = $id;
     $sql ="SELECT * FROM get_enrollment where enrollID='$id'";
@@ -24,6 +27,8 @@ if (!isset($_GET['d'])){
         $pin = $r['pins'];
         $student = $r['admissionNo']." - ". $r['first_name'] ." ". $r['surname'];
         $studentID = $r['studentID'];
+        $semesterID = $r['semesterID'];
+        $levelID = $r['s_level'];
     }
     $input_type ="<input type='text' name='pin' readonly value='{$pin}' class='form-control' id='exampleInputName1' placeholder='Institute'>";
     $button ="edit-enrollment";
@@ -41,10 +46,28 @@ if (!isset($_GET['d'])){
                             <?php echo $input_type;?>
                         </div>
                         <div class="form-group">
+                            <label for="exampleFormControlSelect3">Semester</label>
+                            <select name="semester" class="form-control form-control-sm" id="exampleFormControlSelect3">
+                                <option value="<?php echo $semesterID;?>"><?php echo semester($semesterID);?></option>
+                                <option value="1">1st Semester</option>
+                                <option value="2">2nd Semester</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect3">Level</label>
+                            <select name="level" class="form-control form-control-sm" id="exampleFormControlSelect3">
+                                <option value="<?php echo $levelID;?>"><?php echo $levelID;?></option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                                <option value="300">300</option>
+                                <option value="400">400</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="exampleFormControlSelect3">Student Index</label>
                             <select name="student" class="form-control form-control-sm" id="exampleFormControlSelect3">
                                 <option value="<?php echo $studentID;?>"><?php echo $student;?></option>
-                                <?php student_index_list($conn);?>
+                                <?php cmb_student_index($conn);?>
                             </select>
                         </div>
                         <button type="submit" name="submit" value="<?php echo $button;?>" class="btn btn-success mr-2">Submit</button>

@@ -18,6 +18,15 @@ function logout(){
     include "template/login.php";
 }
 
+
+function generate_academic_session(){
+
+    $date = date("Y");
+    $prev_date =  $date - 1;
+
+    return $prev_date."/".$date;
+}
+
 function random_string($length) {
     $i = 0; //counter
     $pin = ""; //our default pin is blank.
@@ -38,7 +47,6 @@ function generate_pin($length){
     for ($i=0; $i < $length; $i++) {
         $token .= $codeAlphabet[crypto_rand_secure(0, $max-1)];
     }
-
     return $token;
 }
 
@@ -48,7 +56,6 @@ function student_index(){
     }else{
         $name ="No Name";
     }
-
     return $name;
 }
 
@@ -78,6 +85,18 @@ function marital_status($maritalID){
         $marital = "unknown";
     }
     return $marital;
+}
+
+function semester($semesterID){
+
+    if($semesterID == 1){
+        $semester = "1st Semester";
+    }elseif ($semesterID == 2){
+        $semester = "2nd Semester";
+    }else{
+        $semester = "";
+    }
+    return $semester;
 }
 
 function student_application_mode($entryID){
@@ -129,13 +148,16 @@ function student_hostel_status($hostelID){
     return $hostel;
 }
 
-function generate_academic_session(){
 
-    $date = date("Y");
-    $prev_date =  $date - 1;
+function cmb_student_index($conn){
 
-    return $prev_date."/".$date;
+    $sql='SELECT * FROM `get_student_index`';
+    $result=$conn->query($sql);
+    while ($r=$result->fetch_assoc()){
+        echo"<option value='{$r['stud_indexID']}'>{$r['stud_index']}->{$r['name']}</option>";
+    }
 }
+
 
 function cmb_new_student_serial_index($conn){
 
@@ -163,7 +185,6 @@ function cmb_day_list($conn){
         echo"<option value='{$r['dayID']}'>{$r['day_type']}</option>";
     }
 }
-
 
 function cmb_gender_status($conn){
 

@@ -308,8 +308,8 @@ function enrollment_list($conn){
                 <tr> 
                     <td>{$r['enroll_date']}</td>
                     <td><a href='index.php?_route=admin&p=course.registration&d={$r['enrollID']}'>{$r['pins']}</a></td>
-                    <td>{$r['admissionNo']}</td>
-                    <td>{$r['first_name']} {$r['surname']}</td>                
+                    <td>{$r['stud_index']}</td>
+                    <td>{$r['name']}</td>                
                     <td>{$status}</td>                   
                 </tr>
             ";

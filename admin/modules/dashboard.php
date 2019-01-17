@@ -15,9 +15,9 @@ function dashboard_student_list($conn){
         return"
         <tr>
             <td>{$r['pins']}</td>
-            <td>{$r['admissionNo']}</td>
-            <td>{$r['first_name']} {$r['surname']}</td>
-            <td>{$r['programme']}</td>
+            <td>{$r['stud_index']}</td>
+            <td>{$r['name']}</td>
+            <td>{$r['prefix']}-{$r['programme']}</td>
             <td>{$r['statusID']}</td>
         </tr>
     ";

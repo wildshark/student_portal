@@ -14,14 +14,18 @@ class ENROLLMENT{
         $date = date ('Y-m-d');
         $pin = $_POST['pin'];
         $index = $_POST['student'];
+        $level = $_POST['level'];
+        $semester = $_POST['semester'];
 
-        $sql ="INSERT INTO `enrollment`(`enroll_time`, `pins`, `enroll_date`, `studentID`) VALUES ('$now', '$pin', '$date', '$index')";
+        $sql ="INSERT INTO `enrollment`(`enroll_time`, `pins`,`semesterID`,`s_level`, `enroll_date`, `studentID`) VALUES ('$now', '$pin','$semester','$level', '$date', '$index')";
+
         $result = mysqli_query($conn,$sql);
         if($result === TRUE){
             header("location: index.php?_route=admin&p=course.registration&e=104");
         }else{
-           header("location: index.php?_route=admin&p=course.registration&e=103");
+            header("location: index.php?_route=admin&p=course.registration&e=103");
         }
+
     }
 
     function  edit_enroll($conn){

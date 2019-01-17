@@ -74,6 +74,7 @@ class PINs{
         $index = $_POST['index'];
         $mobile = $_POST['mobile'];
         $date = date('Y-m-d');
+
         $sql= "INSERT INTO `pins`(`pin`, `username`, `mobile`, `pin_date`) VALUES ('$pin', '$index', '$mobile', '$date')";
         $result = mysqli_query($conn,$sql);
 
