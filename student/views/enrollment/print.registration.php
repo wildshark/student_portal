@@ -28,6 +28,12 @@ if(mysqli_num_rows($result) > 0){
     $level = $r['s_level'];
     $s_programme = $r['programme'];
 
+    if($r['prefix'] == "SOT"){
+        $type = "ACI";
+    }else{
+        $type = "UDS";
+    }
+
 }
 /***
 $sql_fees_statement ="";
@@ -50,7 +56,7 @@ $balance = "0.00";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Print</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -60,8 +66,9 @@ $balance = "0.00";
 <body>
 
 <div class="jumbotron text-center">
-    <h1>My First Bootstrap Page</h1>
-    <p>Resize this responsive page to see the effect!</p>
+    <h2>GHANA CHRISTIAN UNIVERSITY COLLEGE/<?php echo $type;?></h2>
+    <p>STUDENT REGISTRATION FROM - <?php echo strtoupper($s_programme)." LEVEL".$level."(".strtoupper($semester).")";?>.</p>
+    <p>GHANACUC IDENTIFICATION NUMBER <?php echo $index;?>.</p>
     <small>(FOR CONTINUING STUDENT ONLY. FRESH STUDENTS SHALL BE GIVE IDENTIFICATION NUMBERS AT THE END OF THE REGISTRATION)</small>
 </div>
 
