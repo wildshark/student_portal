@@ -5,6 +5,7 @@
  * Date: 18/12/2018
  * Time: 8:54 PM
  */
+
 if (!isset($_GET['d'])){
     header("location: index.php?_route=student&p=enrollment.form&e=108");
     exit();
@@ -15,17 +16,26 @@ if (!isset($_GET['d'])){
     header("location: index.php?_route=student&p=enrollment.form&e=110");
     exit();
 }else{
+
+    $programmeID = $_GET['d'];
+    $studentID =  $_SESSION['student_index_id'];
+    $level = $_GET['l'];
+    $semester = $_GET['s'];
+    $school = $_GET['sch'];
+    $admission = $_GET['adm'];
+    $yearID = $_GET['y'];
+
+    $url = "&pg={$programmeID}&st={$studentID}&l={$level}&s={$semester}&sch={$school}&adm={$admission}&y={$yearID}";
+    $print_url = "index.php?_route=student&p=print.registration". $url;
     function programme_list($conn){
 
         $programmeID = $_GET['d'];
         $studentID =  $_SESSION['student_index_id'];
         $level = $_GET['l'];
         $semester = $_GET['s'];
-        $school = $_GET['sch']; 
+        $school = $_GET['sch'];
         $admission = $_GET['adm'];
         $yearID = $_GET['y'];
-
-
 
         $url = "pg={$programmeID}&st={$studentID}&l={$level}&s={$semester}&sch={$school}&adm={$admission}&y={$yearID}";
         //$sql = "SELECT * FROM get_course_table where progID='$programmeID' and course_level='$level' and semesterID='$semester'";
@@ -52,7 +62,6 @@ if (!isset($_GET['d'])){
                         <td>{$r['credit']}</td>
                         <td><a href='index.php?submit=reg.course&c={$r['courseID']}&{$url}'>Take</a></td>
                     </tr>";
-
             }
         }
     }
@@ -87,7 +96,6 @@ if (!isset($_GET['d'])){
         </div>
     </div>
 </div>
-
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
@@ -114,6 +122,9 @@ if (!isset($_GET['d'])){
                     <?php get_course_registered($conn);?>
                     </tbody>
                 </table>
+            </div>
+            <div class="form-group">
+                <a href="<?php echo $print_url;?>" class="btn btn-success mr-2 pull-left">Print</a>
             </div>
         </div>
     </div>
