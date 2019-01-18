@@ -21,7 +21,7 @@ if (!isset($_GET['d'])){
         $studentID =  $_SESSION['student_index_id'];
         $level = $_GET['l'];
         $semester = $_GET['s'];
-        $school = $_GET['sch'];
+        $school = $_GET['sch']; 
         $admission = $_GET['adm'];
         $yearID = $_GET['y'];
 

@@ -78,6 +78,10 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                 USER_PROFILE::update_profile($conn);
             break;
 
+            case"add-fees-bill";
+                FEES::add_fees_bill($conn);
+            break;
+
             case"add-fees-payment":
                 FEES::add_fees_payment($conn);
             break;

@@ -41,7 +41,7 @@ if(!isset($_GET['d'])){
         $year =$r['yearID'];
         $bank=$r['bank'];
         $ref=$r['ref'];
-        $amount=$r['amount'];
+        $amount=$r['paid'];
 
     }
     $button = "edit-fees-payment";
@@ -158,15 +158,15 @@ if(!isset($_GET['d'])){
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Date</th>
-                        <th>PINs</th>
-                        <th>Index No#</th>
-                        <th>Mobile</th>
-                        <th>Status</th>
+                        <th>Ref No</th>
+                        <th>Student</th>
+                        <th>Semester</th>
+                        <th>Receipt</th>
+                        <th>Amount</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php pin_generated($conn);?>
+                    <?php fees_transaction_ledger_paid($conn);?>
                     </tbody>
                 </table>
             </div>

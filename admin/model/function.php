@@ -317,6 +317,92 @@ function enrollment_list($conn){
     }
 }
 
+
+function fees_transaction_ledger($conn){
+
+    $sql ="SELECT * FROM `get_fees_payment_details` LIMIT 0, 1000";
+    $result = mysqli_query($conn,$sql);
+    if($result->num_rows > 0){
+        while ($r= $result->fetch_assoc()){
+
+            if ($r['semesterID'] == 1){
+                $status = "1st Semester";
+            }else{
+                $status ="2n Semester";
+            }
+            echo"
+                <tr>
+                    <td>{$r['ref_index']}</td>
+                    <td>{$r['stud_index']}-{$r['name']}</td>
+                    <td>{$r['semesterID']}</td>
+                    <td>{$r['bank']}</td>
+                    <td>{$status}</td>
+                    <td>{$r['ref']}</td>
+                    <td>{$r['bill']}</td>
+                    <td>{$r['paid']}</td>
+                    <td><a href='index.php?_route=admin&p=faculty&e=104&d={$r['schoolID']}'>edit</a></td>
+                </tr>
+            ";
+
+        }
+    }
+}
+
+function fees_transaction_ledger_bill($conn){
+
+    $sql ="SELECT * FROM `get_fees_payment_details` LIMIT 0, 1000";
+    $result = mysqli_query($conn,$sql);
+    if($result->num_rows > 0){
+        while ($r= $result->fetch_assoc()){
+
+            if ($r['semesterID'] == 1){
+                $status = "1st Semester";
+            }else{
+                $status ="2n Semester";
+            }
+            echo"
+                <tr>
+                    <td>
+                      <a href='index.php?_route=admin&p=faculty&e=104&d={$r['feeID']}'>{$r['ref_index']}</a>
+                    </td>
+                    <td>{$r['stud_index']}-{$r['name']}</td>
+                    <td>{$status}</td>
+                    <td>{$r['ref']}</td>
+                    <td>{$r['bill']}</td>
+                </tr>
+            ";
+
+        }
+    }
+}
+
+function fees_transaction_ledger_paid($conn){
+
+    $sql ="SELECT * FROM `get_fees_payment_details` LIMIT 0, 1000";
+    $result = mysqli_query($conn,$sql);
+    if($result->num_rows > 0){
+        while ($r= $result->fetch_assoc()){
+
+            if ($r['semesterID'] == 1){
+                $status = "1st Semester";
+            }else{
+                $status ="2n Semester";
+            }
+            echo"
+                <tr>
+                    <td>
+                      <a href='index.php?_route=admin&p=faculty&e=104&d={$r['feeID']}'>{$r['ref_index']}</a>
+                    </td>
+                    <td>{$r['stud_index']}-{$r['name']}</td>
+                    <td>{$status}</td>
+                    <td>{$r['ref']}</td>
+                    <td>{$r['paid']}</td>
+                </tr>
+            ";
+
+        }
+    }
+}
 ?>
 
 
