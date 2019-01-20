@@ -31,4 +31,4 @@ if (!isset($_GET['_route'])) {
         require "template/recovery.php";
     }
 }
-
+?>

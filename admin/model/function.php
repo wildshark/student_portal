@@ -322,7 +322,21 @@ function fees_transaction_ledger($conn){
 
     $sql ="SELECT * FROM `get_fees_payment_details` LIMIT 0, 1000";
     $result = mysqli_query($conn,$sql);
-    if($result->num_rows > 0){
+    if($result->num_rows == 0){
+        echo"
+                <tr>
+                    <td>Null</td>
+                    <td>Null</td>
+                    <td>Null</td>
+                    <td>Null</td>
+                    <td>Null</td>
+                    <td>Null</td>
+                    <td>Null</td>
+                    <td>Null</td>
+                    <td><a href='#'>edit</a></td>
+                </tr>
+            ";
+    }else{
         while ($r= $result->fetch_assoc()){
 
             if ($r['semesterID'] == 1){
@@ -350,9 +364,19 @@ function fees_transaction_ledger($conn){
 
 function fees_transaction_ledger_bill($conn){
 
-    $sql ="SELECT * FROM `get_fees_payment_details` LIMIT 0, 1000";
+    $sql ="SELECT * FROM `get_fees_payment_details` where typeID = '1' LIMIT 0, 1000";
     $result = mysqli_query($conn,$sql);
-    if($result->num_rows > 0){
+    if($result->num_rows === 0){
+        echo"
+             <tr>
+                <td>Null</td>
+                <td>Null</td>
+                <td>Null</td>
+                <td>Null</td>
+                <td>Null</td>
+             </tr>
+            ";
+    }else{
         while ($r= $result->fetch_assoc()){
 
             if ($r['semesterID'] == 1){
@@ -378,9 +402,19 @@ function fees_transaction_ledger_bill($conn){
 
 function fees_transaction_ledger_paid($conn){
 
-    $sql ="SELECT * FROM `get_fees_payment_details` LIMIT 0, 1000";
+    $sql ="SELECT * FROM `get_fees_payment_details` where typeID='2' LIMIT 0, 10";
     $result = mysqli_query($conn,$sql);
-    if($result->num_rows > 0){
+    if($result->num_rows == 0){
+        echo"
+             <tr>
+                <td>Null</td>
+                <td>Null</td>
+                <td>Null</td>
+                <td>Null</td>
+                <td>Null</td>
+             </tr>
+            ";
+    }else{
         while ($r= $result->fetch_assoc()){
 
             if ($r['semesterID'] == 1){
@@ -400,6 +434,88 @@ function fees_transaction_ledger_paid($conn){
                 </tr>
             ";
 
+        }
+    }
+}
+
+function fees_transaction_ledger_balance($conn){
+
+    if(isset($_SESSION['studentID'])){
+        $studentID = $_SESSION['studentID'];
+
+        $sql ="SELECT * FROM get_fees_payment_total WHERE studentID='$studentID' LIMIT 0, 1";
+        $result = mysqli_query($conn,$sql);
+        if(mysqli_num_rows($result) === 0){
+            echo"
+            <form class='forms-sample'>
+                <div class='form-group'>
+                    <label for='exampleInputName1'>Total Fees</label>
+                    <input type='text' name='total-fees' value='0.00' class='form-control' id='exampleInputName1' placeholder='0.000'>
+                </div>
+                <div class='form-group'>
+                    <label for='exampleInputName1'>Total Payment</label>
+                    <input type='text' name='total-payment' value='0.00' class='form-control' id='exampleInputName1' placeholder='0.000'>
+                </div>
+                <div class='form-group'>
+                    <label for='exampleInputEmail3'>Balance Due</label>
+                    <input type='text' name='balance-due' value='0.00' class='form-control' id='exampleInputEmail3' placeholder='0.000'>
+                </div>
+            </form>
+        ";
+        }else{
+            $r= $result->fetch_assoc();
+
+            $total_bill = $r['total_bill'];
+            $total_bill = number_format($total_bill,2);
+            $total_paid = $r['total_paid'];
+            $total_paid = number_format($total_paid,2);
+            $balance = $r['Balance'];
+            $balance = number_format($balance,2);
+            echo"
+            <form class='forms-sample'>
+                <div class='form-group'>
+                    <label for='exampleInputName1'>Total Fees</label>
+                    <input type='text' name='total-fees' value={$total_bill} class='form-control' id='exampleInputName1' placeholder='0.000'>
+                </div>
+                <div class='form-group'>
+                    <label for='exampleInputName1'>Total Payment</label>
+                    <input type='text' name='total-payment' value={$total_paid} class='form-control' id='exampleInputName1' placeholder='0.000'>
+                </div>
+                <div class='form-group'>
+                    <label for='exampleInputEmail3'>Balance Due</label>
+                    <input type='text' name='balance-due' value={$balance} class='form-control' id='exampleInputEmail3' placeholder='0.000'>
+                </div>
+            </form>
+        ";
+        }
+    }
+}
+
+function fees_summary_ledger($conn){
+
+    $sql ="SELECT * FROM `get_fees_payment_total` LIMIT 0, 1000";
+    $result = mysqli_query($conn,$sql);
+    if($result->num_rows == 0){
+        echo"
+             <tr>
+                <td>Null</td>
+                <td>Null</td>
+                <td>Null</td>
+                <td>Null</td>
+             </tr>
+            ";
+    }else{
+        while ($r= $result->fetch_assoc()){
+            echo"
+                <tr>
+                    <td>
+                      <a href='index.php?_route=admin&p=ledger&e=104&d={$r['studentID']}'>{$r['stud_index']}-{$r['name']}</a>
+                    </td>
+                    <td>{$r['total_bill']}</td>
+                    <td>{$r['total_paid']}</td>
+                    <td>{$r['Balance']}</td>
+                </tr>
+            ";
         }
     }
 }

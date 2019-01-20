@@ -130,20 +130,7 @@ if(!isset($_GET['d'])){
             <p class="card-description">
                 Basic form elements
             </p>
-            <form class="forms-sample">
-                <div class="form-group">
-                    <label for="exampleInputName1">Total Fees</label>
-                    <input type="text" class="form-control" id="exampleInputName1" placeholder="0.000">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputName1">Total Payment</label>
-                    <input type="text" class="form-control" id="exampleInputName1" placeholder="0.000">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail3">Balance Due</label>
-                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="0.000">
-                </div>
-            </form>
+            <?php fees_transaction_ledger_balance($conn);?>
         </div>
     </div>
 </div>

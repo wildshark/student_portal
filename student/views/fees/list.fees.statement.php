@@ -19,24 +19,13 @@
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th>
-                            Date
-                        </th>
-                        <th>
-                            Ref no#
-                        </th>
-                        <th>
-                            Academy Year/Semester
-                        </th>
-                        <th>
-                            Bill
-                        </th>
-                        <th>
-                            Paid
-                        </th>
-                        <th>
-                            Balance
-                        </th>
+                        <th>Index</th>
+                        <th>Date</th>
+                        <th>Semester</th>
+                        <th>Year</th>
+                        <th>Ref</th>
+                        <th>Bill</th>
+                        <th>paid</th>
                     </tr>
                     </thead>
                     <tbody>

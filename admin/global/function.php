@@ -148,6 +148,20 @@ function student_hostel_status($hostelID){
     return $hostel;
 }
 
+function get_random_block_name($conn){
+
+    $sql = "SELECT * FROM get_hostel_block where statusID ='1' ORDER BY RAND() LIMIT 1";
+    $result = mysqli_query($conn,$sql);
+    if ($result->num_rows > 0){
+        $r = $result->fetch_assoc();
+        $block = $r['block_name'];
+        $blockID = $r['blockID'];
+    }
+
+    $_SESSION['blockID'] = $blockID;
+    return $block;
+}
+
 
 function cmb_student_index($conn){
 

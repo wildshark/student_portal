@@ -17,7 +17,6 @@ if(!isset($_GET['d'])){
     $levelID ="";
     $semesterID ="";
     $year ="";
-    $bank="";
     $ref="";
     $amount="";
 
@@ -39,7 +38,6 @@ if(!isset($_GET['d'])){
         $levelID =$r['level'];
         $semesterID =$r['semesterID'];
         $year =$r['yearID'];
-        $bank=$r['bank'];
         $ref=$r['ref'];
         $amount=$r['bill'];
 
@@ -104,14 +102,6 @@ if(!isset($_GET['d'])){
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Bank</label>
-                            <input type="text" name="bank" value="<?php echo $bank;?>" class="form-control" id="exampleInputName1" placeholder="ref no">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputName1">Receipt No#</label>
-                            <input type="text" name="ref" value="<?php echo $ref;?>" class="form-control" id="exampleInputName1" placeholder="ref no">
-                        </div>
-                        <div class="form-group">
                             <label for="exampleInputName1">Amount</label>
                             <input type="text" name="amount" value="<?php echo $amount;?>" class="form-control" id="exampleInputName1" placeholder="0.00">
                         </div>
@@ -130,20 +120,7 @@ if(!isset($_GET['d'])){
             <p class="card-description">
                 Basic form elements
             </p>
-            <form class="forms-sample">
-                <div class="form-group">
-                    <label for="exampleInputName1">Total Fees</label>
-                    <input type="text" class="form-control" id="exampleInputName1" placeholder="0.000">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputName1">Total Payment</label>
-                    <input type="text" class="form-control" id="exampleInputName1" placeholder="0.000">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail3">Balance Due</label>
-                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="0.000">
-                </div>
-            </form>
+            <?php  fees_transaction_ledger_balance($conn);?>
         </div>
     </div>
 </div>
@@ -166,7 +143,7 @@ if(!isset($_GET['d'])){
                     </tr>
                     </thead>
                     <tbody>
-                    <?php fees_transaction_ledger_bill($conn);?>
+                        <?php fees_transaction_ledger_bill($conn);?>
                     </tbody>
                 </table>
             </div>

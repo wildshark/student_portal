@@ -10,35 +10,55 @@
 
 function fees_details($conn){
 
-    $sql="SELECT * FROM `school_data`.`get_fees_payment_details` LIMIT 0,1000";
+   $studentID = $_SESSION['student_index_id'];
+
+    $sql="SELECT * FROM `get_fees_payment_details` WHERE studentID='$studentID' ORDER BY feeID DESC, tranNow DESC LIMIT 0,1000";
     $result = mysqli_query($conn,$sql);
-    if ($result->num_rows > 0){
-        $r=$result->fetch_assoc();
-
-        $studentID = $r['studentID'];
-        $yearID = $r['yearID'];
-        $tran_time = $r['tran_time'];
-        $tranDate = $r['tranDate'];
-
-
+    if ($result->num_rows === 0){
         echo"
-        <tr>
-            <td>{$r['first_name']} {$r['surname']}</td>
-            <td>{{$r['yearID']}}</td>
-            <td>{{$r['yearID']}}</td>
-            <td>{{$r['yearID']}}</td>
-            <td>{{$r['yearID']}}</td>
-            <td>{{$r['yearID']}}</td>
-        </tr>
-    ";
+                <tr>
+                    <td>Null</td>
+                    <td>Null</td>
+                    <td>Null</td>
+                    <td>Null</td>
+                    <td>Null</td>
+                    <td>Null</td>
+                    <td>Null</td>
+                </tr>
+            ";
+    }else{
+        while ($r=$result->fetch_assoc()){
+            $studentID = $r['studentID'];
+            $yearID = $r['yearID'];
+            $tran_time = $r['tranNow'];
+            $tranDate = $r['tranDate'];
+
+            if($r['semesterID'] = 1){
+                $semester = "1st Semester";
+            }else{
+                $semester = "2nd Semester";
+            }
+
+            echo"
+                <tr>
+                    <td>{$r['ref_index']}</td>
+                    <td>{$r['tranDate']}</td>
+                    <td>{$semester}</td>
+                    <td>{$r['yearID']}</td>
+                    <td>{$r['ref']}</td>
+                    <td>{$r['bill']}</td>
+                    <td>{$r['paid']}</td>
+                </tr>
+            ";
+        }
     }
 }
 
 function hostel_details($conn){
 
-    $studentID = $_SESSION['studentID'];
+    $studentID = $_SESSION['student_index'];
 
-    $sql="SELECT * FROM `school_data`.`get_hostel_booking_details` where studentID='$studentID'";
+    $sql="SELECT * FROM `get_hostel_booking_details` where studentID='$studentID'";
     $result = mysqli_query($conn,$sql);
     if ($result->num_rows > 0){
         while ($r=$result->fetch_assoc()){
@@ -53,15 +73,17 @@ function hostel_details($conn){
             }
 
             echo"
-        <tr>
-            <td>{$yearID}</td>
-            <td>{$room}</td>
-            <td>{$in}</td>
-            <td>{$out}</td>
-        </tr>";
+                <tr>
+                    <td>{$yearID}</td>
+                    <td>{$room}</td>
+                    <td>{$in}</td>
+                    <td>{$out}</td>
+                </tr>";
         }
     }
 }
+
+
 
 function enrollment_details($conn){
 

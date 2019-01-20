@@ -1,22 +1,36 @@
 <?php
-include ("plugin/tcpdf/tcpdf.php");
 
 
-//TTCPDF Object
-$pdf = new TCPDF('p','mm','A4');
+function get_room_list_for_student($conn){
 
-//remover header and footer
-$pdf->setPrintHeader(false);
-$pdf->setPrintFooter(false);
+    $studentID = $_SESSION['student_index_id'];
 
-//add page
-$pdf->AddPage();
+    $sql="SELECT * FROM `get_hostel_booking_details` where studentID='$studentID' LIMIT 0, 1";
+    $result = mysqli_query($conn,$sql);
+    if ($result->num_rows > 0){
+        $r=$result->fetch_assoc();
+        echo $block = $r['block'];
+    }
 
-$pdf->Cell(190,10,'test form',1,1,'C');
-$pdf->WriteHTMLCell(190,0,'','',"
+    $sql ="SELECT * FROM `get_hostel_room` where  blockID ='$block'LIMIT 0, 100";
+    $result = mysqli_query($conn,$sql);
+    while ($r=$result->fetch_assoc()){
+        echo"<option value='{$r['roomID']}'>{$r['room']}</option>";
+    }
+}
 
 
-");
 
-$pdf->Output();
-?>
+
+
+$sql ="SELECT * FROM `get_hostel_room` where  blockID ='$block'LIMIT 0, 100";
+$result = mysqli_query($conn,$sql);
+while ($r=$result->fetch_assoc()){
+    echo"<option value='{$r['roomID']}'>{$r['room']}</option>";
+}
+
+
+
+
+
+

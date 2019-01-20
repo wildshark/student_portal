@@ -9,6 +9,30 @@
 $OldDate = date("Y") - 1;
 $academy_yr = $OldDate."/".date("Y");
 
+$studentID = $_SESSION['student_index_id'];
+
+function get_room_list_for_student($conn,$studentID){
+
+
+    $sql = "SELECT * FROM `get_hostel_booking_details` where studentID='$studentID' LIMIT 0, 1";
+    $result = mysqli_query($conn, $sql);
+    if ($result->num_rows > 0) {
+        $r = $result->fetch_assoc();
+        $block = $r['blockID'];
+    }
+
+    $sql = "SELECT * FROM `get_hostel_room` where  blockID ='$block' LIMIT 0, 100";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) === "0") {
+        echo "<option value='0'>No Room</option>";
+    } else {
+        while ($r = $result->fetch_assoc()) {
+            echo "<option value='{$r['roomID']}'>{$r['room']}</option>";
+        }
+    }
+}
+
+
 ?>
 <div class="col-md-6 d-flex align-items-stretch grid-margin">
     <div class="row flex-grow">
@@ -37,7 +61,7 @@ $academy_yr = $OldDate."/".date("Y");
                             <label for="exampleFormControlSelect3">Hall/room</label>
                             <select name="room" class="form-control form-control-sm" id="exampleFormControlSelect3">
                                 <option value=""></option>
-                                <?php cmb_room_list($conn);?>
+                                <?php get_room_list_for_student($conn,$studentID);?>
                             </select>
                         </div>
                         <button type="submit" name="submit" value="add-booking" class="btn btn-success mr-2">Submit</button>

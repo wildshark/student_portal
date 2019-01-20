@@ -8,13 +8,14 @@
 
 if(!isset($_GET['d'])){
     $button = "add-hostel";
+    $block = get_random_block_name($conn);
     $pin = "";
     $student ="";
     $ref ="";
     $year = "";
-    $generate = rand(10,99)."".date('YHmids');
+    $generate = "A".date('yhmids');
     $input_type ="<input name='pin' value={$generate} type='text' name='faculty' class='form-control' id='exampleInputName1' placeholder='Pin'>";
-
+    $input_block ="<input name='block' readonly value='{$block}' type='text' class='form-control' id='exampleInputName1' placeholder='Block'>";
 }else{
 
     $id = $_GET['d'];
@@ -29,14 +30,18 @@ if(!isset($_GET['d'])){
         $student = $r['admissionNo']." - ".$r['first_name']." ".$r['surname'];
         $ref = $r['ref_no'];
         $year = $r['yearID'];
+        $block = $r['block'];
 
     }
 
     $input_type ="<input name='pin' readonly value=".$pin." type='text' name='faculty' class='form-control' id='exampleInputName1' placeholder='Pin'>";
+    $input_block ="<input name='block' readonly value=".$block." type='text' class='form-control' id='exampleInputName1' placeholder='Ref. Number'>";
     $button ="edit-hostel";
 }
 
+
 ?>
+
 <div class="col-md-6 d-flex align-items-stretch grid-margin">
     <div class="row flex-grow">
         <div class="col-12">
@@ -44,9 +49,14 @@ if(!isset($_GET['d'])){
                 <div class="card-body">
                     <h4 class="card-title">Hostel</h4>
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="forms-sample" enctype="multipart/form-data">
+                        <input type="hidden" name="block-id" value="<?php echo $_SESSION['blockID'];?>"/>
                         <div class="form-group">
                             <label for="exampleInputName1">Generate PINs</label>
                             <?php echo $input_type;?>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect3">Block Name</label>
+                            <?php echo $input_block;?>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect3">Academy Year</label>
@@ -59,7 +69,7 @@ if(!isset($_GET['d'])){
                             <label for="exampleFormControlSelect3">Student</label>
                             <select name="student" class="form-control form-control-sm" id="exampleFormControlSelect3">
                                 <option value="<?php echo $studentID;?>"><?php echo $student;?></option>
-                                <?php student_index_list($conn);?>
+                                <?php cmb_student_index($conn);?>
                             </select>
                         </div>
                         <div class="form-group">
