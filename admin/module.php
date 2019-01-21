@@ -58,6 +58,22 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                 PROGRAMME::edit_courses($conn);
             break;
 
+            case"add-block-hostel";
+                HOSTEL::add_block_name($conn);
+            break;
+
+            case"edit-block-hostel";
+                HOSTEL::update_block_name($conn);
+            break;
+
+            case "add-room-hostel";
+                HOSTEL::add_room_name($conn);
+            break;
+
+            case"edit-room-hostel";
+                HOSTEL::update_room_name($conn);
+            break;
+            
             case"add-hostel";
                 HOSTEL::add_booking($conn);
             break;
@@ -76,6 +92,14 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
 
             case"update-profile";
                 USER_PROFILE::update_profile($conn);
+            break;
+
+            case"add-admin-account";
+                USER_PROFILE::add_admin_account($conn);
+            break;
+
+            case"edit-admin-account";
+                USER_PROFILE::update_admin_account($conn);
             break;
 
             case"add-fees-bill";

@@ -128,7 +128,8 @@ if(!isset($_GET['d'])){
                         <th>Date</th>
                         <th>Pin(s)</th>
                         <th>Student</th>
-                        <th>Arrival</th>
+                        <th>Block</th>
+                        <th>Room</th>
                         <th>Status</th>
 
                     </tr>
@@ -136,7 +137,7 @@ if(!isset($_GET['d'])){
                     <tbody>
                     <?php
                         if(!isset($_GET['q'])){
-                            hostel($conn);
+                            hostel_pin($conn);
                         }else{
                             $hostel = $_GET['q'];
                             search_hostel($conn,$hostel);

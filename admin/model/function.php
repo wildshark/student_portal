@@ -55,6 +55,7 @@ function pin_list($conn){
         }
     }
 }
+
 function student_index_data_list($conn){
 
     $sql ="SELECT * FROM get_student_index ORDER BY stud_indexID DESC LIMIT 0,20";
@@ -156,6 +157,86 @@ function hostel($conn){
         }
     }
 }
+
+function hostel_pin($conn){
+
+    $sql ="SELECT * FROM get_hostel_booking_details ORDER BY userID DESC";
+    $result = mysqli_query($conn,$sql);
+    if($result->num_rows > 0){
+        while ($r= $result->fetch_assoc()){
+            $id = $r['userID'];
+            if ($r['status'] == 1){
+                $status = "<label class='badge badge-success'>Active</label>";
+            }else{
+                $status ="<label class='badge badge-danger'>Used</label>";
+            }
+
+            if (!isset($r['roomID'])){
+                $room = "<label class='badge badge-outline-danger'>Not Taken</label>";
+            }else{
+                $room = $r['roomID'];
+            }
+            echo"
+                <tr>
+                    <td>{$r['date']}</td>
+                    <td><a href='index.php?_route=admin&p=hostel&d={$id}'>{$r['pin_index']}</a></td>
+                    <td>{$r['stud_index']} - {$r['name']}</td>
+                    <td>{$r['block_name']}</td>
+                    <td>{$room}</td>
+                    <td>{$status}</td>
+                </tr>
+            ";
+
+        }
+    }
+}
+
+function hostel_block($conn){
+
+    $sql ="SELECT * FROM get_hostel_block";
+    $result = mysqli_query($conn,$sql);
+    if($result->num_rows > 0){
+        while ($r= $result->fetch_assoc()){
+            if ($r['statusID'] == 1){
+                $status = "<label class='badge badge-success'>Active</label>";
+            }else{
+                $status ="<label class='badge badge-danger'>Passive</label>";
+            }
+
+            echo"
+                <tr>
+                    <td>{$r['block_name']}</td>
+                    <td>No room</td>
+                    <td>{$status}</td>
+                    <td><a href='index.php?_route=admin&p=hostel-block&d={$r['blockID']}'>edit</a></td>
+                </tr>
+            ";
+
+        }
+    }
+
+}
+
+
+function hostel_room($conn){
+
+    $sql ="SELECT * FROM get_hostel_room";
+    $result = mysqli_query($conn,$sql);
+    if($result->num_rows > 0){
+        while ($r= $result->fetch_assoc()){
+
+            echo"
+                <tr>
+                    <td>{$r['room']}</td>
+                    <td>{$r['block_name']}</td>
+                    <td>{$r['bed']}</td>
+                    <td><a href='index.php?_route=admin&p=hostel-room&d={$r['roomID']}'>edit</a></td>
+                </tr>
+            ";
+        }
+    }
+}
+
 
 function faculty($conn){
 
@@ -316,7 +397,6 @@ function enrollment_list($conn){
         }
     }
 }
-
 
 function fees_transaction_ledger($conn){
 
@@ -519,6 +599,37 @@ function fees_summary_ledger($conn){
         }
     }
 }
+
+function admin_users($conn){
+
+    $sql ="SELECT * FROM `get_admin` LIMIT 0, 1000";
+    $result = mysqli_query($conn,$sql);
+    if($result->num_rows == 0){
+        echo"
+             <tr>
+                <td>Null</td>
+                <td>Null</td>
+                <td>Null</td>
+                <td>Null</td>
+             </tr>
+            ";
+    }else{
+        while ($r= $result->fetch_assoc()){
+            echo"
+                <tr>
+                    <td>
+                      <a href='index.php?_route=admin&p=ledger&e=104&d={$r['userID']}'>{$r['username']}</a>
+                    </td>
+                    <td>{$r['password']}</td>
+                    <td>{$r['email']}</td>
+                    <td>{$r['access']}</td>
+                    <td>{$r['status']}</td>
+                </tr>
+            ";
+        }
+    }
+}
+
 ?>
 
 

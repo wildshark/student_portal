@@ -8,6 +8,40 @@
 
 class USER_PROFILE{
 
+    function add_admin_account($conn){
+
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $email = $_POST['email'];
+        $access = $_POST['access'];
+
+        echo $sql ="INSERT INTO `admin` (`username`, `password`, `email`, `access`, `status`) VALUES ('$username', '$password', '$email', '$access', '1')";
+        $result = mysqli_query($conn,$sql);
+        if ($result == TRUE) {
+            header("location: index.php?_route=admin&p=administrator&e=104");
+        }else{
+            header("location: index.php?_route=admin&p=administrator&e=103");
+        }
+    }
+
+    function update_admin_account($conn){
+
+        $userID = $_POST['userID'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $email = $_POST['admin'];
+        $access = $_POST['access'];
+
+
+        $sql="UPDATE `admin` SET `username`='$username', `password`='$password', `email`='$email', `access`='$access ', `status`='3' WHERE (`userID`='$userID')";
+        $result = mysqli_query($conn,$sql);
+        if ($result == TRUE) {
+            header("location: index.php?_route=admin&p=admin.account&e=104");
+        }else{
+            header("location: index.php?_route=admin&p=admin.account&e=103");
+        }
+    }
+
     function change_password($conn){
 
         if (isset($_SESSION['user-id'])){

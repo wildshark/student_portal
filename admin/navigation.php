@@ -31,19 +31,25 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
             case "dashboard";
                 $_template->menu = "template/menu.php";
                 include "template/dashboard.php";
-                break;
+            break;
+
+            case"administrator";
+                $_template->menu = "template/menu.php";
+                $_template->view ="views/profile/admin/admin.account.php";
+                include "template/form.php";
+            break;
 
             case"staff.profile";
                 $_template->menu = "template/menu.php";
                 $_template->view ="views/profile/admin/staff.profile.php";
                 include "template/form.php";
-                break;
+            break;
 
             case"password";
                 $_template->menu = "template/menu.php";
                 $_template->view ="views/profile/admin/staff.password.php";
                 include "template/form.php";
-                break;
+            break;
 
             case"create.pins";
                 $_template->menu = "template/menu.php";
@@ -123,11 +129,24 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                 include "template/form.php";
             break;
 
+            case"hostel-block";
+                $_template->menu = "template/menu.php";
+                $_template->view ="views/hostel/add.block.php";
+                include "template/form.php";
+            break;
+
+            case"hostel-room";
+                $_template->menu = "template/menu.php";
+                $_template->view ="views/hostel/add.room.php";
+                include "template/form.php";
+            break;
+
             case"course.registration";
                 $_template->menu = "template/menu.php";
                 $_template->view ="views/enrollment/enrollment.php";
                 include "template/form.php";
             break;
+
 
             default:
                 include_once "template/error.php";
