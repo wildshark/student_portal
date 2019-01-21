@@ -37,7 +37,6 @@ class ENROLL{
                 header("location: index.php?_route=student&p=enrollment.form&e=103");
                 exit();
             }
-
         }
     }
 
@@ -69,9 +68,6 @@ class ENROLL{
         }else{
             header("location: index.php?_route=student&p=course.registration&e=120&{$url}");
         }
-
-
-
     }
 
     function remove_course($conn){

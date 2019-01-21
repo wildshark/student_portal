@@ -48,7 +48,7 @@ class stuSideMenu{
             </div>";
     }
 
-    function menu_activated(){
+    function super_admin_menu(){
         echo"
         
             <li class='nav-item'>
@@ -166,6 +166,268 @@ class stuSideMenu{
     ";
 
     }
+
+    function admin_menu(){
+        echo"
+        
+            <li class='nav-item'>
+                <a class='nav-link' href='?_route=admin&p=dashboard'>
+                    <i class='menu-icon mdi mdi-view-dashboard'></i>
+                    <span class='menu-title'>Dashboard</span>
+                </a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' data-toggle='collapse' href='#auth' aria-expanded='false' aria-controls='auth'>
+                    <i class='menu-icon mdi mdi-barcode-scan'></i>
+                    <span class='menu-title'>PINs Card</span>
+                    <i class='menu-arrow'></i>
+                </a>
+                <div class='collapse' id='auth'>
+                    <ul class='nav flex-column sub-menu'>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=create.pins'> Create PINs  </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=pins.list'> PINs List </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=register.account'> Register Account </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' href='?_route=admin&p=student.index'>
+                    <i class='menu-icon mdi mdi-account-key'></i>
+                    <span class='menu-title'>Generate Index</span>
+                </a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' href='?_route=admin&p=student.profile'>
+                    <i class='menu-icon mdi mdi-school'></i>
+                    <span class='menu-title'>Student Profile</span>
+                </a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' data-toggle='collapse' href='#fees' aria-expanded='false' aria-controls='auth'>
+                    <i class='menu-icon mdi mdi-cash'></i>
+                    <span class='menu-title'>Student Fees</span>
+                    <i class='menu-arrow'></i>
+                </a>
+                <div class='collapse' id='fees'>
+                    <ul class='nav flex-column sub-menu'>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=billing'>Billing </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=payment'> Payment </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=fees.ledger'> Fees Ledger </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            
+            <li class='nav-item'>
+                <a class='nav-link' href='?_route=admin&p=course.registration'>
+                    <i class='menu-icon mdi mdi-account-edit'></i>
+                    <span class='menu-title'>Course Registration </span>
+                </a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' data-toggle='collapse' href='#hostel' aria-expanded='false' aria-controls='auth'>
+                    <i class='menu-icon mdi mdi-hotel'></i>
+                    <span class='menu-title'>Hostel & Booking</span>
+                    <i class='menu-arrow'></i>
+                </a>
+                <div class='collapse' id='hostel'>
+                    <ul class='nav flex-column sub-menu'>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=hostel'> Student Booking</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=hostel-block'> Create Block</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=hostel-room'> Create Room</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' data-toggle='collapse' href='#programme-courses' aria-expanded='false' aria-controls='auth'>
+                    <i class='menu-icon mdi mdi-book-open-page-variant'></i>
+                    <span class='menu-title'>Programme & Courses</span>
+                    <i class='menu-arrow'></i>
+                </a>
+                <div class='collapse' id='programme-courses'>
+                    <ul class='nav flex-column sub-menu'>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=affiliate'> Affiliate School</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=faculty'> School/Faculty</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=programme'> Programme</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=course'> Course</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=add.course'> Block Course </a>
+                        </li>
+                    </ul>
+                </div>
+            </li> 
+        ";
+    }
+
+    function registrar_menu(){
+
+        echo"
+        
+            <li class='nav-item'>
+                <a class='nav-link' href='?_route=admin&p=dashboard'>
+                    <i class='menu-icon mdi mdi-view-dashboard'></i>
+                    <span class='menu-title'>Dashboard</span>
+                </a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' href='?_route=admin&p=student.index'>
+                    <i class='menu-icon mdi mdi-account-key'></i>
+                    <span class='menu-title'>Generate Index</span>
+                </a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' href='?_route=admin&p=student.profile'>
+                    <i class='menu-icon mdi mdi-school'></i>
+                    <span class='menu-title'>Student Profile</span>
+                </a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' href='?_route=admin&p=course.registration'>
+                    <i class='menu-icon mdi mdi-account-edit'></i>
+                    <span class='menu-title'>Course Registration </span>
+                </a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' data-toggle='collapse' href='#programme-courses' aria-expanded='false' aria-controls='auth'>
+                    <i class='menu-icon mdi mdi-book-open-page-variant'></i>
+                    <span class='menu-title'>Programme & Courses</span>
+                    <i class='menu-arrow'></i>
+                </a>
+                <div class='collapse' id='programme-courses'>
+                    <ul class='nav flex-column sub-menu'>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=affiliate'> Affiliate School</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=faculty'> School/Faculty</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=programme'> Programme</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=course'> Course</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=add.course'> Block Course </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        ";
+    }
+
+    function account_menu(){
+
+        echo"
+        
+            <li class='nav-item'>
+                <a class='nav-link' href='?_route=admin&p=dashboard'>
+                    <i class='menu-icon mdi mdi-view-dashboard'></i>
+                    <span class='menu-title'>Dashboard</span>
+                </a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' data-toggle='collapse' href='#auth' aria-expanded='false' aria-controls='auth'>
+                    <i class='menu-icon mdi mdi-barcode-scan'></i>
+                    <span class='menu-title'>PINs Card</span>
+                    <i class='menu-arrow'></i>
+                </a>
+                <div class='collapse' id='auth'>
+                    <ul class='nav flex-column sub-menu'>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=create.pins'> Create PINs  </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=pins.list'> PINs List </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=register.account'> Register Account </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+           
+            <li class='nav-item'>
+                <a class='nav-link' data-toggle='collapse' href='#fees' aria-expanded='false' aria-controls='auth'>
+                    <i class='menu-icon mdi mdi-cash'></i>
+                    <span class='menu-title'>Student Fees</span>
+                    <i class='menu-arrow'></i>
+                </a>
+                <div class='collapse' id='fees'>
+                    <ul class='nav flex-column sub-menu'>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=billing'>Billing </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=payment'> Payment </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=fees.ledger'> Fees Ledger </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        ";
+    }
+
+    function hostel_menu(){
+
+        echo"
+        
+            <li class='nav-item'>
+                <a class='nav-link' href='?_route=admin&p=dashboard'>
+                    <i class='menu-icon mdi mdi-view-dashboard'></i>
+                    <span class='menu-title'>Dashboard</span>
+                </a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' data-toggle='collapse' href='#hostel' aria-expanded='false' aria-controls='auth'>
+                    <i class='menu-icon mdi mdi-hotel'></i>
+                    <span class='menu-title'>Hostel & Booking</span>
+                    <i class='menu-arrow'></i>
+                </a>
+                <div class='collapse' id='hostel'>
+                    <ul class='nav flex-column sub-menu'>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=hostel'> Student Booking</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=hostel-block'> Create Block</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=admin&p=hostel-room'> Create Room</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        ";
+    }
+
     function student_menu_not_activated(){
 
         return"

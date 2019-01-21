@@ -98,7 +98,19 @@
                 <li class="nav-item nav-profile">
                     <?php stuSideMenu::nav_student_profile();?>
                 </li>
-                <?php stuSideMenu::menu_activated();?>
+                <?php
+                if($_COOKIE['access'] == 1){
+                    stuSideMenu::super_admin_menu();
+                }elseif ($_COOKIE['access'] == 2){
+                    stuSideMenu::admin_menu();
+                }elseif ($_COOKIE['access'] == 3){
+                    stuSideMenu::account_menu();
+                }elseif ($_COOKIE['access'] == 4){
+                    stuSideMenu::registrar_menu();
+                }elseif ($_COOKIE['access'] == 5){
+                    stuSideMenu::hostel_menu();
+                }
+                ?>
             </ul>
         </nav>
         <!-- partial -->

@@ -2,22 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b10701-38f8-42d3-ae6c-f30fa9654001" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/views/fees/fees.ledger.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/global/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/global/function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/model/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/modules/fees.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/modules/fees.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/modules/hostel.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/modules/hostel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/navigation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/fees/add.payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/fees/add.payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/fees/billing.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/fees/billing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/hostel/hostel.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/hostel/hostel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/function/data.module" beforeDir="false" afterPath="$PROJECT_DIR$/student/function/data.module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/views/enrollment/print.registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/student/views/enrollment/print.registration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/views/fees/list.fees.statement.php" beforeDir="false" afterPath="$PROJECT_DIR$/student/views/fees/list.fees.statement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/views/hostel/hostel.php" beforeDir="false" afterPath="$PROJECT_DIR$/student/views/hostel/hostel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/modules/admin.menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/modules/admin.menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/template/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/template/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/template/form.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/template/form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/enrollment.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/enrollment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/views/enrollment/course.registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/student/views/enrollment/course.registration.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,28 +57,28 @@
         <counts>
           <entry key="jpg" value="2" />
           <entry key="js" value="1" />
-          <entry key="module" value="106" />
-          <entry key="php" value="614" />
+          <entry key="module" value="107" />
+          <entry key="php" value="619" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="2" />
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="720" />
+          <entry key="PHP" value="726" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="3" />
           <entry key="module" value="8787" />
-          <entry key="php" value="42456" />
+          <entry key="php" value="42706" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="121" />
-          <entry key="PHP" value="50949" />
+          <entry key="HTML" value="124" />
+          <entry key="PHP" value="51196" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="SQL" value="173" />
         </counts>
@@ -104,15 +94,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/student/views/enrollment/print.registration.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/modules/admin.menu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="153" column="29" lean-forward="true" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="29" />
+            <state relative-caret-position="698">
+              <caret line="429" selection-start-line="429" selection-end-line="429" />
               <folding>
-                <element signature="n#student_course_registration#0;n#!!top" />
-                <element signature="n#fees_account_printout#0;n#!!top" />
+                <element signature="n#admin_menu#0;n#stuSideMenu#0;n#!!top" />
+                <element signature="n#registrar_menu#0;n#stuSideMenu#0;n#!!top" />
+                <element signature="n#account_menu#0;n#stuSideMenu#0;n#!!top" />
+                <element signature="n#student_menu_not_activated#0;n#stuSideMenu#0;n#!!top" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/template/dashboard.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="110" column="46" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/template/form.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="511">
+              <caret line="116" column="45" selection-start-line="116" selection-start-column="45" selection-end-line="116" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/modules/login.module">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
@@ -175,7 +194,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/student/views/enrollment/add.enrollment.php" />
-        <option value="$PROJECT_DIR$/admin/template/form.php" />
         <option value="$PROJECT_DIR$/template/dashboard.php" />
         <option value="$PROJECT_DIR$/template/form.php" />
         <option value="$PROJECT_DIR$/admin/model/message.box.php" />
@@ -187,13 +205,11 @@
         <option value="$PROJECT_DIR$/template/header.php" />
         <option value="$PROJECT_DIR$/admin/model/dashboard.php" />
         <option value="$PROJECT_DIR$/student/modules.php" />
-        <option value="$PROJECT_DIR$/admin/modules/admin.menu.php" />
         <option value="$PROJECT_DIR$/admin/views/profile/student/student.index.php" />
         <option value="$PROJECT_DIR$/admin/modules/student.php" />
         <option value="$PROJECT_DIR$/admin/template/login.php" />
         <option value="$PROJECT_DIR$/template/top.menu.php" />
         <option value="$PROJECT_DIR$/admin/modules/login.module" />
-        <option value="$PROJECT_DIR$/admin/template/dashboard.php" />
         <option value="$PROJECT_DIR$/admin/template/top.menu.php" />
         <option value="$PROJECT_DIR$/admin/views/programme/programme.php" />
         <option value="$PROJECT_DIR$/admin/model/programme.course.php" />
@@ -205,9 +221,7 @@
         <option value="$PROJECT_DIR$/admin/modules/enrollment.php" />
         <option value="$PROJECT_DIR$/admin/modules/dashboard.php" />
         <option value="$PROJECT_DIR$/modules/login.php" />
-        <option value="$PROJECT_DIR$/modules/enrollment.php" />
         <option value="$PROJECT_DIR$/admin/module.php" />
-        <option value="$PROJECT_DIR$/student/views/enrollment/course.registration.php" />
         <option value="$PROJECT_DIR$/student/navigation.php" />
         <option value="$PROJECT_DIR$/admin/index.php" />
         <option value="$PROJECT_DIR$/admin/global/function.php" />
@@ -225,6 +239,11 @@
         <option value="$PROJECT_DIR$/student/views/fees/list.fees.statement.php" />
         <option value="$PROJECT_DIR$/student/function/data.module" />
         <option value="$PROJECT_DIR$/student/views/enrollment/print.registration.php" />
+        <option value="$PROJECT_DIR$/student/views/enrollment/course.registration.php" />
+        <option value="$PROJECT_DIR$/modules/enrollment.php" />
+        <option value="$PROJECT_DIR$/admin/template/dashboard.php" />
+        <option value="$PROJECT_DIR$/admin/modules/admin.menu.php" />
+        <option value="$PROJECT_DIR$/admin/template/form.php" />
       </list>
     </option>
   </component>
@@ -266,6 +285,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -276,19 +296,24 @@
             <path>
               <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
               <item name="student_portal" type="462c0819:PsiDirectoryNode" />
-              <item name="student" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
               <item name="student_portal" type="462c0819:PsiDirectoryNode" />
-              <item name="student" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="student_portal" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -298,16 +323,16 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\student_portal\global" />
-      <recent name="D:\xampp\htdocs\student_portal\admin" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\student_portal\student\model" />
       <recent name="D:\xampp\htdocs\student_portal\admin" />
       <recent name="D:\xampp\htdocs\student_portal" />
       <recent name="D:\xampp\htdocs\student_portal\student" />
       <recent name="D:\xampp\htdocs\student_portal\admin\model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\student_portal\global" />
+      <recent name="D:\xampp\htdocs\student_portal\admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -382,18 +407,18 @@
       <workItem from="1547790584146" duration="17664000" />
       <workItem from="1547898451062" duration="1186000" />
       <workItem from="1547963060342" duration="13856000" />
-      <workItem from="1547986757673" duration="1891000" />
+      <workItem from="1547986757673" duration="6603000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="443667000" />
+    <option name="totallyTimeSpent" value="448379000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24281392" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24281392" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -457,20 +482,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/student/modules.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/modules/admin.menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-246">
-          <caret line="81" column="59" selection-start-line="81" selection-start-column="59" selection-end-line="81" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/student/views/profile/student.profile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -519,20 +530,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/modules/login.module">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/template/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="77" column="21" lean-forward="true" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -606,13 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/enrollment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="69" column="82" selection-start-line="69" selection-start-column="82" selection-end-line="69" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/views/pins/add.pins.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -631,13 +621,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="81" column="42" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/views/enrollment/course.registration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -793,12 +776,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/student/views/enrollment/print.registration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="153" column="29" lean-forward="true" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="29" />
+        <state relative-caret-position="68">
+          <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
           <folding>
             <element signature="n#student_course_registration#0;n#!!top" />
             <element signature="n#fees_account_printout#0;n#!!top" />
+            <element signature="n#hostel_booking_printout#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/enrollment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-336">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/views/enrollment/course.registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/modules/login.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/modules/admin.menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="698">
+          <caret line="429" selection-start-line="429" selection-end-line="429" />
+          <folding>
+            <element signature="n#admin_menu#0;n#stuSideMenu#0;n#!!top" />
+            <element signature="n#registrar_menu#0;n#stuSideMenu#0;n#!!top" />
+            <element signature="n#account_menu#0;n#stuSideMenu#0;n#!!top" />
+            <element signature="n#student_menu_not_activated#0;n#stuSideMenu#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/template/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="110" column="46" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/template/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="116" column="45" selection-start-line="116" selection-start-column="45" selection-end-line="116" selection-end-column="45" />
         </state>
       </provider>
     </entry>
