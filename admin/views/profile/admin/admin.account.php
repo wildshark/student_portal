@@ -18,7 +18,7 @@ if(!isset($_GET['d'])) {
     $_SESSION['id']=$id;
     $button = "edit-admin-account";
 
-    $sql = "SELECT * FROM `get_admin` WHERE userID='$userID' LIMIT 0, 1";
+    $sql = "SELECT * FROM `get_admin` WHERE userID='$id' LIMIT 0, 1";
     $result = mysqli_query($conn,$sql);
     if ($result->num_rows >0){
         $r = $result->fetch_assoc();
@@ -28,6 +28,8 @@ if(!isset($_GET['d'])) {
         $email = $r['email'];
         $accessID = $r['access'];
     }
+
+    $button = "edit-admin-account";
 }
 
 ?>

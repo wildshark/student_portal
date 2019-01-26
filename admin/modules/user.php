@@ -26,19 +26,19 @@ class USER_PROFILE{
 
     function update_admin_account($conn){
 
-        $userID = $_POST['userID'];
+        $userID = $_SESSION['id'];
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $email = $_POST['admin'];
+        $email = $_POST['email'];
         $access = $_POST['access'];
 
 
-        $sql="UPDATE `admin` SET `username`='$username', `password`='$password', `email`='$email', `access`='$access ', `status`='3' WHERE (`userID`='$userID')";
+        $sql="UPDATE `admin` SET `username`='$username', `password`='$password', `email`='$email', `access`='$access ' WHERE (`userID`='$userID')";
         $result = mysqli_query($conn,$sql);
         if ($result == TRUE) {
-            header("location: index.php?_route=admin&p=admin.account&e=104");
+            header("location: index.php?_route=admin&p=administrator&e=104");
         }else{
-            header("location: index.php?_route=admin&p=admin.account&e=103");
+            header("location: index.php?_route=admin&p=administrator&e=103");
         }
     }
 

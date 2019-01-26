@@ -73,7 +73,7 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
             case"edit-room-hostel";
                 HOSTEL::update_room_name($conn);
             break;
-            
+
             case"add-hostel";
                 HOSTEL::add_booking($conn);
             break;
@@ -99,7 +99,7 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
             break;
 
             case"edit-admin-account";
-                USER_PROFILE::update_admin_account($conn);
+                 USER_PROFILE::update_admin_account($conn);
             break;
 
             case"add-fees-bill";
@@ -108,6 +108,9 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
 
             case"add-fees-payment":
                 FEES::add_fees_payment($conn);
+            break;
+
+            case"add-comment";
             break;
 
             default:

@@ -55,7 +55,7 @@ if(!isset($_GET['d'])){
                             <?php echo $input_type;?>
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlSelect3">Block Name</label>
+                            <label for="exampleFormControlSelect3">Hall/Block Name</label>
                             <?php echo $input_block;?>
                         </div>
                         <div class="form-group">
@@ -128,7 +128,7 @@ if(!isset($_GET['d'])){
                         <th>Date</th>
                         <th>Pin(s)</th>
                         <th>Student</th>
-                        <th>Block</th>
+                        <th>Hall/Block</th>
                         <th>Room</th>
                         <th>Status</th>
 

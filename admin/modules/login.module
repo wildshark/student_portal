@@ -35,11 +35,13 @@ class admin_login{
             $user = mysqli_fetch_assoc($result);
 
             if (!isset($_COOKIE['token'])){
+
                 setcookie("token",$token,time() + (86400 * 30), "/");
                 setcookie("username",$user['username'],time() + (86400 * 30), "/");
                 setcookie("access",$user['access'],time() + (86400 * 30), "/");
                 setcookie("email",$user['email'],time() + (86400 * 30), "/");
                 setcookie("status",$user['status'],time() + (86400 * 30), "/");
+
                 if (!isset($_SESSION['token'])){
                     $_SESSION['token'] = $token;
                     $_SESSION['user-id'] = $user['userID'];
@@ -67,11 +69,13 @@ class admin_login{
 
             if ($token === $_COOKIE['user-token']){
                 if (!isset($_COOKIE['token'])){
+
                     setcookie("token",$token,time() + (86400 * 30), "/");
                     setcookie("username",$user['username'],time() + (86400 * 30), "/");
                     setcookie("access",$user['access'],time() + (86400 * 30), "/");
                     setcookie("email",$user['email'],time() + (86400 * 30), "/");
                     setcookie("status",$user['status'],time() + (86400 * 30), "/");
+
                     if (!isset($_SESSION['token'])){
                         $_SESSION['token'] = $token;
                         $_SESSION['user-id'] = $user['userID'];

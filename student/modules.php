@@ -6,9 +6,11 @@
  * Time: 8:14 AM
  */
 
-include_once "modules/student.module";
+include "modules/student.module";
 include "modules/hostel.php";
 include "modules/enrollment.php";
+include "modules/ticket.php";
+
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
     // echo "no cookie or session created";
@@ -17,8 +19,6 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
     if ($_SESSION['token'] === $_COOKIE["token"]){
 
         switch ($_REQUEST['submit']){
-
-
 
             case"update-password";
                 PROFILE::password($conn);
@@ -42,6 +42,10 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
 
             case"remove.reg.course";
                 ENROLL::remove_course($conn);
+            break;
+
+            case "add-comment";
+                TICKET::add_ticket($conn);
             break;
 
             default:

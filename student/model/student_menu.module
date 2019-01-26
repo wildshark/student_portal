@@ -57,6 +57,12 @@ class stuSideMenu{
                 </a>
             </li>
             <li class='nav-item'>
+                <a class='nav-link' href='?_route=student&p=ticket'>
+                    <i class='menu-icon mdi mdi-cash-multiple'></i>
+                    <span class='menu-title'>Ticket</span>
+                </a>
+            </li>
+            <li class='nav-item'>
                 <a class='nav-link' href='?_route=student&p=fees.history'>
                     <i class='menu-icon mdi mdi-cash-multiple'></i>
                     <span class='menu-title'>Fees Statement</span>

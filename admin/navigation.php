@@ -147,6 +147,12 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                 include "template/form.php";
             break;
 
+            case"ticket";
+                $_template->menu = "template/menu.php";
+                $_template->view ="views/ticket/ticket.php";
+                include "template/form.php";
+            break;
+
 
             default:
                 include_once "template/error.php";

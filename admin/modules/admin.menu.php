@@ -64,6 +64,12 @@ class stuSideMenu{
                 </a>
             </li>
             <li class='nav-item'>
+                <a class='nav-link' href='?_route=admin&p=ticket'>
+                    <i class='menu-icon mdi mdi-view-dashboard'></i>
+                    <span class='menu-title'>Ticket</span>
+                </a>
+            </li>
+            <li class='nav-item'>
                 <a class='nav-link' data-toggle='collapse' href='#auth' aria-expanded='false' aria-controls='auth'>
                     <i class='menu-icon mdi mdi-barcode-scan'></i>
                     <span class='menu-title'>PINs Card</span>
