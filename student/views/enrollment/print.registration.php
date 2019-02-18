@@ -199,9 +199,9 @@ function hostel_booking_printout($conn,$studentID){
 
 <div class="jumbotron text-center">
     <h2>GHANA CHRISTIAN UNIVERSITY COLLEGE/<?php echo $type;?></h2>
-    <p>STUDENT REGISTRATION FROM - <?php echo strtoupper($s_programme)." LEVEL".$level." (".strtoupper($semester).")";?>.</p>
+    <p>STUDENT REGISTRATION FORM - <?php echo strtoupper($s_programme)." LEVEL".$level." (".strtoupper($semester).")";?>.</p>
     <p>GHANACUC IDENTIFICATION NUMBER <?php echo $index;?>.</p>
-    <small>(FOR CONTINUING STUDENT ONLY. FRESH STUDENTS SHALL BE GIVE IDENTIFICATION NUMBERS AT THE END OF THE REGISTRATION)</small>
+    <small>(FOR CONTINUING STUDENT ONLY. FRESH STUDENTS SHALL BE GIVEN IDENTIFICATION NUMBERS AT THE END OF THE REGISTRATION)</small>
 </div>
 
 <div class="container">

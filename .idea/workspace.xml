@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b10701-38f8-42d3-ae6c-f30fa9654001" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/admin/views/department/department.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/department/department.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/department/position.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/department/position.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/enrollment/enrollment.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/enrollment/enrollment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/hostel/add.block.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/hostel/add.block.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/hostel/add.room.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/hostel/add.room.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/pins/add.pins.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/pins/add.pins.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/profile/admin/admin.account.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/profile/admin/admin.account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/profile/student/student.index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/profile/student/student.index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/programme/affiliate.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/programme/affiliate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/programme/courses.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/programme/courses.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/programme/faculty.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/programme/faculty.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/programme/list.course.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/programme/list.course.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/programme/programme.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/programme/programme.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/school/views/department/department.php" beforeDir="false" afterPath="$PROJECT_DIR$/school/views/department/department.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/school/views/department/position.php" beforeDir="false" afterPath="$PROJECT_DIR$/school/views/department/position.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/school/views/enrollment/enrollment.php" beforeDir="false" afterPath="$PROJECT_DIR$/school/views/enrollment/enrollment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/school/views/profile/admin/admin.account.php" beforeDir="false" afterPath="$PROJECT_DIR$/school/views/profile/admin/admin.account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/school/views/programme/affiliate.php" beforeDir="false" afterPath="$PROJECT_DIR$/school/views/programme/affiliate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/school/views/programme/faculty.php" beforeDir="false" afterPath="$PROJECT_DIR$/school/views/programme/faculty.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/school/views/programme/list.course.php" beforeDir="false" afterPath="$PROJECT_DIR$/school/views/programme/list.course.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/school/views/programme/programme.php" beforeDir="false" afterPath="$PROJECT_DIR$/school/views/programme/programme.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/views/enrollment/print.registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/student/views/enrollment/print.registration.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,13 +69,13 @@
         <counts>
           <entry key="dummy" value="3" />
           <entry key="module" value="9424" />
-          <entry key="php" value="45984" />
+          <entry key="php" value="45987" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="142" />
-          <entry key="PHP" value="55093" />
+          <entry key="PHP" value="55096" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="SQL" value="173" />
         </counts>
@@ -132,9 +112,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/student/views/enrollment/print.registration.php">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="305">
+              <caret line="201" column="31" selection-start-line="201" selection-start-column="31" selection-end-line="201" selection-end-column="31" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -168,7 +152,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/student/views/profile/student.profile.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-4314" />
@@ -233,7 +217,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/student/views/enrollment/print.registration.php" />
         <option value="$PROJECT_DIR$/student/views/enrollment/course.registration.php" />
         <option value="$PROJECT_DIR$/modules/enrollment.php" />
         <option value="$PROJECT_DIR$/admin/template/form.php" />
@@ -284,6 +267,7 @@
         <option value="$PROJECT_DIR$/admin/views/programme/faculty.php" />
         <option value="$PROJECT_DIR$/admin/views/programme/list.course.php" />
         <option value="$PROJECT_DIR$/admin/views/programme/programme.php" />
+        <option value="$PROJECT_DIR$/student/views/enrollment/print.registration.php" />
       </list>
     </option>
   </component>
@@ -502,15 +486,16 @@
       <workItem from="1548071256115" duration="21549000" />
       <workItem from="1548478312792" duration="1242000" />
       <workItem from="1550386756894" duration="9320000" />
-      <workItem from="1550488555690" duration="1863000" />
+      <workItem from="1550488555690" duration="1969000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="491206000" />
+    <option name="totallyTimeSpent" value="491312000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2579425" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -828,9 +813,6 @@
         <state relative-caret-position="-2376" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/student/views/enrollment/print.registration.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/student/views/fees/detail.fees.statement.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -855,6 +837,13 @@
     <entry file="file://$PROJECT_DIR$/student/views/profile/student.profile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4314" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/views/enrollment/print.registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="201" column="31" selection-start-line="201" selection-start-column="31" selection-end-line="201" selection-end-column="31" />
+        </state>
       </provider>
     </entry>
   </component>
