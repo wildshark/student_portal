@@ -29,7 +29,7 @@
                 </form>
             </div>
             <div class="table-responsive">
-                <table class="table">
+                <table class="table" id="example">
                     <thead>
                     <tr>
                         <th>Index</th>

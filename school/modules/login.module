@@ -1,0 +1,91 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Andrew Quaye
+ * Date: 13/12/2018
+ * Time: 1:19 PM
+ */
+
+class admin_login{
+
+    function login($conn){
+
+        if (!isset($_POST['username'])){
+            echo "no user name";
+        }else{
+            $username = $_POST['username'];
+        }
+
+        if (!isset($_POST['password'])){
+            echo "no password";
+        }else{
+            $password =  $_POST['password'];
+        }
+
+        if(isset($_POST['check'])){
+            $token = md5($username."/".$password);
+            setcookie("user-token",$token,time() + (86400 * 30), "/");
+        }
+
+        $token = md5($username."/".$password);
+
+        $sql = "SELECT * FROM `get_admin` where username='$username' and password='$password' LIMIT 1";
+        $result = (mysqli_query($conn,$sql));
+        if (mysqli_num_rows($result) > 0){
+            $user = mysqli_fetch_assoc($result);
+
+            if (!isset($_COOKIE['token'])){
+
+                setcookie("token",$token,time() + (86400 * 30), "/");
+                setcookie("username",$user['username'],time() + (86400 * 30), "/");
+                setcookie("access",$user['access'],time() + (86400 * 30), "/");
+                setcookie("email",$user['email'],time() + (86400 * 30), "/");
+                setcookie("status",$user['status'],time() + (86400 * 30), "/");
+
+                if (!isset($_SESSION['token'])){
+                    $_SESSION['token'] = $token;
+                    $_SESSION['user-id'] = $user['userID'];
+                    $_SESSION['username'] = $_POST['username'];
+                    header("location: index.php?_route=school&p=dashboard&e=100");
+                }
+            }
+        }else{
+            header("location: index.php");
+        }
+    }
+
+    function login_use_cookie($conn){
+
+        $sql = "SELECT * FROM `get_admin`";
+        $result = (mysqli_query($conn,$sql));
+
+        if (mysqli_num_rows($result) > 0){
+
+            $user = mysqli_fetch_assoc($result);
+            $username = $user['username'];
+            $password = $user['password'];
+
+            $token = md5($username."/".$password);
+
+            if ($token === $_COOKIE['user-token']){
+                if (!isset($_COOKIE['token'])){
+
+                    setcookie("token",$token,time() + (86400 * 30), "/");
+                    setcookie("username",$user['username'],time() + (86400 * 30), "/");
+                    setcookie("access",$user['access'],time() + (86400 * 30), "/");
+                    setcookie("email",$user['email'],time() + (86400 * 30), "/");
+                    setcookie("status",$user['status'],time() + (86400 * 30), "/");
+
+                    if (!isset($_SESSION['token'])){
+                        $_SESSION['token'] = $token;
+                        $_SESSION['user-id'] = $user['userID'];
+                        header("location: index.php?_route=admin&p=dashboard&e=100");
+                    }
+                }
+            }
+        }else{
+            header("location: index.php");
+        }
+
+    }
+}

@@ -116,7 +116,8 @@ if (!isset($_GET['d'])){
                 </form>
             </div>
             <div class="table-responsive">
-                <table class="table">
+                <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+                <table class="table" id="example">
                     <thead>
                     <tr>
                         <th>Date</th>
@@ -130,6 +131,12 @@ if (!isset($_GET['d'])){
                         <?php enrollment_list($conn);?>
                     </tbody>
                 </table>
+                <script>
+                    $(document).ready(function() {
+                        $('#example').DataTable();
+                    } );
+                </script>
+
             </div>
         </div>
     </div>
