@@ -108,14 +108,9 @@ $button ="edit-courses";
 <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Paragraph</h4>
+            <h4 class="card-title">Help Box</h4>
             <p class="card-description">
-                Write text in
-                <code>&lt;p&gt;</code> tag
-            </p>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley not only five centuries,
+                Contact ICT Department
             </p>
         </div>
     </div>
