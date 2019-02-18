@@ -42,7 +42,7 @@ if (!isset($_GET['d'])){
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="forms-sample">
                         <div class="form-group">
                             <label for="exampleInputName1">Name</label>
-                            <input type="text" name="student-name" value="<?php echo $name;?>" class="form-control" id="exampleInputName1" placeholder="index">
+                            <input type="text" name="student-name" value="<?php echo $name;?>" class="form-control" id="exampleInputName1" placeholder="Name">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Mobile</label>
