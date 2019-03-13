@@ -35,13 +35,12 @@ class PAYMENT{
                 $schoolID = $r['schoolID'];
 
                 //get school bill from bill
-                $getBillSQL="SELECT * FROM `get_fees_bill` where school_ID='$schoolID' and catID='$categoryID'LIMIT 0, 1";
+                $getBillSQL="SELECT * FROM `get_fees_bill` where `school_ID`='$schoolID' and `catID`='$categoryID' LIMIT 0, 1";
                 $result = $conn->query($getBillSQL);
                 $bill = $result->fetch_assoc();
 
                 if (!isset($bill['amount'])){
-                    echo "ERROR: can pay";
-                    exit();
+                    header("location: ?_route=student&p=school.fees&e=121");
                 }else {
                     $bill_amount = $bill['amount'];
 
@@ -58,11 +57,11 @@ class PAYMENT{
                     $_SESSION['st-amount'] = $amount;
                     $_SESSION['st-bill'] = $bill_amount;
 
-                    header("location: ?_route=student&p=payment.process&e=121");
+                    header("location: ?_route=student&p=payment.process&e=122");
 
                 }
             }else{
-                echo"Error: profile is blocked";
+                header("location: ?_route=student&p=school.fees&e=121");
             }
         }
 
