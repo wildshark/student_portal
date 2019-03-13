@@ -63,6 +63,26 @@ class stuSideMenu{
                 </a>
             </li>
             <li class='nav-item'>
+                <a class='nav-link' data-toggle='collapse' href='#auth' aria-expanded='false' aria-controls='auth'>
+                    <i class='menu-icon mdi mdi-package-variant'></i>
+                    <span class='menu-title'>Payment</span>
+                    <i class='menu-arrow'></i>
+                </a>
+                <div class='collapse' id='auth'>
+                    <ul class='nav flex-column sub-menu'>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=student&p=school.fees'> School Fees </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=student&p=hostel.fees'> Hostel Fees </a>
+                        </li>
+                         <li class='nav-item'>
+                            <a class='nav-link' href='?_route=student&p=other.fees'> Other Fees </a>
+                        </li>                      
+                    </ul>
+                </div>
+            </li>
+            <li class='nav-item'>
                 <a class='nav-link' href='?_route=student&p=fees.history'>
                     <i class='menu-icon mdi mdi-cash-multiple'></i>
                     <span class='menu-title'>Fees Statement</span>

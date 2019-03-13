@@ -10,6 +10,7 @@ include "modules/student.module";
 include "modules/hostel.php";
 include "modules/enrollment.php";
 include "modules/ticket.php";
+include "modules/payment.php";
 
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
@@ -42,6 +43,10 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
 
             case"remove.reg.course";
                 ENROLL::remove_course($conn);
+            break;
+
+            case "make-fees-payment";
+                PAYMENT::make_fees_payment($conn);
             break;
 
             case "add-comment";
