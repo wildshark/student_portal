@@ -19,7 +19,9 @@ class PAYMENT{
         $semester = $_POST['semester'];
         $programme = $_POST['programme'];
         $level = $_POST['level'];
+        $currency = $_POST['currency'];
         $amount = $_POST['amount'];
+
 
         if (isset($admission)){
 
@@ -54,8 +56,11 @@ class PAYMENT{
                     $_SESSION['st-semester'] = $semester;
                     $_SESSION['st-programme'] = $programme;
                     $_SESSION['st-level'] = $level;
+                    $_SESSION['st-currency'] = $currency;
                     $_SESSION['st-amount'] = $amount;
                     $_SESSION['st-bill'] = $bill_amount;
+                    $_SESSION['st-schoolID'] = $schoolID;
+                    $_SESSION['st-categoryID'] = $categoryID;
 
                     header("location: ?_route=student&p=payment.process&e=122");
 
@@ -84,17 +89,22 @@ class PAYMENT{
         $bill_amount=$_SESSION['st-bill'];
 
 
-        $getBOOK="INSERT INTO `fees_payment_details` (`tranNow`, `tranDate`,`acadYer`, `ref_index`, `studentID`, `progID`, `semesterID`, `levelID`, `yearID`, `bank`, `ref`, `bill`, `paid`, `typeID`) VALUES ('$now', '$date','$academYr', '$receipt', '$studentID', '$programme', '$semester', '$level', '$academYr', 'SmartPay', '$receipt', '$bill_amount', '$amount','1')";
+        $getBOOK="INSERT INTO `fees_payment_details` (`tranNow`, `tranDate`,`ref_index`, `studentID`, `progID`, `semesterID`, `levelID`, `yearID`, `bank`, `ref`, `bill`, `paid`, `typeID`) VALUES ('$now', '$date','$receipt', '$studentID', '$programme', '$semester', '$level', '$academYr', 'SmartPay', '$receipt', '$bill_amount', '$amount','1')";
         $result = $conn->query($getBOOK);
         if ($result === TRUE){
        // $last_id = $conn->insert_id;
 
-            $getEnrollSQL="INSERT INTO `enrollment` (`enroll_time`, `pins`, `enroll_date`, `studentID`, `semesterID`, `s_level`, `yearID`, `progID`, `statusID`) VALUES ('$now', '$pin', '$date', '$studentID', '$semester', '$level', '$academYr', '$programme', '2')";
-            $result = $conn->query($getEnrollSQL);
-            if($result === TRUE){
-                header("location: ?_route=student&p=payment.process&e=121&d={$last_id}");
-            }
+            $pin = date ('YmdHis');
+            $shuffled = str_shuffle($pin);
+           // $rand = rand(100,999);
+            $pin = $shuffled; //."1".$rand;
 
+            $getEnrollSQL="INSERT INTO `enrollment` (`enroll_time`, `pins`, `enroll_date`, `studentID`, `semesterID`, `s_level`, `yearID`, `progID`,`ref`, `statusID`) VALUES ('$now', '$pin', '$date', '$studentID', '$semester', '$level', '$academYr', '$programme','$receipt', '2')";
+            $result = $conn->query($getEnrollSQL);
+            $last_id = $conn->insert_id;
+            if($result === TRUE){
+                header("location: ?_route=student&p=print.enrollment.slip&e=100&d={$last_id}&q={$pin}");
+            }
         }else{
          header("location: ?_route=student&p=payment.process&e=103");
         }

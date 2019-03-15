@@ -20,7 +20,7 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
 }else{
     if ($_SESSION['token'] === $_COOKIE["token"]){
 
-        switch ($_POST['submit']){
+        switch ($_REQUEST['submit']){
 
             case "logout";
                 logout();

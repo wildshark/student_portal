@@ -91,6 +91,10 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                 include "student/views/enrollment/print.registration.php";
             break;
 
+            case "print.enrollment.slip";
+                include "student/views/enrollment/print.enrollment.pay.slip.php";
+            break;
+
             default:
                 include_once "template/error.php";
         }

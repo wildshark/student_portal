@@ -170,7 +170,22 @@ if (isset($_SESSION['studentID'])){
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Currency</label>
+                            <div class="col-sm-9">
+                                <select name="currency"  class="form-control">
+                                    <option value="USD">United States Dollar</option>
+                                    <option value="NGN">Nigerian Naira</option>
+                                    <option value="GHS">Ghanaian cedi</option>
+                                    <option value="KES">Kenyan Shilling</option>
+                                    <option value="UGX">Ugandan Shilling</option>
+                                    <option value="TZS">Tanzanian Shilling</option>
+                                    <option value="SLL">Sierra Leonean Leone</option>
+                                    <option value="ZMW">Zambian Kwacha</option>
+                                    <option value="ZAR">South African Rand</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group row">
