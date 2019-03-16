@@ -63,7 +63,6 @@ class PAYMENT{
                     $_SESSION['st-categoryID'] = $categoryID;
 
                     header("location: ?_route=student&p=payment.process&e=122");
-
                 }
             }else{
                 header("location: ?_route=student&p=school.fees&e=121");
