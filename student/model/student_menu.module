@@ -63,12 +63,12 @@ class stuSideMenu{
                 </a>
             </li>
             <li class='nav-item'>
-                <a class='nav-link' data-toggle='collapse' href='#auth' aria-expanded='false' aria-controls='auth'>
+                <a class='nav-link' data-toggle='collapse' href='#payment' aria-expanded='false' aria-controls='auth'>
                     <i class='menu-icon mdi mdi-package-variant'></i>
                     <span class='menu-title'>Payment</span>
                     <i class='menu-arrow'></i>
                 </a>
-                <div class='collapse' id='auth'>
+                <div class='collapse' id='payment'>
                     <ul class='nav flex-column sub-menu'>
                         <li class='nav-item'>
                             <a class='nav-link' href='?_route=student&p=school.fees'> School Fees </a>

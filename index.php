@@ -5,7 +5,7 @@
  * Date: 15/10/2018
  * Time: 7:54 AM
  */
-
+include "setup.php";
 include "global/db.connection.php";
 include "global/global.function.php";
 include "global/global.label.php";

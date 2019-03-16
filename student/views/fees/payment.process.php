@@ -47,7 +47,7 @@ $programme = $_SESSION['st-programme'];
 $level = $_SESSION['st-level'];
 $amount = $_SESSION['st-amount'];
 $bill_amount=$_SESSION['st-bill'];
-
+$currency =$_SESSION['st-currency'];
 $bal = $bill_amount-$amount;
 
 ?>
@@ -181,6 +181,7 @@ $bal = $bill_amount-$amount;
                 </div>
 
                 <div class="row">
+                    <input type="hidden" name="currency" id="currency" readonly class="form-control" value="<?php echo $currency;?>"/>
                     <input type="hidden" name="email" id="email" readonly class="form-control" value="<?php echo $email;?>"/>
                     <input type="hidden" name="mobile" id="mobile" readonly class="form-control" value="<?php echo $mobile;?>"/>
                     <button type="button" name="submit" onClick="payWithRave()" class="btn btn-success mr-2">Submit</button>
@@ -191,7 +192,7 @@ $bal = $bill_amount-$amount;
     </div>
 </div>
 <script>
-    const API_publicKey = "FLWPUBK_TEST-f3182c49e15e6d57532e348a0a9d2b2a-X";
+    const API_publicKey = "FLWPUBK-5e9fc24ef3018f495c27e22e602384c8-X";
 
     function payWithRave() {
 
@@ -205,7 +206,7 @@ $bal = $bill_amount-$amount;
         var user_level = document.getElementById('level').value;
         var user_email = document.getElementById('email').value;
         var user_amount = document.getElementById('amount').value;
-       //var user_currency = document.getElementById('currency').value;
+        var user_currency = document.getElementById('currency').value;
         var user_mobile = document.getElementById('mobile').value;
 
 
@@ -217,13 +218,13 @@ $bal = $bill_amount-$amount;
             customer_phone: user_mobile,
             customer_email: user_email,
             amount: user_amount,
-            currency: "NGN",
+            currency: user_currency,
             custom_logo:"https://www.ghanacu.com/wp-content/uploads/2018/06/logo.png",
             custom_title:"GhanaCUC Pay Portal",
             txref: user_ref,
             subaccounts: [
                 {
-                    id: "RS_E5BB585CA2717B6FE073A4705D70917E" // This assumes you have setup your commission on the dashboard.
+                    id: "RS_0BA4212A177547B92A3EFD7866AD309A" // This assumes you have setup your commission on the dashboard.
                 }
             ],
             meta: [{
@@ -239,7 +240,7 @@ $bal = $bill_amount-$amount;
                     response.tx.chargeResponseCode == "0"
                 ) {
                     // redirect to a success page
-                    window.location.assign("http://localhost/student_portal/index.php?submit=payment.portal&status=payment.success&e=125&txref=" + user_ref);
+                    window.location.assign("http://localhost/student_portal/index.php?submit=payment.portal&status=payment.verification&e=125&txref=" + user_ref);
                 } else {
                     // redirect to a failure page.
                     window.location.assign("http://localhost/student_portal/index.php?_route=student&p=payment.failed&e=124&txref=" +user_ref );

@@ -50,11 +50,14 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
             break;
 
             case"payment.portal";
-                if($_REQUEST['status'] ==='payment.success'){
+                if ($_REQUEST['status'] ==="payment.successful"){
+                    if ($_SESSION['st-token'] == $_REQUEST['stamp']){
+                        PAYMENT:: after_payment_process($conn);
+                    }
+                }elseif($_REQUEST['status'] ==='payment.verification'){
                     if(isset($_REQUEST['txref'])){
-                        echo  $_SESSION['st-receipt'];
                         if ($_REQUEST['txref'] === $_SESSION['st-receipt']){
-                            PAYMENT::after_payment_process($conn);
+                            PAYMENT::payment_verification($rave);
                         }else{
                             echo"ERROR: System error or a fraudulent act. see administrator for further details";
                         }

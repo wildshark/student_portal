@@ -71,7 +71,68 @@ class PAYMENT{
 
     }
 
+    function payment_verification($rave){
+
+        if (isset($_REQUEST['txref'])) {
+           $ref = $_REQUEST['txref'];
+           $amount = $_SESSION['st-amount']; //Correct Amount from Server
+           $currency = $_SESSION['st-currency']; //Correct Currency from Server
+           $URLverification = $rave['TestPaymentVerify'];
+
+           if(!isset($stamp)){
+               $stamp = md5($ref);
+               $stamp = $stamp."-". md5($amount);
+               $stamp = $stamp ."-". md5($currency);
+               $stamp ="ST-". md5($stamp);
+
+               $_SESSION['st-token'] = $stamp;
+           }
+
+            $query = array(
+                "SECKEY" => "FLWSECK-45a0c821f1e1a352a1a45f4fd1c727ca-X",
+                "txref" => $ref
+            );
+
+            $data_string = json_encode($query);
+
+            //live $ch = curl_init('https://api.ravepay.co/flwv3-pug/getpaidx/api/v2/verify');
+            $ch = curl_init($URLverification);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+
+            $response = curl_exec($ch);
+
+            $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+            $header = substr($response, 0, $header_size);
+            $body = substr($response, $header_size);
+
+            curl_close($ch);
+
+            $resp = json_decode($response, true);
+
+            $paymentStatus = $resp['data']['status'];
+            $chargeResponsecode = $resp['data']['chargecode'];
+            $chargeAmount = $resp['data']['amount'];
+            $chargeCurrency = $resp['data']['currency'];
+
+            if (($chargeResponsecode == "00" || $chargeResponsecode == "0") && ($chargeAmount == $amount)  && ($chargeCurrency == $currency)) {
+                //Give Value and return to Success page
+                $_SESSION['verification']  ="verify";
+                 header("location: ?submit=payment.portal&status=payment.successful&e=125&ref={$ref}&stamp={$stamp}&verify=g");
+            } else {
+                //Dont Give Value and return to Failure page
+                $_SESSION['verification']  = null;
+                header("location: ?submit=payment.portal&status=payment.successful&e=125&ref={$ref}&stamp={$stamp}&verify=f");
+            }
+        }
+
+    }
+
     function after_payment_process($conn){
+
 
         $now = date("Y-m-d H:i:s ");
         $date = $_SESSION['st-date'];
@@ -86,23 +147,29 @@ class PAYMENT{
         $level = $_SESSION['st-level'];
         $amount = $_SESSION['st-amount'];
         $bill_amount=$_SESSION['st-bill'];
+        $verification= $_SESSION['verification'];
+        if (is_null($verification)){
+            $statusID = '1';
+        }else{
+            $statusID ="2";
+        }
 
 
-        $getBOOK="INSERT INTO `fees_payment_details` (`tranNow`, `tranDate`,`ref_index`, `studentID`, `progID`, `semesterID`, `levelID`, `yearID`, `bank`, `ref`, `bill`, `paid`, `typeID`) VALUES ('$now', '$date','$receipt', '$studentID', '$programme', '$semester', '$level', '$academYr', 'SmartPay', '$receipt', '$bill_amount', '$amount','1')";
+        $getBOOK="INSERT INTO `fees_payment_details` (`tranNow`, `tranDate`,`ref_index`, `studentID`, `progID`, `semesterID`, `levelID`, `yearID`, `bank`, `ref`, `bill`, `paid`,`statusID`,`typeID`) VALUES ('$now', '$date','$receipt', '$studentID', '$programme', '$semester', '$level', '$academYr', 'SmartPay', '$receipt', '$bill_amount', '$amount','$statusID','1')";
         $result = $conn->query($getBOOK);
         if ($result === TRUE){
-       // $last_id = $conn->insert_id;
+        $fee_last_id = $conn->insert_id;
 
             $pin = date ('YmdHis');
             $shuffled = str_shuffle($pin);
            // $rand = rand(100,999);
             $pin = $shuffled; //."1".$rand;
 
-            $getEnrollSQL="INSERT INTO `enrollment` (`enroll_time`, `pins`, `enroll_date`, `studentID`, `semesterID`, `s_level`, `yearID`, `progID`,`ref`, `statusID`) VALUES ('$now', '$pin', '$date', '$studentID', '$semester', '$level', '$academYr', '$programme','$receipt', '2')";
+            $getEnrollSQL="INSERT INTO `enrollment` (`enroll_time`, `pins`, `enroll_date`, `studentID`, `semesterID`, `s_level`, `yearID`, `progID`,`ref`, `statusID`) VALUES ('$now', '$pin', '$date', '$studentID', '$semester', '$level', '$academYr', '$programme','$receipt', '$statusID')";
             $result = $conn->query($getEnrollSQL);
             $last_id = $conn->insert_id;
             if($result === TRUE){
-                header("location: ?_route=student&p=print.enrollment.slip&e=100&d={$last_id}&q={$pin}");
+                header("location: ?_route=student&p=print.enrollment.slip&e=100&d={$last_id}&q={$pin}&f={$fee_last_id}");
             }
         }else{
          header("location: ?_route=student&p=payment.process&e=103");

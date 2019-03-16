@@ -6,11 +6,19 @@
  * Time: 4:05 PM
  */
 
-if(isset($_GET['d'])){
-    $id =$_GET['d'];
+if(!isset($_REQUEST['f'])){
+    $fee_id = null;
 }else{
-    logout();
+    $fee_id = $_REQUEST['f'];
+    $feeSQL ="SELECT * FROM `get_fees_payment_details` where LIMIT 0, 1";
 }
+if(!isset($_REQUEST['d'])){
+    $id = null;
+}else {
+    $id = $_REQUEST['d'];
+}
+
+
 
 if(isset($_GET['q'])){
     $q =$_GET['q'];
@@ -82,12 +90,6 @@ if(isset($_GET['q'])){
             </tr>
         ";
     }
-
-
-
-
-
-
 }else{
     logout();
 }
