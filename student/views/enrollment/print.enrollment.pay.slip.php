@@ -10,83 +10,157 @@ if(!isset($_REQUEST['f'])){
     $fee_id = null;
 }else{
     $fee_id = $_REQUEST['f'];
-    $feeSQL ="SELECT * FROM `get_fees_payment_details` where LIMIT 0, 1";
+    $feeSQL ="SELECT * FROM `get_fees_payment_details` where `feeID`='$fee_id' LIMIT 0, 1";
+    $result = $conn->query($feeSQL);
+    if ($result->num_rows == 0) {
+        $status = null;
+    }else{
+        $r=$result->fetch_assoc();
+        $statusID = $r['statusID'];
+
+        if ($statusID == 1){
+            $status ="**NOT APPROVED YET**";
+        }else{
+            $status ="**APPROVED DIGITAL**";
+        }
+    }
 }
+
 if(!isset($_REQUEST['d'])){
     $id = null;
 }else {
     $id = $_REQUEST['d'];
 }
 
-
-
 if(isset($_GET['q'])){
     $q =$_GET['q'];
 
     $sql ="SELECT * FROM `get_student_enrollment` where enrollID='$id' and pins='$q' LIMIT 0, 1";
     $result = $conn->query($sql);
-    $r=$result->fetch_assoc();
+    if ($result->num_rows == 0) {
+        $pin = "";
+        $studentID = "";
+        $name = "";
+        $index ="";
+        $semesterID = "";
+        $level = "";
+        $programme = "";
+        $school = "";
 
-    $pin = $r['pins'];
-    $studentID = $r['studentID'];
-    $name = $r['name'];
-    $index = $r['stud_index'];
-    $semesterID = $r['semester'];
-    $level = $r['s_level'];
-    $programme = $r['programme'];
-    $school = $r['school'];
+        $date = "";
+        $year = "";
+        $semester = "";
+        $pin = "";
+        $schoolID = "";
+        $categoryID = "";
+        $ref = "";
+    }else{
+        $r=$result->fetch_assoc();
 
-    $date = $r['enroll_time'];
-    $year = $r['yearID'];
-    $semester = $r['semester'];
-    $pin = $r['pins'];
-    $schoolID = $r['schoolID'];
-    $categoryID = $r['categoryID'];
-    $ref = $r['ref'];
+        $pin = $r['pins'];
+        $studentID = $r['studentID'];
+        $name = $r['name'];
+        $index = $r['stud_index'];
+        $semesterID = $r['semester'];
+        $level = $r['s_level'];
+        $programme = $r['programme'];
+        $school = $r['school'];
 
+        $date = $r['enroll_time'];
+        $year = $r['yearID'];
+        $semester = $r['semester'];
+        $pin = $r['pins'];
+        $schoolID = $r['schoolID'];
+        $categoryID = $r['categoryID'];
+        $ref = $r['ref'];
+    }
 
-    function print_fees_details_bill($conn,$schoolID,$categoryID){
+    function print_fees_details_bill($conn,$schoolID,$categoryID,$status){
 
         $billSQL ="SELECT * FROM `get_fees_bill` where school_ID ='$schoolID' and catID='$categoryID' LIMIT 0, 1";
         $result = $conn->query($billSQL);
-        while ($r=$result->fetch_assoc()){
-
-            if(!isset($n)){
-                $n ="1";
-            }else{
-                $n = $n + 1;
-            }
+        if ($result->num_rows == 0) {
             echo "
-            <tr>
-                <td class='no'>{$n}</td>
-                <td class='text-left'><h3>Website Design</h3>Creating a recognizable design solution based on the company's existing visual identity</td>
-                <td class='unit'>{$r['amount']}</td>
-                <td class='qty'>1</td>
-                <td class='total'>{$r['amount']}</td>
-            </tr>
-        ";
+                 <tr>
+                    <td class='no'>Null</td>
+                    <td class='text-left'>Null</td>
+                    <td class='unit'>Null</td>
+                    <td class='qty'>Null</td>
+                    <td class='total'>Null</td>
+                 </tr>";
+        }else{
+            while ($r=$result->fetch_assoc()){
+
+                if(!isset($n)){
+                    $n ="1";
+                }else{
+                    $n = $n + 1;
+                }
+                echo "
+                    <tr>
+                        <td class='no'>{$n}</td>
+                        <td class='text-left'><h3>Fees</h3>{$status}</td>
+                        <td class='unit'>{$r['amount']}</td>
+                        <td class='qty'>1</td>
+                        <td class='total'>{$r['amount']}</td>
+                    </tr>
+                ";
+            }
         }
+
     }
 
-    function print_fees_total($conn){
+    function print_fees_total($conn,$studentID){
+
+        $balSQL = "SELECT * FROM `get_fees_payment_details` where studentID='$studentID' order by feeID DESC  LIMIT 0, 1";
+        $result = $conn->query($balSQL);
+        if ($result->num_rows == 0) {
+            $bal = '0.00';
+        }else{
+            while ($r=$result->fetch_assoc()){
+                $bill = $r['bill'];
+                $paid = $r['paid'];
+            }
+        }
+
+        $balSQL = "SELECT `Balance` FROM `get_fees_payment_total` where studentID='$studentID' LIMIT 0, 1";
+        $result = $conn->query($balSQL);
+        if ($result->num_rows == 0) {
+            $bal = '0.00';
+        }else{
+            while ($r=$result->fetch_assoc()){
+                $balance = $r['Balance'];
+                $previousBAL = $balance - $paid;
+            }
+        }
+
+        $previousBAL = number_format($previousBAL,2);
+        $paid = number_format($paid,2);
+        $balance = number_format($balance,2);
 
         echo"
             <tr>
-                <td colspan=\"2\"></td>
-                <td colspan=\"2\">SUBTOTAL</td>
-                <td>{799}</td>
+                <td colspan='2'></td>
+                <td colspan='2'>SUBTOTAL</td>
+                <td>{$bill}</td>
             </tr>
             
             <tr>
-                <td colspan=\"2\"></td>
-                <td colspan=\"2\">TAX 25%</td>
-                <td>$1,300.00</td>
+                <td colspan='2'></td>
+                <td colspan='2'>PREVIOUS BAL</td>
+                <td>{$previousBAL}</td>
             </tr>
             
             <tr>
-                <td colspan=\"2\"></td>
-                <td colspan=\"2\">GRAND TOTAL</td>
-                <td>$6,500.00</td>
+                <td colspan='2'></td>
+                <td colspan='2'>PAID</td>
+                <td>{$paid}</td>
+            </tr>
+            
+            <tr>
+                <td colspan='2'></td>
+                <td colspan='2'>GRAND TOTAL</td>
+                <td>{$balance}</td>
             </tr>
         ";
     }
@@ -287,7 +361,7 @@ if(isset($_GET['q'])){
                 <header>
                     <div class="row">
                         <div class="col">
-                            <a target="_blank" href="https://lobianijs.com">
+                            <a target="_blank" href="#">
                                 <img src="https://www.ghanacu.com/wp-content/uploads/2018/06/logo.png" data-holder-rendered="true" />
                             </a>
                         </div>
@@ -330,10 +404,10 @@ if(isset($_GET['q'])){
                         </tr>
                         </thead>
                         <tbody>
-                            <?php print_fees_details_bill($conn,$schoolID,$categoryID);?>
+                            <?php print_fees_details_bill($conn,$schoolID,$categoryID,$status);?>
                         </tbody>
                         <tfoot>
-                            <?php print_fees_total($conn);?>
+                            <?php print_fees_total($conn,$studentID);?>
                         </tfoot>
                     </table>
                     <div class="thanks">Thank you!</div>

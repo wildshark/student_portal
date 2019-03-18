@@ -8,7 +8,7 @@
 
 class PAYMENT{
 
-    function make_fees_payment($conn){
+    function make_fees_payment($conn,$rate){
 
         $date = $_POST['date'];
         $receipt = $_POST['receipt'];
@@ -58,11 +58,51 @@ class PAYMENT{
                     $_SESSION['st-level'] = $level;
                     $_SESSION['st-currency'] = $currency;
                     $_SESSION['st-amount'] = $amount;
+                    $_SESSION['st-rate-amount'] = $amount;
                     $_SESSION['st-bill'] = $bill_amount;
                     $_SESSION['st-schoolID'] = $schoolID;
                     $_SESSION['st-categoryID'] = $categoryID;
 
-                    header("location: ?_route=student&p=payment.process&e=122");
+                    /***
+                     *calculating the excharge rate
+                     *
+                    if($currency = "USD"){
+                     echo   $_SESSION['st-amount'] = $amount * $rate['USD'];
+                        $_SESSION['st-bill'] = $bill_amount * $rate['USD'];
+                    }elseif($currency = "GHS"){
+                        $_SESSION['st-amount'] = $amount * $rate['GHS'];
+                        $_SESSION['st-bill'] = $bill_amount * $rate['GHS'];
+                    }elseif ($currency = "NGN"){
+                        $_SESSION['st-amount'] = $amount * $rate['NGN'];
+                        $_SESSION['st-bill'] = $bill_amount * $rate['NGN'];
+                    }elseif ($currency = "KES"){
+                        $_SESSION['st-amount'] = $amount * $rate['KES'];
+                        $_SESSION['st-bill'] = $bill_amount * $rate['KES'];
+                    }elseif ($currency = "UGX"){
+                        $_SESSION['st-amount'] = $amount * $rate['UGX'];
+                        $_SESSION['st-bill'] = $bill_amount * $rate['UGX'];
+                    }elseif ($currency = "TZS"){
+                        $_SESSION['st-amount'] = $amount * $rate['TZS'];
+                        $_SESSION['st-bill'] = $bill_amount * $rate['TZS'];
+                    }elseif ($currency = "SLL"){
+                        $_SESSION['st-amount'] = $amount * $rate['SLL'];
+                        $_SESSION['st-bill'] = $bill_amount * $rate['SLL'];
+                    }elseif ($currency = "ZMW"){
+                        $_SESSION['st-amount'] = $amount * $rate['ZMW'];
+                        $_SESSION['st-bill'] = $bill_amount * $rate['ZMW'];
+                    }elseif ($currency = "ZAR"){
+                        $_SESSION['st-amount'] = $amount * $rate['ZAR'];
+                        $_SESSION['st-bill'] = $bill_amount * $rate['ZAR'];
+                    }
+                     * **/
+
+                    $FEE_CheckSQL ="SELECT * FROM `get_fees_payment_details` where ref_index='$receipt' LIMIT 0, 1";
+                    $result = $conn->query($FEE_CheckSQL);
+                    if ($result->num_rows > 0) {
+                       header("location: ?_route=student&p=school.fees&e=126");
+                    }else{
+                        header("location: ?_route=student&p=payment.process&e=122");
+                    }
                 }
             }else{
                 header("location: ?_route=student&p=school.fees&e=121");
@@ -154,25 +194,30 @@ class PAYMENT{
             $statusID ="2";
         }
 
-
-        $getBOOK="INSERT INTO `fees_payment_details` (`tranNow`, `tranDate`,`ref_index`, `studentID`, `progID`, `semesterID`, `levelID`, `yearID`, `bank`, `ref`, `bill`, `paid`,`statusID`,`typeID`) VALUES ('$now', '$date','$receipt', '$studentID', '$programme', '$semester', '$level', '$academYr', 'SmartPay', '$receipt', '$bill_amount', '$amount','$statusID','1')";
-        $result = $conn->query($getBOOK);
-        if ($result === TRUE){
-        $fee_last_id = $conn->insert_id;
-
-            $pin = date ('YmdHis');
-            $shuffled = str_shuffle($pin);
-           // $rand = rand(100,999);
-            $pin = $shuffled; //."1".$rand;
-
-            $getEnrollSQL="INSERT INTO `enrollment` (`enroll_time`, `pins`, `enroll_date`, `studentID`, `semesterID`, `s_level`, `yearID`, `progID`,`ref`, `statusID`) VALUES ('$now', '$pin', '$date', '$studentID', '$semester', '$level', '$academYr', '$programme','$receipt', '$statusID')";
-            $result = $conn->query($getEnrollSQL);
-            $last_id = $conn->insert_id;
-            if($result === TRUE){
-                header("location: ?_route=student&p=print.enrollment.slip&e=100&d={$last_id}&q={$pin}&f={$fee_last_id}");
-            }
+        $FEE_CheckSQL ="SELECT * FROM `get_fees_payment_details` where ref_index='$receipt' LIMIT 0, 1";
+        $result = $conn->query($FEE_CheckSQL);
+        if ($result->num_rows > 0) {
+            header("location: ?_route=student&p=payment.process&e=126");
         }else{
-         header("location: ?_route=student&p=payment.process&e=103");
+            $getBOOK="INSERT INTO `fees_payment_details` (`tranNow`, `tranDate`,`ref_index`, `studentID`, `progID`, `semesterID`, `levelID`, `yearID`, `bank`, `ref`, `bill`, `paid`,`statusID`,`typeID`) VALUES ('$now', '$date','$receipt', '$studentID', '$programme', '$semester', '$level', '$academYr', 'SmartPay', '$receipt', '$bill_amount', '$amount','$statusID','1')";
+            $result = $conn->query($getBOOK);
+            if ($result === TRUE) {
+                $fee_last_id = $conn->insert_id;
+
+                $pin = date('YmdHis');
+                $shuffled = str_shuffle($pin);
+                // $rand = rand(100,999);
+                $pin = $shuffled; //."1".$rand;
+
+                $getEnrollSQL = "INSERT INTO `enrollment` (`enroll_time`, `pins`, `enroll_date`, `studentID`, `semesterID`, `s_level`, `yearID`, `progID`,`ref`, `statusID`) VALUES ('$now', '$pin', '$date', '$studentID', '$semester', '$level', '$academYr', '$programme','$receipt', '$statusID')";
+                $result = $conn->query($getEnrollSQL);
+                $last_id = $conn->insert_id;
+                if ($result === TRUE) {
+                    header("location: ?_route=student&p=print.enrollment.slip&e=100&d={$last_id}&q={$pin}&f={$fee_last_id}");
+                } else {
+                    header("location: ?_route=student&p=payment.process&e=103");
+                }
+            }
         }
     }
 }

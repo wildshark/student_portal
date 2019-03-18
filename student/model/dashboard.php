@@ -9,15 +9,48 @@
 class DASHBOARD{
 
     function total_fees($conn){
-        return "0.00";
+
+        $id = $_SESSION['studentID'];
+        $sql ="SELECT `fees` FROM `get_fees_summary_total` where studentID='$id' LIMIT 0, 1";
+        $result = $conn->query($sql);
+        if ($result->num_rows == 0){
+            $total = "0.00";
+        }else {
+            $r = $result->fetch_assoc();
+            $total = $r['fees'];
+        }
+
+        return $total;
     }
 
     function total_payment($conn){
-        return "0.00";
+
+        $id = $_SESSION['studentID'];
+        $sql ="SELECT `paid` FROM `get_fees_summary_total` where studentID='$id' LIMIT 0, 1";
+        $result=$conn->query($sql);
+        if ($result->num_rows == 0){
+            $total = "0.00";
+        }else {
+            $r = $result->fetch_assoc();
+            $total = $r['paid'];
+        }
+
+        return $total;
     }
 
     function  total_balance($conn){
-        return"0.00";
+
+        $id = $_SESSION['studentID'];
+        $sql ="SELECT balance FROM `get_fees_summary_total` where studentID='$id' LIMIT 0, 1";
+        $result=$conn->query($sql);
+        if ($result->num_rows == 0){
+            $total = "0.00";
+        }else {
+            $r = $result->fetch_assoc();
+            $total = $r['balance'];
+        }
+
+        return $total;
     }
 
     function semester($semester){

@@ -46,7 +46,7 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
             break;
 
             case "make-fees-payment";
-                PAYMENT::make_fees_payment($conn);
+                PAYMENT::make_fees_payment($conn,$rate);
             break;
 
             case"payment.portal";

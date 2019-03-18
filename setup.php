@@ -6,7 +6,6 @@
  * Time: 8:20 AM
  */
 $rave = array(
-
     'LivePayment' =>"https://api.ravepay.co/flwv3-pug/getpaidx/api/v2/hosted/pay",
     'TestPayment' =>"https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/v2/hosted/pay",
 
@@ -15,5 +14,11 @@ $rave = array(
 
     'LiveSECKEY'=>"FLWSECK-45a0c821f1e1a352a1a45f4fd1c727ca-X",
     'TestSECKEY'=>"FLWSECK-45a0c821f1e1a352a1a45f4fd1c727ca-X"
-
 );
+
+$rate = array(
+    "NGN"=>'9',
+    "GHS"=>'0',
+    "USD"=>'9'
+);
+
