@@ -22,7 +22,6 @@ class PAYMENT{
         $currency = $_POST['currency'];
         $amount = $_POST['amount'];
 
-
         if (isset($admission)){
 
             $sql = "SELECT * FROM `get_student_profile_detail` where admissionNo='$admission' LIMIT 0, 1";
@@ -96,12 +95,38 @@ class PAYMENT{
                     }
                      * **/
 
-                    $FEE_CheckSQL ="SELECT * FROM `get_fees_payment_details` where ref_index='$receipt' LIMIT 0, 1";
-                    $result = $conn->query($FEE_CheckSQL);
-                    if ($result->num_rows > 0) {
-                       header("location: ?_route=student&p=school.fees&e=126");
+                    if (($level == 100) && ($semester == 1)){
+                        $balanace = $amount-$bill_amount;
+
+                        if ($balanace >= 0){
+                            $FEE_CheckSQL ="SELECT * FROM `get_fees_payment_details` where ref_index='$receipt' LIMIT 0, 1";
+                            $result = $conn->query($FEE_CheckSQL);
+                            if ($result->num_rows > 0) {
+                                header("location: ?_route=student&p=school.fees&e=126");
+                            }else{
+                                header("location: ?_route=student&p=payment.process&e=122");
+                            }
+                        }else{
+                           header("location: ?_route=student&p=school.fees&e=127");
+                            exit();
+                        }
+
                     }else{
-                        header("location: ?_route=student&p=payment.process&e=122");
+                        $bal =(($bill_amount * 75) / 100);
+
+                        if($amount > $bal){
+                            $FEE_CheckSQL ="SELECT * FROM `get_fees_payment_details` where ref_index='$receipt' LIMIT 0, 1";
+                            $result = $conn->query($FEE_CheckSQL);
+                            if ($result->num_rows > 0) {
+                                header("location: ?_route=student&p=school.fees&e=126");
+                            }else{
+                                header("location: ?_route=student&p=payment.process&e=122");
+                            }
+                        }else{
+                            header("location: ?_route=student&p=school.fees&e=128");
+                        }
+
+
                     }
                 }
             }else{

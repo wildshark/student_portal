@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b10701-38f8-42d3-ae6c-f30fa9654001" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/student.module" beforeDir="false" afterPath="$PROJECT_DIR$/modules/student.module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.php" beforeDir="false" afterPath="$PROJECT_DIR$/setup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/model/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/student/model/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/modules.php" beforeDir="false" afterPath="$PROJECT_DIR$/student/modules.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/views/enrollment/print.enrollment.pay.slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/student/views/enrollment/print.enrollment.pay.slip.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/dashboard.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,7 +58,7 @@
           <entry key="jpg" value="2" />
           <entry key="js" value="3" />
           <entry key="module" value="124" />
-          <entry key="php" value="801" />
+          <entry key="php" value="803" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -72,20 +66,20 @@
           <entry key="CSS" value="1" />
           <entry key="Image" value="2" />
           <entry key="JavaScript" value="3" />
-          <entry key="PHP" value="925" />
+          <entry key="PHP" value="927" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="3" />
           <entry key="module" value="9539" />
-          <entry key="php" value="54418" />
+          <entry key="php" value="54671" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="164" />
-          <entry key="PHP" value="63618" />
+          <entry key="PHP" value="63871" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="SQL" value="175" />
         </counts>
@@ -102,28 +96,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/student/model/dashboard.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-594">
-              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/student/navigation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1350">
-              <caret line="94" column="79" selection-start-line="94" selection-start-column="79" selection-end-line="94" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/template/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="114" column="51" selection-start-line="114" selection-start-column="51" selection-end-line="114" selection-end-column="51" />
+            <state relative-caret-position="228">
+              <caret line="199" lean-forward="true" selection-start-line="199" selection-end-line="199" />
             </state>
           </provider>
         </entry>
@@ -133,6 +109,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
               <caret line="23" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/payment.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="108" column="30" lean-forward="true" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -249,10 +234,10 @@
         <option value="$PROJECT_DIR$/student/views/enrollment/print.enrollment.pay.slip.php" />
         <option value="$PROJECT_DIR$/setup.php" />
         <option value="$PROJECT_DIR$/student/modules.php" />
-        <option value="$PROJECT_DIR$/modules/payment.php" />
         <option value="$PROJECT_DIR$/modules/student.module" />
         <option value="$PROJECT_DIR$/student/model/dashboard.php" />
         <option value="$PROJECT_DIR$/template/dashboard.php" />
+        <option value="$PROJECT_DIR$/modules/payment.php" />
       </list>
     </option>
   </component>
@@ -313,11 +298,6 @@
               <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
               <item name="student_portal" type="462c0819:PsiDirectoryNode" />
               <item name="student" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="student_portal" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -424,12 +404,12 @@
       <workItem from="1550386756894" duration="9320000" />
       <workItem from="1550488555690" duration="3198000" />
       <workItem from="1552263980966" duration="39555000" />
-      <workItem from="1552540685943" duration="49136000" />
+      <workItem from="1552540685943" duration="56989000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="581232000" />
+    <option name="totallyTimeSpent" value="589085000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -750,20 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/payment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="101" column="22" lean-forward="true" selection-start-line="101" selection-start-column="22" selection-end-line="101" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/modules.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="54" column="58" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/enrollment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-897" />
@@ -792,8 +758,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/student/model/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-594">
+        <state relative-caret-position="69">
           <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/modules.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="54" column="58" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -806,8 +779,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/template/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="114" column="51" selection-start-line="114" selection-start-column="51" selection-end-line="114" selection-end-column="51" />
+        <state relative-caret-position="228">
+          <caret line="199" lean-forward="true" selection-start-line="199" selection-end-line="199" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/payment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="108" column="30" lean-forward="true" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
         </state>
       </provider>
     </entry>
