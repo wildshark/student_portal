@@ -204,28 +204,6 @@ if (isset($_SESSION['studentID'])){
         </div>
     </div>
 </div>
-<div class="col-md-12 grid-margin stretch-card">
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Enrollment Details</h4>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>Year</th>
-                        <th>Programme</th>
-                        <th>Semester</th>
-                        <th>Level</th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php enrollment_details($conn);?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 

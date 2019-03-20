@@ -16,9 +16,14 @@ class top_menu{
             $name =strtoupper($_SESSION['student_index']);
         }
 
+        if (isset($_SESSION['picture'])){
+            $picture = $_SESSION['picture'];
+        }else{
+            $picture = 'asset/images/faces/face1.jpg';
+        }
         echo"
             <span class='profile-text'>Hello, {$name} !</span>
-            <img class='img-xs rounded-circle' src='asset/images/faces/face1.jpg' alt='Profile image'>
+            <img class='img-xs rounded-circle' src='{$picture}' alt='Profile image'>
             ";
     }
 

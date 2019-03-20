@@ -359,7 +359,7 @@
     <!-- page-body-wrapper ends -->
 </div>
 <!-- container-scroller -->
-
+<?php include_once "student/model/modal.box.php"?>
 <!-- plugins:js -->
 <script src="asset/vendors/js/vendor.bundle.base.js"></script>
 <script src="asset/vendors/js/vendor.bundle.addons.js"></script>

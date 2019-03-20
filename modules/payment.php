@@ -8,7 +8,7 @@
 
 class PAYMENT{
 
-    function make_fees_payment($conn,$rate){
+    function make_fees_payment($conn,$exchange_rate){
 
         $date = $_POST['date'];
         $receipt = $_POST['receipt'];
@@ -36,14 +36,26 @@ class PAYMENT{
                 $schoolID = $r['schoolID'];
 
                 //get school bill from bill
-                $getBillSQL="SELECT * FROM `get_fees_bill` where `school_ID`='$schoolID' and `catID`='$categoryID' LIMIT 0, 1";
+                $getBillSQL="SELECT * FROM `get_fees_bill` where `school_ID`='$schoolID' and `catID`='$categoryID' and `semesterID`='$semester' LIMIT 0, 1";
                 $result = $conn->query($getBillSQL);
                 $bill = $result->fetch_assoc();
 
                 if (!isset($bill['amount'])){
                     header("location: ?_route=student&p=school.fees&e=121");
                 }else {
-                    $bill_amount = $bill['amount'];
+                     $bill_amount = $bill['amount'];
+
+                    if($currency === 'USD'){
+                        $_EXCHANGE_bill_amount = $bill_amount * $exchange_rate['usd'];
+                    }elseif ($currency === 'NGN'){
+                        $_EXCHANGE_bill_amount = $bill_amount * $exchange_rate['ngn'];
+                    }elseif ($currency === 'GHS'){
+                        $_EXCHANGE_bill_amount = $bill_amount * $exchange_rate['ghs'];
+                    }else{
+                        $_EXCHANGE_bill_amount = null;
+                    }
+
+                    $_SESSION['billAmount'] =  $_EXCHANGE_bill_amount;
 
                     $_SESSION['st-date'] = $date;
                     $_SESSION['st-receipt'] = $receipt;
@@ -62,43 +74,11 @@ class PAYMENT{
                     $_SESSION['st-schoolID'] = $schoolID;
                     $_SESSION['st-categoryID'] = $categoryID;
 
-                    /***
-                     *calculating the excharge rate
-                     *
-                    if($currency = "USD"){
-                     echo   $_SESSION['st-amount'] = $amount * $rate['USD'];
-                        $_SESSION['st-bill'] = $bill_amount * $rate['USD'];
-                    }elseif($currency = "GHS"){
-                        $_SESSION['st-amount'] = $amount * $rate['GHS'];
-                        $_SESSION['st-bill'] = $bill_amount * $rate['GHS'];
-                    }elseif ($currency = "NGN"){
-                        $_SESSION['st-amount'] = $amount * $rate['NGN'];
-                        $_SESSION['st-bill'] = $bill_amount * $rate['NGN'];
-                    }elseif ($currency = "KES"){
-                        $_SESSION['st-amount'] = $amount * $rate['KES'];
-                        $_SESSION['st-bill'] = $bill_amount * $rate['KES'];
-                    }elseif ($currency = "UGX"){
-                        $_SESSION['st-amount'] = $amount * $rate['UGX'];
-                        $_SESSION['st-bill'] = $bill_amount * $rate['UGX'];
-                    }elseif ($currency = "TZS"){
-                        $_SESSION['st-amount'] = $amount * $rate['TZS'];
-                        $_SESSION['st-bill'] = $bill_amount * $rate['TZS'];
-                    }elseif ($currency = "SLL"){
-                        $_SESSION['st-amount'] = $amount * $rate['SLL'];
-                        $_SESSION['st-bill'] = $bill_amount * $rate['SLL'];
-                    }elseif ($currency = "ZMW"){
-                        $_SESSION['st-amount'] = $amount * $rate['ZMW'];
-                        $_SESSION['st-bill'] = $bill_amount * $rate['ZMW'];
-                    }elseif ($currency = "ZAR"){
-                        $_SESSION['st-amount'] = $amount * $rate['ZAR'];
-                        $_SESSION['st-bill'] = $bill_amount * $rate['ZAR'];
-                    }
-                     * **/
 
                     if (($level == 100) && ($semester == 1)){
-                        $balanace = $amount-$bill_amount;
+                        $balance = $amount - $_EXCHANGE_bill_amount;
 
-                        if ($balanace >= 0){
+                        if ($balance >= 0){
                             $FEE_CheckSQL ="SELECT * FROM `get_fees_payment_details` where ref_index='$receipt' LIMIT 0, 1";
                             $result = $conn->query($FEE_CheckSQL);
                             if ($result->num_rows > 0) {
@@ -112,7 +92,7 @@ class PAYMENT{
                         }
 
                     }else{
-                        $bal =(($bill_amount * 75) / 100);
+                         $bal =(($_EXCHANGE_bill_amount * 75) / 100);
 
                         if($amount > $bal){
                             $FEE_CheckSQL ="SELECT * FROM `get_fees_payment_details` where ref_index='$receipt' LIMIT 0, 1";
@@ -125,8 +105,6 @@ class PAYMENT{
                         }else{
                             header("location: ?_route=student&p=school.fees&e=128");
                         }
-
-
                     }
                 }
             }else{
@@ -196,7 +174,7 @@ class PAYMENT{
 
     }
 
-    function after_payment_process($conn){
+    function after_payment_process($conn,$exchange_rate){
 
 
         $now = date("Y-m-d H:i:s ");
@@ -210,9 +188,23 @@ class PAYMENT{
         $semester = $_SESSION['st-semester'];
         $programme = $_SESSION['st-programme'];
         $level = $_SESSION['st-level'];
+        $currency = $_SESSION['st-currency'];
         $amount = $_SESSION['st-amount'];
         $bill_amount=$_SESSION['st-bill'];
         $verification= $_SESSION['verification'];
+
+        if($currency === 'USD'){
+            $_EXCHANGE_amount = $amount / $exchange_rate['usd'];
+        }elseif ($currency === 'NGN'){
+            $_EXCHANGE_amount = $amount / $exchange_rate['ngn'];
+        }elseif ($currency === 'GHS'){
+            $_EXCHANGE_amount = $amount / $exchange_rate['ghs'];
+        }else{
+            $_EXCHANGE_amount = null;
+        }
+
+        $_SESSION['paidAmount'] = $_EXCHANGE_amount;
+
         if (is_null($verification)){
             $statusID = '1';
         }else{
@@ -224,7 +216,7 @@ class PAYMENT{
         if ($result->num_rows > 0) {
             header("location: ?_route=student&p=payment.process&e=126");
         }else{
-            $getBOOK="INSERT INTO `fees_payment_details` (`tranNow`, `tranDate`,`ref_index`, `studentID`, `progID`, `semesterID`, `levelID`, `yearID`, `bank`, `ref`, `bill`, `paid`,`statusID`,`typeID`) VALUES ('$now', '$date','$receipt', '$studentID', '$programme', '$semester', '$level', '$academYr', 'SmartPay', '$receipt', '$bill_amount', '$amount','$statusID','1')";
+            $getBOOK="INSERT INTO `fees_payment_details` (`tranNow`, `tranDate`,`ref_index`, `studentID`, `progID`, `semesterID`, `levelID`, `yearID`, `bank`, `ref`, `bill`, `paid`,`statusID`,`typeID`) VALUES ('$now', '$date','$receipt', '$studentID', '$programme', '$semester', '$level', '$academYr', 'SmartPay', '$receipt', '$bill_amount', '$_EXCHANGE_amount','$statusID','1')";
             $result = $conn->query($getBOOK);
             if ($result === TRUE) {
                 $fee_last_id = $conn->insert_id;

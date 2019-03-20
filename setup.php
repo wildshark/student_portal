@@ -16,9 +16,7 @@ $rave = array(
     'TestSECKEY'=>"FLWSECK-45a0c821f1e1a352a1a45f4fd1c727ca-X"
 );
 
-$rate = array(
-    "NGN"=>'9',
-    "GHS"=>'0',
-    "USD"=>'9'
-);
+$exchange_rate =array("usd" => '0.19',"ghs" => '1',"ngn" => '66.42');
+
+
 

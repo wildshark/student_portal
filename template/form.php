@@ -131,6 +131,7 @@
     </div>
     <!-- page-body-wrapper ends -->
 </div>
+<?php include_once "student/model/modal.box.php"?>
 <!-- container-scroller -->
 <!-- plugins:js -->
 <script src="asset/vendors/js/vendor.bundle.base.js"></script>

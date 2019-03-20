@@ -10,8 +10,8 @@ class stuSideMenu{
 
     function nav_student_profile(){
 
-        if(isset($_USER['picture']) and !empty($_USER['picture'])){
-            $picture = $_USER['picture'];
+        if(isset($_SESSION['picture'])){
+            $picture =$_SESSION['picture'];
         }else{
             $picture ="asset/images/faces/face1.jpg";
         }
@@ -32,7 +32,9 @@ class stuSideMenu{
             <div class='nav-link'>
                 <div class='user-wrapper'>
                     <div class='profile-image'>
-                        <img src='{$picture}' alt='profile image'>
+                        <a href='#' data-toggle='modal' data-target='#picture-modal'>
+                            <img src='{$picture}' alt='profile image'>
+                        </a>
                     </div>
                     <div class='text-wrapper'>
                         <p class='profile-name'>{$name}</p>
@@ -45,7 +47,8 @@ class stuSideMenu{
                 <button class='btn btn-success btn-block'>New Project
                     <i class='mdi mdi-plus'></i>
                 </button>
-            </div>";
+            </div>
+            ";
     }
 
     function menu_activated(){
@@ -65,13 +68,16 @@ class stuSideMenu{
             <li class='nav-item'>
                 <a class='nav-link' data-toggle='collapse' href='#payment' aria-expanded='false' aria-controls='auth'>
                     <i class='menu-icon mdi mdi-package-variant'></i>
-                    <span class='menu-title'>Payment</span>
+                    <span class='menu-title'>Payment & Bill</span>
                     <i class='menu-arrow'></i>
                 </a>
                 <div class='collapse' id='payment'>
                     <ul class='nav flex-column sub-menu'>
                         <li class='nav-item'>
-                            <a class='nav-link' href='?_route=student&p=school.fees'> School Fees </a>
+                            <a class='nav-link' href='#' data-toggle='modal' data-target='#school-bill-modal'> Fees Bill </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='?_route=student&p=school.fees'> Fees Payment </a>
                         </li>
                         <li class='nav-item'>
                             <a class='nav-link' href='?_route=student&p=hostel.fees'> Hostel Fees </a>

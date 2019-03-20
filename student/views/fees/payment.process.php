@@ -35,20 +35,25 @@ if (isset($_SESSION['studentID'])) {
     }
 }
 
-$date = $_SESSION['st-date'];
-$receipt = $_SESSION['st-receipt'];
-$studentID = $_SESSION['st-id'];
-$name = $_SESSION['st-name'];
-$surname = $_SESSION['st-surname'];
-$admission = $_SESSION['st-admission'];
-$academYr = $_SESSION['st-acadYr'];
-$semester = $_SESSION['st-semester'];
-$programme = $_SESSION['st-programme'];
-$level = $_SESSION['st-level'];
-$amount = $_SESSION['st-amount'];
-$bill_amount=$_SESSION['st-bill'];
-$currency =$_SESSION['st-currency'];
-$bal = $bill_amount-$amount;
+if (isset($_SESSION['billAmount']) && ($_SESSION['billAmount'] !== null)){
+    $date = $_SESSION['st-date'];
+    $receipt = $_SESSION['st-receipt'];
+    $studentID = $_SESSION['st-id'];
+    $name = $_SESSION['st-name'];
+    $surname = $_SESSION['st-surname'];
+    $admission = $_SESSION['st-admission'];
+    $academYr = $_SESSION['st-acadYr'];
+    $semester = $_SESSION['st-semester'];
+    $programme = $_SESSION['st-programme'];
+    $level = $_SESSION['st-level'];
+    $amount = $_SESSION['st-amount'];
+    //$bill_amount=$_SESSION['st-bill'];
+    $currency = $_SESSION['st-currency'];
+
+    $bill_exchange = $_SESSION['billAmount'];
+    $bal = $bill_exchange-$amount;
+
+}
 
 ?>
 
@@ -152,7 +157,7 @@ $bal = $bill_amount-$amount;
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Bill</label>
                             <div class="col-sm-9">
-                                <input type="text" name="surname" id="bill" readonly value="<?php echo $bill_amount;?>" class="form-control" placeholder="Student Name" />
+                                <input type="text" name="surname" id="bill" readonly value="<?php echo $bill_exchange;?>" class="form-control" placeholder="Student Name" />
                             </div>
                         </div>
                     </div>

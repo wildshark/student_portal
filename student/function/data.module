@@ -186,5 +186,92 @@ function manage_ticket($conn){
     }
 }
 
+function school_fees_bill_details($conn,$academic,$programmeID,$semesterID){
+
+   $catID = $_SESSION['studentCatID'];
+
+    $sql="SELECT * FROM `get_programme` where `progID`='$programmeID' LIMIT 0, 1";
+    $result = mysqli_query($conn,$sql);
+    if ($result->num_rows > 0){
+        $r=$result->fetch_assoc();
+        $schoolID = $r['schoolID'];
+    }else{
+        $schoolID =null;
+    }
+
+    echo $sql="SELECT * FROM `get_fees_bill` where `semesterID`='$semesterID' and `school_ID`='$schoolID' and `catID`='$catID' LIMIT 0, 1";
+    $result = mysqli_query($conn,$sql);
+    if ($result->num_rows > 0){
+        while ($r=$result->fetch_assoc()){
+            $tf = $r['tf'];
+            $fuf =  $r['fuf'];
+            $src = $r['src'];
+            $fdf = $r['fdf'];
+            $af = $r['af'];
+            $rv = $r['rv'];
+            $mat = $r['matr'];
+            $med = $r['medi'];
+            $shb = $r['shb'];
+            $other = $r['other'];
+            $semester = $r['semesterID'];
+            $amount = $r['amount'];
+
+            if($semester == 1){
+                $sem = "1st Semester";
+            }elseif ($semester == 2){
+                $sem = "2nd Semester";
+            }else{
+                $sem = "Unknown";
+            }
+            echo"
+                <tr>
+                    <td>Tuition Fees</td>
+                    <td>{$tf}</td>
+                </tr>
+                <tr>
+                    <td>Facility User Fees</td>
+                    <td>{$fuf}</td>
+                </tr>
+                <tr>
+                    <td>SRC-Fees</td>
+                    <td>{$src}</td>
+                </tr>
+                <tr>
+                    <td>Facility Due Fees</td>
+                    <td>{$fdf}</td>
+                </tr>
+                <tr>
+                    <td>Acceptance Fees</td>
+                    <td>{$af}</td>
+                </tr>
+                <tr>
+                    <td>Result Verification</td>
+                    <td>{$rv}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>{$mat}</td>
+                </tr>
+                <tr>
+                    <td>Medical Examination</td>
+                    <td>{$med}</td>
+                </tr>
+                <tr>
+                    <td>Student Hand book</td>
+                    <td>{$shb}</td>
+                </tr>
+                <tr>
+                    <td>Other Fees</td>
+                    <td>{$other}</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>{$amount}</td>
+                </tr>
+                ";
+        }
+    }
+}
+
 ?>
 

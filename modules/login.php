@@ -106,6 +106,8 @@ class USER_LOGIN{
                         $student = mysqli_fetch_assoc($profile_result);
                         $_SESSION['studentID'] = $student['studentID'];
                         $_SESSION['student_name'] = $student['first_name']." ".$student['surname'];
+                        $_SESSION['picture'] = $student['picture'];
+                        $_SESSION['studentCatID'] = $student['categoryID'];
                         if (!isset($student['admissionNo']) OR !isset($student['surname'])){
                             header("location: index.php?_route=student&p=profile&e=100");
                         }else{
@@ -115,6 +117,8 @@ class USER_LOGIN{
                             if (mysqli_num_rows($student_index_id_result) > 0) {
                                 $r = mysqli_fetch_assoc($student_index_id_result);
                                 $student_index_id = $r['studentID'];
+                                $_SESSION['picture'] = $r['picture'];
+                                $_SESSION['studentCatID'] = $r['categoryID'];
                                 $_SESSION['student_index_id']= $student_index_id;
                                 if(isset($_SESSION['student_index_id'])){
                                     header("location: index.php?_route=student&p=dashboard&e=100");

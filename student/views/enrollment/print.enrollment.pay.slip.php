@@ -75,7 +75,13 @@ if(isset($_GET['q'])){
         $ref = $r['ref'];
     }
 
-    function print_fees_details_bill($conn,$schoolID,$categoryID,$status){
+    if($categoryID == 1){
+        $rate = $exchange_rate['ghs'];
+    }elseif($categoryID == 2){
+        $rate = $exchange_rate['usd'];
+    }
+
+    function print_fees_details_bill($conn,$schoolID,$categoryID,$status,$rate){
 
         $billSQL ="SELECT * FROM `get_fees_bill` where school_ID ='$schoolID' and catID='$categoryID' LIMIT 0, 1";
         $result = $conn->query($billSQL);
@@ -96,13 +102,15 @@ if(isset($_GET['q'])){
                 }else{
                     $n = $n + 1;
                 }
+                $amount =$r['amount'];
+                $amount = $amount * $rate;
                 echo "
                     <tr>
                         <td class='no'>{$n}</td>
                         <td class='text-left'><h3>Fees</h3>{$status}</td>
-                        <td class='unit'>{$r['amount']}</td>
+                        <td class='unit'>{$amount}</td>
                         <td class='qty'>1</td>
-                        <td class='total'>{$r['amount']}</td>
+                        <td class='total'>{$amount}</td>
                     </tr>
                 ";
             }
@@ -110,7 +118,7 @@ if(isset($_GET['q'])){
 
     }
 
-    function print_fees_total($conn,$studentID){
+    function print_fees_total($conn,$studentID,$rate){
 
         $balSQL = "SELECT * FROM `get_fees_payment_details` where studentID='$studentID' order by feeID DESC  LIMIT 0, 1";
         $result = $conn->query($balSQL);
@@ -130,6 +138,17 @@ if(isset($_GET['q'])){
         }else{
             while ($r=$result->fetch_assoc()){
                 $balance = $r['Balance'];
+                $previousBAL = $balance - $paid;
+            }
+        }
+
+        $countSQL = "SELECT Count(get_fees_payment_details.feeID) as total FROM get_fees_payment_details";
+        $result = $conn->query($countSQL);
+        if ($result->num_rows > 0) {
+            $r=$result->fetch_assoc();
+            if ($r['total'] == 1){
+                $previousBAL = 0.00;
+            }else{
                 $previousBAL = $balance - $paid;
             }
         }
@@ -404,10 +423,10 @@ if(isset($_GET['q'])){
                         </tr>
                         </thead>
                         <tbody>
-                            <?php print_fees_details_bill($conn,$schoolID,$categoryID,$status);?>
+                            <?php print_fees_details_bill($conn,$schoolID,$categoryID,$status,$rate);?>
                         </tbody>
                         <tfoot>
-                            <?php print_fees_total($conn,$studentID);?>
+                            <?php print_fees_total($conn,$studentID,$rate);?>
                         </tfoot>
                     </table>
                     <div class="thanks">Thank you!</div>

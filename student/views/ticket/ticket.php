@@ -22,12 +22,13 @@ if(isset($_GET['d'])){
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="forms-sample">
                         <input type="hidden" name="ticket" value="<?php echo $ticket;?>">
                         <div class="form-group">
-                            <label for="exampleInputName1">Subject</label>
+                            <label for="exampleInputName1">Issue of Concern</label>
                             <input type="text" name="subject" class="form-control" id="exampleInputName1" placeholder="Subject">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Comment</label>
                             <textarea name="comment" class="form-control" id="exampleText-area1" rows="7"></textarea>
+                            
                         </div>
                         <button type="submit" name="submit" value="add-comment" class="btn btn-success mr-2">Submit</button>
                         <button class="btn btn-light">Cancel</button>

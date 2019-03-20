@@ -6,11 +6,13 @@
  * Time: 8:14 AM
  */
 
+include "plugin/image/image.resize.php";
 include "modules/student.module";
 include "modules/hostel.php";
 include "modules/enrollment.php";
 include "modules/ticket.php";
 include "modules/payment.php";
+
 
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
@@ -25,8 +27,28 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                 PROFILE::password($conn);
             break;
 
+            case"upload-image";
+                PROFILE::upload_picture($conn);
+                if(isset($_SESSION['pic-status']) && $_SESSION['pic-status'] == true){
+                    // *** 1) Initialise / load image
+                    $picture = $_SESSION['image'];
+                    $resizeObj = new resize($picture);
+
+                    // *** 2) Resize image (options: exact, portrait, landscape, auto, crop)
+                    $resizeObj -> resizeImage(100, 100, 'crop');
+
+                    // *** 3) Save image
+                    $resizeObj -> saveImage($picture, 1000);
+                    $_SESSION['picture']=$picture;
+                }
+            break;
+
             case "update-student-profile";
                 PROFILE::update($conn);
+            break;
+
+            case "school-bill";
+                include "student/views/fees/print.fees.bill.php";
             break;
 
             case"add-booking";
@@ -46,13 +68,13 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
             break;
 
             case "make-fees-payment";
-                PAYMENT::make_fees_payment($conn,$rate);
+                PAYMENT::make_fees_payment($conn,$exchange_rate);
             break;
 
             case"payment.portal";
                 if ($_REQUEST['status'] ==="payment.successful"){
                     if ($_SESSION['st-token'] == $_REQUEST['stamp']){
-                        PAYMENT:: after_payment_process($conn);
+                        PAYMENT:: after_payment_process($conn,$exchange_rate);
                     }
                 }elseif($_REQUEST['status'] ==='payment.verification'){
                     if(isset($_REQUEST['txref'])){
