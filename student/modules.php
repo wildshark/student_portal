@@ -12,7 +12,7 @@ include "modules/hostel.php";
 include "modules/enrollment.php";
 include "modules/ticket.php";
 include "modules/payment.php";
-
+include "plugin/sms/sms.php";
 
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
@@ -78,7 +78,18 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                     }
                 }elseif($_REQUEST['status'] ==='payment.verification'){
                     if(isset($_REQUEST['txref'])){
+                        
                         if ($_REQUEST['txref'] === $_SESSION['st-receipt']){
+
+                            $r = $_SESSION['st-receipt'];
+                            $i = $_SESSION['st-admission'];
+                            $n = $_SESSION['st-name'] ." ". $_SESSION['st-surname'];
+                            $x = $_SESSION['paidAmount'];
+                            $x = number_format($x,2);
+                            $msg = "ref: ".$r."\r\n index:".$i."\r\n name:".$n."\r\n paid:". $x;
+                            $sms = array("to"=>$alert_mobile,"msg"=>$msg);
+                            sms_messenger($sms);
+
                             PAYMENT::payment_verification($rave);
                         }else{
                             echo"ERROR: System error or a fraudulent act. see administrator for further details";

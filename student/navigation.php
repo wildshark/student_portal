@@ -10,7 +10,7 @@ include_once "model/student_menu.module";
 include_once "function/data.module";
 include_once "model/dashboard.php";
 include_once "model/message.box.php";
-
+include "plugin/sms/sms.php";
 
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
    // echo "no cookie or session created";

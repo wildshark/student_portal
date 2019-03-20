@@ -16,7 +16,8 @@ $rave = array(
     'TestSECKEY'=>"FLWSECK-45a0c821f1e1a352a1a45f4fd1c727ca-X"
 );
 
-$exchange_rate =array("usd" => '0.19',"ghs" => '1',"ngn" => '66.42');
+$exchange_rate = array("usd" => '0.19',"ghs" => '1',"ngn" => '66.42');
 
+$alert_mobile ="233558218614";
 
 

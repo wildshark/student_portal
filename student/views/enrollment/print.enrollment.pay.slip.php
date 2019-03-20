@@ -123,7 +123,8 @@ if(isset($_GET['q'])){
         $balSQL = "SELECT * FROM `get_fees_payment_details` where studentID='$studentID' order by feeID DESC  LIMIT 0, 1";
         $result = $conn->query($balSQL);
         if ($result->num_rows == 0) {
-            $bal = '0.00';
+            $bill= '0.00';
+            $paid ="0.00";
         }else{
             while ($r=$result->fetch_assoc()){
                 $bill = $r['bill'];
@@ -134,7 +135,7 @@ if(isset($_GET['q'])){
         $balSQL = "SELECT `Balance` FROM `get_fees_payment_total` where studentID='$studentID' LIMIT 0, 1";
         $result = $conn->query($balSQL);
         if ($result->num_rows == 0) {
-            $bal = '0.00';
+            $balance = '0.00';
         }else{
             while ($r=$result->fetch_assoc()){
                 $balance = $r['Balance'];
@@ -186,6 +187,7 @@ if(isset($_GET['q'])){
 }else{
     logout();
 }
+
 ?>
 <html>
 <head>

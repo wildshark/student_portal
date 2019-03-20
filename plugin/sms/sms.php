@@ -3,9 +3,8 @@
  * Created by PhpStorm.
  * User: Andrew Quaye
  * Date: 20/03/2019
- * Time: 8:07 AM
+ * Time: 12:07 PM
  */
-
 function sms_messenger($sms){
 
 //username from SMSAPI
@@ -46,10 +45,4 @@ function sms_messenger($sms){
     }else{
         return false;
     }
-}
-
-if(false == sms_messenger($sms)){
-    echo "failed";
-}else{
-    echo "ok";
 }

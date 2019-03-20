@@ -36,7 +36,7 @@ class PAYMENT{
                 $schoolID = $r['schoolID'];
 
                 //get school bill from bill
-                $getBillSQL="SELECT * FROM `get_fees_bill` where `school_ID`='$schoolID' and `catID`='$categoryID' and `semesterID`='$semester' LIMIT 0, 1";
+               echo $getBillSQL="SELECT * FROM `get_fees_bill` where `school_ID`='$schoolID' and `catID`='$categoryID' and `semesterID`='$semester' LIMIT 0, 1";
                 $result = $conn->query($getBillSQL);
                 $bill = $result->fetch_assoc();
 
