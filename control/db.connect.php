@@ -11,8 +11,8 @@ if($_SERVER['SERVER_NAME'] === 'localhost'){
     $password = "";
     $database = "school_data";
 }elseif($_SERVER['SERVER_NAME'] ==='qschool.herokuapp.com'){
-    $servername = "86.101.88.73";
-    $username = "admin";
+    $servername = "46.101.88.78";
+    $username = "iquipe";
     $password = "@passWD8282";
     $database = "school_data";
 }else{
