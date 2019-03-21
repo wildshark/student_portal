@@ -6,6 +6,7 @@
  * Time: 1:01 PM
  */
 ?>
+<!--Picture upload modal-->
 <div class="modal fade" id="picture-modal">
     <div class="modal-dialog modal-dialog-centered modal-md">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
@@ -30,7 +31,7 @@
     </div>
 </div>
 
-//school bill
+<!--School Bill Modal-->
 <div class="modal fade" id="school-bill-modal">
     <div class="modal-dialog modal-dialog-centered modal-md">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
