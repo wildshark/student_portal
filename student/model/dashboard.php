@@ -18,6 +18,7 @@ class DASHBOARD{
         }else {
             $r = $result->fetch_assoc();
             $total = $r['fees'];
+            $total = number_format($total,2);
         }
 
         return $total;
@@ -33,6 +34,7 @@ class DASHBOARD{
         }else {
             $r = $result->fetch_assoc();
             $total = $r['paid'];
+            $total = number_format($total,2);
         }
 
         return $total;
@@ -48,6 +50,7 @@ class DASHBOARD{
         }else {
             $r = $result->fetch_assoc();
             $total = $r['balance'];
+            $total = number_format($total,2);
         }
 
         return $total;

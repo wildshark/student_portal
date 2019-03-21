@@ -5,51 +5,20 @@
  * Date: 20/03/2019
  * Time: 8:07 AM
  */
+$servername = "46.101.88.78";
+$username = "iquipe";
+$password = "@passWD8282";
+$database = "school_data";
 
-function sms_messenger($sms){
 
-//username from SMSAPI
-    $username = 'bsgh-iquipe';
-//or 'password' => md5('open-text-password'),
-    $password = 'passwd82';
-//destination number
-    $to = $sms['to'];
-//sender name has to be active
-    $from = 'smartpay';
-//message content
-    $message = $sms['msg'];
-//API http
+// Create connection
+$conn = mysqli_connect($servername, $username, $password,$database);
 
-    $url = 'http://sms.bernsergsolutions.com:8080/bulksms/bulksms?';
-
-    $c = curl_init();
-    curl_setopt($c,CURLOPT_URL,$url);
-    curl_setopt($c,CURLOPT_POST,true);
-    curl_setopt($c,CURLOPT_POSTFIELDS,  'username='.$username.
-        '&password='.$password.
-        '&type=0&dlr=1&destination='.$to.
-        '&source='.$from.
-        '&message='.$message);
-    curl_setopt($c,CURLOPT_RETURNTRANSFER,true);
-    $content = curl_exec($c);
-    curl_close($c);
-//echo  $content;
-
-    $str_total = strlen($content);
-    $text = 4 - $str_total;
-
-    $msg = substr($content,0,$text);
-
-    if ($msg == 1701){
-
-        return true;
-    }else{
-        return false;
-    }
-}
-
-if(false == sms_messenger($sms)){
-    echo "failed";
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }else{
-    echo "ok";
+
+    session_start();
+    echo "Connected successfully";
 }

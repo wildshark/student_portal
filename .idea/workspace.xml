@@ -2,38 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b10701-38f8-42d3-ae6c-f30fa9654001" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/control/db.connect.php" beforeDir="false" afterPath="$PROJECT_DIR$/control/db.connect.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/model/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/student/model/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2.php" beforeDir="false" afterPath="$PROJECT_DIR$/test2.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/student/function/data.module">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="426">
-                    <caret line="263" column="34" selection-start-line="263" selection-start-column="24" selection-end-line="263" selection-end-column="34" />
-                    <folding>
-                      <element signature="n#fees_details#0;n#!!top" />
-                      <element signature="n#hostel_details#0;n#!!top" />
-                      <element signature="n#get_course_registered#0;n#!!top" />
-                      <element signature="n#manage_ticket#0;n#!!top" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1764539658">
@@ -84,7 +61,7 @@
           <entry key="jpg" value="2" />
           <entry key="js" value="3" />
           <entry key="module" value="135" />
-          <entry key="php" value="857" />
+          <entry key="php" value="860" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -92,20 +69,20 @@
           <entry key="CSS" value="1" />
           <entry key="Image" value="2" />
           <entry key="JavaScript" value="3" />
-          <entry key="PHP" value="992" />
+          <entry key="PHP" value="995" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="3" />
           <entry key="module" value="10781" />
-          <entry key="php" value="58506" />
+          <entry key="php" value="58524" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="196" />
-          <entry key="PHP" value="68916" />
+          <entry key="PHP" value="68934" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="SQL" value="175" />
         </counts>
@@ -122,15 +99,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plugin/sms/sms.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/student/modules.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -139,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/control/db.connect.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+            <state relative-caret-position="528">
+              <caret line="35" column="32" lean-forward="true" selection-start-line="24" selection-end-line="35" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -163,13 +131,6 @@
             <state relative-caret-position="35">
               <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/school/views/enrollment/enrollment.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1682" />
           </provider>
         </entry>
       </file>
@@ -194,17 +155,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="8" selection-start-line="8" selection-end-line="48" selection-end-column="1" />
+            <state relative-caret-position="238">
+              <caret line="14" column="68" lean-forward="true" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/setup.php">
+        <entry file="file://$PROJECT_DIR$/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="358">
+              <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/student/model/dashboard.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/dashboard.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6125">
+              <caret line="361" column="50" selection-start-line="361" selection-start-column="50" selection-end-line="361" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -303,7 +282,6 @@
         <option value="$PROJECT_DIR$/asset/css/invoice_style.css" />
         <option value="$PROJECT_DIR$/modules/verify.payment.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/student/model/dashboard.php" />
         <option value="$PROJECT_DIR$/student/views/fees/fees.payment.php" />
         <option value="$PROJECT_DIR$/template/dashboard.php" />
         <option value="$PROJECT_DIR$/template/form.php" />
@@ -319,7 +297,6 @@
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/student/views/fees/payment.process.php" />
         <option value="$PROJECT_DIR$/student/views/fees/print.fees.bill.php" />
-        <option value="$PROJECT_DIR$/test2.php" />
         <option value="$PROJECT_DIR$/plugin/sms/sms.php" />
         <option value="$PROJECT_DIR$/modules/payment.php" />
         <option value="$PROJECT_DIR$/student/navigation.php" />
@@ -327,6 +304,8 @@
         <option value="$PROJECT_DIR$/student/views/enrollment/print.enrollment.pay.slip.php" />
         <option value="$PROJECT_DIR$/student/modules.php" />
         <option value="$PROJECT_DIR$/control/db.connect.php" />
+        <option value="$PROJECT_DIR$/test2.php" />
+        <option value="$PROJECT_DIR$/student/model/dashboard.php" />
       </list>
     </option>
   </component>
@@ -365,10 +344,10 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1276" />
-    <option name="y" value="-18" />
-    <option name="width" value="1038" />
-    <option name="height" value="674" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -385,7 +364,18 @@
             <path>
               <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
               <item name="student_portal" type="462c0819:PsiDirectoryNode" />
-              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="student" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="student_portal" type="462c0819:PsiDirectoryNode" />
+              <item name="student" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="student_portal" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -495,15 +485,15 @@
       <workItem from="1552263980966" duration="39555000" />
       <workItem from="1552540685943" duration="64325000" />
       <workItem from="1553002682068" duration="3132000" />
-      <workItem from="1553009047083" duration="45427000" />
+      <workItem from="1553009047083" duration="47742000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="644980000" />
+    <option name="totallyTimeSpent" value="647295000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2730711" />
@@ -671,13 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/student/model/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-594">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -764,19 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/student/function/data.module">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="263" column="34" selection-start-line="263" selection-start-column="24" selection-end-line="263" selection-end-column="34" />
-          <folding>
-            <element signature="n#fees_details#0;n#!!top" />
-            <element signature="n#hostel_details#0;n#!!top" />
-            <element signature="n#get_course_registered#0;n#!!top" />
-            <element signature="n#manage_ticket#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/student/views/fees/print.fees.bill.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -808,13 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="361" column="50" selection-start-line="361" selection-start-column="50" selection-end-line="361" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugin/sms/sms.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -829,16 +792,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" selection-start-line="8" selection-end-line="48" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/school/views/enrollment/enrollment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1682" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/views/enrollment/print.enrollment.pay.slip.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="159" selection-start-line="159" selection-end-line="159" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/modules.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
@@ -855,10 +825,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/student/views/enrollment/print.enrollment.pay.slip.php">
+    <entry file="file://$PROJECT_DIR$/control/db.connect.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="159" selection-start-line="159" selection-end-line="159" />
+        <state relative-caret-position="528">
+          <caret line="35" column="32" lean-forward="true" selection-start-line="24" selection-end-line="35" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="68" lean-forward="true" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/function/data.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="715">
+          <caret line="256" column="35" lean-forward="true" selection-start-line="256" selection-start-column="35" selection-end-line="256" selection-end-column="35" />
+          <folding>
+            <element signature="n#fees_details#0;n#!!top" />
+            <element signature="n#hostel_details#0;n#!!top" />
+            <element signature="n#get_course_registered#0;n#!!top" />
+            <element signature="n#manage_ticket#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6125">
+          <caret line="361" column="50" selection-start-line="361" selection-start-column="50" selection-end-line="361" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -869,24 +873,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/student/modules.php">
+    <entry file="file://$PROJECT_DIR$/student/model/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/db.connect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        <state relative-caret-position="425">
+          <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
         </state>
       </provider>
     </entry>
