@@ -78,7 +78,7 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                     }
                 }elseif($_REQUEST['status'] ==='payment.verification'){
                     if(isset($_REQUEST['txref'])){
-                        
+
                         if ($_REQUEST['txref'] === $_SESSION['st-receipt']){
 
                             $r = $_SESSION['st-receipt'];
