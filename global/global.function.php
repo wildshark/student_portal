@@ -12,7 +12,15 @@ function logout(){
 
     unset($_COOKIE['token']);
 
-    setcookie('token', '', time() - (86400 * 30), '/');
+    setcookie('token', '', time() - (1), '/');
+
+    if (!isset($_COOKIE['token'])){
+
+        $past =time () - (1);
+        foreach ($_COOKIE as $key => $value){ //delete all cookies
+            setcookie($key,$value,$past,'/');
+        }
+    }
 
     include "global.label.php";
     include "template/login.php";

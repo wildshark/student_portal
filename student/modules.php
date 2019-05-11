@@ -110,7 +110,6 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
 
             default:
                 include_once "template/error.php";
-
         }
     }else{
         logout();

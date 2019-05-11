@@ -69,6 +69,12 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                 include "template/form.php";
             break;
 
+            case "hostel.fees";
+                $_template->menu = "template/menu.php";
+                $_template->view ="student/views/hostel/hostel.order.php";
+                include "template/form.php";
+            break;
+
             case"hostel";
                 $_template->menu = "template/menu.php";
                 $_template->view ="student/views/hostel/hostel.php";

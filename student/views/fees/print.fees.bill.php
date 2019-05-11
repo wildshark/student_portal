@@ -197,15 +197,16 @@
             $balance = '0.00';
             $previousBAL ="0.00";
         }else{
-            while ($r=$result->fetch_assoc()){
+            while ($r=$result->fetch_assoc()) {
                 $balance = $r['Balance'];
+                $previousBAL = $r['Balance'];
             }
         }
+            $grand = $bill + $balance;
 
-        $grand = $bill + $balance;
         $previousBAL = number_format($previousBAL,2);
         $paid = number_format($paid,2);
-        $balance = number_format($balance,2);
+        //$balance = number_format($balance,2);
         $grandTOTAL = number_format($grand,2);
 
         echo"

@@ -104,6 +104,12 @@ class USER_LOGIN{
                     if(mysqli_num_rows($profile_result) > 0){
 
                         $student = mysqli_fetch_assoc($profile_result);
+                        //setcookie
+                        setcookie("st_name",$student['first_name'],time() + (86400 * 30), "/");
+                        setcookie("st_surname",$student['surname'],time() + (86400 * 30), "/");
+                        setcookie("st_mobile1",$student['mobile1'],time() + (86400 * 30), "/");
+                        setcookie("st_email",$student['email'],time() + (86400 * 30), "/");
+
                         $_SESSION['studentID'] = $student['studentID'];
                         $_SESSION['student_name'] = $student['first_name']." ".$student['surname'];
                         $_SESSION['picture'] = $student['picture'];
@@ -120,6 +126,12 @@ class USER_LOGIN{
                                 $_SESSION['picture'] = $r['picture'];
                                 $_SESSION['studentCatID'] = $r['categoryID'];
                                 $_SESSION['student_index_id']= $student_index_id;
+
+                                setcookie("st_name",$student['first_name'],time() + (86400 * 30), "/");
+                                setcookie("st_surname",$student['surname'],time() + (86400 * 30), "/");
+                                setcookie("st_mobile1",$student['mobile1'],time() + (86400 * 30), "/");
+                                setcookie("st_email",$student['email'],time() + (86400 * 30), "/");
+
                                 if(isset($_SESSION['student_index_id'])){
                                     header("location: index.php?_route=student&p=dashboard&e=100");
                                 }
