@@ -237,5 +237,27 @@ class PAYMENT{
             }
         }
     }
+
+    function make_hostel_payment($conn,$data){
+
+        $date = date("Y-m-d H:i:s");
+        $studentID = $data[0];
+        $name= $data[1];
+        $surname = $data[2];
+        $email = $data[3];
+        $phone = $data[4];
+        $txref = $data[5];
+        $currency = $data[6];
+        $amount = $data[7];
+
+        $sql="INSERT INTO `hostel_ledger` (`cDate`, `StudentID`, `ref`, `bill`) VALUES ('$date','$studentID','$txref','$amount')";
+        $result = $conn->query($sql);
+        if ($result === TRUE) {
+            $last_id = $conn->insert_id;
+            header("location: ?_route=student&p=print.enrollment.slip&e=100&d={$last_id}&s={$studentID}&a={$amount}");
+        } else {
+            header("location: ?_route=student&p=payment.process&e=103");
+        }
+    }
 }
 

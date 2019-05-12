@@ -16,8 +16,7 @@ $sql = "SELECT * FROM `get_student_enrollment` where studentID = '$studentID' or
 $result = $conn->query($sql);
 $r = $result->fetch_assoc();
 $prefix = $r['prefix'];
-
-
+//check for sps student and change their bill
 if ($prefix == 'SPS'){
     $sql = "SELECT * FROM `get_hostel_billing` where types=1";
 }else{
@@ -30,7 +29,7 @@ while ($r = $result->fetch_assoc()){
     $details = $r['hostel_details'];
     $bill = $r['amount'];
 
-    $ref =date('YmdHis');
+    $ref ="HTL-".date('YmdHis');
 
     echo "
         <div class='col-md-4 grid-margin stretch-card'>
@@ -41,50 +40,16 @@ while ($r = $result->fetch_assoc()){
                         <i class='mdi mdi-hotel icon-md text-info d-flex align-self-start mr-3'></i>
                         <div class='media-body'>
                             <p class='card-text'>{$details}</p>
-                           <form>
-                                <script src='https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js'></script>
-                                    <input type='text' name='customer_email' value='{$_COOKIE['st_email']}'>
-                                    <input type='text' name='amount' value='{$bill}'>
-                                    <input type='text' name='customer_phone' value='{$_COOKIE['st_mobile1']}'>
-                                    <input type='text' name='currency' value='GHS'>
-                                    <input type='text' name='txref' value='{$ref}'>                                  
-                                <button type='button' onClick='payWithRave()'>Pay Now</button>
-                           </form>
-                                <script>
-                                    const API_publicKey = 'FLWPUBK-24b72aebb821aea177483039677df9d3-X';
-                                
-                                    function payWithRave() {
-                                        var x = getpaidSetup({
-                                            PBFPubKey: API_publicKey,
-                                            customer_email: '{$_COOKIE['st_email']}',
-                                            amount: '{$bill}',
-                                            customer_phone: '{$_COOKIE['st_mobile1']}',
-                                            currency: 'NGN',
-                                            payment_method: 'both',
-                                            txref: 'rave-123456',
-                                            payment_plan: 13,
-                                            meta: [{
-                                                metaname: 'flightID',
-                                                metavalue: 'AP1234'
-                                            }],
-                                            onclose: function() {},
-                                            callback: function(response) {
-                                                var txref = response.tx.txRef; // collect flwRef returned and pass to a 					server page to complete status check.
-                                                console.log('This is the response returned after a charge', response);
-                                                if (
-                                                    response.tx.chargeResponseCode == '00' ||
-                                                    response.tx.chargeResponseCode == '0'
-                                                ) {
-                                                    // redirect to a success page
-                                                } else {
-                                                    // redirect to a failure page.
-                                                }
-                                
-                                                x.close(); // use this to close the modal immediately after payment.
-                                            }
-                                        });
-                                    }
-                                </script>
+                               <form action='index.php' method='post' enctype='application/x-www-form-urlencoded'>
+                                    <input type='text' class='form-control' name='customer_email' value='{$_COOKIE['st_email']}'>
+                                    <input type='text' class='form-control' name='customer_phone' value='{$_COOKIE['st_mobile1']}'>
+                                    <input type='text' class='form-control' name='customer_phone' value='GHS {$bill}'>
+                                    <input type='text' class='form-control' name='txref' value='{$ref}'>
+                                    <input type='hidden' class='form-control' name='currency' value='GHS'>
+                                    <input type='hidden' class='form-control' name='amount' value='{$bill}'>      
+                                    <hr>                            
+                                    <button type='submit' name='submit' value='pay-hostel-fee' class='btn btn-danger btn-sm'>Pay GHS {$bill}.</button>
+                               </form>
                         </div>
                     </div>
                 </div>

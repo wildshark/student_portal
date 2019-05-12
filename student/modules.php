@@ -104,6 +104,21 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
                 }
             break;
 
+            case"pay-hostel-fee";
+
+                $data[] = $_SESSION['student_index_id'];
+                $data[] = $_COOKIE['st_name'];
+                $data[] = $_COOKIE['st_surname'];
+                $data[] = $_POST['customer_email'];
+                $data[] = $_POST['customer_phone'];
+                $data[] = $_POST['txref'];
+                $data[] = $_POST['currency'];
+                $data[] = $_POST['amount'];
+
+                //echo var_dump($data);
+
+            break;
+
             case "add-comment";
                 TICKET::add_ticket($conn);
             break;
