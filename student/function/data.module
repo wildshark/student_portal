@@ -10,7 +10,7 @@ function fees_details($conn){
 
    $studentID = $_SESSION['student_index_id'];
 
-    $sql="SELECT * FROM `get_fees_payment_details` WHERE studentID='$studentID' ORDER BY feeID DESC, tranNow DESC LIMIT 0,1000";
+    $sql="SELECT * FROM `get_fees_payment_details` WHERE studentID='$studentID' ORDER BY tranNow ASC, tranNow DESC LIMIT 0,1000";
     $result = mysqli_query($conn,$sql);
     if ($result->num_rows === 0){
         echo"
@@ -37,15 +37,28 @@ function fees_details($conn){
                 $semester = "2nd Semester";
             }
 
+            if(isset($n)){
+                $n= $n+1;
+            }else{
+                $n = 1;
+            }
+
+            if(isset($bal)){
+                $bal = (($bal + $r['bill'])-$r['paid']);
+            }else{
+                $bal = $r['bill']-$r['paid'];
+            }
+
             echo"
                 <tr>
-                    <td>{$r['ref_index']}</td>
+                    <td>{$n}</td>
                     <td>{$r['tranDate']}</td>
                     <td>{$semester}</td>
                     <td>{$r['yearID']}</td>
                     <td>{$r['ref']}</td>
                     <td>{$r['bill']}</td>
                     <td>{$r['paid']}</td>
+                    <td>{$bal}</td>
                 </tr>
             ";
         }
@@ -54,7 +67,7 @@ function fees_details($conn){
 
 function hostel_details($conn){
 
-    $studentID = $_SESSION['student_index'];
+    $studentID = $_SESSION['student_index_id'];
 
     $sql="SELECT * FROM `get_hostel_booking_details` where studentID='$studentID'";
     $result = mysqli_query($conn,$sql);
@@ -83,7 +96,7 @@ function hostel_details($conn){
 
 function enrollment_details($conn){
 
-    $studentID = $_SESSION['student_index'];
+    $studentID = $_SESSION['student_index_id'];
 
     $sql="SELECT * FROM `get_student_enrollment` where stud_index='$studentID' and statusID='2'";
     $result = mysqli_query($conn,$sql);

@@ -19,13 +19,14 @@
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th>Index</th>
+                        <th>Serial</th>
                         <th>Date</th>
                         <th>Semester</th>
                         <th>Year</th>
                         <th>Ref</th>
                         <th>Bill</th>
-                        <th>paid</th>
+                        <th>Paid</th>
+                        <th>Balance</th>
                     </tr>
                     </thead>
                     <tbody>
