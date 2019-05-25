@@ -5,10 +5,7 @@
  * Date: 15/10/2018
  * Time: 8:53 AM
  */
-    $servername = "46.101.88.78";
-    $username = "iquipe";
-    $password = "@passWD8282";
-    $database = "school_data";
+include "db.config.php";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password,$database);

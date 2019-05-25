@@ -73,11 +73,6 @@ class ENROLL{
             header("location: index.php?_route=student&p=enrollment.form&e=128");
             exit();
         }
-
-
-
-
-
     }
 
     function add_reg_course($conn){
