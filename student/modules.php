@@ -72,7 +72,9 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
             break;
 
             case"add.enrollment";
+
                 $enroll = ENROLL::add_enrollment($admin_conn,$account_conn,$_POST);
+
                 if ($enroll == 102){
                     header("location: index.php?_route=student&p=enrollment.form&e=102");
                 }elseif ($enroll ==104){

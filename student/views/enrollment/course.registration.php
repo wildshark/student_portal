@@ -18,7 +18,7 @@ if (!isset($_GET['d'])){
 }else{
 
     $programmeID = $_GET['d'];
-    $studentID =  $_SESSION['student_index_id'];
+    $studentID =  $_SESSION['studentID'];
     $level = $_GET['l'];
     $semester = $_GET['s'];
     $school = $_GET['sch'];
@@ -32,7 +32,7 @@ if (!isset($_GET['d'])){
     function programme_list($conn){
 
         $programmeID = $_GET['d'];
-        $studentID =  $_SESSION['student_index_id'];
+        $studentID =  $_SESSION['studentID'];
         $level = $_GET['l'];
         $semester = $_GET['s'];
         $school = $_GET['sch'];
@@ -71,7 +71,7 @@ if (!isset($_GET['d'])){
     function sot_programme_list($conn){
 
         $programmeID = $_GET['d'];
-        $studentID =  $_SESSION['student_index_id'];
+        $studentID =  $_SESSION['studentID'];
         $level = $_GET['l'];
         $semester = $_GET['s'];
         $school = $_GET['sch'];
@@ -144,7 +144,7 @@ if (!isset($_GET['d'])){
             <p class="card-description">
                Total Course Registrated
                 <?php
-                    $studentID = $_SESSION['student_index_id'];
+                    $studentID = $_SESSION['studentID'];
                     echo total_course_registration($admin_conn,$studentID);
                 ?>
             </p>

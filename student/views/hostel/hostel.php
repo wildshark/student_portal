@@ -9,7 +9,7 @@
 $OldDate = date("Y") - 1;
 $academy_yr = $OldDate."/".date("Y");
 
-$studentID = $_SESSION['student_index_id'];
+$studentID = $_SESSION['studentID'];
 
 function get_room_list_for_student($conn,$studentID){
 
@@ -46,7 +46,7 @@ function get_room_list_for_student($conn,$studentID){
                             <label for="exampleFormControlSelect3">Academy Year</label>
                             <select name="year" class="form-control form-control-sm" id="exampleFormControlSelect3">
                                 <option class="active" value="<?php echo $academy_yr;?>"><?php echo $academy_yr;?></option>
-                                <?php cmb_academic_session($conn);?>
+                                <?php cmb_academic_session($admin_conn);?>
                             </select>
                         </div>
                         <div class="form-group">
@@ -61,7 +61,7 @@ function get_room_list_for_student($conn,$studentID){
                             <label for="exampleFormControlSelect3">Hall/room</label>
                             <select name="room" class="form-control form-control-sm" id="exampleFormControlSelect3">
                                 <option value=""></option>
-                                <?php get_room_list_for_student($conn,$studentID);?>
+                                <?php get_room_list_for_student($admin_conn,$studentID);?>
                             </select>
                         </div>
                         <button type="submit" name="submit" value="add-booking" class="btn btn-success mr-2">Submit</button>
@@ -114,7 +114,7 @@ function get_room_list_for_student($conn,$studentID){
                     </tr>
                     </thead>
                     <tbody>
-                        <?php hostel_details($conn);?>
+                        <?php hostel_details($admin_conn);?>
                     </tbody>
                 </table>
             </div>

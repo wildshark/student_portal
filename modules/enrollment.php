@@ -19,9 +19,11 @@ class ENROLL{
         $pin = $data['pin'];
         $status= 1;
 
-        $sql ="SELECT * FROM `get_enrollment` where pins=? AND stud_index=? AND s_level=? AND semesterID=? AND statusID =?";
+        //echo var_export($data);
+
+        $sql ="SELECT * FROM `get_enrollment` where `pins`=? AND `studentID`=? AND `yearID`=? AND `s_level`=? AND `semesterID`=? AND `progID`=? AND `statusID`=?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssss", $pin,$student,$level,$semester,$status);
+        $stmt->bind_param("sssssss", $pin,$student,$year,$level,$semester,$programme,$status);
         $stmt->execute();
 
         $result = $stmt->get_result();

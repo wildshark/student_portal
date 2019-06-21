@@ -65,7 +65,7 @@ class stuSideMenu{
                     <span class='menu-title'>Ticket</span>
                 </a>
             </li>
-            <li class='nav-item'>
+            <!--li class='nav-item'>
                 <a class='nav-link' data-toggle='collapse' href='#payment' aria-expanded='false' aria-controls='auth'>
                     <i class='menu-icon mdi mdi-package-variant'></i>
                     <span class='menu-title'>Payment & Bill</span>
@@ -87,7 +87,7 @@ class stuSideMenu{
                         </li>                      
                     </ul>
                 </div>
-            </li>
+            </li-->
             <li class='nav-item'>
                 <a class='nav-link' href='?_route=student&p=fees.history'>
                     <i class='menu-icon mdi mdi-cash-multiple'></i>
