@@ -7,8 +7,6 @@
  */
 //echo $_SESSION['studentID'];
 
-
-
 ?>
 <div class="col-12 grid-margin">
     <div class="card">
@@ -43,7 +41,7 @@
                             <div class="col-sm-8">
                                 <select name="year" class="form-control">
                                     <option value=""></option>
-                                    <?php cmb_academic_session($conn);?>
+                                    <?php cmb_academic_session($admin_conn);?>
                                 </select>
                             </div>
                         </div>
@@ -68,7 +66,7 @@
                             <div class="col-sm-9">
                                 <select name="programme" class="form-control">
                                     <option value=""></option>
-                                    <?php cmb_programme_data($conn);?>
+                                    <?php cmb_programme_data($admin_conn);?>
                                 </select>
                             </div>
                         </div>
@@ -96,12 +94,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Amount</label>
-                            <div class="col-sm-9">
-                                <input type="text" name="amount" class="form-control" placeholder="0.00" />
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <div class="row">
@@ -128,7 +121,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php enrollment_details($conn);?>
+                    <?php enrollment_details($admin_conn);?>
                     </tbody>
                 </table>
             </div>

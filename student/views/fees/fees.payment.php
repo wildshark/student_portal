@@ -8,7 +8,7 @@
 if (isset($_SESSION['studentID'])){
     $id = $_SESSION['studentID'];
     $sql = "SELECT * FROM `get_student_profile_detail` where `studentID` = '$id'";
-    $result = mysqli_query($conn,$sql);
+    $result = mysqli_query($admin_conn,$sql);
     if($result->num_rows === 0){
         $entryID = "";
         $date = "";
@@ -123,7 +123,7 @@ if (isset($_SESSION['studentID'])){
                             <div class="col-sm-8">
                                 <select name="year" class="form-control">
                                     <option value=""></option>
-                                    <?php cmb_academic_session($conn);?>
+                                    <?php cmb_academic_session($admin_conn);?>
                                 </select>
                             </div>
                         </div>
@@ -148,7 +148,7 @@ if (isset($_SESSION['studentID'])){
                             <div class="col-sm-9">
                                 <select name="programme" class="form-control">
                                     <option value=""></option>
-                                    <?php cmb_programme_data($conn);?>
+                                    <?php cmb_programme_data($admin_conn);?>
                                 </select>
                             </div>
                         </div>

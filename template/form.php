@@ -107,7 +107,7 @@
             <div class="content-wrapper">
                 <div class="row purchace-popup">
                     <div class="col-12">
-                        <?php echo message_box($conn,$errCode);?>
+                        <?php echo message_box($admin_conn,$errCode);?>
                     </div>
                 </div>
                 <div class="row">

@@ -6,10 +6,10 @@
  * Time: 8:57 AM
  */
 
-if (isset($_SESSION['studentID'])){
-    $id = $_SESSION['studentID'];
-    $sql = "SELECT * FROM `get_student_profile_detail` where `studentID` = '$id'";
-    $result = mysqli_query($conn,$sql);
+if (isset($_SESSION['token'])){
+    $id = $_SESSION['token'];
+    $sql = "SELECT * FROM `get_student_profile_detail` where `token` = '$id'";
+    $result = mysqli_query($admin_conn,$sql);
     if($result->num_rows === 0){
         $entryID = "";
         $date = "";
@@ -90,7 +90,7 @@ if (isset($_SESSION['studentID'])){
                             <div class="col-sm-9">
                                 <select name="year" class="form-control">
                                     <option value="<?php echo $yearID?>" ><?php echo $yearID;?></option>
-                                    <?php cmb_academic_session($conn);?>
+                                    <?php cmb_academic_session($admin_conn);?>
                                 </select>
                             </div>
                         </div>
@@ -165,7 +165,7 @@ if (isset($_SESSION['studentID'])){
                             <div class="col-sm-9">
                                 <select name="nationality" class="form-control">
                                     <option class="active" value="<?php echo $nationalityID;?>"><?php echo $nationality;?></option>
-                                    <?php cmb_nationality($conn);?>
+                                    <?php cmb_nationality($admin_conn);?>
                                 </select>
                             </div>
                         </div>
@@ -232,7 +232,7 @@ if (isset($_SESSION['studentID'])){
                             <div class="col-sm-9">
                                 <select name="programme" class="form-control">
                                     <option class="active" value="<?php echo $progID?>"><?php echo $programme?></option>
-                                    <?php cmb_programme_data($conn);?>
+                                    <?php cmb_programme_data($admin_conn);?>
                                 </select>
                             </div>
                         </div>

@@ -130,7 +130,7 @@ if (!isset($_GET['d'])){
                     </tr>
                     </thead>
                     <tbody>
-                    <?php programme_list($conn);?>
+                    <?php programme_list($admin_conn);?>
                     </tbody>
                 </table>
             </div>
@@ -145,7 +145,7 @@ if (!isset($_GET['d'])){
                Total Course Registrated
                 <?php
                     $studentID = $_SESSION['student_index_id'];
-                    echo total_course_registration($conn,$studentID);
+                    echo total_course_registration($admin_conn,$studentID);
                 ?>
             </p>
             <div class="table-responsive">
@@ -160,7 +160,7 @@ if (!isset($_GET['d'])){
                     </tr>
                     </thead>
                     <tbody>
-                    <?php get_course_registered($conn);?>
+                    <?php get_course_registered($admin_conn);?>
                     </tbody>
                 </table>
             </div>

@@ -106,7 +106,7 @@
             <div class="content-wrapper">
                 <div class="row purchace-popup">
                     <div class="col-12">
-                        <?php echo message_box($conn,$errCode);?>
+                        <?php echo message_box($admin_conn,$errCode);?>
                     </div>
                 </div>
                 <div class="row">
@@ -120,7 +120,7 @@
                                     <div class="float-right">
                                         <p class="mb-0 text-right">Total Fees</p>
                                         <div class="fluid-container">
-                                            <h3 class="font-weight-medium text-right mb-0"><?php echo DASHBOARD::total_fees($conn);?></h3>
+                                            <h3 class="font-weight-medium text-right mb-0"><?php echo DASHBOARD::total_fees($account_conn);?></h3>
                                         </div>
                                     </div>
                                 </div>
@@ -140,7 +140,7 @@
                                     <div class="float-right">
                                         <p class="mb-0 text-right">Fees Paid</p>
                                         <div class="fluid-container">
-                                            <h3 class="font-weight-medium text-right mb-0"><?php echo DASHBOARD::total_payment($conn);?></h3>
+                                            <h3 class="font-weight-medium text-right mb-0"><?php echo DASHBOARD::total_payment($account_conn );?></h3>
                                         </div>
                                     </div>
                                 </div>
@@ -160,7 +160,7 @@
                                     <div class="float-right">
                                         <p class="mb-0 text-right">Balance</p>
                                         <div class="fluid-container">
-                                            <h3 class="font-weight-medium text-right mb-0"><?php echo DASHBOARD::total_balance($conn);?></h3>
+                                            <h3 class="font-weight-medium text-right mb-0"><?php echo DASHBOARD::total_balance($account_conn);?></h3>
                                         </div>
                                     </div>
                                 </div>

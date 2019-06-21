@@ -30,7 +30,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                        <?php fees_details($conn);?>
+                        <?php fees_details($account_conn);?>
                     </tbody>
                 </table>
             </div>

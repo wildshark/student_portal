@@ -8,70 +8,80 @@
 
 class ENROLL{
 
-    function  add_enrollment($conn){
+    function  add_enrollment($conn,$account,$data){
 
-        $date = $_POST['date'];
-        $student= $_SESSION['student_index_id'];
-        $year = $_POST['year'];
-        $semester = $_POST['semester'];
-        $programme = $_POST['programme'];
-        $level = $_POST['level'];
-        $pin = $_POST['pin'];
+        $date = $data['date'];
+        $student= $_SESSION['studentID'];
+        $year = $data['year'];
+        $semester = $data['semester'];
+        $programme = $data['programme'];
+        $level = $data['level'];
+        $pin = $data['pin'];
+        $status= 1;
 
-        //get student
-        $sql ="SELECT * FROM `get_student_index` where `stud_indexID`='$student' LIMIT 0, 1000";
-        $result = mysqli_query($conn,$sql);
+        $sql ="SELECT * FROM `get_enrollment` where pins=? AND stud_index=? AND s_level=? AND semesterID=? AND statusID =?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sssss", $pin,$student,$level,$semester,$status);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
         if ($result->num_rows == 0){
-            $student =0;
-        }else{
-            $r = $result->fetch_assoc();
-            $catID = $r['categoryID'];
-        }
+            return 102;
+            exit();
+            //header("location: index.php?_route=student&p=enrollment.form&e=102");
+        }else {
 
-        // get payment
-        $sql ="SELECT * FROM `get_total_payment` where `studentID`='$student' AND `progID`='$programme' AND `semesterID`='$semester' AND `levelID`='$level' AND `yearID`='$year'";
-        $result = mysqli_query($conn,$sql);
-        if ($result->num_rows == 0){
-            $paid_amount =0;
-        }else{
-            $r = $result->fetch_assoc();
-            $paid_amount = $r['paid'];
-        }
+            //get student
+            $sql = "SELECT * FROM `get_student_index` where `stud_indexID`='$student' LIMIT 0, 1000";
+            $result = mysqli_query($conn, $sql);
+            if ($result->num_rows == 0) {
+                $student = 0;
+            } else {
+                $r = $result->fetch_assoc();
+                $catID = $r['categoryID'];
+            }
+
+            // get payment
+            $sql = "SELECT * FROM `get_total_payment` where `studentID`='$student' AND `progID`='$programme' AND `semesterID`='$semester' AND `levelID`='$level' AND `yearID`='$year'";
+            $result = mysqli_query($account, $sql);
+            if ($result->num_rows == 0) {
+                $paid_amount = 0;
+            } else {
+                $r = $result->fetch_assoc();
+                $paid_amount = $r['paid'];
+            }
 
 
-        // get fees
-        $sql ="SELECT * FROM `get_fee_prices_list` where `progID`='$programme' AND `catID`='$catID' AND `semesterID`='$semester'";
-        $result = mysqli_query($conn,$sql);
-        if ($result->num_rows == 0){
-            $bill_amount =0;
-        }else{
-            $r = $result->fetch_assoc();
-            $bill_amount = $r['amount'];
+            // get fees
+            $sql = "SELECT * FROM `get_fee_prices_list` where `progID`='$programme' AND `catID`='$catID' AND `semesterID`='$semester'";
+            $result = mysqli_query($account, $sql);
+            if ($result->num_rows == 0) {
+                $bill_amount = 0;
+            } else {
+                $r = $result->fetch_assoc();
+                $bill_amount = $r['amount'];
 
-            $bill = ($bill_amount *(75/100));
-        }
+                $bill = ($bill_amount * (75 / 100));
+            }
 
-        if($paid_amount > $bill){
+            if ($paid_amount > $bill) {
 
-            $sql ="SELECT * FROM `get_enrollment` where pins='$pin' AND stud_index='$student' AND s_level='$level' AND semesterID='$semester' AND statusID ='1'";
-            $result = mysqli_query($conn,$sql);
-            if ($result->num_rows == 0){
-                header("location: index.php?_route=student&p=enrollment.form&e=102");
-            }else {
                 $sql = "UPDATE `enrollment` SET `enroll_date` = '$date',`yearID` = '$year',`progID` = '$programme',`statusID` = '2' WHERE `pins` = '$pin'";
                 $result = mysqli_query($conn, $sql);
                 if ($result == TRUE) {
-
-                    header("location: index.php?_route=student&p=enrollment.form&e=104");
+                    return 104;
+                    exit();
+                    //header("location: index.php?_route=student&p=enrollment.form&e=104");
                 } else {
-                    header("location: index.php?_route=student&p=enrollment.form&e=103");
+                    return 103;
+                    //header("location: index.php?_route=student&p=enrollment.form&e=103");
                     exit();
                 }
+            } else {
+                return 128;
+                //header("location: index.php?_route=student&p=enrollment.form&e=128");
+                exit();
             }
-
-        }else{
-            header("location: index.php?_route=student&p=enrollment.form&e=128");
-            exit();
         }
     }
 
@@ -95,9 +105,11 @@ class ENROLL{
             $result = mysqli_query($conn,$sql);
 
             if($result == TRUE){
-                header("location: index.php?_route=student&p=course.registration&e=104&{$url}");
+                return array("error"=>104,"url"=>$url);
+                //header("location: index.php?_route=student&p=course.registration&e=104&{$url}");
             }else{
-                header("location: index.php?_route=student&p=course.registration&e=103&{$url}");
+                return array("error"=>103,"url"=>$url);
+                //header("location: index.php?_route=student&p=course.registration&e=103&{$url}");
             }
 
         }else{
@@ -112,9 +124,8 @@ class ENROLL{
         $sql="DELETE FROM `course_registration` WHERE `regID` = '$id'";
         $result = mysqli_query($conn,$sql);
         if ($result == TRUE){
-            header("location: ". $_SERVER['HTTP_REFERER']);
+            return 200;
+            //header("location: ". $_SERVER['HTTP_REFERER']);
         }
     }
-
-
 }

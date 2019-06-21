@@ -8,7 +8,7 @@
 
 function fees_details($conn){
 
-   $studentID = $_SESSION['student_index_id'];
+   $studentID = $_SESSION['studentID'];
 
     $sql="SELECT * FROM `get_fees_payment_details` WHERE studentID='$studentID' ORDER BY tranNow ASC, tranNow DESC LIMIT 0,1000";
     $result = mysqli_query($conn,$sql);
@@ -67,7 +67,7 @@ function fees_details($conn){
 
 function hostel_details($conn){
 
-    $studentID = $_SESSION['student_index_id'];
+    $studentID = $_SESSION['studentID'];
 
     $sql="SELECT * FROM `get_hostel_booking_details` where studentID='$studentID'";
     $result = mysqli_query($conn,$sql);
@@ -96,7 +96,7 @@ function hostel_details($conn){
 
 function enrollment_details($conn){
 
-    $studentID = $_SESSION['student_index_id'];
+    $studentID = $_SESSION['studentID'];
 
     $sql="SELECT * FROM `get_student_enrollment` where studentID='$studentID' and statusID='2'";
     $result = mysqli_query($conn,$sql);
@@ -131,7 +131,7 @@ function enrollment_details($conn){
 
 function get_course_registered($conn){
 
-    $studentID = $_SESSION['student_index_id'];
+    $studentID = $_SESSION['studentID'];
     $year = $_GET['y'];
     $semesterID = $_GET['s'];
 

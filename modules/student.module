@@ -9,88 +9,70 @@
 
 class PROFILE{
 
-    function password($conn){
+    function password($conn,$data){
 
          $id = $_SESSION['studentID'];
         $token = $_SESSION['token'];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $mobile = $_POST['mobile'];
-        $email = $_POST['email'];
+        $username = $data['username'];
+        $password = $data['password'];
+        $mobile = $data['mobile'];
+        $email = $data['email'];
         $stamp = md5($username."/".$password);
 
-        $sql ="UPDATE `get_all_pins` SET 
-            `username` = '$username', 
-            `password` = '$password', 
-            `mobile` = '$mobile', 
-            `email` = '$email', 
-            `token` = '$stamp' 
-            WHERE `token` = '$token'";
-        $result = (mysqli_query($conn,$sql));
-        if ($result == TRUE){
-            $sql = "UPDATE `student_profile` SET `token` = '$stamp' WHERE `studentID` = '$id'";
-            $result = (mysqli_query($conn,$sql));
-            if ($result == TRUE){
-                $_SESSION['token'] = $stamp;
-                setcookie("token",$stamp,time() + (86400 * 30), "/");
+        $sql ="UPDATE `pins` SET `username` = ?,`password` = ?,`mobile` =?,`email` = ?,`token` =? WHERE `token` =?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssssss", $username,$password,$mobile,$email,$stamp,$token);
+        if(TRUE == $stmt->execute()){
 
-                header("location: index.php?_route=student&p=password&e=104");
+            $sql = "UPDATE `student_profile` SET `token` = ? WHERE `studentID` = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ss", $stamp,$id);
+            if(TRUE == $stmt->execute()){
+                return array("token"=>$stamp);
             }else{
-                header("location: index.php?_route=student&p=password&e=103");
+                return 101;
             }
+        }else{
+            return 101;
         }
     }
 
-    public function update($conn){
+    function update($conn,$data){
+
+        $token = $_SESSION['token'];
 
         $id = $_SESSION['studentID'];
         $date= date ("Y-m-d");
-        $f_name = $_POST['f-name'];
-        $l_name = $_POST['l-name'];
-        $dob = $_POST['dob'];
-        $gender = $_POST['gender'];
-        $marital = $_POST['marital-status'];
-        $nationality = $_POST['nationality'];
-        $address = $_POST['address'];
-        $admission = $_POST['admission'];
-        $mobile = $_POST['mobile-1'];
-        $mobile2 =$_POST['mobile-2'];
-        $email = $_POST['email'];
-        $campus_status = $_POST['hostel'];
-        $yearID = $_POST['year'];
-        $progID = $_POST['programme'];
-        $categoryID = $_POST['category'];
-        $stream = $_POST['stream'];
-        $application = $_POST['entry'];
+        $serial = date("HisYmd");
+        $f_name = $data['f-name'];
+        $surname = $data['l-name'];
+        $dob = $data['dob'];
+        $gender = $data['gender'];
+        $marital = $data['marital-status'];
+        $nationality = $data['nationality'];
+        $address = $data['address'];
+        $admission = $data['admission'];
+        $mobile = $data['mobile-1'];
+        $mobile2 =$data['mobile-2'];
+        $email = $data['email'];
+        $campus_status = $data['hostel'];
+        $yearID = $data['year'];
+        $progID = $data['programme'];
+        $categoryID = $data['category'];
+        $stream = $data['stream'];
+        $entryID = $data['entry'];
 
-        $sql="UPDATE `student_profile` SET 
-              `entryID` = '$application',
-              `serial_no` = '2', 
-              `admissionDate` = '$date',
-              `first_name` = '$f_name', 
-              `surname` = '$l_name', 
-              `admissionNo` = '$admission', 
-              `dob` = '$dob',
-              `gender` = '$gender',
-              `nationalityID` = '$nationality',
-              `marital_status` = '$marital',
-              `mobile1` = '$mobile',
-              `mobile2` = '$mobile2',
-              `email` = '$email',
-              `address` = '$address',
-              `progID` = '$progID',
-              `yearID` = '$yearID',
-              `categoryID` = '$categoryID',
-              `streamID` = '$stream',
-              `campus_status` = '$campus_status'
-               WHERE `studentID` = '$id'";
-        $result = (mysqli_query($conn,$sql));
 
-        if ($result == TRUE){
-            header("location: index.php?_route=student&p=update&e=104");
+        $sql="UPDATE `student_profile` SET `entryID` = ?,`serial_no` = ?,`admissionDate` = ?,`first_name` = ?,`surname` = ?,`admissionNo` = ?,`dob` = ?,`gender` = ?,`nationalityID` = ?,`marital_status` = ?,`mobile1` = ?,`mobile2` = ?,`email` = ?,`address` = ?,`progID` = ?,`yearID` = ?,`categoryID` = ?,`streamID` = ?,`campus_status` = ? WHERE `token` = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssssssssssssssssssss", $entryID,$serial,$date,$f_name,$surname,$admission,$dob,$gender,$nationality,$marital,$mobile,$mobile2,$email,$address,$progID,$yearID,$categoryID,$stream,$campus_status,$token);
+
+        if(TRUE == $stmt->execute()){
+            return 200;
         }else{
-            header("location: index.php?_route=student&p=profile&e=103");
+            return 103;
         }
+
     }
 
     function upload_picture($conn){

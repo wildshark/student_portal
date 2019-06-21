@@ -425,10 +425,10 @@ if(isset($_GET['q'])){
                         </tr>
                         </thead>
                         <tbody>
-                            <?php print_fees_details_bill($conn,$schoolID,$categoryID,$status,$rate);?>
+                            <?php print_fees_details_bill($admin_conn,$schoolID,$categoryID,$status,$rate);?>
                         </tbody>
                         <tfoot>
-                            <?php print_fees_total($conn,$studentID,$rate);?>
+                            <?php print_fees_total($admin_conn,$studentID,$rate);?>
                         </tfoot>
                     </table>
                     <div class="thanks">Thank you!</div>

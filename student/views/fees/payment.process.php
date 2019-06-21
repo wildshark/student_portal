@@ -8,7 +8,7 @@
 if (isset($_SESSION['studentID'])) {
     $id = $_SESSION['studentID'];
     $sql = "SELECT * FROM `get_student_profile_detail` where `studentID` = '$id'";
-    $result = mysqli_query($conn, $sql);
+    $result = mysqli_query($admin_conn, $sql);
     if ($result->num_rows === 0) {
 
         $date = "";
@@ -139,7 +139,7 @@ if (isset($_SESSION['billAmount']) && ($_SESSION['billAmount'] !== null)){
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Programme</label>
                             <div class="col-sm-9">
-                                <input type="text" name="surname" id="programme" readonly value="<?php echo DASHBOARD::programme($conn,$programme);?>" class="form-control" placeholder="Student Name" />
+                                <input type="text" name="surname" id="programme" readonly value="<?php echo DASHBOARD::programme($admin_conn,$programme);?>" class="form-control" placeholder="Student Name" />
                             </div>
                         </div>
                     </div>

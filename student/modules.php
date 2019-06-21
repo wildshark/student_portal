@@ -15,6 +15,7 @@ include "modules/payment.php";
 include "plugin/sms/sms.php";
 
 
+
 if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
     // echo "no cookie or session created";
     logout();
@@ -23,12 +24,9 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
 
         switch ($_REQUEST['submit']){
 
-            case"update-password";
-                PROFILE::password($conn);
-            break;
-
             case"upload-image";
-                PROFILE::upload_picture($conn);
+                PROFILE::upload_picture($admin_conn);
+
                 if(isset($_SESSION['pic-status']) && $_SESSION['pic-status'] == true){
                     // *** 1) Initialise / load image
                     $picture = $_SESSION['image'];
@@ -44,7 +42,25 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
             break;
 
             case "update-student-profile";
-                PROFILE::update($conn);
+               $student = PROFILE::update($admin_conn,$_POST);
+               if ($student == 200){
+                   header("location: index.php?_route=student&p=update&e=104");
+               }else{
+                   header("location: index.php?_route=student&p=profile&e=103");
+               }
+            break;
+
+            case"update-password";
+                $password = PROFILE::password($admin_conn,$_POST);
+
+                if($password == 101){
+                    header("location: index.php?_route=student&p=password&e=103");
+                }else{
+                    $_SESSION['token'] = $password['token'];
+                    setcookie("token",$password['token'],time() + (86400 * 30), "/");
+
+                    header("location: index.php?_route=student&p=password&e=104");
+                }
             break;
 
             case "school-bill";
@@ -52,23 +68,40 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
             break;
 
             case"add-booking";
-                HOSTEL::add_booking($conn);
+                HOSTEL::add_booking($admin_conn);
             break;
 
             case"add.enrollment";
-                ENROLL::add_enrollment($conn);
+                $enroll = ENROLL::add_enrollment($admin_conn,$account_conn,$_POST);
+                if ($enroll == 102){
+                    header("location: index.php?_route=student&p=enrollment.form&e=102");
+                }elseif ($enroll ==104){
+                    header("location: index.php?_route=student&p=enrollment.form&e=104");
+                }elseif ($enroll == 103){
+                    header("location: index.php?_route=student&p=enrollment.form&e=103");
+                }elseif ($enroll == 128){
+                    header("location: index.php?_route=student&p=enrollment.form&e=128");
+                }
             break;
 
             case"reg.course";
-                ENROLL::add_reg_course($conn);
+                $enroll = ENROLL::add_reg_course($admin_conn);
+                if($enroll['error'] == 104){
+                    header("location: index.php?_route=student&p=course.registration&e=104&{$enroll['url']}");
+                }elseif ($enroll['error'] == 103){
+                    eader("location: index.php?_route=student&p=course.registration&e=103&{$enroll['url']}");
+                }
             break;
 
             case"remove.reg.course";
-                ENROLL::remove_course($conn);
+                $enroll = ENROLL::remove_course($admin_conn);
+                if($enroll == 200){
+                    header("location: ". $_SERVER['HTTP_REFERER']);
+                }
             break;
 
             case "make-fees-payment";
-                PAYMENT::make_fees_payment($conn,$exchange_rate);
+                PAYMENT::make_fees_payment($admin_conn,$exchange_rate);
             break;
 
             case"payment.portal";
@@ -120,7 +153,7 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
             break;
 
             case "add-comment";
-                TICKET::add_ticket($conn);
+                TICKET::add_ticket($admin_conn);
             break;
 
             default:

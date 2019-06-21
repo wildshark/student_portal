@@ -46,13 +46,13 @@
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Academic Year</label>
                         <select name="academic-year" class="form-control" id="exampleFormControlSelect2">
-                            <?php cmb_academic_session($conn);?>
+                            <?php cmb_academic_session($admin_conn);?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect3">Programme</label>
                         <select name="programme" class="form-control form-control-sm" id="exampleFormControlSelect3">
-                            <?php cmb_programme_data($conn);?>
+                            <?php cmb_programme_data($admin_conn);?>
                         </select>
                     </div>
                     <div class="form-group">

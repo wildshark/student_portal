@@ -9,96 +9,119 @@
 class USER_LOGIN
 {
 
-    function login($conn)
-    {
+    function login($conn,$data){
 
-        if (!isset($_POST['username'])) {
-            echo "no user name";
-        } else {
-            $username = $_POST['username'];
-        }
-
-        if (!isset($_POST['password'])) {
-            echo "no password";
-        } else {
-            $password = $_POST['password'];
-        }
+        $username = $data['username'];
+        $password = $data['password'];
 
         $token = md5($username . "/" . $password);
 
         $username = strtoupper($username);
 
-        $get_sql_index_id = "SELECT * FROM `get_student_index` where stud_index='$username' LIMIT 0, 1";
-        $sql_index_id = mysqli_query($conn, $get_sql_index_id);
-        if (mysqli_num_rows($sql_index_id) > 0) {
-            $index_id = mysqli_fetch_assoc($sql_index_id);
+        $sql = "SELECT * FROM `get_active_pin` where `token`=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s",$token);
 
-            $_SESSION['student_index_id'] = $index_id['stud_indexID'];
+        $stmt->execute();
 
-            $sql = "SELECT * FROM `get_active_pin` where token='$token' LIMIT 1";
-            $result = (mysqli_query($conn,$sql));
-            if (mysqli_num_rows($result) > 0){
-                $user = mysqli_fetch_assoc($result);
+        $result = $stmt->get_result();
+        if($result->num_rows === 0){
+            return 101;
+        }else {
+            $row = $result->fetch_assoc();
 
-                if (!isset($_COOKIE[$token])){
-                    setcookie("token",$token,time() + (86400 * 1), "/");
+            if(($username === $row['username']) && ($password === $row['password']) && ($token === $row['token'])){
 
-                    if (!isset($_SESSION['token'])){
+                $sql = "SELECT * FROM `get_student_index` WHERE `stud_index`=?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("s",$username);
+                $stmt->execute();
 
-                        $_SESSION['token'] = $token;
-                        $_SESSION['student_name'] = $user['first_name']." ". $user['surname'];
-                        $_SESSION['student_index'] = $username;
-                        //$_USER['picture'] = $user['picture'];
-
-                        $profile = "SELECT * FROM `get_student_profile_detail` WHERE token = '$token'";
-                        $profile_result = mysqli_query($conn,$profile);
-
-                        if(mysqli_num_rows($profile_result) > 0){
-
-                            $student = mysqli_fetch_assoc($profile_result);
-                            //setcookie
-                            setcookie("st_name",$student['first_name'],time() + (86400 * 1), "/");
-                            setcookie("st_surname",$student['surname'],time() + (86400 * 1), "/");
-                            setcookie("st_mobile1",$student['mobile1'],time() + (86400 * 1), "/");
-                            setcookie("st_email",$student['email'],time() + (86400 * 1), "/");
-
-                            //$_SESSION['studentID'] = $student['studentID'];
-                            $_SESSION['student_name'] = $student['first_name']." ".$student['surname'];
-                            $_SESSION['picture'] = $student['picture'];
-                            $_SESSION['studentCatID'] = $student['categoryID'];
-
-                            if (!isset($student['admissionNo']) OR !isset($student['surname'])){
-                                header("location: index.php?_route=student&p=profile&e=100");
-                            }else{
-
-                                $index_id = "SELECT * FROM `get_student_profile_detail` where token='$token'LIMIT 0, 1";
-                                $student_index_id_result = mysqli_query($conn,$index_id);
-                                if (mysqli_num_rows($student_index_id_result) > 0) {
-                                    $r = mysqli_fetch_assoc($student_index_id_result);
-                                    $student_index_id = $r['studentID'];
-                                    $_SESSION['picture'] = $r['picture'];
-                                    $_SESSION['studentCatID'] = $r['categoryID'];
-                                    //$_SESSION['student_index_id']= $student_index_id;
-
-                                    setcookie("st_name",$student['first_name'],time() + (86400 * 1), "/");
-                                    setcookie("st_surname",$student['surname'],time() + (86400 * 1), "/");
-                                    setcookie("st_mobile1",$student['mobile1'],time() + (86400 * 1), "/");
-                                    setcookie("st_email",$student['email'],time() + (86400 * 1), "/");
-
-                                    if(isset($_SESSION['student_index_id'])){
-                                        $_SESSION['studentID'] = $_SESSION['student_index_id'];
-                                        header("location: index.php?_route=student&p=dashboard&e=100");
-                                    }
-                                }
-
-                            }
-                        }
-                    }
+                $result = $stmt->get_result();
+                if($result->num_rows > 0){
+                    $row = $result->fetch_assoc();
+                    return array(
+                        "studentID"=>$row['stud_indexID'],
+                        "index"=>$row['stud_index'],
+                        "name"=>$row['name'],
+                        "surname"=>$row['surname'],
+                        "programmeID"=>$row['progID'],
+                        "programme"=>$row['programme'],
+                        "streamID"=>$row['streamID'],
+                        "categoryID"=>$row['categoryID'],
+                        "token"=>$token
+                        ) ;
                 }
-            }else{
-                header("location: index.php");
             }
+        }
 
+    }
+
+    function registration($conn,$data){
+
+        $index = $data['username'];
+        $username = $data['username'];
+        $password = $data['password'];
+        $mobile = $data['mobile'];
+        $email = $data['email'];
+        $voucher = $data['voucher'];
+
+        $sql = "SELECT * FROM `get_pins` where pin =? and username=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ss", $voucher,$username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if($result->num_rows === 0){
+            return 101;
+        }else {
+            $row = $result->fetch_assoc();
+            $id = $row['pin_id'];
+            $token = md5($index . "/" . $password);
+            $date = date("Y-m-d H:i:s");
+            $status = 2;
+
+            $sql ="UPDATE `pins` SET `password`=?, `mobile`=?, `email`=?, `active_date`=?, `token`=?, status=?  WHERE (`pin_id`=?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("sssssss", $password,$mobile,$email,$date,$token,$status,$id);
+            if(TRUE == $stmt->execute()){
+                return 200;
+            }else{
+                return array("index"=>$index,"username"=>$username,"password"=>$password,"mobile"=>$mobile,"email"=>$email,"token"=>$token);
+            }
+        }
+    }
+
+    function token($conn,$data){
+
+        $token = $data['token'];
+
+        $sql ="INSERT INTO `student_profile` (`token`) VALUES (?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $token);
+        if(TRUE == $stmt->execute()){
+            return 200;
+        }else{
+            return 101;
+        }
+
+    }
+
+    function check_profile($conn,$data){
+
+        $index = $data['index'];
+
+        $sql="SELECT * FROM `get_student_profile_detail` where `admissionNo`=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $index);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if($result->num_rows === 0){
+            return 101;
+        }else {
+            $row = $result->fetch_assoc();
+            return array("name"=>$row['first_name'],"surname"=>$row['surname'],"admission"=>$row['admissionNo']);
         }
     }
 
