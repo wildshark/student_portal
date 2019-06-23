@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b10701-38f8-42d3-ae6c-f30fa9654001" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/modules/enrollment.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/enrollment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/model/student_menu.module" beforeDir="false" afterPath="$PROJECT_DIR$/student/model/student_menu.module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/modules.php" beforeDir="false" afterPath="$PROJECT_DIR$/student/modules.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/views/enrollment/course.registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/student/views/enrollment/course.registration.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student/views/hostel/hostel.php" beforeDir="false" afterPath="$PROJECT_DIR$/student/views/hostel/hostel.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,7 +28,7 @@
     <session id="-1764539658">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="43" />
+          <entry key="project.closed" value="44" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.106" value="1" />
           <entry key="project.open.time.11" value="1" />
@@ -123,8 +119,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/student/views/hostel/hostel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="116" column="56" selection-start-line="116" selection-start-column="56" selection-end-line="116" selection-end-column="56" />
+            <state relative-caret-position="-476">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -298,34 +294,6 @@
               <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
               <item name="student_portal" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="student_portal" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="student_portal" type="462c0819:PsiDirectoryNode" />
-              <item name="student" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="student_portal" type="462c0819:PsiDirectoryNode" />
-              <item name="student" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="student_portal" type="462c0819:PsiDirectoryNode" />
-              <item name="student" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="hostel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="student_portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="student_portal" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -455,16 +423,15 @@
       <workItem from="1560504444117" duration="547000" />
       <workItem from="1560955150993" duration="18457000" />
       <workItem from="1560994407275" duration="11217000" />
-      <workItem from="1561099826802" duration="7721000" />
+      <workItem from="1561099826802" duration="8605000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="748390000" />
+    <option name="totallyTimeSpent" value="749274000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23373677" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -820,8 +787,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/student/views/hostel/hostel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="116" column="56" selection-start-line="116" selection-start-column="56" selection-end-line="116" selection-end-column="56" />
+        <state relative-caret-position="-476">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>

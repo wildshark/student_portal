@@ -32,7 +32,6 @@ function get_room_list_for_student($conn,$studentID){
     }
 }
 
-
 ?>
 <div class="col-md-6 d-flex align-items-stretch grid-margin">
     <div class="row flex-grow">
