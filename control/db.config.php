@@ -11,7 +11,7 @@ if ($_SERVER["HTTP_HOST"] == 'localhost'){
     define("HOST",'localhost');
     define("USERNAME",'root');
     define("PASSWORD",'');
-    define("DATABASE",'school_data');
+    define("DATABASE",'ghanacuc_school_data');
     define("PORT",'');
 }else{
 

@@ -48,7 +48,7 @@ if((isset($_SESSION['account_db'])) && (isset($_SESSION['administrative_db'])) &
                     $verification = USER_LOGIN::check_profile($admin_conn,$student);
                     if($verification == 101){
                         header("location: index.php?_route=student&p=profile&e=100");
-                    }elseif(!isset($student['admissionNo']) OR !isset($student['surname'])){
+                    }elseif(!isset($student['index']) OR !isset($student['surname'])){
                         header("location: index.php?_route=student&p=profile&e=100");
                     }else{
                         header("location: index.php?_route=student&p=dashboard&e=100");
