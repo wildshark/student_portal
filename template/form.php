@@ -34,8 +34,8 @@
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">
             <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Schedule
+                <!--li class="nav-item">
+                    <a href="#" class="nav-link">Semester Schedule
                         <span class="badge badge-primary ml-1">New</span>
                     </a>
                 </li>
@@ -45,8 +45,8 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="mdi mdi-bookmark-plus-outline"></i>Score</a>
-                </li>
+                        <i class="mdi mdi-bookmark-plus-outline"></i>Note</a>
+                </li-->
             </ul>
             <ul class="navbar-nav navbar-nav-right">
                 <li class="nav-item dropdown">

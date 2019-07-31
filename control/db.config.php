@@ -21,3 +21,4 @@ if ($_SERVER["HTTP_HOST"] == 'localhost'){
     define("DATABASE",'ghanacuc_school_data');
     define("PORT",'');
 }
+

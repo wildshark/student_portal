@@ -33,8 +33,8 @@
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">
             <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Schedule
+                <!--li class="nav-item">
+                    <a href="#" class="nav-link">Semester Schedule
                         <span class="badge badge-primary ml-1">New</span>
                     </a>
                 </li>
@@ -44,8 +44,8 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="mdi mdi-bookmark-plus-outline"></i>Score</a>
-                </li>
+                        <i class="mdi mdi-bookmark-plus-outline"></i>Note</a>
+                </li-->
             </ul>
             <ul class="navbar-nav navbar-nav-right">
                 <li class="nav-item dropdown">
@@ -125,7 +125,7 @@
                                     </div>
                                 </div>
                                 <p class="text-muted mt-3 mb-0">
-                                    <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> 65% lower growth
+                                    <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> Total Fees Bill as at <?php echo date("Y-m-d");?>
                                 </p>
                             </div>
                         </div>
@@ -145,7 +145,7 @@
                                     </div>
                                 </div>
                                 <p class="text-muted mt-3 mb-0">
-                                    <i class="mdi mdi-bookmark-outline mr-1" aria-hidden="true"></i> Product-wise sales
+                                    <i class="mdi mdi-bookmark-outline mr-1" aria-hidden="true"></i> Total Fees Payment
                                 </p>
                             </div>
                         </div>
@@ -165,7 +165,7 @@
                                     </div>
                                 </div>
                                 <p class="text-muted mt-3 mb-0">
-                                    <i class="mdi mdi-calendar mr-1" aria-hidden="true"></i> Weekly Sales
+                                    <i class="mdi mdi-calendar mr-1" aria-hidden="true"></i> last balance update
                                 </p>
                             </div>
                         </div>
@@ -178,14 +178,14 @@
                                         <i class="mdi mdi-account-location text-info icon-lg"></i>
                                     </div>
                                     <div class="float-right">
-                                        <p class="mb-0 text-right">Employees</p>
+                                        <p class="mb-0 text-right">Course Mate</p>
                                         <div class="fluid-container">
-                                            <h3 class="font-weight-medium text-right mb-0">246</h3>
+                                            <h3 class="font-weight-medium text-right mb-0">0</h3>
                                         </div>
                                     </div>
                                 </div>
                                 <p class="text-muted mt-3 mb-0">
-                                    <i class="mdi mdi-reload mr-1" aria-hidden="true"></i> Product-wise sales
+                                    <i class="mdi mdi-reload mr-1" aria-hidden="true"></i> Numbers in a class
                                 </p>
                             </div>
                         </div>
