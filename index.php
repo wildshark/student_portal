@@ -24,34 +24,44 @@ if((isset($_SESSION['account_db'])) && (isset($_SESSION['administrative_db'])) &
                 echo "No login details";
                 exit();
             }else{
-                $student = USER_LOGIN::login($admin_conn,$_POST);
+                $login['username'] = $_POST['username'];
+                $login['password'] = $_POST['password'];
 
-                //echo var_export($student);
-                //exit();
+                $student = USER_LOGIN::login($admin_conn,$login);
 
-                $_SESSION['studentID']= $student['studentID'];
-                $_SESSION['studentCatID'] = $student['categoryID'];
-                $_SESSION['student_index'] = $student['index'];
-                $_SESSION['student_name'] = $student['name']." ".$student['surname'];
-                $_SESSION['programmeID'] = $student['programme'];
-                $_SESSION['streamID'] = $student['streamID'];
-                $_SESSION['categoryID'] = $student['categoryID'];
-                $_SESSION['token'] = $student['token'];
+                if($student == 101){
+                    header("location : index.php");
+                }else{
+                    //echo var_export($student);
+                    // exit();
+                    $url_query = http_build_query($student);
+                    //echo $url_query;
+                    //exit();
 
-                setcookie("token",$student['token'],time() + (86400 * 1), "/");
-                setcookie("st_name",$student['name'],time() + (86400 * 1), "/");
-                setcookie("st_surname",$student['surname'],time() + (86400 * 1), "/");
-                setcookie("st_index",$student['index'],time() + (86400 * 1), "/");
+                    $_SESSION['studentID']= $student['studentID'];
+                    $_SESSION['studentCatID'] = $student['categoryID'];
+                    $_SESSION['student_index'] = $student['index'];
+                    $_SESSION['student_name'] = $student['name']." ".$student['surname'];
+                    $_SESSION['programmeID'] = $student['programme'];
+                    $_SESSION['streamID'] = $student['streamID'];
+                    $_SESSION['categoryID'] = $student['categoryID'];
+                    $_SESSION['token'] = $student['token'];
+
+                    setcookie("token",$student['token'],time() + (86400 * 1), "/");
+                    setcookie("st_name",$student['name'],time() + (86400 * 1), "/");
+                    setcookie("st_surname",$student['surname'],time() + (86400 * 1), "/");
+                    setcookie("st_index",$student['index'],time() + (86400 * 1), "/");
 
 
-                if((isset( $_SESSION['studentID'])) && (isset($_COOKIE))){
-                    $verification = USER_LOGIN::check_profile($admin_conn,$student);
-                    if($verification == 101){
-                        header("location: index.php?_route=student&p=profile&e=100");
-                    }elseif(!isset($student['index']) OR !isset($student['surname'])){
-                        header("location: index.php?_route=student&p=profile&e=100");
-                    }else{
-                        header("location: index.php?_route=student&p=dashboard&e=100");
+                    if(isset( $_SESSION['studentID'])){
+                        $verification = USER_LOGIN::check_profile($admin_conn,$student);
+                        if($verification == 101){
+                            header("location: index.php?_route=student&p=profile&e=100&".$url_query);
+                        }elseif(!isset($student['index']) OR !isset($student['surname'])){
+                            header("location: index.php?_route=student&p=profile&e=100&".$url_query);
+                        }else{
+                            header("location: index.php?_route=student&p=dashboard&e=100&".$url_query);
+                        }
                     }
                 }
             }

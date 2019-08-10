@@ -39,9 +39,8 @@ class PROFILE{
 
     function update($conn,$data){
 
-        $token = $_SESSION['token'];
-
-        $id = $_SESSION['studentID'];
+        $token = $data['token'];
+        //$id=$data['id'];
         $date= date ("Y-m-d");
         $serial = date("HisYmd");
         $f_name = $data['f-name'];
@@ -63,14 +62,28 @@ class PROFILE{
         $entryID = $data['entry'];
 
 
-        $sql="UPDATE `student_profile` SET `entryID` = ?,`serial_no` = ?,`admissionDate` = ?,`first_name` = ?,`surname` = ?,`admissionNo` = ?,`dob` = ?,`gender` = ?,`nationalityID` = ?,`marital_status` = ?,`mobile1` = ?,`mobile2` = ?,`email` = ?,`address` = ?,`progID` = ?,`yearID` = ?,`categoryID` = ?,`streamID` = ?,`campus_status` = ? WHERE `token` = ?";
+        $sql = "SELECT * FROM `student_profile` where `token` =? LIMIT 0, 1";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssssssssssssssssssss", $entryID,$serial,$date,$f_name,$surname,$admission,$dob,$gender,$nationality,$marital,$mobile,$mobile2,$email,$address,$progID,$yearID,$categoryID,$stream,$campus_status,$token);
+        $stmt->bind_param("s",$token);
 
-        if(TRUE == $stmt->execute()){
-            return 200;
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if($result->num_rows == 0){
+
         }else{
-            return 103;
+
+            $row = $result->fetch_assoc();
+            $id = $row['studentID'];
+            
+            $sql=" UPDATE `student_profile` SET `entryID`=?, `serial_no`=?, `admissionDate`=?, `first_name`=?, `surname`=?, `admissionNo`=?, `dob`=?, `gender`=?, `nationalityID`=?, `marital_status`=?, `mobile1`=?, `mobile2`=?, `email`=?, `address`=?, `progID`=?, `yearID`=?, `categoryID`=?, `streamID`=?, `campus_status`=? WHERE (`studentID`=?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ssssssssssssssssssss",$entryID,$serial,$date,$f_name,$surname,$admission,$dob,$gender,$nationality,$marital,$mobile,$mobile2,$email,$address,$progID,$yearID,$categoryID,$stream,$campus_status,$id);
+            if(TRUE == $stmt->execute()){
+                return 200;
+            }else{
+                return 103;
+            }
         }
 
     }

@@ -42,6 +42,8 @@ if (!isset($_COOKIE["token"]) or !isset($_SESSION['token'])){
             break;
 
             case "update-student-profile";
+                $_POST['token'] = $_SESSION['token'];
+                $_POST['id'] = $_SESSION['studentID'];
                $student = PROFILE::update($admin_conn,$_POST);
                if ($student == 200){
                    header("location: index.php?_route=student&p=update&e=104");
