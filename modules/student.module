@@ -75,7 +75,7 @@ class PROFILE{
 
             $row = $result->fetch_assoc();
             $id = $row['studentID'];
-            
+
             $sql=" UPDATE `student_profile` SET `entryID`=?, `serial_no`=?, `admissionDate`=?, `first_name`=?, `surname`=?, `admissionNo`=?, `dob`=?, `gender`=?, `nationalityID`=?, `marital_status`=?, `mobile1`=?, `mobile2`=?, `email`=?, `address`=?, `progID`=?, `yearID`=?, `categoryID`=?, `streamID`=?, `campus_status`=? WHERE (`studentID`=?)";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("ssssssssssssssssssss",$entryID,$serial,$date,$f_name,$surname,$admission,$dob,$gender,$nationality,$marital,$mobile,$mobile2,$email,$address,$progID,$yearID,$categoryID,$stream,$campus_status,$id);

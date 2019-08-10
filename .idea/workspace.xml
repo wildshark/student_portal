@@ -36,7 +36,7 @@
               <entry file="file://$PROJECT_DIR$/modules/student.module">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="367">
-                    <caret line="77" column="12" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="12" />
+                    <caret line="77" selection-start-line="77" selection-end-line="77" />
                     <folding>
                       <element signature="n#password#0;n#PROFILE#0;n#!!top" />
                       <element signature="n#upload_picture#0;n#PROFILE#0;n#!!top" />
@@ -54,7 +54,7 @@
     <session id="-1764539658">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="48" />
+          <entry key="project.closed" value="49" />
           <entry key="project.open.time.1" value="7" />
           <entry key="project.open.time.106" value="1" />
           <entry key="project.open.time.11" value="1" />
@@ -486,12 +486,12 @@
       <workItem from="1564509234594" duration="801000" />
       <workItem from="1564551131867" duration="4862000" />
       <workItem from="1564576792003" duration="22000" />
-      <workItem from="1565446794270" duration="3597000" />
+      <workItem from="1565446794270" duration="4194000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="763508000" />
+    <option name="totallyTimeSpent" value="764105000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -828,21 +828,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="122" column="42" lean-forward="true" selection-start-line="122" selection-start-column="10" selection-end-line="122" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/student.module">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
-          <caret line="77" column="12" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="12" />
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
           <folding>
             <element signature="n#password#0;n#PROFILE#0;n#!!top" />
             <element signature="n#upload_picture#0;n#PROFILE#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="122" column="42" lean-forward="true" selection-start-line="122" selection-start-column="10" selection-end-line="122" selection-end-column="42" />
         </state>
       </provider>
     </entry>
